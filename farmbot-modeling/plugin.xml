@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated farmbot_modeling -->
+      <package
+            uri="http://www.example.org/farmbot_modeling"
+            class="farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage"
+            genModel="model/farmbot_modeling.genmodel"/>
+   </extension>
+
+</plugin>

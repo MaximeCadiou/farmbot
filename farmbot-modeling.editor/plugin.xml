@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated farmbot_modeling -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="farmbot.modeling.farmbot_modeling.presentation.Farmbot_modelingModelWizardID"
+            name="%_UI_Farmbot_modelingModelWizard_label"
+            class="farmbot.modeling.farmbot_modeling.presentation.Farmbot_modelingModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/Farmbot_modelingModelFile.gif">
+         <description>%_UI_Farmbot_modelingModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated farmbot_modeling -->
+      <editor
+            id="farmbot.modeling.farmbot_modeling.presentation.Farmbot_modelingEditorID"
+            name="%_UI_Farmbot_modelingEditor_label"
+            icon="icons/full/obj16/Farmbot_modelingModelFile.gif"
+            extensions="farmbot_modeling"
+            class="farmbot.modeling.farmbot_modeling.presentation.Farmbot_modelingEditor"
+            contributorClass="farmbot.modeling.farmbot_modeling.presentation.Farmbot_modelingActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>

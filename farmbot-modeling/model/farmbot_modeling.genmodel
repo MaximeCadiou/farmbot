@@ -1,12 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/farmbot-modeling/src-gen" creationIcons="false"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel"
+    modelDirectory="/farmbot-modeling/src-gen" creationIcons="false"
     editDirectory="/farmbot-modeling.edit/src-gen" editorDirectory="/farmbot-modeling.editor/src-gen"
     modelPluginID="farmbot-modeling" modelName="Farmbot_modeling" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
     codeFormatting="true" importerID="org.eclipse.emf.importer.ecore" complianceLevel="9.0"
     copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>farmbot_modeling.ecore</foreignModel>
   <testsDirectory xsi:nil="true"/>
-  <genPackages prefix="Farmbot_modeling" basePackage="farmbot-modeling" disposableProviderFactory="true"
-      ecorePackage="farmbot_modeling.ecore#/"/>
+  <genPackages prefix="Farmbot_modeling" basePackage="farmbot.modeling" disposableProviderFactory="true"
+      ecorePackage="farmbot_modeling.ecore#/">
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Farmbot">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Farmbot/instruction"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Instruction"/>
+    <genClasses image="false" ecoreClass="farmbot_modeling.ecore#//SequenceCommand"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Move">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Move/x"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Move/y"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Move/z"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Move/speed"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//TurnOn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOn/pin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOn/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//TurnOff">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOff/pin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOff/mode"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//MoveRelative"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//FindHome">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findX"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findY"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findZ"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Sequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Sequence/name"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Sequence/if"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Sequence/sequenceinstruction"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//If">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/booleanexpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/then"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/else"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//MoveAbsolute"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//ExecuteSequence">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//ExecuteSequence/id"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Wait">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Wait/duration"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//BooleanExpression">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//BooleanExpression/result"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsToolOn">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsToolOn/pin"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//SendMessage">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//SendMessage/message"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//RunFarmware">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//RunFarmware/name"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//TakePhoto"/>
+    <genClasses image="false" ecoreClass="farmbot_modeling.ecore#//SequenceInstruction"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsEqualTo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsEqualTo/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsEqualTo/axe"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsNotEqualTo">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsNotEqualTo/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsNotEqualTo/axe"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsGreaterThan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsGreaterThan/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsGreaterThan/axe"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsLowerThan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsLowerThan/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsLowerThan/axe"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Schedule">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/sequence"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/startDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/startTime"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/reapeat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/repeatFrequency"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/repeatUnit"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/endDate"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/endTime"/>
+    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//Command"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//ListPeripherals"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//ListSequences"/>
+  </genPackages>
 </genmodel:GenModel>

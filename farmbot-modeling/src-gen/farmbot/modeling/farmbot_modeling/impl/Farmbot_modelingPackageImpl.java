@@ -502,17 +502,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSequence_If() {
-		return (EReference) sequenceEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getSequence_Sequenceinstruction() {
-		return (EReference) sequenceEClass.getEStructuralFeatures().get(2);
+		return (EReference) sequenceEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -835,7 +826,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getSchedule_Reapeat() {
+	public EAttribute getSchedule_Repeat() {
 		return (EAttribute) scheduleEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -961,7 +952,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		sequenceEClass = createEClass(SEQUENCE);
 		createEAttribute(sequenceEClass, SEQUENCE__NAME);
-		createEReference(sequenceEClass, SEQUENCE__IF);
 		createEReference(sequenceEClass, SEQUENCE__SEQUENCEINSTRUCTION);
 
 		ifEClass = createEClass(IF);
@@ -1013,7 +1003,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		createEAttribute(scheduleEClass, SCHEDULE__SEQUENCE);
 		createEAttribute(scheduleEClass, SCHEDULE__START_DATE);
 		createEAttribute(scheduleEClass, SCHEDULE__START_TIME);
-		createEAttribute(scheduleEClass, SCHEDULE__REAPEAT);
+		createEAttribute(scheduleEClass, SCHEDULE__REPEAT);
 		createEAttribute(scheduleEClass, SCHEDULE__REPEAT_FREQUENCY);
 		createEAttribute(scheduleEClass, SCHEDULE__REPEAT_UNIT);
 		createEAttribute(scheduleEClass, SCHEDULE__END_DATE);
@@ -1131,9 +1121,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSequence_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sequence.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSequence_If(), this.getIf(), null, "if", null, 0, -1, Sequence.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
 		initEReference(getSequence_Sequenceinstruction(), this.getSequenceInstruction(), null, "sequenceinstruction",
 				null, 0, -1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1224,7 +1211,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchedule_StartTime(), ecorePackage.getEString(), "startTime", null, 0, 1, Schedule.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getSchedule_Reapeat(), ecorePackage.getEBoolean(), "reapeat", null, 0, 1, Schedule.class,
+		initEAttribute(getSchedule_Repeat(), ecorePackage.getEBoolean(), "repeat", null, 0, 1, Schedule.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getSchedule_RepeatFrequency(), ecorePackage.getEInt(), "repeatFrequency", null, 0, 1,
 				Schedule.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,

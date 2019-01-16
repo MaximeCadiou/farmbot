@@ -3,7 +3,6 @@
 package farmbot.modeling.farmbot_modeling.impl;
 
 import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
-import farmbot.modeling.farmbot_modeling.If;
 import farmbot.modeling.farmbot_modeling.Sequence;
 import farmbot.modeling.farmbot_modeling.SequenceInstruction;
 
@@ -31,7 +30,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl#getName <em>Name</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl#getIf <em>If</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl#getSequenceinstruction <em>Sequenceinstruction</em>}</li>
  * </ul>
  *
@@ -57,16 +55,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 	 * @ordered
 	 */
 	protected String name = NAME_EDEFAULT;
-
-	/**
-	 * The cached value of the '{@link #getIf() <em>If</em>}' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIf()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<If> if_;
 
 	/**
 	 * The cached value of the '{@link #getSequenceinstruction() <em>Sequenceinstruction</em>}' containment reference list.
@@ -124,18 +112,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<If> getIf() {
-		if (if_ == null) {
-			if_ = new EObjectContainmentEList<If>(If.class, this, Farmbot_modelingPackage.SEQUENCE__IF);
-		}
-		return if_;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<SequenceInstruction> getSequenceinstruction() {
 		if (sequenceinstruction == null) {
 			sequenceinstruction = new EObjectContainmentEList<SequenceInstruction>(SequenceInstruction.class, this,
@@ -152,8 +128,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.SEQUENCE__IF:
-			return ((InternalEList<?>) getIf()).basicRemove(otherEnd, msgs);
 		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
 			return ((InternalEList<?>) getSequenceinstruction()).basicRemove(otherEnd, msgs);
 		}
@@ -170,8 +144,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			return getName();
-		case Farmbot_modelingPackage.SEQUENCE__IF:
-			return getIf();
 		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
 			return getSequenceinstruction();
 		}
@@ -189,10 +161,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			setName((String) newValue);
-			return;
-		case Farmbot_modelingPackage.SEQUENCE__IF:
-			getIf().clear();
-			getIf().addAll((Collection<? extends If>) newValue);
 			return;
 		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
 			getSequenceinstruction().clear();
@@ -213,9 +181,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Farmbot_modelingPackage.SEQUENCE__IF:
-			getIf().clear();
-			return;
 		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
 			getSequenceinstruction().clear();
 			return;
@@ -233,8 +198,6 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Farmbot_modelingPackage.SEQUENCE__IF:
-			return if_ != null && !if_.isEmpty();
 		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
 			return sequenceinstruction != null && !sequenceinstruction.isEmpty();
 		}

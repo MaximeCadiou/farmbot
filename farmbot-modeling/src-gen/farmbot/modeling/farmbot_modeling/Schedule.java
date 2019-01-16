@@ -14,7 +14,7 @@ package farmbot.modeling.farmbot_modeling;
  *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#getSequence <em>Sequence</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#getStartTime <em>Start Time</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#isReapeat <em>Reapeat</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#isRepeat <em>Repeat</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#getRepeatFrequency <em>Repeat Frequency</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#getRepeatUnit <em>Repeat Unit</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.Schedule#getEndDate <em>End Date</em>}</li>
@@ -105,30 +105,30 @@ public interface Schedule extends Command {
 	void setStartTime(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Reapeat</b></em>' attribute.
+	 * Returns the value of the '<em><b>Repeat</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Reapeat</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Repeat</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Reapeat</em>' attribute.
-	 * @see #setReapeat(boolean)
-	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getSchedule_Reapeat()
+	 * @return the value of the '<em>Repeat</em>' attribute.
+	 * @see #setRepeat(boolean)
+	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getSchedule_Repeat()
 	 * @model
 	 * @generated
 	 */
-	boolean isReapeat();
+	boolean isRepeat();
 
 	/**
-	 * Sets the value of the '{@link farmbot.modeling.farmbot_modeling.Schedule#isReapeat <em>Reapeat</em>}' attribute.
+	 * Sets the value of the '{@link farmbot.modeling.farmbot_modeling.Schedule#isRepeat <em>Repeat</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Reapeat</em>' attribute.
-	 * @see #isReapeat()
+	 * @param value the new value of the '<em>Repeat</em>' attribute.
+	 * @see #isRepeat()
 	 * @generated
 	 */
-	void setReapeat(boolean value);
+	void setRepeat(boolean value);
 
 	/**
 	 * Returns the value of the '<em><b>Repeat Frequency</b></em>' attribute.

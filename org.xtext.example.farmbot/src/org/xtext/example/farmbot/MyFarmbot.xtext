@@ -22,48 +22,28 @@ BooleanExpression returns BooleanExpression:
 
 TurnOn returns TurnOn:
 	{TurnOn}
-	'TurnOn'
-	'{'
-		('pin' pin=EInt)?
-		('mode' mode=EString)?
-	'}';
+	'turnOn(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
 
 TurnOff returns TurnOff:
 	{TurnOff}
-	'TurnOff'
-	'{'
-		('pin' pin=EInt)?
-		('mode' mode=EString)?
-	'}';
+	'turnOff(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
 
 MoveRelative returns MoveRelative:
 	{MoveRelative}
-	'MoveRelative'
-	'{'
-		('x' x=EInt)?
-		('y' y=EInt)?
-		('z' z=EInt)?
-		('speed' speed=EDouble)?
-	'}';
+	'moveRelative(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
 
 FindHome returns FindHome:
 	{FindHome}
-	(findX?='findX')?
-	(findY?='findY')?
-	(findZ?='findZ')?
-	'FindHome'
-	;
+	'findHome(' 'findX=' findX=EBoolean ',' 'findY=' findY=EBoolean ',' 'findZ=' findZ=EBoolean ')';
 
 Sequence returns Sequence:
 	{Sequence}
-	'Sequence'
-	name=EString
-	'{'
-		('if' '{' if+=If ( "," if+=If)* '}' )?
-		('sequenceinstruction' '{' sequenceinstruction+=SequenceInstruction ( "," sequenceinstruction+=SequenceInstruction)* '}' )?
-	'}';
+	'sequence' name=STRING
+		(sequenceinstruction+=SequenceInstruction)*
+	'end';
 
 If returns If:
+	{If}
 	'if' booleanexpression=BooleanExpression
 	'then' then=ExecuteSequence
 	('else' else=ExecuteSequence)?
@@ -71,121 +51,67 @@ If returns If:
 
 MoveAbsolute returns MoveAbsolute:
 	{MoveAbsolute}
-	'MoveAbsolute'
-	'{'
-		('x' x=EInt)?
-		('y' y=EInt)?
-		('z' z=EInt)?
-		('speed' speed=EDouble)?
-	'}';
+	'moveAbsolute(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
 
 ExecuteSequence returns ExecuteSequence:
 	{ExecuteSequence}
-	'ExecuteSequence'
-	'{'
-		('id' id=EInt)?
-	'}';
+	'executeSequence' '(' 'id=' id=INT ')';
 
 Wait returns Wait:
 	{Wait}
-	'Wait'
-	'{'
-		('duration' duration=EDouble)?
-	'}';
+	'wait' '(' 'duration=' duration=EDouble ')';
 
 IsToolOn returns IsToolOn:
 	{IsToolOn}
-	(result?='result')?
-	'IsToolOn'
-	'{'
-		('pin' pin=EInt)?
-	'}';
+	'isToolOn' '(' 'pin=' pin=INT ')';
 
 SendMessage returns SendMessage:
 	{SendMessage}
-	'SendMessage'
-	'{'
-		('message' message=EString)?
-	'}';
+	'sendMessage' '(' 'message=' message=STRING ')';
 
 RunFarmware returns RunFarmware:
 	{RunFarmware}
-	'RunFarmware'
-	name=EString;
+	'runFarmware' '(' 'name=' name=STRING ')';
 
 TakePhoto returns TakePhoto:
 	{TakePhoto}
-	'TakePhoto'
-	;
+	'takePhoto()';
 
 Schedule returns Schedule:
 	{Schedule}
-	(reapeat?='reapeat')?
-	'Schedule'
-	'{'
-		('sequence' sequence=EString)?
-		('startDate' startDate=EString)?
-		('startTime' startTime=EString)?
-		('repeatFrequency' repeatFrequency=EInt)?
-		('repeatUnit' repeatUnit=EString)?
-		('endDate' endDate=EString)?
-		('endTime' endTime=EString)?
-	'}';
+	'schedule' '(' 'sequence=' sequence=STRING ',' 'startDate=' startDate=STRING ',' 'startTime=' startTime=STRING ',' 'repeat=' repeat=EBoolean ','  'repeatFrequency=' repeatFrequency=INT ',' 'repeatUnit=' repeatUnit=STRING ',' 'endDate=' endDate=STRING ',' 'endTime=' endTime=STRING ')';
 
 ListPeripherals returns ListPeripherals:
 	{ListPeripherals}
-	'ListPeripherals'
+	'listPeripherals()'
 	;
 
 ListSequences returns ListSequences:
 	{ListSequences}
-	'ListSequences'
-	;
+	'listSequences()';
 
-EInt returns ecore::EInt:
-	'-'? INT;
+IsEqualTo returns IsEqualTo:
+	{IsEqualTo}
+	axe=STRING 'equals' 'to' value=INT;
+
+IsNotEqualTo returns IsNotEqualTo:
+	{IsNotEqualTo}
+	axe=STRING 'not' 'equals' 'to' value=INT;
+
+IsGreaterThan returns IsGreaterThan:
+	{IsGreaterThan}
+	axe=STRING 'greater' 'than' value=INT;
+
+IsLowerThan returns IsLowerThan:
+	{IsLowerThan}
+	axe=STRING 'lower' 'than' value=INT;
+
+
+
+
 
 EDouble returns ecore::EDouble:
 	'-'? INT? '.' INT (('E'|'e') '-'? INT)?;
 
-EString returns ecore::EString:
-	STRING | ID;
-
 EBoolean returns ecore::EBoolean:
 	'true' | 'false';
-
-IsEqualTo returns IsEqualTo:
-	{IsEqualTo}
-	(result?='result')?
-	'IsEqualTo'
-	'{'
-		('value' value=EInt)?
-		('axe' axe=EString)?
-	'}';
-
-IsNotEqualTo returns IsNotEqualTo:
-	{IsNotEqualTo}
-	(result?='result')?
-	'IsNotEqualTo'
-	'{'
-		('value' value=EInt)?
-		('axe' axe=EString)?
-	'}';
-
-IsGreaterThan returns IsGreaterThan:
-	{IsGreaterThan}
-	(result?='result')?
-	'IsGreaterThan'
-	'{'
-		('value' value=EInt)?
-		('axe' axe=EString)?
-	'}';
-
-IsLowerThan returns IsLowerThan:
-	{IsLowerThan}
-	(result?='result')?
-	'IsLowerThan'
-	'{'
-		('value' value=EInt)?
-		('axe' axe=EString)?
-	'}';

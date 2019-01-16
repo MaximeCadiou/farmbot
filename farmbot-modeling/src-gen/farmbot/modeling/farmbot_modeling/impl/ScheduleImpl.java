@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#getSequence <em>Sequence</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#getStartDate <em>Start Date</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#getStartTime <em>Start Time</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#isReapeat <em>Reapeat</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#isRepeat <em>Repeat</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#getRepeatFrequency <em>Repeat Frequency</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#getRepeatUnit <em>Repeat Unit</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl#getEndDate <em>End Date</em>}</li>
@@ -93,24 +93,24 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 	protected String startTime = START_TIME_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isReapeat() <em>Reapeat</em>}' attribute.
+	 * The default value of the '{@link #isRepeat() <em>Repeat</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isReapeat()
+	 * @see #isRepeat()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean REAPEAT_EDEFAULT = false;
+	protected static final boolean REPEAT_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isReapeat() <em>Reapeat</em>}' attribute.
+	 * The cached value of the '{@link #isRepeat() <em>Repeat</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isReapeat()
+	 * @see #isRepeat()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean reapeat = REAPEAT_EDEFAULT;
+	protected boolean repeat = REPEAT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRepeatFrequency() <em>Repeat Frequency</em>}' attribute.
@@ -282,8 +282,8 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isReapeat() {
-		return reapeat;
+	public boolean isRepeat() {
+		return repeat;
 	}
 
 	/**
@@ -291,12 +291,12 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setReapeat(boolean newReapeat) {
-		boolean oldReapeat = reapeat;
-		reapeat = newReapeat;
+	public void setRepeat(boolean newRepeat) {
+		boolean oldRepeat = repeat;
+		repeat = newRepeat;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.SCHEDULE__REAPEAT, oldReapeat,
-					reapeat));
+			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.SCHEDULE__REPEAT, oldRepeat,
+					repeat));
 	}
 
 	/**
@@ -401,8 +401,8 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 			return getStartDate();
 		case Farmbot_modelingPackage.SCHEDULE__START_TIME:
 			return getStartTime();
-		case Farmbot_modelingPackage.SCHEDULE__REAPEAT:
-			return isReapeat();
+		case Farmbot_modelingPackage.SCHEDULE__REPEAT:
+			return isRepeat();
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_FREQUENCY:
 			return getRepeatFrequency();
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_UNIT:
@@ -432,8 +432,8 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 		case Farmbot_modelingPackage.SCHEDULE__START_TIME:
 			setStartTime((String) newValue);
 			return;
-		case Farmbot_modelingPackage.SCHEDULE__REAPEAT:
-			setReapeat((Boolean) newValue);
+		case Farmbot_modelingPackage.SCHEDULE__REPEAT:
+			setRepeat((Boolean) newValue);
 			return;
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_FREQUENCY:
 			setRepeatFrequency((Integer) newValue);
@@ -468,8 +468,8 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 		case Farmbot_modelingPackage.SCHEDULE__START_TIME:
 			setStartTime(START_TIME_EDEFAULT);
 			return;
-		case Farmbot_modelingPackage.SCHEDULE__REAPEAT:
-			setReapeat(REAPEAT_EDEFAULT);
+		case Farmbot_modelingPackage.SCHEDULE__REPEAT:
+			setRepeat(REPEAT_EDEFAULT);
 			return;
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_FREQUENCY:
 			setRepeatFrequency(REPEAT_FREQUENCY_EDEFAULT);
@@ -501,8 +501,8 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 			return START_DATE_EDEFAULT == null ? startDate != null : !START_DATE_EDEFAULT.equals(startDate);
 		case Farmbot_modelingPackage.SCHEDULE__START_TIME:
 			return START_TIME_EDEFAULT == null ? startTime != null : !START_TIME_EDEFAULT.equals(startTime);
-		case Farmbot_modelingPackage.SCHEDULE__REAPEAT:
-			return reapeat != REAPEAT_EDEFAULT;
+		case Farmbot_modelingPackage.SCHEDULE__REPEAT:
+			return repeat != REPEAT_EDEFAULT;
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_FREQUENCY:
 			return repeatFrequency != REPEAT_FREQUENCY_EDEFAULT;
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_UNIT:
@@ -532,8 +532,8 @@ public class ScheduleImpl extends CommandImpl implements Schedule {
 		result.append(startDate);
 		result.append(", startTime: ");
 		result.append(startTime);
-		result.append(", reapeat: ");
-		result.append(reapeat);
+		result.append(", repeat: ");
+		result.append(repeat);
 		result.append(", repeatFrequency: ");
 		result.append(repeatFrequency);
 		result.append(", repeatUnit: ");

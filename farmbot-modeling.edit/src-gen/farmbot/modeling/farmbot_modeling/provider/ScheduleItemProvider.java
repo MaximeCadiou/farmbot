@@ -47,7 +47,7 @@ public class ScheduleItemProvider extends CommandItemProvider {
 			addSequencePropertyDescriptor(object);
 			addStartDatePropertyDescriptor(object);
 			addStartTimePropertyDescriptor(object);
-			addReapeatPropertyDescriptor(object);
+			addRepeatPropertyDescriptor(object);
 			addRepeatFrequencyPropertyDescriptor(object);
 			addRepeatUnitPropertyDescriptor(object);
 			addEndDatePropertyDescriptor(object);
@@ -105,18 +105,18 @@ public class ScheduleItemProvider extends CommandItemProvider {
 	}
 
 	/**
-	 * This adds a property descriptor for the Reapeat feature.
+	 * This adds a property descriptor for the Repeat feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addReapeatPropertyDescriptor(Object object) {
+	protected void addRepeatPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_Schedule_reapeat_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_Schedule_reapeat_feature",
+						getResourceLocator(), getString("_UI_Schedule_repeat_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_Schedule_repeat_feature",
 								"_UI_Schedule_type"),
-						Farmbot_modelingPackage.Literals.SCHEDULE__REAPEAT, true, false, false,
+						Farmbot_modelingPackage.Literals.SCHEDULE__REPEAT, true, false, false,
 						ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
 	}
 
@@ -233,7 +233,7 @@ public class ScheduleItemProvider extends CommandItemProvider {
 		case Farmbot_modelingPackage.SCHEDULE__SEQUENCE:
 		case Farmbot_modelingPackage.SCHEDULE__START_DATE:
 		case Farmbot_modelingPackage.SCHEDULE__START_TIME:
-		case Farmbot_modelingPackage.SCHEDULE__REAPEAT:
+		case Farmbot_modelingPackage.SCHEDULE__REPEAT:
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_FREQUENCY:
 		case Farmbot_modelingPackage.SCHEDULE__REPEAT_UNIT:
 		case Farmbot_modelingPackage.SCHEDULE__END_DATE:

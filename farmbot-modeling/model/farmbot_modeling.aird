@@ -464,22 +464,6 @@
           <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B0btIBlpEemzyeloDFeRoA" id="(0.6101694915254238,0.0)"/>
           <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_B0btIRlpEemzyeloDFeRoA" id="(0.5,0.5)"/>
         </edges>
-        <edges xmi:type="notation:Edge" xmi:id="_lEs1cBlsEemzyeloDFeRoA" type="4001" element="_lEnV4BlsEemzyeloDFeRoA" source="_K-sIIBlnEemzyeloDFeRoA" target="_eeBZMBloEemzyeloDFeRoA">
-          <children xmi:type="notation:Node" xmi:id="_lEtcgBlsEemzyeloDFeRoA" type="6001">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lEtcgRlsEemzyeloDFeRoA" y="-10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_lEtcghlsEemzyeloDFeRoA" type="6002">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lEtcgxlsEemzyeloDFeRoA" y="10"/>
-          </children>
-          <children xmi:type="notation:Node" xmi:id="_lEtchBlsEemzyeloDFeRoA" type="6003">
-            <layoutConstraint xmi:type="notation:Bounds" xmi:id="_lEtchRlsEemzyeloDFeRoA" y="10"/>
-          </children>
-          <styles xmi:type="notation:ConnectorStyle" xmi:id="_lEs1cRlsEemzyeloDFeRoA" routing="Rectilinear"/>
-          <styles xmi:type="notation:FontStyle" xmi:id="_lEs1chlsEemzyeloDFeRoA" fontColor="7490599" fontName=".AppleSystemUIFont" fontHeight="8"/>
-          <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_lEs1cxlsEemzyeloDFeRoA" points="[0, 0, 116, 0]$[-116, 0, 0, 0]"/>
-          <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lEtchhlsEemzyeloDFeRoA" id="(0.0,0.7142857142857143)"/>
-          <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_lEtchxlsEemzyeloDFeRoA" id="(1.0,0.7142857142857143)"/>
-        </edges>
         <edges xmi:type="notation:Edge" xmi:id="_3RjncBlsEemzyeloDFeRoA" type="4001" element="_3Rdg0BlsEemzyeloDFeRoA" source="_wqz88BlsEemzyeloDFeRoA" target="_aTG7IBlsEemzyeloDFeRoA">
           <children xmi:type="notation:Node" xmi:id="_3RjndBlsEemzyeloDFeRoA" type="6001">
             <layoutConstraint xmi:type="notation:Bounds" xmi:id="_3RjndRlsEemzyeloDFeRoA" x="-6" y="-10"/>
@@ -1106,7 +1090,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_K-kzYBlnEemzyeloDFeRoA" name="Sequence" tooltipText="" outgoingEdges="_lEnV4BlsEemzyeloDFeRoA _dPPtYBlyEemDKezlAEJN7w _gIhnoBlyEemDKezlAEJN7w" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_K-kzYBlnEemzyeloDFeRoA" name="Sequence" tooltipText="" outgoingEdges="_dPPtYBlyEemDKezlAEJN7w _gIhnoBlyEemDKezlAEJN7w" width="12" height="10">
       <target xmi:type="ecore:EClass" href="farmbot_modeling.ecore#//Sequence"/>
       <semanticElements xmi:type="ecore:EClass" href="farmbot_modeling.ecore#//Sequence"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1125,7 +1109,7 @@
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
     </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ed75oBloEemzyeloDFeRoA" name="If" tooltipText="" outgoingEdges="_mxmp4BlxEemDKezlAEJN7w _otmcgBlxEemDKezlAEJN7w _0KldMBlxEemDKezlAEJN7w _d5p8UBlyEemDKezlAEJN7w" incomingEdges="_lEnV4BlsEemzyeloDFeRoA" width="12" height="10">
+    <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_ed75oBloEemzyeloDFeRoA" name="If" tooltipText="" outgoingEdges="_mxmp4BlxEemDKezlAEJN7w _otmcgBlxEemDKezlAEJN7w _0KldMBlxEemDKezlAEJN7w _d5p8UBlyEemDKezlAEJN7w" width="12" height="10">
       <target xmi:type="ecore:EClass" href="farmbot_modeling.ecore#//If"/>
       <semanticElements xmi:type="ecore:EClass" href="farmbot_modeling.ecore#//If"/>
       <arrangeConstraints>KEEP_LOCATION</arrangeConstraints>
@@ -1228,19 +1212,6 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-    </ownedDiagramElements>
-    <ownedDiagramElements xmi:type="diagram:DEdge" xmi:id="_lEnV4BlsEemzyeloDFeRoA" name="[0..*] if" sourceNode="_K-kzYBlnEemzyeloDFeRoA" targetNode="_ed75oBloEemzyeloDFeRoA">
-      <target xmi:type="ecore:EReference" href="farmbot_modeling.ecore#//Sequence/if"/>
-      <semanticElements xmi:type="ecore:EReference" href="farmbot_modeling.ecore#//Sequence/if"/>
-      <ownedStyle xmi:type="diagram:EdgeStyle" xmi:id="_lEnV4RlsEemzyeloDFeRoA" description="_QqUAcBliEemzyeloDFeRoA" sourceArrow="FillDiamond" routingStyle="manhattan" strokeColor="0,0,0">
-        <centerLabelStyle xmi:type="diagram:CenterLabelStyle" xmi:id="_lEnV4hlsEemzyeloDFeRoA" showIcon="false">
-          <customFeatures>labelSize</customFeatures>
-        </centerLabelStyle>
-        <endLabelStyle xmi:type="diagram:EndLabelStyle" xmi:id="_lEnV4xlsEemzyeloDFeRoA" showIcon="false" labelColor="39,76,114">
-          <customFeatures>labelSize</customFeatures>
-        </endLabelStyle>
-      </ownedStyle>
-      <actualMapping xmi:type="description_1:EdgeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@edgeMappings[name='EC_EReference']"/>
     </ownedDiagramElements>
     <ownedDiagramElements xmi:type="diagram:DNodeList" xmi:id="_wqudYBlsEemzyeloDFeRoA" name="IsToolOn" tooltipText="" outgoingEdges="_3Rdg0BlsEemzyeloDFeRoA _K4VngBlyEemDKezlAEJN7w" width="12" height="10">
       <target xmi:type="ecore:EClass" href="farmbot_modeling.ecore#//IsToolOn"/>
@@ -1728,9 +1699,9 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fSCZoBl0EemDKezlAEJN7w" name="reapeat : EBoolean = false" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//Schedule/reapeat"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//Schedule/reapeat"/>
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_fSCZoBl0EemDKezlAEJN7w" name="repeat : EBoolean = false" tooltipText="">
+        <target xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//Schedule/repeat"/>
+        <semanticElements xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//Schedule/repeat"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_iq39sBl0EemDKezlAEJN7w" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>

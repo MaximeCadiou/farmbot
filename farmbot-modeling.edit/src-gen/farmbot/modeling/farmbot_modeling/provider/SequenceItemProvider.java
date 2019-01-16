@@ -80,7 +80,6 @@ public class SequenceItemProvider extends InstructionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Farmbot_modelingPackage.Literals.SEQUENCE__IF);
 			childrenFeatures.add(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION);
 		}
 		return childrenFeatures;
@@ -148,7 +147,6 @@ public class SequenceItemProvider extends InstructionItemProvider {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case Farmbot_modelingPackage.SEQUENCE__IF:
 		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
@@ -166,9 +164,6 @@ public class SequenceItemProvider extends InstructionItemProvider {
 	@Override
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__IF,
-				Farmbot_modelingFactory.eINSTANCE.createIf()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
 				Farmbot_modelingFactory.eINSTANCE.createTurnOn()));
@@ -214,27 +209,6 @@ public class SequenceItemProvider extends InstructionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
 				Farmbot_modelingFactory.eINSTANCE.createListSequences()));
-	}
-
-	/**
-	 * This returns the label text for {@link org.eclipse.emf.edit.command.CreateChildCommand}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String getCreateChildText(Object owner, Object feature, Object child, Collection<?> selection) {
-		Object childFeature = feature;
-		Object childObject = child;
-
-		boolean qualify = childFeature == Farmbot_modelingPackage.Literals.SEQUENCE__IF
-				|| childFeature == Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION;
-
-		if (qualify) {
-			return getString("_UI_CreateChild_text2",
-					new Object[] { getTypeText(childObject), getFeatureText(childFeature), getTypeText(owner) });
-		}
-		return super.getCreateChildText(owner, feature, child, selection);
 	}
 
 }

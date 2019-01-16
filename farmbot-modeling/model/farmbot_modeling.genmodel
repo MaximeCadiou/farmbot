@@ -37,7 +37,6 @@
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Sequence/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Sequence/if"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Sequence/sequenceinstruction"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//If">
@@ -86,7 +85,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/sequence"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/startDate"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/startTime"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/reapeat"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/repeat"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/repeatFrequency"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/repeatUnit"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/endDate"/>

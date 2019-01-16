@@ -500,22 +500,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SEQUENCE__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>If</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE__IF = INSTRUCTION_FEATURE_COUNT + 1;
-
-	/**
 	 * The feature id for the '<em><b>Sequenceinstruction</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENCE__SEQUENCEINSTRUCTION = INSTRUCTION_FEATURE_COUNT + 2;
+	int SEQUENCE__SEQUENCEINSTRUCTION = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Sequence</em>' class.
@@ -524,7 +515,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENCE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 3;
+	int SEQUENCE_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Sequence</em>' class.
@@ -1171,13 +1162,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SCHEDULE__START_TIME = COMMAND_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Reapeat</b></em>' attribute.
+	 * The feature id for the '<em><b>Repeat</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SCHEDULE__REAPEAT = COMMAND_FEATURE_COUNT + 3;
+	int SCHEDULE__REPEAT = COMMAND_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Repeat Frequency</b></em>' attribute.
@@ -1521,17 +1512,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSequence_Name();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link farmbot.modeling.farmbot_modeling.Sequence#getIf <em>If</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>If</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.Sequence#getIf()
-	 * @see #getSequence()
-	 * @generated
-	 */
-	EReference getSequence_If();
 
 	/**
 	 * Returns the meta object for the containment reference list '{@link farmbot.modeling.farmbot_modeling.Sequence#getSequenceinstruction <em>Sequenceinstruction</em>}'.
@@ -1915,15 +1895,15 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EAttribute getSchedule_StartTime();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.Schedule#isReapeat <em>Reapeat</em>}'.
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.Schedule#isRepeat <em>Repeat</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Reapeat</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.Schedule#isReapeat()
+	 * @return the meta object for the attribute '<em>Repeat</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.Schedule#isRepeat()
 	 * @see #getSchedule()
 	 * @generated
 	 */
-	EAttribute getSchedule_Reapeat();
+	EAttribute getSchedule_Repeat();
 
 	/**
 	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.Schedule#getRepeatFrequency <em>Repeat Frequency</em>}'.
@@ -2215,14 +2195,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SEQUENCE__NAME = eINSTANCE.getSequence_Name();
-
-		/**
-		 * The meta object literal for the '<em><b>If</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference SEQUENCE__IF = eINSTANCE.getSequence_If();
 
 		/**
 		 * The meta object literal for the '<em><b>Sequenceinstruction</b></em>' containment reference list feature.
@@ -2543,12 +2515,12 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EAttribute SCHEDULE__START_TIME = eINSTANCE.getSchedule_StartTime();
 
 		/**
-		 * The meta object literal for the '<em><b>Reapeat</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Repeat</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute SCHEDULE__REAPEAT = eINSTANCE.getSchedule_Reapeat();
+		EAttribute SCHEDULE__REPEAT = eINSTANCE.getSchedule_Repeat();
 
 		/**
 		 * The meta object literal for the '<em><b>Repeat Frequency</b></em>' attribute feature.

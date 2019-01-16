@@ -61,7 +61,7 @@ public class IfItemProvider extends SequenceInstructionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Farmbot_modelingPackage.Literals.IF__BOOLEANEXPRESSION);
+			childrenFeatures.add(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION);
 			childrenFeatures.add(Farmbot_modelingPackage.Literals.IF__THEN);
 			childrenFeatures.add(Farmbot_modelingPackage.Literals.IF__ELSE);
 		}
@@ -125,7 +125,7 @@ public class IfItemProvider extends SequenceInstructionItemProvider {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(If.class)) {
-		case Farmbot_modelingPackage.IF__BOOLEANEXPRESSION:
+		case Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION:
 		case Farmbot_modelingPackage.IF__THEN:
 		case Farmbot_modelingPackage.IF__ELSE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
@@ -145,19 +145,19 @@ public class IfItemProvider extends SequenceInstructionItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEANEXPRESSION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
 				Farmbot_modelingFactory.eINSTANCE.createIsToolOn()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEANEXPRESSION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
 				Farmbot_modelingFactory.eINSTANCE.createIsEqualTo()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEANEXPRESSION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
 				Farmbot_modelingFactory.eINSTANCE.createIsNotEqualTo()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEANEXPRESSION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
 				Farmbot_modelingFactory.eINSTANCE.createIsGreaterThan()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEANEXPRESSION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
 				Farmbot_modelingFactory.eINSTANCE.createIsLowerThan()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__THEN,

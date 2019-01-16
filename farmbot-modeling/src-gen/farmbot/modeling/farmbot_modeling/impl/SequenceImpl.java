@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * </p>
  * <ul>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl#getName <em>Name</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl#getSequenceinstruction <em>Sequenceinstruction</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl#getSequenceInstructions <em>Sequence Instructions</em>}</li>
  * </ul>
  *
  * @generated
@@ -57,14 +57,14 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 	protected String name = NAME_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSequenceinstruction() <em>Sequenceinstruction</em>}' containment reference list.
+	 * The cached value of the '{@link #getSequenceInstructions() <em>Sequence Instructions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getSequenceinstruction()
+	 * @see #getSequenceInstructions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<SequenceInstruction> sequenceinstruction;
+	protected EList<SequenceInstruction> sequenceInstructions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,12 +112,12 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<SequenceInstruction> getSequenceinstruction() {
-		if (sequenceinstruction == null) {
-			sequenceinstruction = new EObjectContainmentEList<SequenceInstruction>(SequenceInstruction.class, this,
-					Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION);
+	public EList<SequenceInstruction> getSequenceInstructions() {
+		if (sequenceInstructions == null) {
+			sequenceInstructions = new EObjectContainmentEList<SequenceInstruction>(SequenceInstruction.class, this,
+					Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS);
 		}
-		return sequenceinstruction;
+		return sequenceInstructions;
 	}
 
 	/**
@@ -128,8 +128,8 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
-			return ((InternalEList<?>) getSequenceinstruction()).basicRemove(otherEnd, msgs);
+		case Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS:
+			return ((InternalEList<?>) getSequenceInstructions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -144,8 +144,8 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			return getName();
-		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
-			return getSequenceinstruction();
+		case Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS:
+			return getSequenceInstructions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -162,9 +162,9 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			setName((String) newValue);
 			return;
-		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
-			getSequenceinstruction().clear();
-			getSequenceinstruction().addAll((Collection<? extends SequenceInstruction>) newValue);
+		case Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS:
+			getSequenceInstructions().clear();
+			getSequenceInstructions().addAll((Collection<? extends SequenceInstruction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -181,8 +181,8 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			setName(NAME_EDEFAULT);
 			return;
-		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
-			getSequenceinstruction().clear();
+		case Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS:
+			getSequenceInstructions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -198,8 +198,8 @@ public class SequenceImpl extends InstructionImpl implements Sequence {
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
-			return sequenceinstruction != null && !sequenceinstruction.isEmpty();
+		case Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS:
+			return sequenceInstructions != null && !sequenceInstructions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

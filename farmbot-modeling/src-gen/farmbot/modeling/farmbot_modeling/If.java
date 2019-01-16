@@ -11,7 +11,7 @@ package farmbot.modeling.farmbot_modeling;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link farmbot.modeling.farmbot_modeling.If#getBooleanexpression <em>Booleanexpression</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.If#getBooleanExpression <em>Boolean Expression</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.If#getThen <em>Then</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.If#getElse <em>Else</em>}</li>
  * </ul>
@@ -22,30 +22,30 @@ package farmbot.modeling.farmbot_modeling;
  */
 public interface If extends SequenceInstruction {
 	/**
-	 * Returns the value of the '<em><b>Booleanexpression</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Boolean Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Booleanexpression</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Boolean Expression</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booleanexpression</em>' containment reference.
-	 * @see #setBooleanexpression(BooleanExpression)
-	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getIf_Booleanexpression()
+	 * @return the value of the '<em>Boolean Expression</em>' containment reference.
+	 * @see #setBooleanExpression(BooleanExpression)
+	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getIf_BooleanExpression()
 	 * @model containment="true" required="true"
 	 * @generated
 	 */
-	BooleanExpression getBooleanexpression();
+	BooleanExpression getBooleanExpression();
 
 	/**
-	 * Sets the value of the '{@link farmbot.modeling.farmbot_modeling.If#getBooleanexpression <em>Booleanexpression</em>}' containment reference.
+	 * Sets the value of the '{@link farmbot.modeling.farmbot_modeling.If#getBooleanExpression <em>Boolean Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booleanexpression</em>' containment reference.
-	 * @see #getBooleanexpression()
+	 * @param value the new value of the '<em>Boolean Expression</em>' containment reference.
+	 * @see #getBooleanExpression()
 	 * @generated
 	 */
-	void setBooleanexpression(BooleanExpression value);
+	void setBooleanExpression(BooleanExpression value);
 
 	/**
 	 * Returns the value of the '<em><b>Then</b></em>' containment reference.

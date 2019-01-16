@@ -357,8 +357,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseCommand(schedule);
 			if (result == null)
-				result = caseSequenceInstruction(schedule);
-			if (result == null)
 				result = caseInstruction(schedule);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -367,8 +365,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 		case Farmbot_modelingPackage.COMMAND: {
 			Command command = (Command) theEObject;
 			T result = caseCommand(command);
-			if (result == null)
-				result = caseSequenceInstruction(command);
 			if (result == null)
 				result = caseInstruction(command);
 			if (result == null)
@@ -381,8 +377,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseCommand(listPeripherals);
 			if (result == null)
-				result = caseSequenceInstruction(listPeripherals);
-			if (result == null)
 				result = caseInstruction(listPeripherals);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -393,8 +387,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 			T result = caseListSequences(listSequences);
 			if (result == null)
 				result = caseCommand(listSequences);
-			if (result == null)
-				result = caseSequenceInstruction(listSequences);
 			if (result == null)
 				result = caseInstruction(listSequences);
 			if (result == null)

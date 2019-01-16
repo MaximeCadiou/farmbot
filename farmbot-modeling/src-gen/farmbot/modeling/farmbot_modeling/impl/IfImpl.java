@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.IfImpl#getBooleanexpression <em>Booleanexpression</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.IfImpl#getBooleanExpression <em>Boolean Expression</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.IfImpl#getThen <em>Then</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.IfImpl#getElse <em>Else</em>}</li>
  * </ul>
@@ -30,14 +30,14 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  */
 public class IfImpl extends SequenceInstructionImpl implements If {
 	/**
-	 * The cached value of the '{@link #getBooleanexpression() <em>Booleanexpression</em>}' containment reference.
+	 * The cached value of the '{@link #getBooleanExpression() <em>Boolean Expression</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBooleanexpression()
+	 * @see #getBooleanExpression()
 	 * @generated
 	 * @ordered
 	 */
-	protected BooleanExpression booleanexpression;
+	protected BooleanExpression booleanExpression;
 
 	/**
 	 * The cached value of the '{@link #getThen() <em>Then</em>}' containment reference.
@@ -83,8 +83,8 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public BooleanExpression getBooleanexpression() {
-		return booleanexpression;
+	public BooleanExpression getBooleanExpression() {
+		return booleanExpression;
 	}
 
 	/**
@@ -92,12 +92,12 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBooleanexpression(BooleanExpression newBooleanexpression, NotificationChain msgs) {
-		BooleanExpression oldBooleanexpression = booleanexpression;
-		booleanexpression = newBooleanexpression;
+	public NotificationChain basicSetBooleanExpression(BooleanExpression newBooleanExpression, NotificationChain msgs) {
+		BooleanExpression oldBooleanExpression = booleanExpression;
+		booleanExpression = newBooleanExpression;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET,
-					Farmbot_modelingPackage.IF__BOOLEANEXPRESSION, oldBooleanexpression, newBooleanexpression);
+					Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION, oldBooleanExpression, newBooleanExpression);
 			if (msgs == null)
 				msgs = notification;
 			else
@@ -111,21 +111,21 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBooleanexpression(BooleanExpression newBooleanexpression) {
-		if (newBooleanexpression != booleanexpression) {
+	public void setBooleanExpression(BooleanExpression newBooleanExpression) {
+		if (newBooleanExpression != booleanExpression) {
 			NotificationChain msgs = null;
-			if (booleanexpression != null)
-				msgs = ((InternalEObject) booleanexpression).eInverseRemove(this,
-						EOPPOSITE_FEATURE_BASE - Farmbot_modelingPackage.IF__BOOLEANEXPRESSION, null, msgs);
-			if (newBooleanexpression != null)
-				msgs = ((InternalEObject) newBooleanexpression).eInverseAdd(this,
-						EOPPOSITE_FEATURE_BASE - Farmbot_modelingPackage.IF__BOOLEANEXPRESSION, null, msgs);
-			msgs = basicSetBooleanexpression(newBooleanexpression, msgs);
+			if (booleanExpression != null)
+				msgs = ((InternalEObject) booleanExpression).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION, null, msgs);
+			if (newBooleanExpression != null)
+				msgs = ((InternalEObject) newBooleanExpression).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION, null, msgs);
+			msgs = basicSetBooleanExpression(newBooleanExpression, msgs);
 			if (msgs != null)
 				msgs.dispatch();
 		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.IF__BOOLEANEXPRESSION,
-					newBooleanexpression, newBooleanexpression));
+			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION,
+					newBooleanExpression, newBooleanExpression));
 	}
 
 	/**
@@ -234,8 +234,8 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.IF__BOOLEANEXPRESSION:
-			return basicSetBooleanexpression(null, msgs);
+		case Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION:
+			return basicSetBooleanExpression(null, msgs);
 		case Farmbot_modelingPackage.IF__THEN:
 			return basicSetThen(null, msgs);
 		case Farmbot_modelingPackage.IF__ELSE:
@@ -252,8 +252,8 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.IF__BOOLEANEXPRESSION:
-			return getBooleanexpression();
+		case Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION:
+			return getBooleanExpression();
 		case Farmbot_modelingPackage.IF__THEN:
 			return getThen();
 		case Farmbot_modelingPackage.IF__ELSE:
@@ -271,8 +271,8 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.IF__BOOLEANEXPRESSION:
-			setBooleanexpression((BooleanExpression) newValue);
+		case Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION:
+			setBooleanExpression((BooleanExpression) newValue);
 			return;
 		case Farmbot_modelingPackage.IF__THEN:
 			setThen((ExecuteSequence) newValue);
@@ -292,8 +292,8 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.IF__BOOLEANEXPRESSION:
-			setBooleanexpression((BooleanExpression) null);
+		case Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION:
+			setBooleanExpression((BooleanExpression) null);
 			return;
 		case Farmbot_modelingPackage.IF__THEN:
 			setThen((ExecuteSequence) null);
@@ -313,8 +313,8 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.IF__BOOLEANEXPRESSION:
-			return booleanexpression != null;
+		case Farmbot_modelingPackage.IF__BOOLEAN_EXPRESSION:
+			return booleanExpression != null;
 		case Farmbot_modelingPackage.IF__THEN:
 			return then != null;
 		case Farmbot_modelingPackage.IF__ELSE:

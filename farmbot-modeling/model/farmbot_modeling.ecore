@@ -3,11 +3,11 @@
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="farmbot_modeling" nsURI="http://www.example.org/farmbot_modeling"
     nsPrefix="farmbot_modeling">
   <eClassifiers xsi:type="ecore:EClass" name="Farmbot">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="instruction" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="instructions" upperBound="-1"
         eType="#//Instruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Instruction" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="SequenceCommand" abstract="true" eSuperTypes="#//Command"/>
+  <eClassifiers xsi:type="ecore:EClass" name="SequenceCommand" abstract="true" eSuperTypes="#//Command #//SequenceInstruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="Move" abstract="true" eSuperTypes="#//SequenceCommand">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="x" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="y" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
@@ -30,11 +30,11 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Sequence" eSuperTypes="#//Instruction">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="sequenceinstruction" upperBound="-1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="sequenceInstructions" upperBound="-1"
         eType="#//SequenceInstruction" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//SequenceInstruction">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanexpression" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="booleanExpression" lowerBound="1"
         eType="#//BooleanExpression" containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="then" lowerBound="1" eType="#//ExecuteSequence"
         containment="true"/>
@@ -89,7 +89,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endDate" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//SequenceInstruction"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//Instruction"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListPeripherals" eSuperTypes="#//Command"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListSequences" eSuperTypes="#//Command"/>
 </ecore:EPackage>

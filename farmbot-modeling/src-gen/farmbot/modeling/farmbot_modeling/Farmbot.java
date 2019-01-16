@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link farmbot.modeling.farmbot_modeling.Farmbot#getInstruction <em>Instruction</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.Farmbot#getInstructions <em>Instructions</em>}</li>
  * </ul>
  *
  * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getFarmbot()
@@ -24,19 +24,19 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Farmbot extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Instruction</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Instructions</b></em>' containment reference list.
 	 * The list contents are of type {@link farmbot.modeling.farmbot_modeling.Instruction}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Instruction</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Instructions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Instruction</em>' containment reference list.
-	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getFarmbot_Instruction()
+	 * @return the value of the '<em>Instructions</em>' containment reference list.
+	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getFarmbot_Instructions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<Instruction> getInstruction();
+	EList<Instruction> getInstructions();
 
 } // Farmbot

@@ -28,21 +28,21 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FarmbotImpl#getInstruction <em>Instruction</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FarmbotImpl#getInstructions <em>Instructions</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot {
 	/**
-	 * The cached value of the '{@link #getInstruction() <em>Instruction</em>}' containment reference list.
+	 * The cached value of the '{@link #getInstructions() <em>Instructions</em>}' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getInstruction()
+	 * @see #getInstructions()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Instruction> instruction;
+	protected EList<Instruction> instructions;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,12 +68,12 @@ public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Instruction> getInstruction() {
-		if (instruction == null) {
-			instruction = new EObjectContainmentEList<Instruction>(Instruction.class, this,
-					Farmbot_modelingPackage.FARMBOT__INSTRUCTION);
+	public EList<Instruction> getInstructions() {
+		if (instructions == null) {
+			instructions = new EObjectContainmentEList<Instruction>(Instruction.class, this,
+					Farmbot_modelingPackage.FARMBOT__INSTRUCTIONS);
 		}
-		return instruction;
+		return instructions;
 	}
 
 	/**
@@ -84,8 +84,8 @@ public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FARMBOT__INSTRUCTION:
-			return ((InternalEList<?>) getInstruction()).basicRemove(otherEnd, msgs);
+		case Farmbot_modelingPackage.FARMBOT__INSTRUCTIONS:
+			return ((InternalEList<?>) getInstructions()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -98,8 +98,8 @@ public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FARMBOT__INSTRUCTION:
-			return getInstruction();
+		case Farmbot_modelingPackage.FARMBOT__INSTRUCTIONS:
+			return getInstructions();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -113,9 +113,9 @@ public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FARMBOT__INSTRUCTION:
-			getInstruction().clear();
-			getInstruction().addAll((Collection<? extends Instruction>) newValue);
+		case Farmbot_modelingPackage.FARMBOT__INSTRUCTIONS:
+			getInstructions().clear();
+			getInstructions().addAll((Collection<? extends Instruction>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -129,8 +129,8 @@ public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FARMBOT__INSTRUCTION:
-			getInstruction().clear();
+		case Farmbot_modelingPackage.FARMBOT__INSTRUCTIONS:
+			getInstructions().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -144,8 +144,8 @@ public class FarmbotImpl extends MinimalEObjectImpl.Container implements Farmbot
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FARMBOT__INSTRUCTION:
-			return instruction != null && !instruction.isEmpty();
+		case Farmbot_modelingPackage.FARMBOT__INSTRUCTIONS:
+			return instructions != null && !instructions.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

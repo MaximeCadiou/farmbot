@@ -80,7 +80,7 @@ public class SequenceItemProvider extends InstructionItemProvider {
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION);
+			childrenFeatures.add(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS);
 		}
 		return childrenFeatures;
 	}
@@ -147,7 +147,7 @@ public class SequenceItemProvider extends InstructionItemProvider {
 		case Farmbot_modelingPackage.SEQUENCE__NAME:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
-		case Farmbot_modelingPackage.SEQUENCE__SEQUENCEINSTRUCTION:
+		case Farmbot_modelingPackage.SEQUENCE__SEQUENCE_INSTRUCTIONS:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), true, false));
 			return;
 		}
@@ -165,50 +165,41 @@ public class SequenceItemProvider extends InstructionItemProvider {
 	protected void collectNewChildDescriptors(Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createTurnOn()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createTurnOff()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createMoveRelative()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createFindHome()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createIf()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createMoveAbsolute()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createExecuteSequence()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createWait()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createIsToolOn()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createSendMessage()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createRunFarmware()));
 
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createTakePhoto()));
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
-				Farmbot_modelingFactory.eINSTANCE.createSchedule()));
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
-				Farmbot_modelingFactory.eINSTANCE.createListPeripherals()));
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCEINSTRUCTION,
-				Farmbot_modelingFactory.eINSTANCE.createListSequences()));
 	}
 
 }

@@ -313,7 +313,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getFarmbot_Instruction() {
+	public EReference getFarmbot_Instructions() {
 		return (EReference) farmbotEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -502,7 +502,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getSequence_Sequenceinstruction() {
+	public EReference getSequence_SequenceInstructions() {
 		return (EReference) sequenceEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -520,7 +520,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIf_Booleanexpression() {
+	public EReference getIf_BooleanExpression() {
 		return (EReference) ifEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -923,7 +923,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		// Create classes and their features
 		farmbotEClass = createEClass(FARMBOT);
-		createEReference(farmbotEClass, FARMBOT__INSTRUCTION);
+		createEReference(farmbotEClass, FARMBOT__INSTRUCTIONS);
 
 		instructionEClass = createEClass(INSTRUCTION);
 
@@ -952,10 +952,10 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		sequenceEClass = createEClass(SEQUENCE);
 		createEAttribute(sequenceEClass, SEQUENCE__NAME);
-		createEReference(sequenceEClass, SEQUENCE__SEQUENCEINSTRUCTION);
+		createEReference(sequenceEClass, SEQUENCE__SEQUENCE_INSTRUCTIONS);
 
 		ifEClass = createEClass(IF);
-		createEReference(ifEClass, IF__BOOLEANEXPRESSION);
+		createEReference(ifEClass, IF__BOOLEAN_EXPRESSION);
 		createEReference(ifEClass, IF__THEN);
 		createEReference(ifEClass, IF__ELSE);
 
@@ -1046,6 +1046,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		// Add supertypes to classes
 		sequenceCommandEClass.getESuperTypes().add(this.getCommand());
+		sequenceCommandEClass.getESuperTypes().add(this.getSequenceInstruction());
 		moveEClass.getESuperTypes().add(this.getSequenceCommand());
 		turnOnEClass.getESuperTypes().add(this.getSequenceCommand());
 		turnOffEClass.getESuperTypes().add(this.getSequenceCommand());
@@ -1067,15 +1068,15 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		isGreaterThanEClass.getESuperTypes().add(this.getBooleanExpression());
 		isLowerThanEClass.getESuperTypes().add(this.getBooleanExpression());
 		scheduleEClass.getESuperTypes().add(this.getCommand());
-		commandEClass.getESuperTypes().add(this.getSequenceInstruction());
+		commandEClass.getESuperTypes().add(this.getInstruction());
 		listPeripheralsEClass.getESuperTypes().add(this.getCommand());
 		listSequencesEClass.getESuperTypes().add(this.getCommand());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(farmbotEClass, Farmbot.class, "Farmbot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getFarmbot_Instruction(), this.getInstruction(), null, "instruction", null, 0, -1, Farmbot.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
-				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getFarmbot_Instructions(), this.getInstruction(), null, "instructions", null, 0, -1,
+				Farmbot.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(instructionEClass, Instruction.class, "Instruction", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1121,12 +1122,12 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSequence_Name(), ecorePackage.getEString(), "name", null, 0, 1, Sequence.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getSequence_Sequenceinstruction(), this.getSequenceInstruction(), null, "sequenceinstruction",
+		initEReference(getSequence_SequenceInstructions(), this.getSequenceInstruction(), null, "sequenceInstructions",
 				null, 0, -1, Sequence.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
 				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(ifEClass, If.class, "If", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIf_Booleanexpression(), this.getBooleanExpression(), null, "booleanexpression", null, 1, 1,
+		initEReference(getIf_BooleanExpression(), this.getBooleanExpression(), null, "booleanExpression", null, 1, 1,
 				If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getIf_Then(), this.getExecuteSequence(), null, "then", null, 1, 1, If.class, !IS_TRANSIENT,

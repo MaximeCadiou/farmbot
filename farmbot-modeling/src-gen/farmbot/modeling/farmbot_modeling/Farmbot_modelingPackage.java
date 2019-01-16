@@ -67,13 +67,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int FARMBOT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Instruction</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Instructions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FARMBOT__INSTRUCTION = 0;
+	int FARMBOT__INSTRUCTIONS = 0;
 
 	/**
 	 * The number of structural features of the '<em>Farmbot</em>' class.
@@ -132,24 +132,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SEQUENCE_INSTRUCTION = 18;
 
 	/**
-	 * The number of structural features of the '<em>Sequence Instruction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>Sequence Instruction</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int SEQUENCE_INSTRUCTION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.CommandImpl <em>Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,7 +148,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_FEATURE_COUNT = SEQUENCE_INSTRUCTION_FEATURE_COUNT + 0;
+	int COMMAND_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Command</em>' class.
@@ -175,7 +157,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int COMMAND_OPERATION_COUNT = SEQUENCE_INSTRUCTION_OPERATION_COUNT + 0;
+	int COMMAND_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.SequenceCommandImpl <em>Sequence Command</em>}' class.
@@ -500,13 +482,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SEQUENCE__NAME = INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Sequenceinstruction</b></em>' containment reference list.
+	 * The feature id for the '<em><b>Sequence Instructions</b></em>' containment reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEQUENCE__SEQUENCEINSTRUCTION = INSTRUCTION_FEATURE_COUNT + 1;
+	int SEQUENCE__SEQUENCE_INSTRUCTIONS = INSTRUCTION_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Sequence</em>' class.
@@ -527,6 +509,24 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SEQUENCE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
 
 	/**
+	 * The number of structural features of the '<em>Sequence Instruction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENCE_INSTRUCTION_FEATURE_COUNT = INSTRUCTION_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>Sequence Instruction</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEQUENCE_INSTRUCTION_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.IfImpl <em>If</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -537,13 +537,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int IF = 9;
 
 	/**
-	 * The feature id for the '<em><b>Booleanexpression</b></em>' containment reference.
+	 * The feature id for the '<em><b>Boolean Expression</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IF__BOOLEANEXPRESSION = SEQUENCE_INSTRUCTION_FEATURE_COUNT + 0;
+	int IF__BOOLEAN_EXPRESSION = SEQUENCE_INSTRUCTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Then</b></em>' containment reference.
@@ -1291,15 +1291,15 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getFarmbot();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link farmbot.modeling.farmbot_modeling.Farmbot#getInstruction <em>Instruction</em>}'.
+	 * Returns the meta object for the containment reference list '{@link farmbot.modeling.farmbot_modeling.Farmbot#getInstructions <em>Instructions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Instruction</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.Farmbot#getInstruction()
+	 * @return the meta object for the containment reference list '<em>Instructions</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.Farmbot#getInstructions()
 	 * @see #getFarmbot()
 	 * @generated
 	 */
-	EReference getFarmbot_Instruction();
+	EReference getFarmbot_Instructions();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.Instruction <em>Instruction</em>}'.
@@ -1514,15 +1514,15 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EAttribute getSequence_Name();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link farmbot.modeling.farmbot_modeling.Sequence#getSequenceinstruction <em>Sequenceinstruction</em>}'.
+	 * Returns the meta object for the containment reference list '{@link farmbot.modeling.farmbot_modeling.Sequence#getSequenceInstructions <em>Sequence Instructions</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Sequenceinstruction</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.Sequence#getSequenceinstruction()
+	 * @return the meta object for the containment reference list '<em>Sequence Instructions</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.Sequence#getSequenceInstructions()
 	 * @see #getSequence()
 	 * @generated
 	 */
-	EReference getSequence_Sequenceinstruction();
+	EReference getSequence_SequenceInstructions();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.If <em>If</em>}'.
@@ -1535,15 +1535,15 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getIf();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link farmbot.modeling.farmbot_modeling.If#getBooleanexpression <em>Booleanexpression</em>}'.
+	 * Returns the meta object for the containment reference '{@link farmbot.modeling.farmbot_modeling.If#getBooleanExpression <em>Boolean Expression</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Booleanexpression</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.If#getBooleanexpression()
+	 * @return the meta object for the containment reference '<em>Boolean Expression</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.If#getBooleanExpression()
 	 * @see #getIf()
 	 * @generated
 	 */
-	EReference getIf_Booleanexpression();
+	EReference getIf_BooleanExpression();
 
 	/**
 	 * Returns the meta object for the containment reference '{@link farmbot.modeling.farmbot_modeling.If#getThen <em>Then</em>}'.
@@ -2013,12 +2013,12 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EClass FARMBOT = eINSTANCE.getFarmbot();
 
 		/**
-		 * The meta object literal for the '<em><b>Instruction</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Instructions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference FARMBOT__INSTRUCTION = eINSTANCE.getFarmbot_Instruction();
+		EReference FARMBOT__INSTRUCTIONS = eINSTANCE.getFarmbot_Instructions();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.InstructionImpl <em>Instruction</em>}' class.
@@ -2197,12 +2197,12 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EAttribute SEQUENCE__NAME = eINSTANCE.getSequence_Name();
 
 		/**
-		 * The meta object literal for the '<em><b>Sequenceinstruction</b></em>' containment reference list feature.
+		 * The meta object literal for the '<em><b>Sequence Instructions</b></em>' containment reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference SEQUENCE__SEQUENCEINSTRUCTION = eINSTANCE.getSequence_Sequenceinstruction();
+		EReference SEQUENCE__SEQUENCE_INSTRUCTIONS = eINSTANCE.getSequence_SequenceInstructions();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.IfImpl <em>If</em>}' class.
@@ -2215,12 +2215,12 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EClass IF = eINSTANCE.getIf();
 
 		/**
-		 * The meta object literal for the '<em><b>Booleanexpression</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Boolean Expression</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IF__BOOLEANEXPRESSION = eINSTANCE.getIf_Booleanexpression();
+		EReference IF__BOOLEAN_EXPRESSION = eINSTANCE.getIf_BooleanExpression();
 
 		/**
 		 * The meta object literal for the '<em><b>Then</b></em>' containment reference feature.

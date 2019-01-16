@@ -11,7 +11,7 @@
   <genPackages prefix="Farmbot_modeling" basePackage="farmbot.modeling" disposableProviderFactory="true"
       ecorePackage="farmbot_modeling.ecore#/">
     <genClasses ecoreClass="farmbot_modeling.ecore#//Farmbot">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Farmbot/instruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Farmbot/instructions"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Instruction"/>
     <genClasses image="false" ecoreClass="farmbot_modeling.ecore#//SequenceCommand"/>
@@ -37,10 +37,10 @@
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Sequence/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Sequence/sequenceinstruction"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//Sequence/sequenceInstructions"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//If">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/booleanexpression"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/booleanExpression"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/then"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference farmbot_modeling.ecore#//If/else"/>
     </genClasses>

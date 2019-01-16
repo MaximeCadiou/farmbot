@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * </p>
  * <ul>
  *   <li>{@link farmbot.modeling.farmbot_modeling.Sequence#getName <em>Name</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.Sequence#getSequenceinstruction <em>Sequenceinstruction</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.Sequence#getSequenceInstructions <em>Sequence Instructions</em>}</li>
  * </ul>
  *
  * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getSequence()
@@ -49,19 +49,19 @@ public interface Sequence extends Instruction {
 	void setName(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Sequenceinstruction</b></em>' containment reference list.
+	 * Returns the value of the '<em><b>Sequence Instructions</b></em>' containment reference list.
 	 * The list contents are of type {@link farmbot.modeling.farmbot_modeling.SequenceInstruction}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Sequenceinstruction</em>' containment reference list isn't clear,
+	 * If the meaning of the '<em>Sequence Instructions</em>' containment reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Sequenceinstruction</em>' containment reference list.
-	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getSequence_Sequenceinstruction()
+	 * @return the value of the '<em>Sequence Instructions</em>' containment reference list.
+	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getSequence_SequenceInstructions()
 	 * @model containment="true"
 	 * @generated
 	 */
-	EList<SequenceInstruction> getSequenceinstruction();
+	EList<SequenceInstruction> getSequenceInstructions();
 
 } // Sequence

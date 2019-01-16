@@ -12,5 +12,5 @@ package farmbot.modeling.farmbot_modeling;
  * @model abstract="true"
  * @generated
  */
-public interface Command extends SequenceInstruction {
+public interface Command extends Instruction {
 } // Command

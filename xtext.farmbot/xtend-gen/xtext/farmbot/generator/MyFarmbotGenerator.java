@@ -3,7 +3,35 @@
  */
 package xtext.farmbot.generator;
 
+import farmbot.modeling.farmbot_modeling.BooleanExpression;
+import farmbot.modeling.farmbot_modeling.Command;
+import farmbot.modeling.farmbot_modeling.ExecuteSequence;
+import farmbot.modeling.farmbot_modeling.Farmbot;
+import farmbot.modeling.farmbot_modeling.FindHome;
+import farmbot.modeling.farmbot_modeling.If;
+import farmbot.modeling.farmbot_modeling.Instruction;
+import farmbot.modeling.farmbot_modeling.IsEqualTo;
+import farmbot.modeling.farmbot_modeling.IsGreaterThan;
+import farmbot.modeling.farmbot_modeling.IsLowerThan;
+import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
+import farmbot.modeling.farmbot_modeling.IsToolOn;
+import farmbot.modeling.farmbot_modeling.ListPeripherals;
+import farmbot.modeling.farmbot_modeling.ListSequences;
+import farmbot.modeling.farmbot_modeling.MoveAbsolute;
+import farmbot.modeling.farmbot_modeling.MoveRelative;
+import farmbot.modeling.farmbot_modeling.RunFarmware;
+import farmbot.modeling.farmbot_modeling.Schedule;
+import farmbot.modeling.farmbot_modeling.SendMessage;
+import farmbot.modeling.farmbot_modeling.SequenceCommand;
+import farmbot.modeling.farmbot_modeling.SequenceInstruction;
+import farmbot.modeling.farmbot_modeling.TakePhoto;
+import farmbot.modeling.farmbot_modeling.TurnOff;
+import farmbot.modeling.farmbot_modeling.TurnOn;
+import farmbot.modeling.farmbot_modeling.Wait;
+import java.util.Arrays;
+import javax.sound.midi.Sequence;
 import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
@@ -17,5 +45,220 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class MyFarmbotGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+  }
+  
+  protected CharSequence _compile(final Farmbot farmbot) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Instruction instruction) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Command command) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final SequenceCommand sequenceCommad) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final SequenceInstruction sequenceInstruction) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final BooleanExpression booleanExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TurnOn turnon) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TurnOff turnoff) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final MoveRelative moveRelative) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final MoveAbsolute moveAbsolute) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final FindHome findHome) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Sequence sequence) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final If ifExpression) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ExecuteSequence executeSequence) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Wait wait) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final IsToolOn isToolOn) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final SendMessage sendMessage) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final RunFarmware runFarmware) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TakePhoto takePhoto) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Schedule schedule) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListPeripherals listPeripherals) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListSequences listSequences) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final IsEqualTo isEqualTo) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final IsNotEqualTo isNotEqualTo) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final IsGreaterThan isGreaterThan) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final IsLowerThan isLowerThan) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  public CharSequence compile(final Object moveAbsolute) {
+    if (moveAbsolute instanceof MoveAbsolute) {
+      return _compile((MoveAbsolute)moveAbsolute);
+    } else if (moveAbsolute instanceof MoveRelative) {
+      return _compile((MoveRelative)moveAbsolute);
+    } else if (moveAbsolute instanceof ExecuteSequence) {
+      return _compile((ExecuteSequence)moveAbsolute);
+    } else if (moveAbsolute instanceof FindHome) {
+      return _compile((FindHome)moveAbsolute);
+    } else if (moveAbsolute instanceof IsToolOn) {
+      return _compile((IsToolOn)moveAbsolute);
+    } else if (moveAbsolute instanceof RunFarmware) {
+      return _compile((RunFarmware)moveAbsolute);
+    } else if (moveAbsolute instanceof SendMessage) {
+      return _compile((SendMessage)moveAbsolute);
+    } else if (moveAbsolute instanceof TakePhoto) {
+      return _compile((TakePhoto)moveAbsolute);
+    } else if (moveAbsolute instanceof TurnOff) {
+      return _compile((TurnOff)moveAbsolute);
+    } else if (moveAbsolute instanceof TurnOn) {
+      return _compile((TurnOn)moveAbsolute);
+    } else if (moveAbsolute instanceof Wait) {
+      return _compile((Wait)moveAbsolute);
+    } else if (moveAbsolute instanceof If) {
+      return _compile((If)moveAbsolute);
+    } else if (moveAbsolute instanceof ListPeripherals) {
+      return _compile((ListPeripherals)moveAbsolute);
+    } else if (moveAbsolute instanceof ListSequences) {
+      return _compile((ListSequences)moveAbsolute);
+    } else if (moveAbsolute instanceof Schedule) {
+      return _compile((Schedule)moveAbsolute);
+    } else if (moveAbsolute instanceof SequenceCommand) {
+      return _compile((SequenceCommand)moveAbsolute);
+    } else if (moveAbsolute instanceof Command) {
+      return _compile((Command)moveAbsolute);
+    } else if (moveAbsolute instanceof IsEqualTo) {
+      return _compile((IsEqualTo)moveAbsolute);
+    } else if (moveAbsolute instanceof IsGreaterThan) {
+      return _compile((IsGreaterThan)moveAbsolute);
+    } else if (moveAbsolute instanceof IsLowerThan) {
+      return _compile((IsLowerThan)moveAbsolute);
+    } else if (moveAbsolute instanceof IsNotEqualTo) {
+      return _compile((IsNotEqualTo)moveAbsolute);
+    } else if (moveAbsolute instanceof SequenceInstruction) {
+      return _compile((SequenceInstruction)moveAbsolute);
+    } else if (moveAbsolute instanceof BooleanExpression) {
+      return _compile((BooleanExpression)moveAbsolute);
+    } else if (moveAbsolute instanceof Farmbot) {
+      return _compile((Farmbot)moveAbsolute);
+    } else if (moveAbsolute instanceof Instruction) {
+      return _compile((Instruction)moveAbsolute);
+    } else if (moveAbsolute instanceof Sequence) {
+      return _compile((Sequence)moveAbsolute);
+    } else {
+      throw new IllegalArgumentException("Unhandled parameter types: " +
+        Arrays.<Object>asList(moveAbsolute).toString());
+    }
   }
 }

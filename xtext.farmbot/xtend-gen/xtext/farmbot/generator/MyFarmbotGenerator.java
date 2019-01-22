@@ -22,6 +22,7 @@ import farmbot.modeling.farmbot_modeling.MoveRelative;
 import farmbot.modeling.farmbot_modeling.RunFarmware;
 import farmbot.modeling.farmbot_modeling.Schedule;
 import farmbot.modeling.farmbot_modeling.SendMessage;
+import farmbot.modeling.farmbot_modeling.Sequence;
 import farmbot.modeling.farmbot_modeling.SequenceCommand;
 import farmbot.modeling.farmbot_modeling.SequenceInstruction;
 import farmbot.modeling.farmbot_modeling.TakePhoto;
@@ -29,7 +30,8 @@ import farmbot.modeling.farmbot_modeling.TurnOff;
 import farmbot.modeling.farmbot_modeling.TurnOn;
 import farmbot.modeling.farmbot_modeling.Wait;
 import java.util.Arrays;
-import javax.sound.midi.Sequence;
+import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
@@ -49,7 +51,26 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final Farmbot farmbot) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("package ");
+    _builder.append(farmbot);
+    _builder.append(";");
+    _builder.newLineIfNotEmpty();
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("public class ");
+    _builder.append(Farmbot.class);
+    _builder.append("{");
+    _builder.newLineIfNotEmpty();
+    {
+      EList<Instruction> _instructions = farmbot.getInstructions();
+      for(final Instruction inst : _instructions) {
+        Object _compile = this.compile(inst);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("}");
+    _builder.newLine();
     return _builder;
   }
   
@@ -79,7 +100,8 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final BooleanExpression booleanExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    boolean _isResult = booleanExpression.isResult();
+    _builder.append(_isResult);
     return _builder;
   }
   
@@ -121,7 +143,30 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final If ifExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("if (");
+    Object _compile = this.compile(ifExpression.getBooleanExpression());
+    _builder.append(_compile);
+    _builder.append(") {");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    Object _compile_1 = this.compile(ifExpression.getThen());
+    _builder.append(_compile_1, "\t");
+    _builder.newLineIfNotEmpty();
+    _builder.append("} ");
+    {
+      ExecuteSequence _else = ifExpression.getElse();
+      boolean _tripleNotEquals = (_else != null);
+      if (_tripleNotEquals) {
+        _builder.append(" else {");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t");
+        Object _compile_2 = this.compile(ifExpression.getElse());
+        _builder.append(_compile_2, "\t");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.append("}");
+    _builder.newLine();
     return _builder;
   }
   
@@ -180,30 +225,62 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   }
   
   protected CharSequence _compile(final IsEqualTo isEqualTo) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      int x = 2;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(x);
+      _builder.append(" == ");
+      int _value = isEqualTo.getValue();
+      _builder.append(_value);
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _compile(final IsNotEqualTo isNotEqualTo) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      int x = 2;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(x);
+      _builder.append(" != ");
+      int _value = isNotEqualTo.getValue();
+      _builder.append(_value);
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _compile(final IsGreaterThan isGreaterThan) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      int x = 2;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(x);
+      _builder.append(" > ");
+      int _value = isGreaterThan.getValue();
+      _builder.append(_value);
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _compile(final IsLowerThan isLowerThan) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      int x = 2;
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(x);
+      _builder.append(" < ");
+      int _value = isLowerThan.getValue();
+      _builder.append(_value);
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
-  public CharSequence compile(final Object moveAbsolute) {
+  public CharSequence compile(final EObject moveAbsolute) {
     if (moveAbsolute instanceof MoveAbsolute) {
       return _compile((MoveAbsolute)moveAbsolute);
     } else if (moveAbsolute instanceof MoveRelative) {
@@ -246,6 +323,8 @@ public class MyFarmbotGenerator extends AbstractGenerator {
       return _compile((IsLowerThan)moveAbsolute);
     } else if (moveAbsolute instanceof IsNotEqualTo) {
       return _compile((IsNotEqualTo)moveAbsolute);
+    } else if (moveAbsolute instanceof Sequence) {
+      return _compile((Sequence)moveAbsolute);
     } else if (moveAbsolute instanceof SequenceInstruction) {
       return _compile((SequenceInstruction)moveAbsolute);
     } else if (moveAbsolute instanceof BooleanExpression) {
@@ -254,8 +333,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
       return _compile((Farmbot)moveAbsolute);
     } else if (moveAbsolute instanceof Instruction) {
       return _compile((Instruction)moveAbsolute);
-    } else if (moveAbsolute instanceof Sequence) {
-      return _compile((Sequence)moveAbsolute);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
         Arrays.<Object>asList(moveAbsolute).toString());

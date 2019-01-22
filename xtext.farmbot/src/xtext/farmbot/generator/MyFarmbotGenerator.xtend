@@ -18,7 +18,7 @@ import farmbot.modeling.farmbot_modeling.TurnOff
 import farmbot.modeling.farmbot_modeling.MoveRelative
 import farmbot.modeling.farmbot_modeling.MoveAbsolute
 import farmbot.modeling.farmbot_modeling.FindHome
-import javax.sound.midi.Sequence
+import farmbot.modeling.farmbot_modeling.Sequence
 import farmbot.modeling.farmbot_modeling.If
 import farmbot.modeling.farmbot_modeling.ExecuteSequence
 import farmbot.modeling.farmbot_modeling.Wait
@@ -49,7 +49,15 @@ class MyFarmbotGenerator extends AbstractGenerator {
 //				.join(', '))
 	}
 	
-	def dispatch compile(Farmbot farmbot) '''this expression is not supported: '''
+	def dispatch compile(Farmbot farmbot) ''' 
+	    package «farmbot»;
+	        
+	    public class «Farmbot»{
+	    	«FOR inst:farmbot.instructions»
+	            «inst.compile»
+	        «ENDFOR»
+	    }
+	'''
 	
 	def dispatch compile(Instruction instruction) '''this expression is not supported: '''
 
@@ -59,7 +67,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 	def dispatch compile(SequenceInstruction sequenceInstruction) '''this expression is not supported: '''
 
-	def dispatch compile(BooleanExpression booleanExpression) '''this expression is not supported: '''
+	def dispatch compile(BooleanExpression booleanExpression) '''«booleanExpression.result»'''
 
 	def dispatch compile(TurnOn turnon) '''this expression is not supported: '''
 
@@ -73,7 +81,14 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	
 	def dispatch compile(Sequence sequence) '''this expression is not supported: '''
 
-	def dispatch compile(If ifExpression) '''this expression is not supported: '''
+	def dispatch compile(If ifExpression) '''
+		if («ifExpression.booleanExpression.compile») {
+			«ifExpression.then.compile»
+		} «IF ifExpression.getElse() !== null» else {
+			«ifExpression.getElse().compile»
+		«ENDIF»
+		}
+	'''
 
 	def dispatch compile(ExecuteSequence executeSequence) '''this expression is not supported: '''
 
@@ -93,13 +108,29 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 	def dispatch compile(ListSequences listSequences) '''this expression is not supported: '''
 	
-	def dispatch compile(IsEqualTo isEqualTo) '''this expression is not supported: '''
+	def dispatch compile(IsEqualTo isEqualTo){
+		var x = 2;
+		
+		'''«x» == «isEqualTo.value»'''	
+	}
 
-	def dispatch compile(IsNotEqualTo isNotEqualTo) '''this expression is not supported: '''
+	def dispatch compile(IsNotEqualTo isNotEqualTo){
+		var x = 2;
+		
+		'''«x» != «isNotEqualTo.value»'''	
+	}
 	
-	def dispatch compile(IsGreaterThan isGreaterThan) '''this expression is not supported: '''
+	def dispatch compile(IsGreaterThan isGreaterThan){
+		var x = 2;
+		
+		'''«x» > «isGreaterThan.value»'''	
+	}
 
-	def dispatch compile(IsLowerThan isLowerThan) '''this expression is not supported: '''
+	def dispatch compile(IsLowerThan isLowerThan){
+		var x = 2;
+		
+		'''«x» < «isLowerThan.value»'''	
+	}
 
 
 }

@@ -17,6 +17,7 @@ import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
 import farmbot.modeling.farmbot_modeling.IsToolOn;
 import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
+import farmbot.modeling.farmbot_modeling.Move;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
 import farmbot.modeling.farmbot_modeling.MoveRelative;
 import farmbot.modeling.farmbot_modeling.RunFarmware;
@@ -63,8 +64,8 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.newLineIfNotEmpty();
     {
       EList<Instruction> _instructions = farmbot.getInstructions();
-      for(final Instruction inst : _instructions) {
-        Object _compile = this.compile(inst);
+      for(final Instruction instruction : _instructions) {
+        Object _compile = this.compile(instruction);
         _builder.append(_compile);
         _builder.newLineIfNotEmpty();
       }
@@ -107,37 +108,110 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final TurnOn turnon) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I turned ");
+    int _pin = turnon.getPin();
+    _builder.append(_pin);
+    _builder.append(" on with mode ");
+    String _mode = turnon.getMode();
+    _builder.append(_mode);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final TurnOff turnoff) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I turned ");
+    int _pin = turnoff.getPin();
+    _builder.append(_pin);
+    _builder.append(" off with mode ");
+    String _mode = turnoff.getMode();
+    _builder.append(_mode);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
-  protected CharSequence _compile(final MoveRelative moveRelative) {
+  protected CharSequence _compile(final Move move) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("this expression is not supported: ");
     return _builder;
   }
   
-  protected CharSequence _compile(final MoveAbsolute moveAbsolute) {
+  protected CharSequence _compile(final MoveRelative move) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I moved relatively with coordinates (");
+    int _x = move.getX();
+    _builder.append(_x);
+    _builder.append(", ");
+    int _y = move.getY();
+    _builder.append(_y);
+    _builder.append(", ");
+    int _z = move.getZ();
+    _builder.append(_z);
+    _builder.append(") at speed ");
+    double _speed = move.getSpeed();
+    _builder.append(_speed);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final MoveAbsolute move) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("System.out.println(\"I moved absolutely with coordinates (");
+    int _x = move.getX();
+    _builder.append(_x);
+    _builder.append(", ");
+    int _y = move.getY();
+    _builder.append(_y);
+    _builder.append(", ");
+    int _z = move.getZ();
+    _builder.append(_z);
+    _builder.append(") at speed ");
+    double _speed = move.getSpeed();
+    _builder.append(_speed);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final FindHome findHome) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    {
+      boolean _isFindX = findHome.isFindX();
+      if (_isFindX) {
+        _builder.append("System.out.println(\"I found home x coordinate: 0\");");
+        _builder.newLine();
+      }
+    }
+    {
+      boolean _isFindY = findHome.isFindY();
+      if (_isFindY) {
+        _builder.append("System.out.println(\"I found home y coordinate: 0\");");
+        _builder.newLine();
+      }
+    }
+    {
+      boolean _isFindZ = findHome.isFindZ();
+      if (_isFindZ) {
+        _builder.append("System.out.println(\"I found home z coordinate: 0\");");
+        _builder.newLine();
+      }
+    }
     return _builder;
   }
   
   protected CharSequence _compile(final Sequence sequence) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    {
+      EList<SequenceInstruction> _sequenceInstructions = sequence.getSequenceInstructions();
+      for(final SequenceInstruction instruction : _sequenceInstructions) {
+        Object _compile = this.compile(instruction);
+        _builder.append(_compile);
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
@@ -172,55 +246,103 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final ExecuteSequence executeSequence) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I executed sequence ");
+    int _id = executeSequence.getId();
+    _builder.append(_id);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final Wait wait) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I waited ");
+    double _duration = wait.getDuration();
+    _builder.append(_duration);
+    _builder.append(" seconds\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final IsToolOn isToolOn) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("true");
     return _builder;
   }
   
   protected CharSequence _compile(final SendMessage sendMessage) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I sent the following message ");
+    String _message = sendMessage.getMessage();
+    _builder.append(_message);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final RunFarmware runFarmware) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I ran the farmware ");
+    String _name = runFarmware.getName();
+    _builder.append(_name);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final TakePhoto takePhoto) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I took a photo\");");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final Schedule schedule) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"I scheduled the sequence ");
+    String _sequence = schedule.getSequence();
+    _builder.append(_sequence);
+    _builder.append(" on ");
+    String _startDate = schedule.getStartDate();
+    _builder.append(_startDate);
+    _builder.append(" at ");
+    String _startTime = schedule.getStartTime();
+    _builder.append(_startTime);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _isRepeat = schedule.isRepeat();
+      if (_isRepeat) {
+        _builder.append("System.out.println(\"It will repeat every ");
+        int _repeatFrequency = schedule.getRepeatFrequency();
+        _builder.append(_repeatFrequency);
+        _builder.append(" ");
+        String _repeatUnit = schedule.getRepeatUnit();
+        _builder.append(_repeatUnit);
+        _builder.append(" until ");
+        String _endDate = schedule.getEndDate();
+        _builder.append(_endDate);
+        _builder.append(" at ");
+        String _endTime = schedule.getEndTime();
+        _builder.append(_endTime);
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
     return _builder;
   }
   
   protected CharSequence _compile(final ListPeripherals listPeripherals) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"Here is a list of the peripherals\");");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final ListSequences listSequences) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
+    _builder.append("System.out.println(\"Here is a list of the sequences\");");
+    _builder.newLine();
     return _builder;
   }
   
@@ -280,62 +402,64 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _xblockexpression;
   }
   
-  public CharSequence compile(final EObject moveAbsolute) {
-    if (moveAbsolute instanceof MoveAbsolute) {
-      return _compile((MoveAbsolute)moveAbsolute);
-    } else if (moveAbsolute instanceof MoveRelative) {
-      return _compile((MoveRelative)moveAbsolute);
-    } else if (moveAbsolute instanceof ExecuteSequence) {
-      return _compile((ExecuteSequence)moveAbsolute);
-    } else if (moveAbsolute instanceof FindHome) {
-      return _compile((FindHome)moveAbsolute);
-    } else if (moveAbsolute instanceof IsToolOn) {
-      return _compile((IsToolOn)moveAbsolute);
-    } else if (moveAbsolute instanceof RunFarmware) {
-      return _compile((RunFarmware)moveAbsolute);
-    } else if (moveAbsolute instanceof SendMessage) {
-      return _compile((SendMessage)moveAbsolute);
-    } else if (moveAbsolute instanceof TakePhoto) {
-      return _compile((TakePhoto)moveAbsolute);
-    } else if (moveAbsolute instanceof TurnOff) {
-      return _compile((TurnOff)moveAbsolute);
-    } else if (moveAbsolute instanceof TurnOn) {
-      return _compile((TurnOn)moveAbsolute);
-    } else if (moveAbsolute instanceof Wait) {
-      return _compile((Wait)moveAbsolute);
-    } else if (moveAbsolute instanceof If) {
-      return _compile((If)moveAbsolute);
-    } else if (moveAbsolute instanceof ListPeripherals) {
-      return _compile((ListPeripherals)moveAbsolute);
-    } else if (moveAbsolute instanceof ListSequences) {
-      return _compile((ListSequences)moveAbsolute);
-    } else if (moveAbsolute instanceof Schedule) {
-      return _compile((Schedule)moveAbsolute);
-    } else if (moveAbsolute instanceof SequenceCommand) {
-      return _compile((SequenceCommand)moveAbsolute);
-    } else if (moveAbsolute instanceof Command) {
-      return _compile((Command)moveAbsolute);
-    } else if (moveAbsolute instanceof IsEqualTo) {
-      return _compile((IsEqualTo)moveAbsolute);
-    } else if (moveAbsolute instanceof IsGreaterThan) {
-      return _compile((IsGreaterThan)moveAbsolute);
-    } else if (moveAbsolute instanceof IsLowerThan) {
-      return _compile((IsLowerThan)moveAbsolute);
-    } else if (moveAbsolute instanceof IsNotEqualTo) {
-      return _compile((IsNotEqualTo)moveAbsolute);
-    } else if (moveAbsolute instanceof Sequence) {
-      return _compile((Sequence)moveAbsolute);
-    } else if (moveAbsolute instanceof SequenceInstruction) {
-      return _compile((SequenceInstruction)moveAbsolute);
-    } else if (moveAbsolute instanceof BooleanExpression) {
-      return _compile((BooleanExpression)moveAbsolute);
-    } else if (moveAbsolute instanceof Farmbot) {
-      return _compile((Farmbot)moveAbsolute);
-    } else if (moveAbsolute instanceof Instruction) {
-      return _compile((Instruction)moveAbsolute);
+  public CharSequence compile(final EObject move) {
+    if (move instanceof MoveAbsolute) {
+      return _compile((MoveAbsolute)move);
+    } else if (move instanceof MoveRelative) {
+      return _compile((MoveRelative)move);
+    } else if (move instanceof ExecuteSequence) {
+      return _compile((ExecuteSequence)move);
+    } else if (move instanceof FindHome) {
+      return _compile((FindHome)move);
+    } else if (move instanceof IsToolOn) {
+      return _compile((IsToolOn)move);
+    } else if (move instanceof Move) {
+      return _compile((Move)move);
+    } else if (move instanceof RunFarmware) {
+      return _compile((RunFarmware)move);
+    } else if (move instanceof SendMessage) {
+      return _compile((SendMessage)move);
+    } else if (move instanceof TakePhoto) {
+      return _compile((TakePhoto)move);
+    } else if (move instanceof TurnOff) {
+      return _compile((TurnOff)move);
+    } else if (move instanceof TurnOn) {
+      return _compile((TurnOn)move);
+    } else if (move instanceof Wait) {
+      return _compile((Wait)move);
+    } else if (move instanceof If) {
+      return _compile((If)move);
+    } else if (move instanceof ListPeripherals) {
+      return _compile((ListPeripherals)move);
+    } else if (move instanceof ListSequences) {
+      return _compile((ListSequences)move);
+    } else if (move instanceof Schedule) {
+      return _compile((Schedule)move);
+    } else if (move instanceof SequenceCommand) {
+      return _compile((SequenceCommand)move);
+    } else if (move instanceof Command) {
+      return _compile((Command)move);
+    } else if (move instanceof IsEqualTo) {
+      return _compile((IsEqualTo)move);
+    } else if (move instanceof IsGreaterThan) {
+      return _compile((IsGreaterThan)move);
+    } else if (move instanceof IsLowerThan) {
+      return _compile((IsLowerThan)move);
+    } else if (move instanceof IsNotEqualTo) {
+      return _compile((IsNotEqualTo)move);
+    } else if (move instanceof Sequence) {
+      return _compile((Sequence)move);
+    } else if (move instanceof SequenceInstruction) {
+      return _compile((SequenceInstruction)move);
+    } else if (move instanceof BooleanExpression) {
+      return _compile((BooleanExpression)move);
+    } else if (move instanceof Farmbot) {
+      return _compile((Farmbot)move);
+    } else if (move instanceof Instruction) {
+      return _compile((Instruction)move);
     } else {
       throw new IllegalArgumentException("Unhandled parameter types: " +
-        Arrays.<Object>asList(moveAbsolute).toString());
+        Arrays.<Object>asList(move).toString());
     }
   }
 }

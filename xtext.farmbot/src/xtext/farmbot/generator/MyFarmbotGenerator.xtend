@@ -33,6 +33,7 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo
 import farmbot.modeling.farmbot_modeling.IsGreaterThan
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo
 import farmbot.modeling.farmbot_modeling.IsLowerThan
+import farmbot.modeling.farmbot_modeling.Move
 
 /**
  * Generates code from your model files on save.
@@ -53,8 +54,8 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	    package «farmbot»;
 	        
 	    public class «Farmbot»{
-	    	«FOR inst:farmbot.instructions»
-	            «inst.compile»
+	    	«FOR instruction:farmbot.instructions»
+	            «instruction.compile»
 	        «ENDFOR»
 	    }
 	'''
@@ -69,17 +70,41 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 	def dispatch compile(BooleanExpression booleanExpression) '''«booleanExpression.result»'''
 
-	def dispatch compile(TurnOn turnon) '''this expression is not supported: '''
+	def dispatch compile(TurnOn turnon) '''
+		System.out.println("I turned «turnon.pin» on with mode «turnon.mode»");
+	'''
 
-	def dispatch compile(TurnOff turnoff) '''this expression is not supported: '''
+	def dispatch compile(TurnOff turnoff) '''
+		System.out.println("I turned «turnoff.pin» off with mode «turnoff.mode»");
+	'''
 
-	def dispatch compile(MoveRelative moveRelative) '''this expression is not supported: '''
+	def dispatch compile(Move move) '''this expression is not supported: '''
 
-	def dispatch compile(MoveAbsolute moveAbsolute) '''this expression is not supported: '''
+	def dispatch compile(MoveRelative move) '''
+		System.out.println("I moved relatively with coordinates («move.x», «move.y», «move.z») at speed «move.speed»");
+	'''
+
+	def dispatch compile(MoveAbsolute move) '''
+		System.out.println("I moved absolutely with coordinates («move.x», «move.y», «move.z») at speed «move.speed»");
+	'''
 	
-	def dispatch compile(FindHome findHome) '''this expression is not supported: '''
+	def dispatch compile(FindHome findHome)'''
+		«IF findHome.findX»
+			System.out.println("I found home x coordinate: 0");
+		«ENDIF»
+		«IF findHome.findY»
+			System.out.println("I found home y coordinate: 0");
+		«ENDIF»
+		«IF findHome.findZ»
+			System.out.println("I found home z coordinate: 0");
+		«ENDIF»
+	'''
 	
-	def dispatch compile(Sequence sequence) '''this expression is not supported: '''
+	def dispatch compile(Sequence sequence) '''
+		«FOR instruction:sequence.sequenceInstructions»
+            «instruction.compile»
+        «ENDFOR»
+	'''
 
 	def dispatch compile(If ifExpression) '''
 		if («ifExpression.booleanExpression.compile») {
@@ -90,23 +115,42 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		}
 	'''
 
-	def dispatch compile(ExecuteSequence executeSequence) '''this expression is not supported: '''
+	def dispatch compile(ExecuteSequence executeSequence) '''
+		System.out.println("I executed sequence «executeSequence.id»");
+	'''
 
-	def dispatch compile(Wait wait) '''this expression is not supported: '''
+	def dispatch compile(Wait wait) '''
+		System.out.println("I waited «wait.duration» seconds");
+	'''
 
-	def dispatch compile(IsToolOn isToolOn) '''this expression is not supported: '''
+	def dispatch compile(IsToolOn isToolOn) '''true'''
 
-	def dispatch compile(SendMessage sendMessage) '''this expression is not supported: '''
+	def dispatch compile(SendMessage sendMessage) '''
+		System.out.println("I sent the following message «sendMessage.message»");
+	'''
 
-	def dispatch compile(RunFarmware runFarmware) '''this expression is not supported: '''
+	def dispatch compile(RunFarmware runFarmware) '''
+		System.out.println("I ran the farmware «runFarmware.name»");
+	'''
 
-	def dispatch compile(TakePhoto takePhoto) '''this expression is not supported: '''
+	def dispatch compile(TakePhoto takePhoto) '''
+		System.out.println("I took a photo");
+	'''
+	
+	def dispatch compile(Schedule schedule) '''
+		System.out.println("I scheduled the sequence «schedule.sequence» on «schedule.startDate» at «schedule.startTime»");
+		«IF schedule.repeat»
+			System.out.println("It will repeat every «schedule.repeatFrequency» «schedule.repeatUnit» until «schedule.endDate» at «schedule.endTime»");
+		«ENDIF»
+	'''
 
-	def dispatch compile(Schedule schedule) '''this expression is not supported: '''
+	def dispatch compile(ListPeripherals listPeripherals) '''
+		System.out.println("Here is a list of the peripherals");
+	'''
 
-	def dispatch compile(ListPeripherals listPeripherals) '''this expression is not supported: '''
-
-	def dispatch compile(ListSequences listSequences) '''this expression is not supported: '''
+	def dispatch compile(ListSequences listSequences) '''
+		System.out.println("Here is a list of the sequences");
+	 '''
 	
 	def dispatch compile(IsEqualTo isEqualTo){
 		var x = 2;

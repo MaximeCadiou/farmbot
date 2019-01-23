@@ -43,20 +43,22 @@ import farmbot.modeling.farmbot_modeling.Move
 class MyFarmbotGenerator extends AbstractGenerator {
 
 	override void doGenerate(Resource resource, IFileSystemAccess2 fsa, IGeneratorContext context) {
-//		fsa.generateFile('greetings.txt', 'People to greet: ' + 
-//			resource.allContents
-//				.filter(Greeting)
-//				.map[name]
-//				.join(', '))
+		fsa.generateFile('Farmbot.java',
+			resource.allContents
+				.filter(Farmbot)
+				.head
+				.compile)
 	}
 	
 	def dispatch compile(Farmbot farmbot) ''' 
 	    package «farmbot»;
 	        
-	    public class «Farmbot»{
-	    	«FOR instruction:farmbot.instructions»
-	            «instruction.compile»
-	        «ENDFOR»
+	    public class «Farmbot» {
+	    	public static void main(String[] args) {
+		    	«FOR instruction:farmbot.instructions»
+		            «instruction.compile»
+	    	    «ENDFOR»
+	    	}
 	    }
 	'''
 	

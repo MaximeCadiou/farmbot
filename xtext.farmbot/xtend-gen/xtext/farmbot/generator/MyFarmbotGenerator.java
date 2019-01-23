@@ -3,6 +3,7 @@
  */
 package xtext.farmbot.generator;
 
+import com.google.common.collect.Iterators;
 import farmbot.modeling.farmbot_modeling.BooleanExpression;
 import farmbot.modeling.farmbot_modeling.Command;
 import farmbot.modeling.farmbot_modeling.ExecuteSequence;
@@ -38,6 +39,7 @@ import org.eclipse.xtend2.lib.StringConcatenation;
 import org.eclipse.xtext.generator.AbstractGenerator;
 import org.eclipse.xtext.generator.IFileSystemAccess2;
 import org.eclipse.xtext.generator.IGeneratorContext;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 
 /**
  * Generates code from your model files on save.
@@ -48,6 +50,8 @@ import org.eclipse.xtext.generator.IGeneratorContext;
 public class MyFarmbotGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
+    fsa.generateFile("Farmbot.java", 
+      this.compile(IteratorExtensions.<Farmbot>head(Iterators.<Farmbot>filter(resource.getAllContents(), Farmbot.class))));
   }
   
   protected CharSequence _compile(final Farmbot farmbot) {
@@ -60,8 +64,11 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("public class ");
     _builder.append(Farmbot.class);
-    _builder.append("{");
+    _builder.append(" {");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append("public static void main(String[] args) {");
+    _builder.newLine();
     {
       EList<Instruction> _instructions = farmbot.getInstructions();
       for(final Instruction instruction : _instructions) {
@@ -70,6 +77,9 @@ public class MyFarmbotGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("\t");
+    _builder.append("}");
+    _builder.newLine();
     _builder.append("}");
     _builder.newLine();
     return _builder;

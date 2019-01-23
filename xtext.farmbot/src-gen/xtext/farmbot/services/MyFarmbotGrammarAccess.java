@@ -205,20 +205,22 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cTurnOnAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTurnOnKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cPinKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPinINTTerminalRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cModeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cModeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cModeSTRINGTerminalRuleCall_6_0 = (RuleCall)cModeAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPinAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPinINTTerminalRuleCall_4_0 = (RuleCall)cPinAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cModeKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cModeAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cModeSTRINGTerminalRuleCall_8_0 = (RuleCall)cModeAssignment_8.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//TurnOn:
 		//	{TurnOn}
-		//	'turnOn(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
+		//	'turnOn(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TurnOn} 'turnOn(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')'
+		//{TurnOn} 'turnOn(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{TurnOn}
@@ -227,29 +229,35 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'turnOn('
 		public Keyword getTurnOnKeyword_1() { return cTurnOnKeyword_1; }
 		
-		//'pin='
+		//'pin'
 		public Keyword getPinKeyword_2() { return cPinKeyword_2; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
 		//pin=INT
-		public Assignment getPinAssignment_3() { return cPinAssignment_3; }
+		public Assignment getPinAssignment_4() { return cPinAssignment_4; }
 		
 		//INT
-		public RuleCall getPinINTTerminalRuleCall_3_0() { return cPinINTTerminalRuleCall_3_0; }
+		public RuleCall getPinINTTerminalRuleCall_4_0() { return cPinINTTerminalRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'mode='
-		public Keyword getModeKeyword_5() { return cModeKeyword_5; }
+		//'mode'
+		public Keyword getModeKeyword_6() { return cModeKeyword_6; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_7() { return cEqualsSignKeyword_7; }
 		
 		//mode=STRING
-		public Assignment getModeAssignment_6() { return cModeAssignment_6; }
+		public Assignment getModeAssignment_8() { return cModeAssignment_8; }
 		
 		//STRING
-		public RuleCall getModeSTRINGTerminalRuleCall_6_0() { return cModeSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getModeSTRINGTerminalRuleCall_8_0() { return cModeSTRINGTerminalRuleCall_8_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
 	}
 	public class TurnOffElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.TurnOff");
@@ -257,20 +265,22 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cTurnOffAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cTurnOffKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cPinKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cPinAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cPinINTTerminalRuleCall_3_0 = (RuleCall)cPinAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cModeKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cModeAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cModeSTRINGTerminalRuleCall_6_0 = (RuleCall)cModeAssignment_6.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cPinAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cPinINTTerminalRuleCall_4_0 = (RuleCall)cPinAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cModeKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cModeAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cModeSTRINGTerminalRuleCall_8_0 = (RuleCall)cModeAssignment_8.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//TurnOff:
 		//	{TurnOff}
-		//	'turnOff(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
+		//	'turnOff(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{TurnOff} 'turnOff(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')'
+		//{TurnOff} 'turnOff(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{TurnOff}
@@ -279,29 +289,35 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'turnOff('
 		public Keyword getTurnOffKeyword_1() { return cTurnOffKeyword_1; }
 		
-		//'pin='
+		//'pin'
 		public Keyword getPinKeyword_2() { return cPinKeyword_2; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
 		//pin=INT
-		public Assignment getPinAssignment_3() { return cPinAssignment_3; }
+		public Assignment getPinAssignment_4() { return cPinAssignment_4; }
 		
 		//INT
-		public RuleCall getPinINTTerminalRuleCall_3_0() { return cPinINTTerminalRuleCall_3_0; }
+		public RuleCall getPinINTTerminalRuleCall_4_0() { return cPinINTTerminalRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'mode='
-		public Keyword getModeKeyword_5() { return cModeKeyword_5; }
+		//'mode'
+		public Keyword getModeKeyword_6() { return cModeKeyword_6; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_7() { return cEqualsSignKeyword_7; }
 		
 		//mode=STRING
-		public Assignment getModeAssignment_6() { return cModeAssignment_6; }
+		public Assignment getModeAssignment_8() { return cModeAssignment_8; }
 		
 		//STRING
-		public RuleCall getModeSTRINGTerminalRuleCall_6_0() { return cModeSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getModeSTRINGTerminalRuleCall_8_0() { return cModeSTRINGTerminalRuleCall_8_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_7() { return cRightParenthesisKeyword_7; }
+		public Keyword getRightParenthesisKeyword_9() { return cRightParenthesisKeyword_9; }
 	}
 	public class MoveRelativeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.MoveRelative");
@@ -309,28 +325,32 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cMoveRelativeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cMoveRelativeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cXKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cXAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cXINTTerminalRuleCall_3_0 = (RuleCall)cXAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cYKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cYAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cYINTTerminalRuleCall_6_0 = (RuleCall)cYAssignment_6.eContents().get(0);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cZKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cZAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cZINTTerminalRuleCall_9_0 = (RuleCall)cZAssignment_9.eContents().get(0);
-		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cSpeedKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cSpeedAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cSpeedEDoubleParserRuleCall_12_0 = (RuleCall)cSpeedAssignment_12.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cXINTTerminalRuleCall_4_0 = (RuleCall)cXAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cYKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cYAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cYINTTerminalRuleCall_8_0 = (RuleCall)cYAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cZKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cEqualsSignKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cZAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cZINTTerminalRuleCall_12_0 = (RuleCall)cZAssignment_12.eContents().get(0);
+		private final Keyword cCommaKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cSpeedKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cEqualsSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cSpeedAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cSpeedEDoubleParserRuleCall_16_0 = (RuleCall)cSpeedAssignment_16.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//MoveRelative:
 		//	{MoveRelative}
-		//	'moveRelative(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
+		//	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MoveRelative} 'moveRelative(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')'
+		//{MoveRelative} 'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{MoveRelative}
@@ -339,53 +359,65 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'moveRelative('
 		public Keyword getMoveRelativeKeyword_1() { return cMoveRelativeKeyword_1; }
 		
-		//'x='
+		//'x'
 		public Keyword getXKeyword_2() { return cXKeyword_2; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
 		//x=INT
-		public Assignment getXAssignment_3() { return cXAssignment_3; }
+		public Assignment getXAssignment_4() { return cXAssignment_4; }
 		
 		//INT
-		public RuleCall getXINTTerminalRuleCall_3_0() { return cXINTTerminalRuleCall_3_0; }
+		public RuleCall getXINTTerminalRuleCall_4_0() { return cXINTTerminalRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'y='
-		public Keyword getYKeyword_5() { return cYKeyword_5; }
+		//'y'
+		public Keyword getYKeyword_6() { return cYKeyword_6; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_7() { return cEqualsSignKeyword_7; }
 		
 		//y=INT
-		public Assignment getYAssignment_6() { return cYAssignment_6; }
+		public Assignment getYAssignment_8() { return cYAssignment_8; }
 		
 		//INT
-		public RuleCall getYINTTerminalRuleCall_6_0() { return cYINTTerminalRuleCall_6_0; }
+		public RuleCall getYINTTerminalRuleCall_8_0() { return cYINTTerminalRuleCall_8_0; }
 		
 		//','
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
 		
-		//'z='
-		public Keyword getZKeyword_8() { return cZKeyword_8; }
+		//'z'
+		public Keyword getZKeyword_10() { return cZKeyword_10; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_11() { return cEqualsSignKeyword_11; }
 		
 		//z=INT
-		public Assignment getZAssignment_9() { return cZAssignment_9; }
+		public Assignment getZAssignment_12() { return cZAssignment_12; }
 		
 		//INT
-		public RuleCall getZINTTerminalRuleCall_9_0() { return cZINTTerminalRuleCall_9_0; }
+		public RuleCall getZINTTerminalRuleCall_12_0() { return cZINTTerminalRuleCall_12_0; }
 		
 		//','
-		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
+		public Keyword getCommaKeyword_13() { return cCommaKeyword_13; }
 		
-		//'speed='
-		public Keyword getSpeedKeyword_11() { return cSpeedKeyword_11; }
+		//'speed'
+		public Keyword getSpeedKeyword_14() { return cSpeedKeyword_14; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_15() { return cEqualsSignKeyword_15; }
 		
 		//speed=EDouble
-		public Assignment getSpeedAssignment_12() { return cSpeedAssignment_12; }
+		public Assignment getSpeedAssignment_16() { return cSpeedAssignment_16; }
 		
 		//EDouble
-		public RuleCall getSpeedEDoubleParserRuleCall_12_0() { return cSpeedEDoubleParserRuleCall_12_0; }
+		public RuleCall getSpeedEDoubleParserRuleCall_16_0() { return cSpeedEDoubleParserRuleCall_16_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
+		public Keyword getRightParenthesisKeyword_17() { return cRightParenthesisKeyword_17; }
 	}
 	public class FindHomeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.FindHome");
@@ -393,24 +425,27 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cFindHomeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFindHomeKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cFindXKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cFindXAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cFindXEBooleanParserRuleCall_3_0 = (RuleCall)cFindXAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cFindYKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cFindYAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cFindYEBooleanParserRuleCall_6_0 = (RuleCall)cFindYAssignment_6.eContents().get(0);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cFindZKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cFindZAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cFindZEBooleanParserRuleCall_9_0 = (RuleCall)cFindZAssignment_9.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cFindXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFindXEBooleanParserRuleCall_4_0 = (RuleCall)cFindXAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cFindYKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cFindYAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cFindYEBooleanParserRuleCall_8_0 = (RuleCall)cFindYAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cFindZKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cEqualsSignKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cFindZAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cFindZEBooleanParserRuleCall_12_0 = (RuleCall)cFindZAssignment_12.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//FindHome:
 		//	{FindHome}
-		//	'findHome(' 'findX=' findX=EBoolean ',' 'findY=' findY=EBoolean ',' 'findZ=' findZ=EBoolean ')';
+		//	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FindHome} 'findHome(' 'findX=' findX=EBoolean ',' 'findY=' findY=EBoolean ',' 'findZ=' findZ=EBoolean ')'
+		//{FindHome} 'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{FindHome}
@@ -419,41 +454,50 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'findHome('
 		public Keyword getFindHomeKeyword_1() { return cFindHomeKeyword_1; }
 		
-		//'findX='
+		//'findX'
 		public Keyword getFindXKeyword_2() { return cFindXKeyword_2; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
 		//findX=EBoolean
-		public Assignment getFindXAssignment_3() { return cFindXAssignment_3; }
+		public Assignment getFindXAssignment_4() { return cFindXAssignment_4; }
 		
 		//EBoolean
-		public RuleCall getFindXEBooleanParserRuleCall_3_0() { return cFindXEBooleanParserRuleCall_3_0; }
+		public RuleCall getFindXEBooleanParserRuleCall_4_0() { return cFindXEBooleanParserRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'findY='
-		public Keyword getFindYKeyword_5() { return cFindYKeyword_5; }
+		//'findY'
+		public Keyword getFindYKeyword_6() { return cFindYKeyword_6; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_7() { return cEqualsSignKeyword_7; }
 		
 		//findY=EBoolean
-		public Assignment getFindYAssignment_6() { return cFindYAssignment_6; }
+		public Assignment getFindYAssignment_8() { return cFindYAssignment_8; }
 		
 		//EBoolean
-		public RuleCall getFindYEBooleanParserRuleCall_6_0() { return cFindYEBooleanParserRuleCall_6_0; }
+		public RuleCall getFindYEBooleanParserRuleCall_8_0() { return cFindYEBooleanParserRuleCall_8_0; }
 		
 		//','
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
 		
-		//'findZ='
-		public Keyword getFindZKeyword_8() { return cFindZKeyword_8; }
+		//'findZ'
+		public Keyword getFindZKeyword_10() { return cFindZKeyword_10; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_11() { return cEqualsSignKeyword_11; }
 		
 		//findZ=EBoolean
-		public Assignment getFindZAssignment_9() { return cFindZAssignment_9; }
+		public Assignment getFindZAssignment_12() { return cFindZAssignment_12; }
 		
 		//EBoolean
-		public RuleCall getFindZEBooleanParserRuleCall_9_0() { return cFindZEBooleanParserRuleCall_9_0; }
+		public RuleCall getFindZEBooleanParserRuleCall_12_0() { return cFindZEBooleanParserRuleCall_12_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_10() { return cRightParenthesisKeyword_10; }
+		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
 	}
 	public class SequenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.Sequence");
@@ -565,28 +609,31 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cMoveAbsoluteAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cMoveAbsoluteKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cXKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Assignment cXAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cXINTTerminalRuleCall_3_0 = (RuleCall)cXAssignment_3.eContents().get(0);
-		private final Keyword cCommaKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Keyword cYKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cYAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cYINTTerminalRuleCall_6_0 = (RuleCall)cYAssignment_6.eContents().get(0);
-		private final Keyword cCommaKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cZKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cZAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cZINTTerminalRuleCall_9_0 = (RuleCall)cZAssignment_9.eContents().get(0);
-		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cSpeedKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cSpeedAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cSpeedEDoubleParserRuleCall_12_0 = (RuleCall)cSpeedAssignment_12.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cXINTTerminalRuleCall_4_0 = (RuleCall)cXAssignment_4.eContents().get(0);
+		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cYKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cYAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cYINTTerminalRuleCall_8_0 = (RuleCall)cYAssignment_8.eContents().get(0);
+		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cZKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cZAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cZINTTerminalRuleCall_11_0 = (RuleCall)cZAssignment_11.eContents().get(0);
+		private final Keyword cCommaKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Keyword cSpeedKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cEqualsSignKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Assignment cSpeedAssignment_15 = (Assignment)cGroup.eContents().get(15);
+		private final RuleCall cSpeedEDoubleParserRuleCall_15_0 = (RuleCall)cSpeedAssignment_15.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_16 = (Keyword)cGroup.eContents().get(16);
 		
 		//MoveAbsolute:
 		//	{MoveAbsolute}
-		//	'moveAbsolute(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
+		//	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MoveAbsolute} 'moveAbsolute(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')'
+		//{MoveAbsolute} 'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{MoveAbsolute}
@@ -595,53 +642,62 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'moveAbsolute('
 		public Keyword getMoveAbsoluteKeyword_1() { return cMoveAbsoluteKeyword_1; }
 		
-		//'x='
+		//'x'
 		public Keyword getXKeyword_2() { return cXKeyword_2; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
+		
 		//x=INT
-		public Assignment getXAssignment_3() { return cXAssignment_3; }
+		public Assignment getXAssignment_4() { return cXAssignment_4; }
 		
 		//INT
-		public RuleCall getXINTTerminalRuleCall_3_0() { return cXINTTerminalRuleCall_3_0; }
+		public RuleCall getXINTTerminalRuleCall_4_0() { return cXINTTerminalRuleCall_4_0; }
 		
 		//','
-		public Keyword getCommaKeyword_4() { return cCommaKeyword_4; }
+		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'y='
-		public Keyword getYKeyword_5() { return cYKeyword_5; }
+		//'y'
+		public Keyword getYKeyword_6() { return cYKeyword_6; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_7() { return cEqualsSignKeyword_7; }
 		
 		//y=INT
-		public Assignment getYAssignment_6() { return cYAssignment_6; }
+		public Assignment getYAssignment_8() { return cYAssignment_8; }
 		
 		//INT
-		public RuleCall getYINTTerminalRuleCall_6_0() { return cYINTTerminalRuleCall_6_0; }
+		public RuleCall getYINTTerminalRuleCall_8_0() { return cYINTTerminalRuleCall_8_0; }
 		
 		//','
-		public Keyword getCommaKeyword_7() { return cCommaKeyword_7; }
+		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
 		
 		//'z='
-		public Keyword getZKeyword_8() { return cZKeyword_8; }
+		public Keyword getZKeyword_10() { return cZKeyword_10; }
 		
 		//z=INT
-		public Assignment getZAssignment_9() { return cZAssignment_9; }
+		public Assignment getZAssignment_11() { return cZAssignment_11; }
 		
 		//INT
-		public RuleCall getZINTTerminalRuleCall_9_0() { return cZINTTerminalRuleCall_9_0; }
+		public RuleCall getZINTTerminalRuleCall_11_0() { return cZINTTerminalRuleCall_11_0; }
 		
 		//','
-		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
+		public Keyword getCommaKeyword_12() { return cCommaKeyword_12; }
 		
-		//'speed='
-		public Keyword getSpeedKeyword_11() { return cSpeedKeyword_11; }
+		//'speed'
+		public Keyword getSpeedKeyword_13() { return cSpeedKeyword_13; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_14() { return cEqualsSignKeyword_14; }
 		
 		//speed=EDouble
-		public Assignment getSpeedAssignment_12() { return cSpeedAssignment_12; }
+		public Assignment getSpeedAssignment_15() { return cSpeedAssignment_15; }
 		
 		//EDouble
-		public RuleCall getSpeedEDoubleParserRuleCall_12_0() { return cSpeedEDoubleParserRuleCall_12_0; }
+		public RuleCall getSpeedEDoubleParserRuleCall_15_0() { return cSpeedEDoubleParserRuleCall_15_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
+		public Keyword getRightParenthesisKeyword_16() { return cRightParenthesisKeyword_16; }
 	}
 	public class ExecuteSequenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.ExecuteSequence");
@@ -650,16 +706,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cExecuteSequenceKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cIdKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cIdAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cIdINTTerminalRuleCall_4_0 = (RuleCall)cIdAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cIdAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cIdINTTerminalRuleCall_5_0 = (RuleCall)cIdAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//ExecuteSequence:
 		//	{ExecuteSequence}
-		//	'executeSequence' '(' 'id=' id=INT ')';
+		//	'executeSequence' '(' 'id' '=' id=INT ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{ExecuteSequence} 'executeSequence' '(' 'id=' id=INT ')'
+		//{ExecuteSequence} 'executeSequence' '(' 'id' '=' id=INT ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{ExecuteSequence}
@@ -671,17 +728,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'id='
+		//'id'
 		public Keyword getIdKeyword_3() { return cIdKeyword_3; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
 		//id=INT
-		public Assignment getIdAssignment_4() { return cIdAssignment_4; }
+		public Assignment getIdAssignment_5() { return cIdAssignment_5; }
 		
 		//INT
-		public RuleCall getIdINTTerminalRuleCall_4_0() { return cIdINTTerminalRuleCall_4_0; }
+		public RuleCall getIdINTTerminalRuleCall_5_0() { return cIdINTTerminalRuleCall_5_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 	public class WaitElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.Wait");
@@ -690,16 +750,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cWaitKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cDurationKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cDurationAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDurationEDoubleParserRuleCall_4_0 = (RuleCall)cDurationAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDurationAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDurationEDoubleParserRuleCall_5_0 = (RuleCall)cDurationAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Wait:
 		//	{Wait}
-		//	'wait' '(' 'duration=' duration=EDouble ')';
+		//	'wait' '(' 'duration' '=' duration=EDouble ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Wait} 'wait' '(' 'duration=' duration=EDouble ')'
+		//{Wait} 'wait' '(' 'duration' '=' duration=EDouble ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{Wait}
@@ -711,17 +772,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'duration='
+		//'duration'
 		public Keyword getDurationKeyword_3() { return cDurationKeyword_3; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
 		//duration=EDouble
-		public Assignment getDurationAssignment_4() { return cDurationAssignment_4; }
+		public Assignment getDurationAssignment_5() { return cDurationAssignment_5; }
 		
 		//EDouble
-		public RuleCall getDurationEDoubleParserRuleCall_4_0() { return cDurationEDoubleParserRuleCall_4_0; }
+		public RuleCall getDurationEDoubleParserRuleCall_5_0() { return cDurationEDoubleParserRuleCall_5_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 	public class IsToolOnElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.IsToolOn");
@@ -730,16 +794,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cIsToolOnKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cPinKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cPinAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cPinINTTerminalRuleCall_4_0 = (RuleCall)cPinAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cPinAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cPinINTTerminalRuleCall_5_0 = (RuleCall)cPinAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//IsToolOn:
 		//	{IsToolOn}
-		//	'isToolOn' '(' 'pin=' pin=INT ')';
+		//	'isToolOn' '(' 'pin' '=' pin=INT ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IsToolOn} 'isToolOn' '(' 'pin=' pin=INT ')'
+		//{IsToolOn} 'isToolOn' '(' 'pin' '=' pin=INT ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{IsToolOn}
@@ -751,17 +816,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'pin='
+		//'pin'
 		public Keyword getPinKeyword_3() { return cPinKeyword_3; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
 		//pin=INT
-		public Assignment getPinAssignment_4() { return cPinAssignment_4; }
+		public Assignment getPinAssignment_5() { return cPinAssignment_5; }
 		
 		//INT
-		public RuleCall getPinINTTerminalRuleCall_4_0() { return cPinINTTerminalRuleCall_4_0; }
+		public RuleCall getPinINTTerminalRuleCall_5_0() { return cPinINTTerminalRuleCall_5_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 	public class SendMessageElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.SendMessage");
@@ -770,16 +838,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSendMessageKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cMessageKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMessageAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_4_0 = (RuleCall)cMessageAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMessageAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_5_0 = (RuleCall)cMessageAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//SendMessage:
 		//	{SendMessage}
-		//	'sendMessage' '(' 'message=' message=STRING ')';
+		//	'sendMessage' '(' 'message' '=' message=STRING ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{SendMessage} 'sendMessage' '(' 'message=' message=STRING ')'
+		//{SendMessage} 'sendMessage' '(' 'message' '=' message=STRING ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{SendMessage}
@@ -791,17 +860,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'message='
+		//'message'
 		public Keyword getMessageKeyword_3() { return cMessageKeyword_3; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
 		//message=STRING
-		public Assignment getMessageAssignment_4() { return cMessageAssignment_4; }
+		public Assignment getMessageAssignment_5() { return cMessageAssignment_5; }
 		
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_4_0() { return cMessageSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_5_0() { return cMessageSTRINGTerminalRuleCall_5_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 	public class RunFarmwareElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.RunFarmware");
@@ -810,16 +882,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cRunFarmwareKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cNameKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cNameSTRINGTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cNameAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cNameSTRINGTerminalRuleCall_5_0 = (RuleCall)cNameAssignment_5.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//RunFarmware:
 		//	{RunFarmware}
-		//	'runFarmware' '(' 'name=' name=STRING ')';
+		//	'runFarmware' '(' 'name' '=' name=STRING ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{RunFarmware} 'runFarmware' '(' 'name=' name=STRING ')'
+		//{RunFarmware} 'runFarmware' '(' 'name' '=' name=STRING ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{RunFarmware}
@@ -831,17 +904,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'name='
+		//'name'
 		public Keyword getNameKeyword_3() { return cNameKeyword_3; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
 		//name=STRING
-		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
+		public Assignment getNameAssignment_5() { return cNameAssignment_5; }
 		
 		//STRING
-		public RuleCall getNameSTRINGTerminalRuleCall_4_0() { return cNameSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getNameSTRINGTerminalRuleCall_5_0() { return cNameSTRINGTerminalRuleCall_5_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_5() { return cRightParenthesisKeyword_5; }
+		public Keyword getRightParenthesisKeyword_6() { return cRightParenthesisKeyword_6; }
 	}
 	public class TakePhotoElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.TakePhoto");
@@ -870,48 +946,56 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cScheduleKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Keyword cLeftParenthesisKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cSequenceKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSequenceAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSequenceSTRINGTerminalRuleCall_4_0 = (RuleCall)cSequenceAssignment_4.eContents().get(0);
-		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cStartDateKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cStartDateAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cStartDateSTRINGTerminalRuleCall_7_0 = (RuleCall)cStartDateAssignment_7.eContents().get(0);
-		private final Keyword cCommaKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cStartTimeKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cStartTimeAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cStartTimeSTRINGTerminalRuleCall_10_0 = (RuleCall)cStartTimeAssignment_10.eContents().get(0);
-		private final Keyword cCommaKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cRepeatKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Assignment cRepeatAssignment_13 = (Assignment)cGroup.eContents().get(13);
-		private final RuleCall cRepeatEBooleanParserRuleCall_13_0 = (RuleCall)cRepeatAssignment_13.eContents().get(0);
+		private final Keyword cEqualsSignKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cSequenceAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cSequenceSTRINGTerminalRuleCall_5_0 = (RuleCall)cSequenceAssignment_5.eContents().get(0);
+		private final Keyword cCommaKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cStartDateKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cEqualsSignKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cStartDateAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cStartDateSTRINGTerminalRuleCall_9_0 = (RuleCall)cStartDateAssignment_9.eContents().get(0);
+		private final Keyword cCommaKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cStartTimeKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Keyword cEqualsSignKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cStartTimeAssignment_13 = (Assignment)cGroup.eContents().get(13);
+		private final RuleCall cStartTimeSTRINGTerminalRuleCall_13_0 = (RuleCall)cStartTimeAssignment_13.eContents().get(0);
 		private final Keyword cCommaKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cRepeatFrequencyKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Assignment cRepeatFrequencyAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cRepeatFrequencyINTTerminalRuleCall_16_0 = (RuleCall)cRepeatFrequencyAssignment_16.eContents().get(0);
-		private final Keyword cCommaKeyword_17 = (Keyword)cGroup.eContents().get(17);
-		private final Keyword cRepeatUnitKeyword_18 = (Keyword)cGroup.eContents().get(18);
-		private final Assignment cRepeatUnitAssignment_19 = (Assignment)cGroup.eContents().get(19);
-		private final RuleCall cRepeatUnitSTRINGTerminalRuleCall_19_0 = (RuleCall)cRepeatUnitAssignment_19.eContents().get(0);
-		private final Keyword cCommaKeyword_20 = (Keyword)cGroup.eContents().get(20);
-		private final Keyword cEndDateKeyword_21 = (Keyword)cGroup.eContents().get(21);
-		private final Assignment cEndDateAssignment_22 = (Assignment)cGroup.eContents().get(22);
-		private final RuleCall cEndDateSTRINGTerminalRuleCall_22_0 = (RuleCall)cEndDateAssignment_22.eContents().get(0);
-		private final Keyword cCommaKeyword_23 = (Keyword)cGroup.eContents().get(23);
-		private final Keyword cEndTimeKeyword_24 = (Keyword)cGroup.eContents().get(24);
-		private final Assignment cEndTimeAssignment_25 = (Assignment)cGroup.eContents().get(25);
-		private final RuleCall cEndTimeSTRINGTerminalRuleCall_25_0 = (RuleCall)cEndTimeAssignment_25.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_26 = (Keyword)cGroup.eContents().get(26);
+		private final Keyword cRepeatKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Keyword cEqualsSignKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Assignment cRepeatAssignment_17 = (Assignment)cGroup.eContents().get(17);
+		private final RuleCall cRepeatEBooleanParserRuleCall_17_0 = (RuleCall)cRepeatAssignment_17.eContents().get(0);
+		private final Keyword cCommaKeyword_18 = (Keyword)cGroup.eContents().get(18);
+		private final Keyword cRepeatFrequencyKeyword_19 = (Keyword)cGroup.eContents().get(19);
+		private final Keyword cEqualsSignKeyword_20 = (Keyword)cGroup.eContents().get(20);
+		private final Assignment cRepeatFrequencyAssignment_21 = (Assignment)cGroup.eContents().get(21);
+		private final RuleCall cRepeatFrequencyINTTerminalRuleCall_21_0 = (RuleCall)cRepeatFrequencyAssignment_21.eContents().get(0);
+		private final Keyword cCommaKeyword_22 = (Keyword)cGroup.eContents().get(22);
+		private final Keyword cRepeatUnitKeyword_23 = (Keyword)cGroup.eContents().get(23);
+		private final Keyword cEqualsSignKeyword_24 = (Keyword)cGroup.eContents().get(24);
+		private final Assignment cRepeatUnitAssignment_25 = (Assignment)cGroup.eContents().get(25);
+		private final RuleCall cRepeatUnitSTRINGTerminalRuleCall_25_0 = (RuleCall)cRepeatUnitAssignment_25.eContents().get(0);
+		private final Keyword cCommaKeyword_26 = (Keyword)cGroup.eContents().get(26);
+		private final Keyword cEndDateKeyword_27 = (Keyword)cGroup.eContents().get(27);
+		private final Keyword cEqualsSignKeyword_28 = (Keyword)cGroup.eContents().get(28);
+		private final Assignment cEndDateAssignment_29 = (Assignment)cGroup.eContents().get(29);
+		private final RuleCall cEndDateSTRINGTerminalRuleCall_29_0 = (RuleCall)cEndDateAssignment_29.eContents().get(0);
+		private final Keyword cCommaKeyword_30 = (Keyword)cGroup.eContents().get(30);
+		private final Keyword cEndTimeKeyword_31 = (Keyword)cGroup.eContents().get(31);
+		private final Keyword cEqualsSignKeyword_32 = (Keyword)cGroup.eContents().get(32);
+		private final Assignment cEndTimeAssignment_33 = (Assignment)cGroup.eContents().get(33);
+		private final RuleCall cEndTimeSTRINGTerminalRuleCall_33_0 = (RuleCall)cEndTimeAssignment_33.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_34 = (Keyword)cGroup.eContents().get(34);
 		
 		//Schedule:
 		//	{Schedule}
-		//	'schedule' '(' 'sequence=' sequence=STRING ',' 'startDate=' startDate=STRING ',' 'startTime=' startTime=STRING ','
-		//	'repeat=' repeat=EBoolean ',' 'repeatFrequency=' repeatFrequency=INT ',' 'repeatUnit=' repeatUnit=STRING ','
-		//	'endDate=' endDate=STRING ',' 'endTime=' endTime=STRING ')';
+		//	'schedule' '(' 'sequence' '=' sequence=STRING ',' 'startDate' '=' startDate=STRING ',' 'startTime' '='
+		//	startTime=STRING ',' 'repeat' '=' repeat=EBoolean ',' 'repeatFrequency' '=' repeatFrequency=INT ',' 'repeatUnit' '='
+		//	repeatUnit=STRING ',' 'endDate' '=' endDate=STRING ',' 'endTime' '=' endTime=STRING ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{Schedule} 'schedule' '(' 'sequence=' sequence=STRING ',' 'startDate=' startDate=STRING ',' 'startTime='
-		//startTime=STRING ',' 'repeat=' repeat=EBoolean ',' 'repeatFrequency=' repeatFrequency=INT ',' 'repeatUnit='
-		//repeatUnit=STRING ',' 'endDate=' endDate=STRING ',' 'endTime=' endTime=STRING ')'
+		//{Schedule} 'schedule' '(' 'sequence' '=' sequence=STRING ',' 'startDate' '=' startDate=STRING ',' 'startTime' '='
+		//startTime=STRING ',' 'repeat' '=' repeat=EBoolean ',' 'repeatFrequency' '=' repeatFrequency=INT ',' 'repeatUnit' '='
+		//repeatUnit=STRING ',' 'endDate' '=' endDate=STRING ',' 'endTime' '=' endTime=STRING ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{Schedule}
@@ -923,101 +1007,125 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'('
 		public Keyword getLeftParenthesisKeyword_2() { return cLeftParenthesisKeyword_2; }
 		
-		//'sequence='
+		//'sequence'
 		public Keyword getSequenceKeyword_3() { return cSequenceKeyword_3; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_4() { return cEqualsSignKeyword_4; }
+		
 		//sequence=STRING
-		public Assignment getSequenceAssignment_4() { return cSequenceAssignment_4; }
+		public Assignment getSequenceAssignment_5() { return cSequenceAssignment_5; }
 		
 		//STRING
-		public RuleCall getSequenceSTRINGTerminalRuleCall_4_0() { return cSequenceSTRINGTerminalRuleCall_4_0; }
+		public RuleCall getSequenceSTRINGTerminalRuleCall_5_0() { return cSequenceSTRINGTerminalRuleCall_5_0; }
 		
 		//','
-		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
+		public Keyword getCommaKeyword_6() { return cCommaKeyword_6; }
 		
-		//'startDate='
-		public Keyword getStartDateKeyword_6() { return cStartDateKeyword_6; }
+		//'startDate'
+		public Keyword getStartDateKeyword_7() { return cStartDateKeyword_7; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_8() { return cEqualsSignKeyword_8; }
 		
 		//startDate=STRING
-		public Assignment getStartDateAssignment_7() { return cStartDateAssignment_7; }
+		public Assignment getStartDateAssignment_9() { return cStartDateAssignment_9; }
 		
 		//STRING
-		public RuleCall getStartDateSTRINGTerminalRuleCall_7_0() { return cStartDateSTRINGTerminalRuleCall_7_0; }
+		public RuleCall getStartDateSTRINGTerminalRuleCall_9_0() { return cStartDateSTRINGTerminalRuleCall_9_0; }
 		
 		//','
-		public Keyword getCommaKeyword_8() { return cCommaKeyword_8; }
+		public Keyword getCommaKeyword_10() { return cCommaKeyword_10; }
 		
-		//'startTime='
-		public Keyword getStartTimeKeyword_9() { return cStartTimeKeyword_9; }
+		//'startTime'
+		public Keyword getStartTimeKeyword_11() { return cStartTimeKeyword_11; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_12() { return cEqualsSignKeyword_12; }
 		
 		//startTime=STRING
-		public Assignment getStartTimeAssignment_10() { return cStartTimeAssignment_10; }
+		public Assignment getStartTimeAssignment_13() { return cStartTimeAssignment_13; }
 		
 		//STRING
-		public RuleCall getStartTimeSTRINGTerminalRuleCall_10_0() { return cStartTimeSTRINGTerminalRuleCall_10_0; }
-		
-		//','
-		public Keyword getCommaKeyword_11() { return cCommaKeyword_11; }
-		
-		//'repeat='
-		public Keyword getRepeatKeyword_12() { return cRepeatKeyword_12; }
-		
-		//repeat=EBoolean
-		public Assignment getRepeatAssignment_13() { return cRepeatAssignment_13; }
-		
-		//EBoolean
-		public RuleCall getRepeatEBooleanParserRuleCall_13_0() { return cRepeatEBooleanParserRuleCall_13_0; }
+		public RuleCall getStartTimeSTRINGTerminalRuleCall_13_0() { return cStartTimeSTRINGTerminalRuleCall_13_0; }
 		
 		//','
 		public Keyword getCommaKeyword_14() { return cCommaKeyword_14; }
 		
-		//'repeatFrequency='
-		public Keyword getRepeatFrequencyKeyword_15() { return cRepeatFrequencyKeyword_15; }
+		//'repeat'
+		public Keyword getRepeatKeyword_15() { return cRepeatKeyword_15; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_16() { return cEqualsSignKeyword_16; }
+		
+		//repeat=EBoolean
+		public Assignment getRepeatAssignment_17() { return cRepeatAssignment_17; }
+		
+		//EBoolean
+		public RuleCall getRepeatEBooleanParserRuleCall_17_0() { return cRepeatEBooleanParserRuleCall_17_0; }
+		
+		//','
+		public Keyword getCommaKeyword_18() { return cCommaKeyword_18; }
+		
+		//'repeatFrequency'
+		public Keyword getRepeatFrequencyKeyword_19() { return cRepeatFrequencyKeyword_19; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_20() { return cEqualsSignKeyword_20; }
 		
 		//repeatFrequency=INT
-		public Assignment getRepeatFrequencyAssignment_16() { return cRepeatFrequencyAssignment_16; }
+		public Assignment getRepeatFrequencyAssignment_21() { return cRepeatFrequencyAssignment_21; }
 		
 		//INT
-		public RuleCall getRepeatFrequencyINTTerminalRuleCall_16_0() { return cRepeatFrequencyINTTerminalRuleCall_16_0; }
+		public RuleCall getRepeatFrequencyINTTerminalRuleCall_21_0() { return cRepeatFrequencyINTTerminalRuleCall_21_0; }
 		
 		//','
-		public Keyword getCommaKeyword_17() { return cCommaKeyword_17; }
+		public Keyword getCommaKeyword_22() { return cCommaKeyword_22; }
 		
-		//'repeatUnit='
-		public Keyword getRepeatUnitKeyword_18() { return cRepeatUnitKeyword_18; }
+		//'repeatUnit'
+		public Keyword getRepeatUnitKeyword_23() { return cRepeatUnitKeyword_23; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_24() { return cEqualsSignKeyword_24; }
 		
 		//repeatUnit=STRING
-		public Assignment getRepeatUnitAssignment_19() { return cRepeatUnitAssignment_19; }
+		public Assignment getRepeatUnitAssignment_25() { return cRepeatUnitAssignment_25; }
 		
 		//STRING
-		public RuleCall getRepeatUnitSTRINGTerminalRuleCall_19_0() { return cRepeatUnitSTRINGTerminalRuleCall_19_0; }
+		public RuleCall getRepeatUnitSTRINGTerminalRuleCall_25_0() { return cRepeatUnitSTRINGTerminalRuleCall_25_0; }
 		
 		//','
-		public Keyword getCommaKeyword_20() { return cCommaKeyword_20; }
+		public Keyword getCommaKeyword_26() { return cCommaKeyword_26; }
 		
-		//'endDate='
-		public Keyword getEndDateKeyword_21() { return cEndDateKeyword_21; }
+		//'endDate'
+		public Keyword getEndDateKeyword_27() { return cEndDateKeyword_27; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_28() { return cEqualsSignKeyword_28; }
 		
 		//endDate=STRING
-		public Assignment getEndDateAssignment_22() { return cEndDateAssignment_22; }
+		public Assignment getEndDateAssignment_29() { return cEndDateAssignment_29; }
 		
 		//STRING
-		public RuleCall getEndDateSTRINGTerminalRuleCall_22_0() { return cEndDateSTRINGTerminalRuleCall_22_0; }
+		public RuleCall getEndDateSTRINGTerminalRuleCall_29_0() { return cEndDateSTRINGTerminalRuleCall_29_0; }
 		
 		//','
-		public Keyword getCommaKeyword_23() { return cCommaKeyword_23; }
+		public Keyword getCommaKeyword_30() { return cCommaKeyword_30; }
 		
-		//'endTime='
-		public Keyword getEndTimeKeyword_24() { return cEndTimeKeyword_24; }
+		//'endTime'
+		public Keyword getEndTimeKeyword_31() { return cEndTimeKeyword_31; }
+		
+		//'='
+		public Keyword getEqualsSignKeyword_32() { return cEqualsSignKeyword_32; }
 		
 		//endTime=STRING
-		public Assignment getEndTimeAssignment_25() { return cEndTimeAssignment_25; }
+		public Assignment getEndTimeAssignment_33() { return cEndTimeAssignment_33; }
 		
 		//STRING
-		public RuleCall getEndTimeSTRINGTerminalRuleCall_25_0() { return cEndTimeSTRINGTerminalRuleCall_25_0; }
+		public RuleCall getEndTimeSTRINGTerminalRuleCall_33_0() { return cEndTimeSTRINGTerminalRuleCall_33_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_26() { return cRightParenthesisKeyword_26; }
+		public Keyword getRightParenthesisKeyword_34() { return cRightParenthesisKeyword_34; }
 	}
 	public class ListPeripheralsElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.ListPeripherals");
@@ -1449,7 +1557,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//TurnOn:
 	//	{TurnOn}
-	//	'turnOn(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
+	//	'turnOn(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
 	public TurnOnElements getTurnOnAccess() {
 		return pTurnOn;
 	}
@@ -1460,7 +1568,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//TurnOff:
 	//	{TurnOff}
-	//	'turnOff(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
+	//	'turnOff(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
 	public TurnOffElements getTurnOffAccess() {
 		return pTurnOff;
 	}
@@ -1471,7 +1579,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//MoveRelative:
 	//	{MoveRelative}
-	//	'moveRelative(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
+	//	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')';
 	public MoveRelativeElements getMoveRelativeAccess() {
 		return pMoveRelative;
 	}
@@ -1482,7 +1590,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//FindHome:
 	//	{FindHome}
-	//	'findHome(' 'findX=' findX=EBoolean ',' 'findY=' findY=EBoolean ',' 'findZ=' findZ=EBoolean ')';
+	//	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 	public FindHomeElements getFindHomeAccess() {
 		return pFindHome;
 	}
@@ -1519,7 +1627,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//MoveAbsolute:
 	//	{MoveAbsolute}
-	//	'moveAbsolute(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
+	//	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')';
 	public MoveAbsoluteElements getMoveAbsoluteAccess() {
 		return pMoveAbsolute;
 	}
@@ -1530,7 +1638,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//ExecuteSequence:
 	//	{ExecuteSequence}
-	//	'executeSequence' '(' 'id=' id=INT ')';
+	//	'executeSequence' '(' 'id' '=' id=INT ')';
 	public ExecuteSequenceElements getExecuteSequenceAccess() {
 		return pExecuteSequence;
 	}
@@ -1541,7 +1649,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Wait:
 	//	{Wait}
-	//	'wait' '(' 'duration=' duration=EDouble ')';
+	//	'wait' '(' 'duration' '=' duration=EDouble ')';
 	public WaitElements getWaitAccess() {
 		return pWait;
 	}
@@ -1552,7 +1660,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//IsToolOn:
 	//	{IsToolOn}
-	//	'isToolOn' '(' 'pin=' pin=INT ')';
+	//	'isToolOn' '(' 'pin' '=' pin=INT ')';
 	public IsToolOnElements getIsToolOnAccess() {
 		return pIsToolOn;
 	}
@@ -1563,7 +1671,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//SendMessage:
 	//	{SendMessage}
-	//	'sendMessage' '(' 'message=' message=STRING ')';
+	//	'sendMessage' '(' 'message' '=' message=STRING ')';
 	public SendMessageElements getSendMessageAccess() {
 		return pSendMessage;
 	}
@@ -1574,7 +1682,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//RunFarmware:
 	//	{RunFarmware}
-	//	'runFarmware' '(' 'name=' name=STRING ')';
+	//	'runFarmware' '(' 'name' '=' name=STRING ')';
 	public RunFarmwareElements getRunFarmwareAccess() {
 		return pRunFarmware;
 	}
@@ -1596,9 +1704,9 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//Schedule:
 	//	{Schedule}
-	//	'schedule' '(' 'sequence=' sequence=STRING ',' 'startDate=' startDate=STRING ',' 'startTime=' startTime=STRING ','
-	//	'repeat=' repeat=EBoolean ',' 'repeatFrequency=' repeatFrequency=INT ',' 'repeatUnit=' repeatUnit=STRING ','
-	//	'endDate=' endDate=STRING ',' 'endTime=' endTime=STRING ')';
+	//	'schedule' '(' 'sequence' '=' sequence=STRING ',' 'startDate' '=' startDate=STRING ',' 'startTime' '='
+	//	startTime=STRING ',' 'repeat' '=' repeat=EBoolean ',' 'repeatFrequency' '=' repeatFrequency=INT ',' 'repeatUnit' '='
+	//	repeatUnit=STRING ',' 'endDate' '=' endDate=STRING ',' 'endTime' '=' endTime=STRING ')';
 	public ScheduleElements getScheduleAccess() {
 		return pSchedule;
 	}

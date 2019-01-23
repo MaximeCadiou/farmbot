@@ -26,19 +26,19 @@ BooleanExpression returns BooleanExpression:
 
 TurnOn returns TurnOn:
 	{TurnOn}
-	'turnOn(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
+	'turnOn(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
 
 TurnOff returns TurnOff:
 	{TurnOff}
-	'turnOff(' 'pin=' pin=INT ',' 'mode=' mode=STRING ')';
+	'turnOff(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
 
 MoveRelative returns MoveRelative:
 	{MoveRelative}
-	'moveRelative(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
+	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')';
 
 FindHome returns FindHome:
 	{FindHome}
-	'findHome(' 'findX=' findX=EBoolean ',' 'findY=' findY=EBoolean ',' 'findZ=' findZ=EBoolean ')';
+	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 
 Sequence returns Sequence:
 	{Sequence}
@@ -55,27 +55,27 @@ If returns If:
 
 MoveAbsolute returns MoveAbsolute:
 	{MoveAbsolute}
-	'moveAbsolute(' 'x=' x=INT ',' 'y=' y=INT ',' 'z=' z=INT ',' 'speed=' speed=EDouble ')';
+	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')';
 
 ExecuteSequence returns ExecuteSequence:
 	{ExecuteSequence}
-	'executeSequence' '(' 'id=' id=INT ')';
+	'executeSequence' '(' 'id' '=' id=INT ')';
 
 Wait returns Wait:
 	{Wait}
-	'wait' '(' 'duration=' duration=EDouble ')';
+	'wait' '(' 'duration' '=' duration=EDouble ')';
 
 IsToolOn returns IsToolOn:
 	{IsToolOn}
-	'isToolOn' '(' 'pin=' pin=INT ')';
+	'isToolOn' '(' 'pin' '=' pin=INT ')';
 
 SendMessage returns SendMessage:
 	{SendMessage}
-	'sendMessage' '(' 'message=' message=STRING ')';
+	'sendMessage' '(' 'message' '=' message=STRING ')';
 
 RunFarmware returns RunFarmware:
 	{RunFarmware}
-	'runFarmware' '(' 'name=' name=STRING ')';
+	'runFarmware' '(' 'name' '=' name=STRING ')';
 
 TakePhoto returns TakePhoto:
 	{TakePhoto}
@@ -83,7 +83,7 @@ TakePhoto returns TakePhoto:
 
 Schedule returns Schedule:
 	{Schedule}
-	'schedule' '(' 'sequence=' sequence=STRING ',' 'startDate=' startDate=STRING ',' 'startTime=' startTime=STRING ',' 'repeat=' repeat=EBoolean ','  'repeatFrequency=' repeatFrequency=INT ',' 'repeatUnit=' repeatUnit=STRING ',' 'endDate=' endDate=STRING ',' 'endTime=' endTime=STRING ')';
+	'schedule' '(' 'sequence' '=' sequence=STRING ',' 'startDate' '=' startDate=STRING ',' 'startTime' '=' startTime=STRING ',' 'repeat' '=' repeat=EBoolean ','  'repeatFrequency' '=' repeatFrequency=INT ',' 'repeatUnit' '=' repeatUnit=STRING ',' 'endDate' '=' endDate=STRING ',' 'endTime' '=' endTime=STRING ')';
 
 ListPeripherals returns ListPeripherals:
 	{ListPeripherals}

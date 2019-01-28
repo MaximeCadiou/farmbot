@@ -50,22 +50,18 @@ import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 public class MyFarmbotGenerator extends AbstractGenerator {
   @Override
   public void doGenerate(final Resource resource, final IFileSystemAccess2 fsa, final IGeneratorContext context) {
-    fsa.generateFile("Farmbot.java", 
+    fsa.generateFile("farmbot/Farmbot.java", 
       this.compile(IteratorExtensions.<Farmbot>head(Iterators.<Farmbot>filter(resource.getAllContents(), Farmbot.class))));
   }
   
   protected CharSequence _compile(final Farmbot farmbot) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("package ");
-    _builder.append(farmbot);
-    _builder.append(";");
-    _builder.newLineIfNotEmpty();
+    _builder.append("package farmbot;");
+    _builder.newLine();
     _builder.append("    ");
     _builder.newLine();
-    _builder.append("public class ");
-    _builder.append(Farmbot.class);
-    _builder.append(" {");
-    _builder.newLineIfNotEmpty();
+    _builder.append("public class Farmbot {");
+    _builder.newLine();
     _builder.append("\t");
     _builder.append("public static void main(String[] args) {");
     _builder.newLine();

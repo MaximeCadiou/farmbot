@@ -7,7 +7,7 @@ Bundle-Version: 1.0.0.qualifier
 Bundle-ClassPath: .
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-9
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
 Export-Package: farmbot.modeling.farmbot_modeling,
  farmbot.modeling.farmbot_modeling.impl,
  farmbot.modeling.farmbot_modeling.util

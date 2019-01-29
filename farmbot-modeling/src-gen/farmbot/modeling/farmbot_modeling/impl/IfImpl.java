@@ -6,8 +6,10 @@ import farmbot.modeling.farmbot_modeling.BooleanExpression;
 import farmbot.modeling.farmbot_modeling.ExecuteSequence;
 import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
 import farmbot.modeling.farmbot_modeling.If;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
@@ -267,7 +269,6 @@ public class IfImpl extends SequenceInstructionImpl implements If {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {

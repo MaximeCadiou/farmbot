@@ -52,9 +52,20 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	
 	def dispatch compile(Farmbot farmbot) ''' 
 	    package farmbot;
-	        
+	    
+	    import java.io.IOException;
+	    import java.net.HttpURLConnection;
+	    import java.net.MalformedURLException;
+	    import java.net.URL;
+	    import org.json.JSONObject;
+	    import org.json.JSONArray;
+	    import org.json.JSONException;
+	    
 	    public class Farmbot {
-	    	public static void main(String[] args) {
+		    static final String TOKEN = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1bmtub3duIiwic3ViIjo0NDAwLCJpYXQiOjE1NDgxNTMzMjcsImp0aSI6IjQ3NzBlZWQ3LWVmMzMtNDM4NC1iNmJlLWVmY2IzNzg4Y2UzMCIsImlzcyI6Ii8vbXkuZmFybWJvdC5pbzo0NDMiLCJleHAiOjE1NTE2MDkzMjcsIm1xdHQiOiJicmlzay1iZWFyLnJtcS5jbG91ZGFtcXAuY29tIiwiYm90IjoiZGV2aWNlXzQzOTUiLCJ2aG9zdCI6InZiemN4c3FyIiwibXF0dF93cyI6IndzczovL2JyaXNrLWJlYXIucm1xLmNsb3VkYW1xcC5jb206NDQzL3dzL21xdHQiLCJvc191cGRhdGVfc2VydmVyIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9mYXJtYm90L2Zhcm1ib3Rfb3MvcmVsZWFzZXMvbGF0ZXN0IiwiZndfdXBkYXRlX3NlcnZlciI6IkRFUFJFQ0FURUQiLCJpbnRlcmltX2VtYWlsIjoiam9yZGhhbi5tYWRlY0BnbWFpbC5jb20iLCJiZXRhX29zX3VwZGF0ZV9zZXJ2ZXIiOiJodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL0Zhcm1Cb3QvZmFybWJvdF9vcy9yZWxlYXNlcy8xNDU4MTg3MSJ9.WDBwreST76bU3MCybjV6WNY4EuZfcPuUzPcrNpZzpE448HmHwDjNrMTXJARostEVrafdVttlErA2B4AVJkuF9WFMCwJCu1wza6HyeucG8TBQLIrOQmunkIbXxzUKdXdb4A9egYlI24gupJha2CejpfhMj3ZWJiQsQ7gMK4vn5sAnETXimnumwtj8writ5uDsA5a74Gqur_kkRZEj_5YrsnCY9ggzWdkAvqizzdvjrI1fN3_LTFT_XrEYUbohECLCHZ-Qy3ibHQm6eMPFEv_4MVYHGg-yyYDBsc-M4itMLuIH_h7_hYbBuW_nQui7EdRR96v0cO0WBrOvswxczAQHiQ";
+		    static final String API_URL = "https://my.farm.bot/api";
+	     
+	    	public static void main(String[] args) throws JSONException {
 		    	«FOR instruction:farmbot.instructions»
 		            «instruction.compile»
 	    	    «ENDFOR»
@@ -73,21 +84,21 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	def dispatch compile(BooleanExpression booleanExpression) '''«booleanExpression.result»'''
 
 	def dispatch compile(TurnOn turnon) '''
-		System.out.println("I turned «turnon.pin» on with mode «turnon.mode»");
+		"I turned «turnon.pin» on with mode «turnon.mode»";
 	'''
 
 	def dispatch compile(TurnOff turnoff) '''
-		System.out.println("I turned «turnoff.pin» off with mode «turnoff.mode»");
+		"I turned «turnoff.pin» off with mode «turnoff.mode»";
 	'''
 
 	def dispatch compile(Move move) '''this expression is not supported: '''
 
 	def dispatch compile(MoveRelative move) '''
-		System.out.println("I moved relatively with coordinates («move.x», «move.y», «move.z») at speed «move.speed»");
+		"I moved relatively with coordinates («move.x», «move.y», «move.z») at speed «move.speed»";
 	'''
 
 	def dispatch compile(MoveAbsolute move) '''
-		System.out.println("I moved absolutely with coordinates («move.x», «move.y», «move.z») at speed «move.speed»");
+		"I moved absolutely with coordinates («move.x», «move.y», «move.z») at speed «move.speed»";
 	'''
 	
 	def dispatch compile(FindHome findHome)'''
@@ -103,9 +114,39 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	'''
 	
 	def dispatch compile(Sequence sequence) '''
+	    String body = new JSONObject()
+        .put("name", "«sequence.name»")
+        .put("body", new JSONArray() 
+    
 		«FOR instruction:sequence.sequenceInstructions»
-            «instruction.compile»
+			.put(«instruction.compile»)
         «ENDFOR»
+    
+    	).toString();    
+    	
+        System.out.println(body);
+        
+        URL url;
+        HttpURLConnection con;
+        try {
+			url = new URL(API_URL + "/sequences");
+			con = (HttpURLConnection) url.openConnection();
+	        con.setRequestMethod("POST");
+	        
+	        con.setRequestProperty("Content-Type", "application/json");
+	        con.setRequestProperty("Authorization", TOKEN);
+	        
+	        con.setDoOutput(true);
+	        con.getOutputStream().write(body.getBytes());
+	        con.getOutputStream().flush();
+	        con.getOutputStream().close();
+	        
+            System.out.println(con.getResponseMessage());
+	    } catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	'''
 
 	def dispatch compile(If ifExpression) '''
@@ -122,7 +163,11 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	'''
 
 	def dispatch compile(Wait wait) '''
-		System.out.println("I waited «wait.duration» seconds");
+		new JSONObject()
+			.put("kind", "wait")
+			.put("args", new JSONObject()
+				.put("milliseconds", «wait.duration»)
+			)
 	'''
 
 	def dispatch compile(IsToolOn isToolOn) '''true'''

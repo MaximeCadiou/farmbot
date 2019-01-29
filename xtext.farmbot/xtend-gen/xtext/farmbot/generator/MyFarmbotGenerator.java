@@ -58,12 +58,34 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("package farmbot;");
     _builder.newLine();
-    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("import java.io.IOException;");
+    _builder.newLine();
+    _builder.append("import java.net.HttpURLConnection;");
+    _builder.newLine();
+    _builder.append("import java.net.MalformedURLException;");
+    _builder.newLine();
+    _builder.append("import java.net.URL;");
+    _builder.newLine();
+    _builder.append("import org.json.JSONObject;");
+    _builder.newLine();
+    _builder.append("import org.json.JSONArray;");
+    _builder.newLine();
+    _builder.append("import org.json.JSONException;");
+    _builder.newLine();
     _builder.newLine();
     _builder.append("public class Farmbot {");
     _builder.newLine();
+    _builder.append("\t\t    ");
+    _builder.append("static final String TOKEN = \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1bmtub3duIiwic3ViIjo0NDAwLCJpYXQiOjE1NDgxNTMzMjcsImp0aSI6IjQ3NzBlZWQ3LWVmMzMtNDM4NC1iNmJlLWVmY2IzNzg4Y2UzMCIsImlzcyI6Ii8vbXkuZmFybWJvdC5pbzo0NDMiLCJleHAiOjE1NTE2MDkzMjcsIm1xdHQiOiJicmlzay1iZWFyLnJtcS5jbG91ZGFtcXAuY29tIiwiYm90IjoiZGV2aWNlXzQzOTUiLCJ2aG9zdCI6InZiemN4c3FyIiwibXF0dF93cyI6IndzczovL2JyaXNrLWJlYXIucm1xLmNsb3VkYW1xcC5jb206NDQzL3dzL21xdHQiLCJvc191cGRhdGVfc2VydmVyIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9mYXJtYm90L2Zhcm1ib3Rfb3MvcmVsZWFzZXMvbGF0ZXN0IiwiZndfdXBkYXRlX3NlcnZlciI6IkRFUFJFQ0FURUQiLCJpbnRlcmltX2VtYWlsIjoiam9yZGhhbi5tYWRlY0BnbWFpbC5jb20iLCJiZXRhX29zX3VwZGF0ZV9zZXJ2ZXIiOiJodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL0Zhcm1Cb3QvZmFybWJvdF9vcy9yZWxlYXNlcy8xNDU4MTg3MSJ9.WDBwreST76bU3MCybjV6WNY4EuZfcPuUzPcrNpZzpE448HmHwDjNrMTXJARostEVrafdVttlErA2B4AVJkuF9WFMCwJCu1wza6HyeucG8TBQLIrOQmunkIbXxzUKdXdb4A9egYlI24gupJha2CejpfhMj3ZWJiQsQ7gMK4vn5sAnETXimnumwtj8writ5uDsA5a74Gqur_kkRZEj_5YrsnCY9ggzWdkAvqizzdvjrI1fN3_LTFT_XrEYUbohECLCHZ-Qy3ibHQm6eMPFEv_4MVYHGg-yyYDBsc-M4itMLuIH_h7_hYbBuW_nQui7EdRR96v0cO0WBrOvswxczAQHiQ\";");
+    _builder.newLine();
+    _builder.append("\t\t    ");
+    _builder.append("static final String API_URL = \"https://my.farm.bot/api\";");
+    _builder.newLine();
+    _builder.append(" ");
+    _builder.newLine();
     _builder.append("\t");
-    _builder.append("public static void main(String[] args) {");
+    _builder.append("public static void main(String[] args) throws JSONException {");
     _builder.newLine();
     {
       EList<Instruction> _instructions = farmbot.getInstructions();
@@ -114,26 +136,26 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final TurnOn turnon) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I turned ");
+    _builder.append("\"I turned ");
     int _pin = turnon.getPin();
     _builder.append(_pin);
     _builder.append(" on with mode ");
     String _mode = turnon.getMode();
     _builder.append(_mode);
-    _builder.append("\");");
+    _builder.append("\";");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final TurnOff turnoff) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I turned ");
+    _builder.append("\"I turned ");
     int _pin = turnoff.getPin();
     _builder.append(_pin);
     _builder.append(" off with mode ");
     String _mode = turnoff.getMode();
     _builder.append(_mode);
-    _builder.append("\");");
+    _builder.append("\";");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -146,7 +168,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final MoveRelative move) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I moved relatively with coordinates (");
+    _builder.append("\"I moved relatively with coordinates (");
     int _x = move.getX();
     _builder.append(_x);
     _builder.append(", ");
@@ -158,14 +180,14 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(") at speed ");
     double _speed = move.getSpeed();
     _builder.append(_speed);
-    _builder.append("\");");
+    _builder.append("\";");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
   
   protected CharSequence _compile(final MoveAbsolute move) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I moved absolutely with coordinates (");
+    _builder.append("\"I moved absolutely with coordinates (");
     int _x = move.getX();
     _builder.append(_x);
     _builder.append(", ");
@@ -177,7 +199,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(") at speed ");
     double _speed = move.getSpeed();
     _builder.append(_speed);
-    _builder.append("\");");
+    _builder.append("\";");
     _builder.newLineIfNotEmpty();
     return _builder;
   }
@@ -210,14 +232,100 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final Sequence sequence) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t    ");
+    _builder.append("String body = new JSONObject()");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append(".put(\"name\", \"");
+    String _name = sequence.getName();
+    _builder.append(_name, "        ");
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append(".put(\"body\", new JSONArray() ");
+    _builder.newLine();
+    _builder.append("    ");
+    _builder.newLine();
     {
       EList<SequenceInstruction> _sequenceInstructions = sequence.getSequenceInstructions();
       for(final SequenceInstruction instruction : _sequenceInstructions) {
+        _builder.append(".put(");
         Object _compile = this.compile(instruction);
         _builder.append(_compile);
+        _builder.append(")");
         _builder.newLineIfNotEmpty();
       }
     }
+    _builder.append("    ");
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.append(").toString();    ");
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("System.out.println(body);");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("URL url;");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("HttpURLConnection con;");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("try {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("url = new URL(API_URL + \"/sequences\");");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("con = (HttpURLConnection) url.openConnection();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestMethod(\"POST\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Content-Type\", \"application/json\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Authorization\", TOKEN);");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setDoOutput(true);");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.getOutputStream().write(body.getBytes());");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.getOutputStream().flush();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.getOutputStream().close();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("System.out.println(con.getResponseMessage());");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("} catch (MalformedURLException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("} catch (IOException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
     return _builder;
   }
   
@@ -262,11 +370,23 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final Wait wait) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I waited ");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"wait\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"milliseconds\", ");
     double _duration = wait.getDuration();
-    _builder.append(_duration);
-    _builder.append(" seconds\");");
+    _builder.append(_duration, "\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   

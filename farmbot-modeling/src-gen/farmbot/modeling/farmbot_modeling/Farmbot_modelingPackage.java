@@ -122,16 +122,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int INSTRUCTION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.SequenceInstructionImpl <em>Sequence Instruction</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see farmbot.modeling.farmbot_modeling.impl.SequenceInstructionImpl
-	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getSequenceInstruction()
-	 * @generated
-	 */
-	int SEQUENCE_INSTRUCTION = 18;
-
-	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.CommandImpl <em>Command</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -507,6 +497,16 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEQUENCE_OPERATION_COUNT = INSTRUCTION_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.SequenceInstructionImpl <em>Sequence Instruction</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see farmbot.modeling.farmbot_modeling.impl.SequenceInstructionImpl
+	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getSequenceInstruction()
+	 * @generated
+	 */
+	int SEQUENCE_INSTRUCTION = 18;
 
 	/**
 	 * The number of structural features of the '<em>Sequence Instruction</em>' class.

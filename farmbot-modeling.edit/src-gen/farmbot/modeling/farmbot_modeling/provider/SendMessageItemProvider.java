@@ -45,6 +45,7 @@ public class SendMessageItemProvider extends SequenceCommandItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addMessagePropertyDescriptor(object);
+			addMessageTypePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -62,6 +63,22 @@ public class SendMessageItemProvider extends SequenceCommandItemProvider {
 						getString("_UI_PropertyDescriptor_description", "_UI_SendMessage_message_feature",
 								"_UI_SendMessage_type"),
 						Farmbot_modelingPackage.Literals.SEND_MESSAGE__MESSAGE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Message Type feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addMessageTypePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_SendMessage_messageType_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_SendMessage_messageType_feature",
+								"_UI_SendMessage_type"),
+						Farmbot_modelingPackage.Literals.SEND_MESSAGE__MESSAGE_TYPE, true, false, false,
 						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
@@ -112,6 +129,7 @@ public class SendMessageItemProvider extends SequenceCommandItemProvider {
 
 		switch (notification.getFeatureID(SendMessage.class)) {
 		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE:
+		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE_TYPE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -34,6 +34,7 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findX"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findY"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findZ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/speed"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Sequence/name"/>
@@ -59,6 +60,7 @@
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//SendMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//SendMessage/message"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//SendMessage/messageType"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//RunFarmware">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//RunFarmware/name"/>

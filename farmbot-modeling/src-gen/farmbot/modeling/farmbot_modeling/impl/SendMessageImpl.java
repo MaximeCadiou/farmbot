@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * </p>
  * <ul>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SendMessageImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.SendMessageImpl#getMessageType <em>Message Type</em>}</li>
  * </ul>
  *
  * @generated
@@ -44,6 +45,26 @@ public class SendMessageImpl extends SequenceCommandImpl implements SendMessage 
 	 * @ordered
 	 */
 	protected String message = MESSAGE_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String MESSAGE_TYPE_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getMessageType() <em>Message Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getMessageType()
+	 * @generated
+	 * @ordered
+	 */
+	protected String messageType = MESSAGE_TYPE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -91,11 +112,35 @@ public class SendMessageImpl extends SequenceCommandImpl implements SendMessage 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getMessageType() {
+		return messageType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setMessageType(String newMessageType) {
+		String oldMessageType = messageType;
+		messageType = newMessageType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE_TYPE,
+					oldMessageType, messageType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE:
 			return getMessage();
+		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE_TYPE:
+			return getMessageType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -110,6 +155,9 @@ public class SendMessageImpl extends SequenceCommandImpl implements SendMessage 
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE:
 			setMessage((String) newValue);
+			return;
+		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE_TYPE:
+			setMessageType((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -126,6 +174,9 @@ public class SendMessageImpl extends SequenceCommandImpl implements SendMessage 
 		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE:
 			setMessage(MESSAGE_EDEFAULT);
 			return;
+		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE_TYPE:
+			setMessageType(MESSAGE_TYPE_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -140,6 +191,8 @@ public class SendMessageImpl extends SequenceCommandImpl implements SendMessage 
 		switch (featureID) {
 		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE:
 			return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+		case Farmbot_modelingPackage.SEND_MESSAGE__MESSAGE_TYPE:
+			return MESSAGE_TYPE_EDEFAULT == null ? messageType != null : !MESSAGE_TYPE_EDEFAULT.equals(messageType);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -157,6 +210,8 @@ public class SendMessageImpl extends SequenceCommandImpl implements SendMessage 
 		StringBuilder result = new StringBuilder(super.toString());
 		result.append(" (message: ");
 		result.append(message);
+		result.append(", messageType: ");
+		result.append(messageType);
 		result.append(')');
 		return result.toString();
 	}

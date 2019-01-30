@@ -341,8 +341,11 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"args\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append(".put(\"speed\", 100)");
-    _builder.newLine();
+    _builder.append(".put(\"speed\", ");
+    double _speed = findHome.getSpeed();
+    _builder.append(_speed, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
     {
       boolean _isFindX = findHome.isFindX();
       if (_isFindX) {
@@ -570,8 +573,11 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(")");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append(".put(\"message_type\", success)");
-    _builder.newLine();
+    _builder.append(".put(\"message_type\", ");
+    String _messageType = message.getMessageType();
+    _builder.append(_messageType, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(")");
     _builder.newLine();

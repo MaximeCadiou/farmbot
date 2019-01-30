@@ -484,6 +484,15 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getFindHome_Speed() {
+		return (EAttribute) findHomeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getSequence() {
 		return sequenceEClass;
 	}
@@ -639,6 +648,15 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 */
 	public EAttribute getSendMessage_Message() {
 		return (EAttribute) sendMessageEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getSendMessage_MessageType() {
+		return (EAttribute) sendMessageEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -949,6 +967,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		createEAttribute(findHomeEClass, FIND_HOME__FIND_X);
 		createEAttribute(findHomeEClass, FIND_HOME__FIND_Y);
 		createEAttribute(findHomeEClass, FIND_HOME__FIND_Z);
+		createEAttribute(findHomeEClass, FIND_HOME__SPEED);
 
 		sequenceEClass = createEClass(SEQUENCE);
 		createEAttribute(sequenceEClass, SEQUENCE__NAME);
@@ -975,6 +994,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		sendMessageEClass = createEClass(SEND_MESSAGE);
 		createEAttribute(sendMessageEClass, SEND_MESSAGE__MESSAGE);
+		createEAttribute(sendMessageEClass, SEND_MESSAGE__MESSAGE_TYPE);
 
 		runFarmwareEClass = createEClass(RUN_FARMWARE);
 		createEAttribute(runFarmwareEClass, RUN_FARMWARE__NAME);
@@ -1117,6 +1137,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFindHome_FindZ(), ecorePackage.getEBoolean(), "findZ", null, 0, 1, FindHome.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFindHome_Speed(), ecorePackage.getEDouble(), "speed", null, 0, 1, FindHome.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1164,6 +1186,9 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getSendMessage_Message(), ecorePackage.getEString(), "message", null, 0, 1, SendMessage.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getSendMessage_MessageType(), ecorePackage.getEString(), "messageType", null, 0, 1,
+				SendMessage.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(runFarmwareEClass, RunFarmware.class, "RunFarmware", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

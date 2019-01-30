@@ -22,6 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#isFindX <em>Find X</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#isFindY <em>Find Y</em>}</li>
  *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#isFindZ <em>Find Z</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#getSpeed <em>Speed</em>}</li>
  * </ul>
  *
  * @generated
@@ -86,6 +87,26 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	 * @ordered
 	 */
 	protected boolean findZ = FIND_Z_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpeed()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final double SPEED_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getSpeed()
+	 * @generated
+	 * @ordered
+	 */
+	protected double speed = SPEED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -177,6 +198,28 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public double getSpeed() {
+		return speed;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setSpeed(double newSpeed) {
+		double oldSpeed = speed;
+		speed = newSpeed;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.FIND_HOME__SPEED, oldSpeed,
+					speed));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -186,6 +229,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 			return isFindY();
 		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
 			return isFindZ();
+		case Farmbot_modelingPackage.FIND_HOME__SPEED:
+			return getSpeed();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -206,6 +251,9 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 			return;
 		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
 			setFindZ((Boolean) newValue);
+			return;
+		case Farmbot_modelingPackage.FIND_HOME__SPEED:
+			setSpeed((Double) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -228,6 +276,9 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
 			setFindZ(FIND_Z_EDEFAULT);
 			return;
+		case Farmbot_modelingPackage.FIND_HOME__SPEED:
+			setSpeed(SPEED_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -246,6 +297,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 			return findY != FIND_Y_EDEFAULT;
 		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
 			return findZ != FIND_Z_EDEFAULT;
+		case Farmbot_modelingPackage.FIND_HOME__SPEED:
+			return speed != SPEED_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -267,6 +320,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 		result.append(findY);
 		result.append(", findZ: ");
 		result.append(findZ);
+		result.append(", speed: ");
+		result.append(speed);
 		result.append(')');
 		return result.toString();
 	}

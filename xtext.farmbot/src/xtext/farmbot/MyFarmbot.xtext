@@ -38,7 +38,7 @@ MoveRelative returns MoveRelative:
 
 FindHome returns FindHome:
 	{FindHome}
-	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
+	'findHome(' 'speed' '=' speed=EDouble ',' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 
 Sequence returns Sequence:
 	{Sequence}
@@ -71,7 +71,7 @@ IsToolOn returns IsToolOn:
 
 SendMessage returns SendMessage:
 	{SendMessage}
-	'sendMessage' '(' 'message' '=' message=STRING ')';
+	'sendMessage' '(' 'type' '=' messageType=STRING ',' 'message' '=' message=STRING ')';
 
 RunFarmware returns RunFarmware:
 	{RunFarmware}

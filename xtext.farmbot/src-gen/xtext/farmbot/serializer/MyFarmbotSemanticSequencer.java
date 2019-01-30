@@ -161,10 +161,12 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     FindHome returns FindHome
 	 *
 	 * Constraint:
-	 *     (findX=EBoolean findY=EBoolean findZ=EBoolean)
+	 *     (speed=EDouble findX=EBoolean findY=EBoolean findZ=EBoolean)
 	 */
 	protected void sequence_FindHome(ISerializationContext context, FindHome semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__SPEED) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__SPEED));
 			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_X) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_X));
 			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Y) == ValueTransient.YES)
@@ -173,9 +175,10 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Z));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_4_0(), semanticObject.isFindX());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_8_0(), semanticObject.isFindY());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_12_0(), semanticObject.isFindZ());
+		feeder.accept(grammarAccess.getFindHomeAccess().getSpeedEDoubleParserRuleCall_4_0(), semanticObject.getSpeed());
+		feeder.accept(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_8_0(), semanticObject.isFindX());
+		feeder.accept(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_12_0(), semanticObject.isFindY());
+		feeder.accept(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_16_0(), semanticObject.isFindZ());
 		feeder.finish();
 	}
 	
@@ -471,15 +474,18 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     SendMessage returns SendMessage
 	 *
 	 * Constraint:
-	 *     message=STRING
+	 *     (messageType=STRING message=STRING)
 	 */
 	protected void sequence_SendMessage(ISerializationContext context, SendMessage semanticObject) {
 		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.SEND_MESSAGE__MESSAGE_TYPE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.SEND_MESSAGE__MESSAGE_TYPE));
 			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.SEND_MESSAGE__MESSAGE) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.SEND_MESSAGE__MESSAGE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getSendMessageAccess().getMessageSTRINGTerminalRuleCall_5_0(), semanticObject.getMessage());
+		feeder.accept(grammarAccess.getSendMessageAccess().getMessageTypeSTRINGTerminalRuleCall_5_0(), semanticObject.getMessageType());
+		feeder.accept(grammarAccess.getSendMessageAccess().getMessageSTRINGTerminalRuleCall_9_0(), semanticObject.getMessage());
 		feeder.finish();
 	}
 	

@@ -435,13 +435,22 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int FIND_HOME__FIND_Z = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Speed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FIND_HOME__SPEED = SEQUENCE_COMMAND_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Find Home</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIND_HOME_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 3;
+	int FIND_HOME_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Find Home</em>' class.
@@ -822,13 +831,22 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SEND_MESSAGE__MESSAGE = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
 
 	/**
+	 * The feature id for the '<em><b>Message Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_MESSAGE__MESSAGE_TYPE = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
+
+	/**
 	 * The number of structural features of the '<em>Send Message</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int SEND_MESSAGE_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
+	int SEND_MESSAGE_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Send Message</em>' class.
@@ -1493,6 +1511,17 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EAttribute getFindHome_FindZ();
 
 	/**
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.FindHome#getSpeed <em>Speed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Speed</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.FindHome#getSpeed()
+	 * @see #getFindHome()
+	 * @generated
+	 */
+	EAttribute getFindHome_Speed();
+
+	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.Sequence <em>Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1681,6 +1710,17 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getSendMessage_Message();
+
+	/**
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.SendMessage#getMessageType <em>Message Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Message Type</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.SendMessage#getMessageType()
+	 * @see #getSendMessage()
+	 * @generated
+	 */
+	EAttribute getSendMessage_MessageType();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.RunFarmware <em>Run Farmware</em>}'.
@@ -2179,6 +2219,14 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EAttribute FIND_HOME__FIND_Z = eINSTANCE.getFindHome_FindZ();
 
 		/**
+		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute FIND_HOME__SPEED = eINSTANCE.getFindHome_Speed();
+
+		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl <em>Sequence</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2337,6 +2385,14 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute SEND_MESSAGE__MESSAGE = eINSTANCE.getSendMessage_Message();
+
+		/**
+		 * The meta object literal for the '<em><b>Message Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute SEND_MESSAGE__MESSAGE_TYPE = eINSTANCE.getSendMessage_MessageType();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.RunFarmwareImpl <em>Run Farmware</em>}' class.

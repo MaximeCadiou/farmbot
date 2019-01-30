@@ -144,7 +144,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		new JSONObject()
 			.put("kind", "find_home")
 			.put("args", new JSONObject()
-				.put("speed", 100)
+				.put("speed", «findHome.speed»)
 				«IF findHome.findX»
 					.put("axis": "x")
 				«ELSEIF findHome.findY»
@@ -225,7 +225,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 			.put("kind", "send_message")
 			.put("args", new JSONObject()
 				.put("message", «message.message»)
-				.put("message_type", success)
+				.put("message_type", «message.messageType»)
 			)
 	'''
 

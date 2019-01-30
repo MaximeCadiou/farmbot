@@ -47,6 +47,7 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 			addFindXPropertyDescriptor(object);
 			addFindYPropertyDescriptor(object);
 			addFindZPropertyDescriptor(object);
+			addSpeedPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -100,6 +101,22 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Speed feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addSpeedPropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_FindHome_speed_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_FindHome_speed_feature",
+								"_UI_FindHome_type"),
+						Farmbot_modelingPackage.Literals.FIND_HOME__SPEED, true, false, false,
+						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This returns FindHome.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -147,6 +164,7 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 		case Farmbot_modelingPackage.FIND_HOME__FIND_X:
 		case Farmbot_modelingPackage.FIND_HOME__FIND_Y:
 		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
+		case Farmbot_modelingPackage.FIND_HOME__SPEED:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

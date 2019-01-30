@@ -769,9 +769,9 @@ ruleFindHome returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getFindHomeAccess().getFindHomeKeyword_1());
 		}
-		otherlv_2='findX'
+		otherlv_2='speed'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFindHomeAccess().getFindXKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getFindHomeAccess().getSpeedKeyword_2());
 		}
 		otherlv_3='='
 		{
@@ -780,18 +780,18 @@ ruleFindHome returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getFindHomeAccess().getSpeedEDoubleParserRuleCall_4_0());
 				}
-				lv_findX_4_0=ruleEBoolean
+				lv_speed_4_0=ruleEDouble
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
 					}
 					set(
 						$current,
-						"findX",
-						lv_findX_4_0,
-						"xtext.farmbot.MyFarmbot.EBoolean");
+						"speed",
+						lv_speed_4_0,
+						"xtext.farmbot.MyFarmbot.EDouble");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -800,9 +800,9 @@ ruleFindHome returns [EObject current=null]
 		{
 			newLeafNode(otherlv_5, grammarAccess.getFindHomeAccess().getCommaKeyword_5());
 		}
-		otherlv_6='findY'
+		otherlv_6='findX'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFindHomeAccess().getFindYKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getFindHomeAccess().getFindXKeyword_6());
 		}
 		otherlv_7='='
 		{
@@ -811,17 +811,17 @@ ruleFindHome returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_8_0());
 				}
-				lv_findY_8_0=ruleEBoolean
+				lv_findX_8_0=ruleEBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
 					}
 					set(
 						$current,
-						"findY",
-						lv_findY_8_0,
+						"findX",
+						lv_findX_8_0,
 						"xtext.farmbot.MyFarmbot.EBoolean");
 					afterParserOrEnumRuleCall();
 				}
@@ -831,9 +831,9 @@ ruleFindHome returns [EObject current=null]
 		{
 			newLeafNode(otherlv_9, grammarAccess.getFindHomeAccess().getCommaKeyword_9());
 		}
-		otherlv_10='findZ'
+		otherlv_10='findY'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFindHomeAccess().getFindZKeyword_10());
+			newLeafNode(otherlv_10, grammarAccess.getFindHomeAccess().getFindYKeyword_10());
 		}
 		otherlv_11='='
 		{
@@ -842,9 +842,40 @@ ruleFindHome returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_12_0());
 				}
-				lv_findZ_12_0=ruleEBoolean
+				lv_findY_12_0=ruleEBoolean
+				{
+					if ($current==null) {
+						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
+					}
+					set(
+						$current,
+						"findY",
+						lv_findY_12_0,
+						"xtext.farmbot.MyFarmbot.EBoolean");
+					afterParserOrEnumRuleCall();
+				}
+			)
+		)
+		otherlv_13=','
+		{
+			newLeafNode(otherlv_13, grammarAccess.getFindHomeAccess().getCommaKeyword_13());
+		}
+		otherlv_14='findZ'
+		{
+			newLeafNode(otherlv_14, grammarAccess.getFindHomeAccess().getFindZKeyword_14());
+		}
+		otherlv_15='='
+		{
+			newLeafNode(otherlv_15, grammarAccess.getFindHomeAccess().getEqualsSignKeyword_15());
+		}
+		(
+			(
+				{
+					newCompositeNode(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_16_0());
+				}
+				lv_findZ_16_0=ruleEBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
@@ -852,15 +883,15 @@ ruleFindHome returns [EObject current=null]
 					set(
 						$current,
 						"findZ",
-						lv_findZ_12_0,
+						lv_findZ_16_0,
 						"xtext.farmbot.MyFarmbot.EBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_13=')'
+		otherlv_17=')'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getFindHomeAccess().getRightParenthesisKeyword_13());
+			newLeafNode(otherlv_17, grammarAccess.getFindHomeAccess().getRightParenthesisKeyword_17());
 		}
 	)
 ;
@@ -1408,9 +1439,9 @@ ruleSendMessage returns [EObject current=null]
 		{
 			newLeafNode(otherlv_2, grammarAccess.getSendMessageAccess().getLeftParenthesisKeyword_2());
 		}
-		otherlv_3='message'
+		otherlv_3='type'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getSendMessageAccess().getMessageKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getSendMessageAccess().getTypeKeyword_3());
 		}
 		otherlv_4='='
 		{
@@ -1418,9 +1449,39 @@ ruleSendMessage returns [EObject current=null]
 		}
 		(
 			(
-				lv_message_5_0=RULE_STRING
+				lv_messageType_5_0=RULE_STRING
 				{
-					newLeafNode(lv_message_5_0, grammarAccess.getSendMessageAccess().getMessageSTRINGTerminalRuleCall_5_0());
+					newLeafNode(lv_messageType_5_0, grammarAccess.getSendMessageAccess().getMessageTypeSTRINGTerminalRuleCall_5_0());
+				}
+				{
+					if ($current==null) {
+						$current = createModelElement(grammarAccess.getSendMessageRule());
+					}
+					setWithLastConsumed(
+						$current,
+						"messageType",
+						lv_messageType_5_0,
+						"org.eclipse.xtext.common.Terminals.STRING");
+				}
+			)
+		)
+		otherlv_6=','
+		{
+			newLeafNode(otherlv_6, grammarAccess.getSendMessageAccess().getCommaKeyword_6());
+		}
+		otherlv_7='message'
+		{
+			newLeafNode(otherlv_7, grammarAccess.getSendMessageAccess().getMessageKeyword_7());
+		}
+		otherlv_8='='
+		{
+			newLeafNode(otherlv_8, grammarAccess.getSendMessageAccess().getEqualsSignKeyword_8());
+		}
+		(
+			(
+				lv_message_9_0=RULE_STRING
+				{
+					newLeafNode(lv_message_9_0, grammarAccess.getSendMessageAccess().getMessageSTRINGTerminalRuleCall_9_0());
 				}
 				{
 					if ($current==null) {
@@ -1429,14 +1490,14 @@ ruleSendMessage returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"message",
-						lv_message_5_0,
+						lv_message_9_0,
 						"org.eclipse.xtext.common.Terminals.STRING");
 				}
 			)
 		)
-		otherlv_6=')'
+		otherlv_10=')'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getSendMessageAccess().getRightParenthesisKeyword_6());
+			newLeafNode(otherlv_10, grammarAccess.getSendMessageAccess().getRightParenthesisKeyword_10());
 		}
 	)
 ;

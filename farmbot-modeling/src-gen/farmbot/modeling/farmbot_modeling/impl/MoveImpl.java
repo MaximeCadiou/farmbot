@@ -4,9 +4,7 @@ package farmbot.modeling.farmbot_modeling.impl;
 
 import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
 import farmbot.modeling.farmbot_modeling.Move;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -96,7 +94,7 @@ public abstract class MoveImpl extends SequenceCommandImpl implements Move {
 	 * @generated
 	 * @ordered
 	 */
-	protected static final double SPEED_EDEFAULT = 0.0;
+	protected static final int SPEED_EDEFAULT = 0;
 
 	/**
 	 * The cached value of the '{@link #getSpeed() <em>Speed</em>}' attribute.
@@ -106,7 +104,7 @@ public abstract class MoveImpl extends SequenceCommandImpl implements Move {
 	 * @generated
 	 * @ordered
 	 */
-	protected double speed = SPEED_EDEFAULT;
+	protected int speed = SPEED_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -195,7 +193,7 @@ public abstract class MoveImpl extends SequenceCommandImpl implements Move {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public double getSpeed() {
+	public int getSpeed() {
 		return speed;
 	}
 
@@ -204,8 +202,8 @@ public abstract class MoveImpl extends SequenceCommandImpl implements Move {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setSpeed(double newSpeed) {
-		double oldSpeed = speed;
+	public void setSpeed(int newSpeed) {
+		int oldSpeed = speed;
 		speed = newSpeed;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.MOVE__SPEED, oldSpeed,
@@ -237,6 +235,7 @@ public abstract class MoveImpl extends SequenceCommandImpl implements Move {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -250,7 +249,7 @@ public abstract class MoveImpl extends SequenceCommandImpl implements Move {
 			setZ((Integer) newValue);
 			return;
 		case Farmbot_modelingPackage.MOVE__SPEED:
-			setSpeed((Double) newValue);
+			setSpeed((Integer) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);

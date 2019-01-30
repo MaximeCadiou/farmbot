@@ -342,15 +342,15 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Keyword cSpeedKeyword_14 = (Keyword)cGroup.eContents().get(14);
 		private final Keyword cEqualsSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
 		private final Assignment cSpeedAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cSpeedEDoubleParserRuleCall_16_0 = (RuleCall)cSpeedAssignment_16.eContents().get(0);
+		private final RuleCall cSpeedINTTerminalRuleCall_16_0 = (RuleCall)cSpeedAssignment_16.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//MoveRelative:
 		//	{MoveRelative}
-		//	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')';
+		//	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MoveRelative} 'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')'
+		//{MoveRelative} 'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{MoveRelative}
@@ -410,11 +410,11 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'='
 		public Keyword getEqualsSignKeyword_15() { return cEqualsSignKeyword_15; }
 		
-		//speed=EDouble
+		//speed=INT
 		public Assignment getSpeedAssignment_16() { return cSpeedAssignment_16; }
 		
-		//EDouble
-		public RuleCall getSpeedEDoubleParserRuleCall_16_0() { return cSpeedEDoubleParserRuleCall_16_0; }
+		//INT
+		public RuleCall getSpeedINTTerminalRuleCall_16_0() { return cSpeedINTTerminalRuleCall_16_0; }
 		
 		//')'
 		public Keyword getRightParenthesisKeyword_17() { return cRightParenthesisKeyword_17; }
@@ -424,35 +424,28 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Action cFindHomeAction_0 = (Action)cGroup.eContents().get(0);
 		private final Keyword cFindHomeKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Keyword cSpeedKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cFindXKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		private final Keyword cEqualsSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cSpeedAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cSpeedEDoubleParserRuleCall_4_0 = (RuleCall)cSpeedAssignment_4.eContents().get(0);
+		private final Assignment cFindXAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cFindXEBooleanParserRuleCall_4_0 = (RuleCall)cFindXAssignment_4.eContents().get(0);
 		private final Keyword cCommaKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Keyword cFindXKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Keyword cFindYKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Keyword cEqualsSignKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Assignment cFindXAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cFindXEBooleanParserRuleCall_8_0 = (RuleCall)cFindXAssignment_8.eContents().get(0);
+		private final Assignment cFindYAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cFindYEBooleanParserRuleCall_8_0 = (RuleCall)cFindYAssignment_8.eContents().get(0);
 		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Keyword cFindYKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cFindZKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cEqualsSignKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Assignment cFindYAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cFindYEBooleanParserRuleCall_12_0 = (RuleCall)cFindYAssignment_12.eContents().get(0);
-		private final Keyword cCommaKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cFindZKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Keyword cEqualsSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
-		private final Assignment cFindZAssignment_16 = (Assignment)cGroup.eContents().get(16);
-		private final RuleCall cFindZEBooleanParserRuleCall_16_0 = (RuleCall)cFindZAssignment_16.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_17 = (Keyword)cGroup.eContents().get(17);
+		private final Assignment cFindZAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cFindZEBooleanParserRuleCall_12_0 = (RuleCall)cFindZAssignment_12.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//FindHome:
 		//	{FindHome}
-		//	'findHome(' 'speed' '=' speed=EDouble ',' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '='
-		//	findZ=EBoolean ')';
+		//	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{FindHome} 'findHome(' 'speed' '=' speed=EDouble ',' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ','
-		//'findZ' '=' findZ=EBoolean ')'
+		//{FindHome} 'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{FindHome}
@@ -461,65 +454,50 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'findHome('
 		public Keyword getFindHomeKeyword_1() { return cFindHomeKeyword_1; }
 		
-		//'speed'
-		public Keyword getSpeedKeyword_2() { return cSpeedKeyword_2; }
+		//'findX'
+		public Keyword getFindXKeyword_2() { return cFindXKeyword_2; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_3() { return cEqualsSignKeyword_3; }
 		
-		//speed=EDouble
-		public Assignment getSpeedAssignment_4() { return cSpeedAssignment_4; }
+		//findX=EBoolean
+		public Assignment getFindXAssignment_4() { return cFindXAssignment_4; }
 		
-		//EDouble
-		public RuleCall getSpeedEDoubleParserRuleCall_4_0() { return cSpeedEDoubleParserRuleCall_4_0; }
+		//EBoolean
+		public RuleCall getFindXEBooleanParserRuleCall_4_0() { return cFindXEBooleanParserRuleCall_4_0; }
 		
 		//','
 		public Keyword getCommaKeyword_5() { return cCommaKeyword_5; }
 		
-		//'findX'
-		public Keyword getFindXKeyword_6() { return cFindXKeyword_6; }
+		//'findY'
+		public Keyword getFindYKeyword_6() { return cFindYKeyword_6; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_7() { return cEqualsSignKeyword_7; }
 		
-		//findX=EBoolean
-		public Assignment getFindXAssignment_8() { return cFindXAssignment_8; }
+		//findY=EBoolean
+		public Assignment getFindYAssignment_8() { return cFindYAssignment_8; }
 		
 		//EBoolean
-		public RuleCall getFindXEBooleanParserRuleCall_8_0() { return cFindXEBooleanParserRuleCall_8_0; }
+		public RuleCall getFindYEBooleanParserRuleCall_8_0() { return cFindYEBooleanParserRuleCall_8_0; }
 		
 		//','
 		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
 		
-		//'findY'
-		public Keyword getFindYKeyword_10() { return cFindYKeyword_10; }
+		//'findZ'
+		public Keyword getFindZKeyword_10() { return cFindZKeyword_10; }
 		
 		//'='
 		public Keyword getEqualsSignKeyword_11() { return cEqualsSignKeyword_11; }
 		
-		//findY=EBoolean
-		public Assignment getFindYAssignment_12() { return cFindYAssignment_12; }
-		
-		//EBoolean
-		public RuleCall getFindYEBooleanParserRuleCall_12_0() { return cFindYEBooleanParserRuleCall_12_0; }
-		
-		//','
-		public Keyword getCommaKeyword_13() { return cCommaKeyword_13; }
-		
-		//'findZ'
-		public Keyword getFindZKeyword_14() { return cFindZKeyword_14; }
-		
-		//'='
-		public Keyword getEqualsSignKeyword_15() { return cEqualsSignKeyword_15; }
-		
 		//findZ=EBoolean
-		public Assignment getFindZAssignment_16() { return cFindZAssignment_16; }
+		public Assignment getFindZAssignment_12() { return cFindZAssignment_12; }
 		
 		//EBoolean
-		public RuleCall getFindZEBooleanParserRuleCall_16_0() { return cFindZEBooleanParserRuleCall_16_0; }
+		public RuleCall getFindZEBooleanParserRuleCall_12_0() { return cFindZEBooleanParserRuleCall_12_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_17() { return cRightParenthesisKeyword_17; }
+		public Keyword getRightParenthesisKeyword_13() { return cRightParenthesisKeyword_13; }
 	}
 	public class SequenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.Sequence");
@@ -641,21 +619,22 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final RuleCall cYINTTerminalRuleCall_8_0 = (RuleCall)cYAssignment_8.eContents().get(0);
 		private final Keyword cCommaKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		private final Keyword cZKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Assignment cZAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cZINTTerminalRuleCall_11_0 = (RuleCall)cZAssignment_11.eContents().get(0);
-		private final Keyword cCommaKeyword_12 = (Keyword)cGroup.eContents().get(12);
-		private final Keyword cSpeedKeyword_13 = (Keyword)cGroup.eContents().get(13);
-		private final Keyword cEqualsSignKeyword_14 = (Keyword)cGroup.eContents().get(14);
-		private final Assignment cSpeedAssignment_15 = (Assignment)cGroup.eContents().get(15);
-		private final RuleCall cSpeedEDoubleParserRuleCall_15_0 = (RuleCall)cSpeedAssignment_15.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_16 = (Keyword)cGroup.eContents().get(16);
+		private final Keyword cEqualsSignKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cZAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cZINTTerminalRuleCall_12_0 = (RuleCall)cZAssignment_12.eContents().get(0);
+		private final Keyword cCommaKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Keyword cSpeedKeyword_14 = (Keyword)cGroup.eContents().get(14);
+		private final Keyword cEqualsSignKeyword_15 = (Keyword)cGroup.eContents().get(15);
+		private final Assignment cSpeedAssignment_16 = (Assignment)cGroup.eContents().get(16);
+		private final RuleCall cSpeedINTTerminalRuleCall_16_0 = (RuleCall)cSpeedAssignment_16.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_17 = (Keyword)cGroup.eContents().get(17);
 		
 		//MoveAbsolute:
 		//	{MoveAbsolute}
-		//	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')';
+		//	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{MoveAbsolute} 'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')'
+		//{MoveAbsolute} 'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')'
 		public Group getGroup() { return cGroup; }
 		
 		//{MoveAbsolute}
@@ -694,32 +673,35 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//','
 		public Keyword getCommaKeyword_9() { return cCommaKeyword_9; }
 		
-		//'z='
+		//'z'
 		public Keyword getZKeyword_10() { return cZKeyword_10; }
 		
+		//'='
+		public Keyword getEqualsSignKeyword_11() { return cEqualsSignKeyword_11; }
+		
 		//z=INT
-		public Assignment getZAssignment_11() { return cZAssignment_11; }
+		public Assignment getZAssignment_12() { return cZAssignment_12; }
 		
 		//INT
-		public RuleCall getZINTTerminalRuleCall_11_0() { return cZINTTerminalRuleCall_11_0; }
+		public RuleCall getZINTTerminalRuleCall_12_0() { return cZINTTerminalRuleCall_12_0; }
 		
 		//','
-		public Keyword getCommaKeyword_12() { return cCommaKeyword_12; }
+		public Keyword getCommaKeyword_13() { return cCommaKeyword_13; }
 		
 		//'speed'
-		public Keyword getSpeedKeyword_13() { return cSpeedKeyword_13; }
+		public Keyword getSpeedKeyword_14() { return cSpeedKeyword_14; }
 		
 		//'='
-		public Keyword getEqualsSignKeyword_14() { return cEqualsSignKeyword_14; }
+		public Keyword getEqualsSignKeyword_15() { return cEqualsSignKeyword_15; }
 		
-		//speed=EDouble
-		public Assignment getSpeedAssignment_15() { return cSpeedAssignment_15; }
+		//speed=INT
+		public Assignment getSpeedAssignment_16() { return cSpeedAssignment_16; }
 		
-		//EDouble
-		public RuleCall getSpeedEDoubleParserRuleCall_15_0() { return cSpeedEDoubleParserRuleCall_15_0; }
+		//INT
+		public RuleCall getSpeedINTTerminalRuleCall_16_0() { return cSpeedINTTerminalRuleCall_16_0; }
 		
 		//')'
-		public Keyword getRightParenthesisKeyword_16() { return cRightParenthesisKeyword_16; }
+		public Keyword getRightParenthesisKeyword_17() { return cRightParenthesisKeyword_17; }
 	}
 	public class ExecuteSequenceElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.ExecuteSequence");
@@ -1621,7 +1603,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//MoveRelative:
 	//	{MoveRelative}
-	//	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')';
+	//	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')';
 	public MoveRelativeElements getMoveRelativeAccess() {
 		return pMoveRelative;
 	}
@@ -1632,8 +1614,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//FindHome:
 	//	{FindHome}
-	//	'findHome(' 'speed' '=' speed=EDouble ',' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '='
-	//	findZ=EBoolean ')';
+	//	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 	public FindHomeElements getFindHomeAccess() {
 		return pFindHome;
 	}
@@ -1670,7 +1651,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	//MoveAbsolute:
 	//	{MoveAbsolute}
-	//	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')';
+	//	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')';
 	public MoveAbsoluteElements getMoveAbsoluteAccess() {
 		return pMoveAbsolute;
 	}

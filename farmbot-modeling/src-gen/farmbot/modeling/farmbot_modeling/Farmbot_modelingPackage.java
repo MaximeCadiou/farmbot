@@ -435,22 +435,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int FIND_HOME__FIND_Z = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
 
 	/**
-	 * The feature id for the '<em><b>Speed</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIND_HOME__SPEED = SEQUENCE_COMMAND_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>Find Home</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIND_HOME_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 4;
+	int FIND_HOME_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Find Home</em>' class.
@@ -1511,17 +1502,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EAttribute getFindHome_FindZ();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.FindHome#getSpeed <em>Speed</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Speed</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.FindHome#getSpeed()
-	 * @see #getFindHome()
-	 * @generated
-	 */
-	EAttribute getFindHome_Speed();
-
-	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.Sequence <em>Sequence</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2217,14 +2197,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute FIND_HOME__FIND_Z = eINSTANCE.getFindHome_FindZ();
-
-		/**
-		 * The meta object literal for the '<em><b>Speed</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FIND_HOME__SPEED = eINSTANCE.getFindHome_Speed();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl <em>Sequence</em>}' class.

@@ -484,15 +484,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFindHome_Speed() {
-		return (EAttribute) findHomeEClass.getEStructuralFeatures().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getSequence() {
 		return sequenceEClass;
 	}
@@ -967,7 +958,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		createEAttribute(findHomeEClass, FIND_HOME__FIND_X);
 		createEAttribute(findHomeEClass, FIND_HOME__FIND_Y);
 		createEAttribute(findHomeEClass, FIND_HOME__FIND_Z);
-		createEAttribute(findHomeEClass, FIND_HOME__SPEED);
 
 		sequenceEClass = createEClass(SEQUENCE);
 		createEAttribute(sequenceEClass, SEQUENCE__NAME);
@@ -1111,7 +1101,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getMove_Z(), ecorePackage.getEInt(), "z", null, 0, 1, Move.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getMove_Speed(), ecorePackage.getEDouble(), "speed", null, 0, 1, Move.class, !IS_TRANSIENT,
+		initEAttribute(getMove_Speed(), ecorePackage.getEInt(), "speed", null, 0, 1, Move.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(turnOnEClass, TurnOn.class, "TurnOn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1136,8 +1126,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		initEAttribute(getFindHome_FindY(), ecorePackage.getEBoolean(), "findY", null, 0, 1, FindHome.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getFindHome_FindZ(), ecorePackage.getEBoolean(), "findZ", null, 0, 1, FindHome.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFindHome_Speed(), ecorePackage.getEDouble(), "speed", null, 0, 1, FindHome.class,
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE,

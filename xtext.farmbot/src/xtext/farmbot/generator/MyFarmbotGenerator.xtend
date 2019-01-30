@@ -122,7 +122,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 			.put("args", new JSONObject()
 				.put("speed", «move.speed»)
 				.put("offset", new JSONObject()
-					.put("kind", "coordinates")
+					.put("kind", "coordinate")
 					.put("args", new JSONObject()
 						.put("x", «move.x»)
 						.put("y", «move.y»)
@@ -130,7 +130,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 					)
 				)
 				.put("location", new JSONObject()
-					.put("kind", "coordinates")
+					.put("kind", "coordinate")
 					.put("args", new JSONObject()
 						.put("x", «move.x»)
 						.put("y", «move.y»)
@@ -144,15 +144,15 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		new JSONObject()
 			.put("kind", "find_home")
 			.put("args", new JSONObject()
-				.put("speed", «findHome.speed»)
+				.put("speed", 100)
 				«IF findHome.findX»
-					.put("axis": "x")
+					.put("axis, "x")
 				«ELSEIF findHome.findY»
-					.put("axis": "y")
+					.put("axis", "y")
 				«ELSEIF findHome.findZ»
-					.put("axis": "z")
+					.put("axis", "z")
 				«ELSE»
-					.put("axis": "all")
+					.put("axis", "all")
 				«ENDIF»
 			)
 	'''
@@ -161,15 +161,15 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	    String body = new JSONObject()
         .put("name", "«sequence.name»")
         .put("body", new JSONArray() 
-    
+
 		«FOR instruction:sequence.sequenceInstructions»
 			.put(«instruction.compile»)
         «ENDFOR»
-    
+
     	).toString();    
-    	
+
         System.out.println(body);
-        
+		
         URL url;
         HttpURLConnection con;
         try {
@@ -224,8 +224,8 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		new JSONObject()
 			.put("kind", "send_message")
 			.put("args", new JSONObject()
-				.put("message", «message.message»)
-				.put("message_type", «message.messageType»)
+				.put("message", "«message.message»")
+				.put("message_type", "«message.messageType»")
 			)
 	'''
 
@@ -233,7 +233,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		new JSONObject()
 			.put("kind", "execute_script")
 			.put("args", new JSONObject()
-				.put("label", «farmware.name»)
+				.put("label", "«farmware.name»")
 			)
 	'''
 

@@ -214,7 +214,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append(".put(\"speed\", ");
-    double _speed = move.getSpeed();
+    int _speed = move.getSpeed();
     _builder.append(_speed, "\t\t");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
@@ -254,7 +254,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("\t\t");
     _builder.append(".put(\"speed\", ");
-    double _speed = move.getSpeed();
+    int _speed = move.getSpeed();
     _builder.append(_speed, "\t\t");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
@@ -262,7 +262,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"offset\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append(".put(\"kind\", \"coordinates\")");
+    _builder.append(".put(\"kind\", \"coordinate\")");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append(".put(\"args\", new JSONObject()");
@@ -295,7 +295,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"location\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t\t");
-    _builder.append(".put(\"kind\", \"coordinates\")");
+    _builder.append(".put(\"kind\", \"coordinate\")");
     _builder.newLine();
     _builder.append("\t\t\t");
     _builder.append(".put(\"args\", new JSONObject()");
@@ -341,32 +341,29 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"args\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append(".put(\"speed\", ");
-    double _speed = findHome.getSpeed();
-    _builder.append(_speed, "\t\t");
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
+    _builder.append(".put(\"speed\", 100)");
+    _builder.newLine();
     {
       boolean _isFindX = findHome.isFindX();
       if (_isFindX) {
         _builder.append("\t\t");
-        _builder.append(".put(\"axis\": \"x\")");
+        _builder.append(".put(\"axis, \"x\")");
         _builder.newLine();
       } else {
         boolean _isFindY = findHome.isFindY();
         if (_isFindY) {
           _builder.append("\t\t");
-          _builder.append(".put(\"axis\": \"y\")");
+          _builder.append(".put(\"axis\", \"y\")");
           _builder.newLine();
         } else {
           boolean _isFindZ = findHome.isFindZ();
           if (_isFindZ) {
             _builder.append("\t\t");
-            _builder.append(".put(\"axis\": \"z\")");
+            _builder.append(".put(\"axis\", \"z\")");
             _builder.newLine();
           } else {
             _builder.append("\t\t");
-            _builder.append(".put(\"axis\": \"all\")");
+            _builder.append(".put(\"axis\", \"all\")");
             _builder.newLine();
           }
         }
@@ -392,7 +389,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append("        ");
     _builder.append(".put(\"body\", new JSONArray() ");
     _builder.newLine();
-    _builder.append("    ");
     _builder.newLine();
     {
       EList<SequenceInstruction> _sequenceInstructions = sequence.getSequenceInstructions();
@@ -404,17 +400,14 @@ public class MyFarmbotGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("    ");
     _builder.newLine();
     _builder.append("    \t");
     _builder.append(").toString();    ");
     _builder.newLine();
-    _builder.append("    \t");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("System.out.println(body);");
     _builder.newLine();
-    _builder.append("        ");
     _builder.newLine();
     _builder.append("        ");
     _builder.append("URL url;");
@@ -567,16 +560,16 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"args\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append(".put(\"message\", ");
+    _builder.append(".put(\"message\", \"");
     String _message = message.getMessage();
     _builder.append(_message, "\t\t");
-    _builder.append(")");
+    _builder.append("\")");
     _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
-    _builder.append(".put(\"message_type\", ");
+    _builder.append(".put(\"message_type\", \"");
     String _messageType = message.getMessageType();
     _builder.append(_messageType, "\t\t");
-    _builder.append(")");
+    _builder.append("\")");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(")");
@@ -595,10 +588,10 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"args\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append(".put(\"label\", ");
+    _builder.append(".put(\"label\", \"");
     String _name = farmware.getName();
     _builder.append(_name, "\t\t");
-    _builder.append(")");
+    _builder.append("\")");
     _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(")");

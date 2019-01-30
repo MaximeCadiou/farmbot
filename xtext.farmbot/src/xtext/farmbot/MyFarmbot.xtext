@@ -34,11 +34,11 @@ TurnOff returns TurnOff:
 
 MoveRelative returns MoveRelative:
 	{MoveRelative}
-	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=EDouble ')';
+	'moveRelative(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT ')';
 
 FindHome returns FindHome:
 	{FindHome}
-	'findHome(' 'speed' '=' speed=EDouble ',' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
+	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
 
 Sequence returns Sequence:
 	{Sequence}
@@ -55,7 +55,7 @@ If returns If:
 
 MoveAbsolute returns MoveAbsolute:
 	{MoveAbsolute}
-	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z=' z=INT ',' 'speed' '=' speed=EDouble ')';
+	'moveAbsolute(' 'x' '=' x=INT ',' 'y' '=' y=INT ',' 'z' '=' z=INT ',' 'speed' '=' speed=INT')';
 
 ExecuteSequence returns ExecuteSequence:
 	{ExecuteSequence}

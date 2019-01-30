@@ -109,12 +109,12 @@ public interface Move extends SequenceCommand {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Speed</em>' attribute.
-	 * @see #setSpeed(double)
+	 * @see #setSpeed(int)
 	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getMove_Speed()
 	 * @model
 	 * @generated
 	 */
-	double getSpeed();
+	int getSpeed();
 
 	/**
 	 * Sets the value of the '{@link farmbot.modeling.farmbot_modeling.Move#getSpeed <em>Speed</em>}' attribute.
@@ -124,6 +124,6 @@ public interface Move extends SequenceCommand {
 	 * @see #getSpeed()
 	 * @generated
 	 */
-	void setSpeed(double value);
+	void setSpeed(int value);
 
 } // Move

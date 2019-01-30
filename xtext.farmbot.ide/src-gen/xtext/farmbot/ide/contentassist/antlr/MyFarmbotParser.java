@@ -71,10 +71,9 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMoveRelativeAccess().getYAssignment_8(), "rule__MoveRelative__YAssignment_8");
 			builder.put(grammarAccess.getMoveRelativeAccess().getZAssignment_12(), "rule__MoveRelative__ZAssignment_12");
 			builder.put(grammarAccess.getMoveRelativeAccess().getSpeedAssignment_16(), "rule__MoveRelative__SpeedAssignment_16");
-			builder.put(grammarAccess.getFindHomeAccess().getSpeedAssignment_4(), "rule__FindHome__SpeedAssignment_4");
-			builder.put(grammarAccess.getFindHomeAccess().getFindXAssignment_8(), "rule__FindHome__FindXAssignment_8");
-			builder.put(grammarAccess.getFindHomeAccess().getFindYAssignment_12(), "rule__FindHome__FindYAssignment_12");
-			builder.put(grammarAccess.getFindHomeAccess().getFindZAssignment_16(), "rule__FindHome__FindZAssignment_16");
+			builder.put(grammarAccess.getFindHomeAccess().getFindXAssignment_4(), "rule__FindHome__FindXAssignment_4");
+			builder.put(grammarAccess.getFindHomeAccess().getFindYAssignment_8(), "rule__FindHome__FindYAssignment_8");
+			builder.put(grammarAccess.getFindHomeAccess().getFindZAssignment_12(), "rule__FindHome__FindZAssignment_12");
 			builder.put(grammarAccess.getSequenceAccess().getNameAssignment_2(), "rule__Sequence__NameAssignment_2");
 			builder.put(grammarAccess.getSequenceAccess().getSequenceInstructionsAssignment_3(), "rule__Sequence__SequenceInstructionsAssignment_3");
 			builder.put(grammarAccess.getIfAccess().getBooleanExpressionAssignment_2(), "rule__If__BooleanExpressionAssignment_2");
@@ -82,8 +81,8 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getIfAccess().getElseAssignment_5_1(), "rule__If__ElseAssignment_5_1");
 			builder.put(grammarAccess.getMoveAbsoluteAccess().getXAssignment_4(), "rule__MoveAbsolute__XAssignment_4");
 			builder.put(grammarAccess.getMoveAbsoluteAccess().getYAssignment_8(), "rule__MoveAbsolute__YAssignment_8");
-			builder.put(grammarAccess.getMoveAbsoluteAccess().getZAssignment_11(), "rule__MoveAbsolute__ZAssignment_11");
-			builder.put(grammarAccess.getMoveAbsoluteAccess().getSpeedAssignment_15(), "rule__MoveAbsolute__SpeedAssignment_15");
+			builder.put(grammarAccess.getMoveAbsoluteAccess().getZAssignment_12(), "rule__MoveAbsolute__ZAssignment_12");
+			builder.put(grammarAccess.getMoveAbsoluteAccess().getSpeedAssignment_16(), "rule__MoveAbsolute__SpeedAssignment_16");
 			builder.put(grammarAccess.getExecuteSequenceAccess().getIdAssignment_5(), "rule__ExecuteSequence__IdAssignment_5");
 			builder.put(grammarAccess.getWaitAccess().getDurationAssignment_5(), "rule__Wait__DurationAssignment_5");
 			builder.put(grammarAccess.getIsToolOnAccess().getPinAssignment_5(), "rule__IsToolOn__PinAssignment_5");

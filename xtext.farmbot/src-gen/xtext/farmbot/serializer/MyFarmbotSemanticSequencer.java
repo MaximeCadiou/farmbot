@@ -161,12 +161,10 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     FindHome returns FindHome
 	 *
 	 * Constraint:
-	 *     (speed=EDouble findX=EBoolean findY=EBoolean findZ=EBoolean)
+	 *     (findX=EBoolean findY=EBoolean findZ=EBoolean)
 	 */
 	protected void sequence_FindHome(ISerializationContext context, FindHome semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__SPEED) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__SPEED));
 			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_X) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_X));
 			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Y) == ValueTransient.YES)
@@ -175,10 +173,9 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Z));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFindHomeAccess().getSpeedEDoubleParserRuleCall_4_0(), semanticObject.getSpeed());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_8_0(), semanticObject.isFindX());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_12_0(), semanticObject.isFindY());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_16_0(), semanticObject.isFindZ());
+		feeder.accept(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_4_0(), semanticObject.isFindX());
+		feeder.accept(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_8_0(), semanticObject.isFindY());
+		feeder.accept(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_12_0(), semanticObject.isFindZ());
 		feeder.finish();
 	}
 	
@@ -343,7 +340,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     MoveAbsolute returns MoveAbsolute
 	 *
 	 * Constraint:
-	 *     (x=INT y=INT z=INT speed=EDouble)
+	 *     (x=INT y=INT z=INT speed=INT)
 	 */
 	protected void sequence_MoveAbsolute(ISerializationContext context, MoveAbsolute semanticObject) {
 		if (errorAcceptor != null) {
@@ -359,8 +356,8 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getMoveAbsoluteAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
 		feeder.accept(grammarAccess.getMoveAbsoluteAccess().getYINTTerminalRuleCall_8_0(), semanticObject.getY());
-		feeder.accept(grammarAccess.getMoveAbsoluteAccess().getZINTTerminalRuleCall_11_0(), semanticObject.getZ());
-		feeder.accept(grammarAccess.getMoveAbsoluteAccess().getSpeedEDoubleParserRuleCall_15_0(), semanticObject.getSpeed());
+		feeder.accept(grammarAccess.getMoveAbsoluteAccess().getZINTTerminalRuleCall_12_0(), semanticObject.getZ());
+		feeder.accept(grammarAccess.getMoveAbsoluteAccess().getSpeedINTTerminalRuleCall_16_0(), semanticObject.getSpeed());
 		feeder.finish();
 	}
 	
@@ -373,7 +370,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     MoveRelative returns MoveRelative
 	 *
 	 * Constraint:
-	 *     (x=INT y=INT z=INT speed=EDouble)
+	 *     (x=INT y=INT z=INT speed=INT)
 	 */
 	protected void sequence_MoveRelative(ISerializationContext context, MoveRelative semanticObject) {
 		if (errorAcceptor != null) {
@@ -390,7 +387,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 		feeder.accept(grammarAccess.getMoveRelativeAccess().getXINTTerminalRuleCall_4_0(), semanticObject.getX());
 		feeder.accept(grammarAccess.getMoveRelativeAccess().getYINTTerminalRuleCall_8_0(), semanticObject.getY());
 		feeder.accept(grammarAccess.getMoveRelativeAccess().getZINTTerminalRuleCall_12_0(), semanticObject.getZ());
-		feeder.accept(grammarAccess.getMoveRelativeAccess().getSpeedEDoubleParserRuleCall_16_0(), semanticObject.getSpeed());
+		feeder.accept(grammarAccess.getMoveRelativeAccess().getSpeedINTTerminalRuleCall_16_0(), semanticObject.getSpeed());
 		feeder.finish();
 	}
 	

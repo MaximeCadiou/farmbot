@@ -718,20 +718,19 @@ ruleMoveRelative returns [EObject current=null]
 		}
 		(
 			(
+				lv_speed_16_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getMoveRelativeAccess().getSpeedEDoubleParserRuleCall_16_0());
+					newLeafNode(lv_speed_16_0, grammarAccess.getMoveRelativeAccess().getSpeedINTTerminalRuleCall_16_0());
 				}
-				lv_speed_16_0=ruleEDouble
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMoveRelativeRule());
+						$current = createModelElement(grammarAccess.getMoveRelativeRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"speed",
 						lv_speed_16_0,
-						"xtext.farmbot.MyFarmbot.EDouble");
-					afterParserOrEnumRuleCall();
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
@@ -769,9 +768,9 @@ ruleFindHome returns [EObject current=null]
 		{
 			newLeafNode(otherlv_1, grammarAccess.getFindHomeAccess().getFindHomeKeyword_1());
 		}
-		otherlv_2='speed'
+		otherlv_2='findX'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getFindHomeAccess().getSpeedKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getFindHomeAccess().getFindXKeyword_2());
 		}
 		otherlv_3='='
 		{
@@ -780,18 +779,18 @@ ruleFindHome returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getSpeedEDoubleParserRuleCall_4_0());
+					newCompositeNode(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_4_0());
 				}
-				lv_speed_4_0=ruleEDouble
+				lv_findX_4_0=ruleEBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
 					}
 					set(
 						$current,
-						"speed",
-						lv_speed_4_0,
-						"xtext.farmbot.MyFarmbot.EDouble");
+						"findX",
+						lv_findX_4_0,
+						"xtext.farmbot.MyFarmbot.EBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
@@ -800,9 +799,9 @@ ruleFindHome returns [EObject current=null]
 		{
 			newLeafNode(otherlv_5, grammarAccess.getFindHomeAccess().getCommaKeyword_5());
 		}
-		otherlv_6='findX'
+		otherlv_6='findY'
 		{
-			newLeafNode(otherlv_6, grammarAccess.getFindHomeAccess().getFindXKeyword_6());
+			newLeafNode(otherlv_6, grammarAccess.getFindHomeAccess().getFindYKeyword_6());
 		}
 		otherlv_7='='
 		{
@@ -811,17 +810,17 @@ ruleFindHome returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_8_0());
+					newCompositeNode(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_8_0());
 				}
-				lv_findX_8_0=ruleEBoolean
+				lv_findY_8_0=ruleEBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
 					}
 					set(
 						$current,
-						"findX",
-						lv_findX_8_0,
+						"findY",
+						lv_findY_8_0,
 						"xtext.farmbot.MyFarmbot.EBoolean");
 					afterParserOrEnumRuleCall();
 				}
@@ -831,9 +830,9 @@ ruleFindHome returns [EObject current=null]
 		{
 			newLeafNode(otherlv_9, grammarAccess.getFindHomeAccess().getCommaKeyword_9());
 		}
-		otherlv_10='findY'
+		otherlv_10='findZ'
 		{
-			newLeafNode(otherlv_10, grammarAccess.getFindHomeAccess().getFindYKeyword_10());
+			newLeafNode(otherlv_10, grammarAccess.getFindHomeAccess().getFindZKeyword_10());
 		}
 		otherlv_11='='
 		{
@@ -842,40 +841,9 @@ ruleFindHome returns [EObject current=null]
 		(
 			(
 				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_12_0());
+					newCompositeNode(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_12_0());
 				}
-				lv_findY_12_0=ruleEBoolean
-				{
-					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
-					}
-					set(
-						$current,
-						"findY",
-						lv_findY_12_0,
-						"xtext.farmbot.MyFarmbot.EBoolean");
-					afterParserOrEnumRuleCall();
-				}
-			)
-		)
-		otherlv_13=','
-		{
-			newLeafNode(otherlv_13, grammarAccess.getFindHomeAccess().getCommaKeyword_13());
-		}
-		otherlv_14='findZ'
-		{
-			newLeafNode(otherlv_14, grammarAccess.getFindHomeAccess().getFindZKeyword_14());
-		}
-		otherlv_15='='
-		{
-			newLeafNode(otherlv_15, grammarAccess.getFindHomeAccess().getEqualsSignKeyword_15());
-		}
-		(
-			(
-				{
-					newCompositeNode(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_16_0());
-				}
-				lv_findZ_16_0=ruleEBoolean
+				lv_findZ_12_0=ruleEBoolean
 				{
 					if ($current==null) {
 						$current = createModelElementForParent(grammarAccess.getFindHomeRule());
@@ -883,15 +851,15 @@ ruleFindHome returns [EObject current=null]
 					set(
 						$current,
 						"findZ",
-						lv_findZ_16_0,
+						lv_findZ_12_0,
 						"xtext.farmbot.MyFarmbot.EBoolean");
 					afterParserOrEnumRuleCall();
 				}
 			)
 		)
-		otherlv_17=')'
+		otherlv_13=')'
 		{
-			newLeafNode(otherlv_17, grammarAccess.getFindHomeAccess().getRightParenthesisKeyword_17());
+			newLeafNode(otherlv_13, grammarAccess.getFindHomeAccess().getRightParenthesisKeyword_13());
 		}
 	)
 ;
@@ -1155,15 +1123,19 @@ ruleMoveAbsolute returns [EObject current=null]
 		{
 			newLeafNode(otherlv_9, grammarAccess.getMoveAbsoluteAccess().getCommaKeyword_9());
 		}
-		otherlv_10='z='
+		otherlv_10='z'
 		{
 			newLeafNode(otherlv_10, grammarAccess.getMoveAbsoluteAccess().getZKeyword_10());
 		}
+		otherlv_11='='
+		{
+			newLeafNode(otherlv_11, grammarAccess.getMoveAbsoluteAccess().getEqualsSignKeyword_11());
+		}
 		(
 			(
-				lv_z_11_0=RULE_INT
+				lv_z_12_0=RULE_INT
 				{
-					newLeafNode(lv_z_11_0, grammarAccess.getMoveAbsoluteAccess().getZINTTerminalRuleCall_11_0());
+					newLeafNode(lv_z_12_0, grammarAccess.getMoveAbsoluteAccess().getZINTTerminalRuleCall_12_0());
 				}
 				{
 					if ($current==null) {
@@ -1172,45 +1144,44 @@ ruleMoveAbsolute returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"z",
-						lv_z_11_0,
+						lv_z_12_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_12=','
+		otherlv_13=','
 		{
-			newLeafNode(otherlv_12, grammarAccess.getMoveAbsoluteAccess().getCommaKeyword_12());
+			newLeafNode(otherlv_13, grammarAccess.getMoveAbsoluteAccess().getCommaKeyword_13());
 		}
-		otherlv_13='speed'
+		otherlv_14='speed'
 		{
-			newLeafNode(otherlv_13, grammarAccess.getMoveAbsoluteAccess().getSpeedKeyword_13());
+			newLeafNode(otherlv_14, grammarAccess.getMoveAbsoluteAccess().getSpeedKeyword_14());
 		}
-		otherlv_14='='
+		otherlv_15='='
 		{
-			newLeafNode(otherlv_14, grammarAccess.getMoveAbsoluteAccess().getEqualsSignKeyword_14());
+			newLeafNode(otherlv_15, grammarAccess.getMoveAbsoluteAccess().getEqualsSignKeyword_15());
 		}
 		(
 			(
+				lv_speed_16_0=RULE_INT
 				{
-					newCompositeNode(grammarAccess.getMoveAbsoluteAccess().getSpeedEDoubleParserRuleCall_15_0());
+					newLeafNode(lv_speed_16_0, grammarAccess.getMoveAbsoluteAccess().getSpeedINTTerminalRuleCall_16_0());
 				}
-				lv_speed_15_0=ruleEDouble
 				{
 					if ($current==null) {
-						$current = createModelElementForParent(grammarAccess.getMoveAbsoluteRule());
+						$current = createModelElement(grammarAccess.getMoveAbsoluteRule());
 					}
-					set(
+					setWithLastConsumed(
 						$current,
 						"speed",
-						lv_speed_15_0,
-						"xtext.farmbot.MyFarmbot.EDouble");
-					afterParserOrEnumRuleCall();
+						lv_speed_16_0,
+						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
 		)
-		otherlv_16=')'
+		otherlv_17=')'
 		{
-			newLeafNode(otherlv_16, grammarAccess.getMoveAbsoluteAccess().getRightParenthesisKeyword_16());
+			newLeafNode(otherlv_17, grammarAccess.getMoveAbsoluteAccess().getRightParenthesisKeyword_17());
 		}
 	)
 ;

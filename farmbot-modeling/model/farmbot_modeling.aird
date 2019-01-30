@@ -146,10 +146,6 @@
               <styles xmi:type="notation:FontStyle" xmi:id="_pOrC4RlpEemzyeloDFeRoA" fontName=".AppleSystemUIFont" fontHeight="8"/>
               <layoutConstraint xmi:type="notation:Location" xmi:id="_pOrC4hlpEemzyeloDFeRoA"/>
             </children>
-            <children xmi:type="notation:Node" xmi:id="_40cWMCSTEemCw4nDWqaOQQ" type="3010" element="_40L3gCSTEemCw4nDWqaOQQ">
-              <styles xmi:type="notation:FontStyle" xmi:id="_40cWMSSTEemCw4nDWqaOQQ" fontName=".AppleSystemUIFont" fontHeight="8"/>
-              <layoutConstraint xmi:type="notation:Location" xmi:id="_40cWMiSTEemCw4nDWqaOQQ"/>
-            </children>
             <styles xmi:type="notation:SortingStyle" xmi:id="_bRlEpRljEemzyeloDFeRoA"/>
             <styles xmi:type="notation:FilteringStyle" xmi:id="_bRlEphljEemzyeloDFeRoA"/>
           </children>
@@ -1005,7 +1001,7 @@
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
       </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_yHsugBloEemzyeloDFeRoA" name="speed : EDouble = 0.0" tooltipText="">
+      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_yHsugBloEemzyeloDFeRoA" name="speed : EInt" tooltipText="">
         <target xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//Move/speed"/>
         <semanticElements xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//Move/speed"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_1vO14BloEemzyeloDFeRoA" labelAlignment="LEFT">
@@ -1109,14 +1105,6 @@
         <target xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//FindHome/findZ"/>
         <semanticElements xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//FindHome/findZ"/>
         <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_pOjuIRlpEemzyeloDFeRoA" labelAlignment="LEFT">
-          <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
-        </ownedStyle>
-        <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>
-      </ownedElements>
-      <ownedElements xmi:type="diagram:DNodeListElement" xmi:id="_40L3gCSTEemCw4nDWqaOQQ" name="speed : EDouble = 0.0" tooltipText="">
-        <target xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//FindHome/speed"/>
-        <semanticElements xmi:type="ecore:EAttribute" href="farmbot_modeling.ecore#//FindHome/speed"/>
-        <ownedStyle xmi:type="diagram:BundledImage" xmi:id="_40MekCSTEemCw4nDWqaOQQ" labelAlignment="LEFT">
           <description xmi:type="style:BundledImageDescription" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']/@style"/>
         </ownedStyle>
         <actualMapping xmi:type="description_1:NodeMapping" href="platform:/plugin/org.eclipse.emf.ecoretools.design/description/ecore.odesign#//@ownedViewpoints[name='Design']/@ownedRepresentations[name='Entities']/@defaultLayer/@containerMappings[name='EC%20EClass']/@subNodeMappings[name='EC%20EAttribute']"/>

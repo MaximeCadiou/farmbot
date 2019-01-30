@@ -109,7 +109,7 @@ public class MoveItemProvider extends SequenceCommandItemProvider {
 						getResourceLocator(), getString("_UI_Move_speed_feature"),
 						getString("_UI_PropertyDescriptor_description", "_UI_Move_speed_feature", "_UI_Move_type"),
 						Farmbot_modelingPackage.Literals.MOVE__SPEED, true, false, false,
-						ItemPropertyDescriptor.REAL_VALUE_IMAGE, null, null));
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**

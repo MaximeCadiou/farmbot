@@ -136,27 +136,63 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final TurnOn turnon) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\"I turned ");
-    int _pin = turnon.getPin();
-    _builder.append(_pin);
-    _builder.append(" on with mode ");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"write_pin\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_mode\", ");
     String _mode = turnon.getMode();
-    _builder.append(_mode);
-    _builder.append("\";");
+    _builder.append(_mode, "\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_value\", 1)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_number\", ");
+    int _pin = turnon.getPin();
+    _builder.append(_pin, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final TurnOff turnoff) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\"I turned ");
-    int _pin = turnoff.getPin();
-    _builder.append(_pin);
-    _builder.append(" off with mode ");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"write_pin\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"pin_mode\", ");
     String _mode = turnoff.getMode();
-    _builder.append(_mode);
-    _builder.append("\";");
+    _builder.append(_mode, "\t\t\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"pin_value\", 1)");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"pin_number\", ");
+    int _pin = turnoff.getPin();
+    _builder.append(_pin, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
@@ -168,65 +204,174 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final MoveRelative move) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\"I moved relatively with coordinates (");
-    int _x = move.getX();
-    _builder.append(_x);
-    _builder.append(", ");
-    int _y = move.getY();
-    _builder.append(_y);
-    _builder.append(", ");
-    int _z = move.getZ();
-    _builder.append(_z);
-    _builder.append(") at speed ");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"move_relative\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"speed\", ");
     double _speed = move.getSpeed();
-    _builder.append(_speed);
-    _builder.append("\";");
+    _builder.append(_speed, "\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(".put(\"x\", ");
+    int _x = move.getX();
+    _builder.append(_x, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(".put(\"y\", ");
+    int _y = move.getY();
+    _builder.append(_y, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(".put(\"z\", ");
+    int _z = move.getZ();
+    _builder.append(_z, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final MoveAbsolute move) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\"I moved absolutely with coordinates (");
-    int _x = move.getX();
-    _builder.append(_x);
-    _builder.append(", ");
-    int _y = move.getY();
-    _builder.append(_y);
-    _builder.append(", ");
-    int _z = move.getZ();
-    _builder.append(_z);
-    _builder.append(") at speed ");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"move_absolute\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"speed\", ");
     double _speed = move.getSpeed();
-    _builder.append(_speed);
-    _builder.append("\";");
+    _builder.append(_speed, "\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(".put(\"offset\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"coordinates\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"x\", ");
+    int _x = move.getX();
+    _builder.append(_x, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"y\", ");
+    int _y = move.getY();
+    _builder.append(_y, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"z\", ");
+    int _z = move.getZ();
+    _builder.append(_z, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"location\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"coordinates\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"x\", ");
+    int _x_1 = move.getX();
+    _builder.append(_x_1, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"y\", ");
+    int _y_1 = move.getY();
+    _builder.append(_y_1, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"z\", ");
+    int _z_1 = move.getZ();
+    _builder.append(_z_1, "\t\t\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final FindHome findHome) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"find_home\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"speed\", 100)");
+    _builder.newLine();
     {
       boolean _isFindX = findHome.isFindX();
       if (_isFindX) {
-        _builder.append("System.out.println(\"I found home x coordinate: 0\");");
+        _builder.append("\t\t");
+        _builder.append(".put(\"axis\": \"x\")");
         _builder.newLine();
+      } else {
+        boolean _isFindY = findHome.isFindY();
+        if (_isFindY) {
+          _builder.append("\t\t");
+          _builder.append(".put(\"axis\": \"y\")");
+          _builder.newLine();
+        } else {
+          boolean _isFindZ = findHome.isFindZ();
+          if (_isFindZ) {
+            _builder.append("\t\t");
+            _builder.append(".put(\"axis\": \"z\")");
+            _builder.newLine();
+          } else {
+            _builder.append("\t\t");
+            _builder.append(".put(\"axis\": \"all\")");
+            _builder.newLine();
+          }
+        }
       }
     }
-    {
-      boolean _isFindY = findHome.isFindY();
-      if (_isFindY) {
-        _builder.append("System.out.println(\"I found home y coordinate: 0\");");
-        _builder.newLine();
-      }
-    }
-    {
-      boolean _isFindZ = findHome.isFindZ();
-      if (_isFindZ) {
-        _builder.append("System.out.println(\"I found home z coordinate: 0\");");
-        _builder.newLine();
-      }
-    }
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
@@ -360,11 +505,23 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final ExecuteSequence executeSequence) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I executed sequence ");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"execute\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"sequence_id\", ");
     int _id = executeSequence.getId();
-    _builder.append(_id);
-    _builder.append("\");");
+    _builder.append(_id, "\t\t\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
@@ -396,29 +553,65 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final SendMessage sendMessage) {
+  protected CharSequence _compile(final SendMessage message) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I sent the following message ");
-    String _message = sendMessage.getMessage();
-    _builder.append(_message);
-    _builder.append("\");");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"send_message\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"message\", ");
+    String _message = message.getMessage();
+    _builder.append(_message, "\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t");
+    _builder.append(".put(\"message_type\", success)");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
-  protected CharSequence _compile(final RunFarmware runFarmware) {
+  protected CharSequence _compile(final RunFarmware farmware) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I ran the farmware ");
-    String _name = runFarmware.getName();
-    _builder.append(_name);
-    _builder.append("\");");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"execute_script\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"label\", ");
+    String _name = farmware.getName();
+    _builder.append(_name, "\t\t");
+    _builder.append(")");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
     return _builder;
   }
   
   protected CharSequence _compile(final TakePhoto takePhoto) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I took a photo\");");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"take_photo\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(")");
     _builder.newLine();
     return _builder;
   }

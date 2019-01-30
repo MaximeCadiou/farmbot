@@ -84,33 +84,77 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	def dispatch compile(BooleanExpression booleanExpression) '''«booleanExpression.result»'''
 
 	def dispatch compile(TurnOn turnon) '''
-		"I turned «turnon.pin» on with mode «turnon.mode»";
+		new JSONObject()
+			.put("kind", "write_pin")
+			.put("args", new JSONObject()
+				.put("pin_mode", «turnon.mode»)
+				.put("pin_value", 1)
+				.put("pin_number", «turnon.pin»)
+			)
 	'''
 
 	def dispatch compile(TurnOff turnoff) '''
-		"I turned «turnoff.pin» off with mode «turnoff.mode»";
+		new JSONObject()
+					.put("kind", "write_pin")
+					.put("args", new JSONObject()
+						.put("pin_mode", «turnoff.mode»)
+						.put("pin_value", 1)
+						.put("pin_number", «turnoff.pin»)
+					)
 	'''
 
 	def dispatch compile(Move move) '''this expression is not supported: '''
 
 	def dispatch compile(MoveRelative move) '''
-		"I moved relatively with coordinates («move.x», «move.y», «move.z») at speed «move.speed»";
+		new JSONObject()
+			.put("kind", "move_relative")
+			.put("args", new JSONObject()
+				.put("speed", «move.speed»)
+				.put("x", «move.x»)
+				.put("y", «move.y»)
+				.put("z", «move.z»)
+			)
 	'''
 
 	def dispatch compile(MoveAbsolute move) '''
-		"I moved absolutely with coordinates («move.x», «move.y», «move.z») at speed «move.speed»";
+		new JSONObject()
+			.put("kind", "move_absolute")
+			.put("args", new JSONObject()
+				.put("speed", «move.speed»)
+				.put("offset", new JSONObject()
+					.put("kind", "coordinates")
+					.put("args", new JSONObject()
+						.put("x", «move.x»)
+						.put("y", «move.y»)
+						.put("z", «move.z»)
+					)
+				)
+				.put("location", new JSONObject()
+					.put("kind", "coordinates")
+					.put("args", new JSONObject()
+						.put("x", «move.x»)
+						.put("y", «move.y»)
+						.put("z", «move.z»)
+					)
+				)
+			)
 	'''
 	
 	def dispatch compile(FindHome findHome)'''
-		«IF findHome.findX»
-			System.out.println("I found home x coordinate: 0");
-		«ENDIF»
-		«IF findHome.findY»
-			System.out.println("I found home y coordinate: 0");
-		«ENDIF»
-		«IF findHome.findZ»
-			System.out.println("I found home z coordinate: 0");
-		«ENDIF»
+		new JSONObject()
+			.put("kind", "find_home")
+			.put("args", new JSONObject()
+				.put("speed", 100)
+				«IF findHome.findX»
+					.put("axis": "x")
+				«ELSEIF findHome.findY»
+					.put("axis": "y")
+				«ELSEIF findHome.findZ»
+					.put("axis": "z")
+				«ELSE»
+					.put("axis": "all")
+				«ENDIF»
+			)
 	'''
 	
 	def dispatch compile(Sequence sequence) '''
@@ -159,7 +203,11 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	'''
 
 	def dispatch compile(ExecuteSequence executeSequence) '''
-		System.out.println("I executed sequence «executeSequence.id»");
+		new JSONObject()
+					.put("kind", "execute")
+					.put("args", new JSONObject()
+						.put("sequence_id", «executeSequence.id»)
+					)
 	'''
 
 	def dispatch compile(Wait wait) '''
@@ -172,16 +220,28 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 	def dispatch compile(IsToolOn isToolOn) '''true'''
 
-	def dispatch compile(SendMessage sendMessage) '''
-		System.out.println("I sent the following message «sendMessage.message»");
+	def dispatch compile(SendMessage message) '''
+		new JSONObject()
+			.put("kind", "send_message")
+			.put("args", new JSONObject()
+				.put("message", «message.message»)
+				.put("message_type", success)
+			)
 	'''
 
-	def dispatch compile(RunFarmware runFarmware) '''
-		System.out.println("I ran the farmware «runFarmware.name»");
+	def dispatch compile(RunFarmware farmware) '''
+		new JSONObject()
+			.put("kind", "execute_script")
+			.put("args", new JSONObject()
+				.put("label", «farmware.name»)
+			)
 	'''
 
 	def dispatch compile(TakePhoto takePhoto) '''
-		System.out.println("I took a photo");
+		new JSONObject()
+					.put("kind", "take_photo")
+					.put("args", new JSONObject()
+					)
 	'''
 	
 	def dispatch compile(Schedule schedule) '''

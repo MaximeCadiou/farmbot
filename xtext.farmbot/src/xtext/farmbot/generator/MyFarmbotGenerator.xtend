@@ -26,7 +26,6 @@ import farmbot.modeling.farmbot_modeling.SendMessage
 import farmbot.modeling.farmbot_modeling.RunFarmware
 import farmbot.modeling.farmbot_modeling.TakePhoto
 import farmbot.modeling.farmbot_modeling.Schedule
-import farmbot.modeling.farmbot_modeling.ListPeripherals
 import farmbot.modeling.farmbot_modeling.ListSequences
 import farmbot.modeling.farmbot_modeling.IsEqualTo
 import farmbot.modeling.farmbot_modeling.IsGreaterThan
@@ -366,10 +365,6 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 
 
-
-	def dispatch compile(ListPeripherals listPeripherals) '''
-		System.out.println("Here is a list of the peripherals");
-	'''
 
 	def dispatch compile(ListSequences listSequences) '''
         try {

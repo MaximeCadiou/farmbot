@@ -15,7 +15,6 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
-import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.Move;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
@@ -839,13 +838,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final ListPeripherals listPeripherals) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"Here is a list of the peripherals\");");
-    _builder.newLine();
-    return _builder;
-  }
-  
   protected CharSequence _compile(final ListSequences listSequences) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("        ");
@@ -956,8 +948,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
       return _compile((Wait)move);
     } else if (move instanceof If) {
       return _compile((If)move);
-    } else if (move instanceof ListPeripherals) {
-      return _compile((ListPeripherals)move);
     } else if (move instanceof ListSequences) {
       return _compile((ListSequences)move);
     } else if (move instanceof Schedule) {

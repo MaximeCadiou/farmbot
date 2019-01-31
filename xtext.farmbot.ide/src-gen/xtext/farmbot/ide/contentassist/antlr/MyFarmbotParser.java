@@ -57,7 +57,6 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getRunFarmwareAccess().getGroup(), "rule__RunFarmware__Group__0");
 			builder.put(grammarAccess.getTakePhotoAccess().getGroup(), "rule__TakePhoto__Group__0");
 			builder.put(grammarAccess.getScheduleAccess().getGroup(), "rule__Schedule__Group__0");
-			builder.put(grammarAccess.getListPeripheralsAccess().getGroup(), "rule__ListPeripherals__Group__0");
 			builder.put(grammarAccess.getListSequencesAccess().getGroup(), "rule__ListSequences__Group__0");
 			builder.put(grammarAccess.getIsEqualToAccess().getGroup(), "rule__IsEqualTo__Group__0");
 			builder.put(grammarAccess.getIsEqualToAccess().getGroup_1_1(), "rule__IsEqualTo__Group_1_1__0");

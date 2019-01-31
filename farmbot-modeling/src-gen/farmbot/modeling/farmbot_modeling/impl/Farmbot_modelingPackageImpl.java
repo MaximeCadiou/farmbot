@@ -15,7 +15,6 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
-import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.Move;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
@@ -212,13 +211,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * @generated
 	 */
 	private EClass commandEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass listPeripheralsEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -809,15 +801,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getListPeripherals() {
-		return listPeripheralsEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getListSequences() {
 		return listSequencesEClass;
 	}
@@ -932,8 +915,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		commandEClass = createEClass(COMMAND);
 
-		listPeripheralsEClass = createEClass(LIST_PERIPHERALS);
-
 		listSequencesEClass = createEClass(LIST_SEQUENCES);
 	}
 
@@ -988,7 +969,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		isLowerThanEClass.getESuperTypes().add(this.getBooleanExpression());
 		scheduleEClass.getESuperTypes().add(this.getCommand());
 		commandEClass.getESuperTypes().add(this.getInstruction());
-		listPeripheralsEClass.getESuperTypes().add(this.getCommand());
 		listSequencesEClass.getESuperTypes().add(this.getCommand());
 
 		// Initialize classes, features, and operations; add parameters
@@ -1132,9 +1112,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(commandEClass, Command.class, "Command", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(listPeripheralsEClass, ListPeripherals.class, "ListPeripherals", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(listSequencesEClass, ListSequences.class, "ListSequences", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

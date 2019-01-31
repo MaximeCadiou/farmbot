@@ -13,7 +13,6 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
-import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
 import farmbot.modeling.farmbot_modeling.MoveRelative;
@@ -74,9 +73,6 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case Farmbot_modelingPackage.IS_NOT_EQUAL_TO:
 				sequence_IsNotEqualTo(context, (IsNotEqualTo) semanticObject); 
-				return; 
-			case Farmbot_modelingPackage.LIST_PERIPHERALS:
-				sequence_ListPeripherals(context, (ListPeripherals) semanticObject); 
 				return; 
 			case Farmbot_modelingPackage.LIST_SEQUENCES:
 				sequence_ListSequences(context, (ListSequences) semanticObject); 
@@ -238,20 +234,6 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ((axe=STRING | pinNumber=INT) value=INT)
 	 */
 	protected void sequence_IsNotEqualTo(ISerializationContext context, IsNotEqualTo semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Instruction returns ListPeripherals
-	 *     Command returns ListPeripherals
-	 *     ListPeripherals returns ListPeripherals
-	 *
-	 * Constraint:
-	 *     {ListPeripherals}
-	 */
-	protected void sequence_ListPeripherals(ISerializationContext context, ListPeripherals semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

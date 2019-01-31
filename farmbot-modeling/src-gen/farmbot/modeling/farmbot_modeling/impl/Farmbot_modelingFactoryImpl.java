@@ -92,8 +92,6 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 			return createIsLowerThan();
 		case Farmbot_modelingPackage.SCHEDULE:
 			return createSchedule();
-		case Farmbot_modelingPackage.LIST_PERIPHERALS:
-			return createListPeripherals();
 		case Farmbot_modelingPackage.LIST_SEQUENCES:
 			return createListSequences();
 		default:
@@ -279,16 +277,6 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 	public Schedule createSchedule() {
 		ScheduleImpl schedule = new ScheduleImpl();
 		return schedule;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public ListPeripherals createListPeripherals() {
-		ListPeripheralsImpl listPeripherals = new ListPeripheralsImpl();
-		return listPeripherals;
 	}
 
 	/**

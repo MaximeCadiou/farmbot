@@ -1206,34 +1206,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int SCHEDULE_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.ListPeripheralsImpl <em>List Peripherals</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see farmbot.modeling.farmbot_modeling.impl.ListPeripheralsImpl
-	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListPeripherals()
-	 * @generated
-	 */
-	int LIST_PERIPHERALS = 24;
-
-	/**
-	 * The number of structural features of the '<em>List Peripherals</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_PERIPHERALS_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of operations of the '<em>List Peripherals</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int LIST_PERIPHERALS_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.ListSequencesImpl <em>List Sequences</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1241,7 +1213,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListSequences()
 	 * @generated
 	 */
-	int LIST_SEQUENCES = 25;
+	int LIST_SEQUENCES = 24;
 
 	/**
 	 * The number of structural features of the '<em>List Sequences</em>' class.
@@ -1865,16 +1837,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getCommand();
 
 	/**
-	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.ListPeripherals <em>List Peripherals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>List Peripherals</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.ListPeripherals
-	 * @generated
-	 */
-	EClass getListPeripherals();
-
-	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.ListSequences <em>List Sequences</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2410,16 +2372,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass COMMAND = eINSTANCE.getCommand();
-
-		/**
-		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.ListPeripheralsImpl <em>List Peripherals</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see farmbot.modeling.farmbot_modeling.impl.ListPeripheralsImpl
-		 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListPeripherals()
-		 * @generated
-		 */
-		EClass LIST_PERIPHERALS = eINSTANCE.getListPeripherals();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.ListSequencesImpl <em>List Sequences</em>}' class.

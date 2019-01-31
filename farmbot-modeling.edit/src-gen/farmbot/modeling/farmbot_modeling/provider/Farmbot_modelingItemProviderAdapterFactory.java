@@ -487,29 +487,6 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.ListPeripherals} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected ListPeripheralsItemProvider listPeripheralsItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link farmbot.modeling.farmbot_modeling.ListPeripherals}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createListPeripheralsAdapter() {
-		if (listPeripheralsItemProvider == null) {
-			listPeripheralsItemProvider = new ListPeripheralsItemProvider(this);
-		}
-
-		return listPeripheralsItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.ListSequences} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -667,8 +644,6 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 			isLowerThanItemProvider.dispose();
 		if (scheduleItemProvider != null)
 			scheduleItemProvider.dispose();
-		if (listPeripheralsItemProvider != null)
-			listPeripheralsItemProvider.dispose();
 		if (listSequencesItemProvider != null)
 			listSequencesItemProvider.dispose();
 	}

@@ -524,31 +524,6 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-// Entry rule entryRuleListPeripherals
-entryRuleListPeripherals
-:
-{ before(grammarAccess.getListPeripheralsRule()); }
-	 ruleListPeripherals
-{ after(grammarAccess.getListPeripheralsRule()); } 
-	 EOF 
-;
-
-// Rule ListPeripherals
-ruleListPeripherals 
-	@init {
-		int stackSize = keepStackSize();
-	}
-	:
-	(
-		{ before(grammarAccess.getListPeripheralsAccess().getGroup()); }
-		(rule__ListPeripherals__Group__0)
-		{ after(grammarAccess.getListPeripheralsAccess().getGroup()); }
-	)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
 // Entry rule entryRuleListSequences
 entryRuleListSequences
 :
@@ -763,15 +738,9 @@ rule__Command__Alternatives
 	)
 	|
 	(
-		{ before(grammarAccess.getCommandAccess().getListPeripheralsParserRuleCall_1()); }
-		ruleListPeripherals
-		{ after(grammarAccess.getCommandAccess().getListPeripheralsParserRuleCall_1()); }
-	)
-	|
-	(
-		{ before(grammarAccess.getCommandAccess().getListSequencesParserRuleCall_2()); }
+		{ before(grammarAccess.getCommandAccess().getListSequencesParserRuleCall_1()); }
 		ruleListSequences
-		{ after(grammarAccess.getCommandAccess().getListSequencesParserRuleCall_2()); }
+		{ after(grammarAccess.getCommandAccess().getListSequencesParserRuleCall_1()); }
 	)
 ;
 finally {
@@ -5212,60 +5181,6 @@ rule__Schedule__Group__34__Impl
 	{ before(grammarAccess.getScheduleAccess().getRightParenthesisKeyword_34()); }
 	')'
 	{ after(grammarAccess.getScheduleAccess().getRightParenthesisKeyword_34()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-
-rule__ListPeripherals__Group__0
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ListPeripherals__Group__0__Impl
-	rule__ListPeripherals__Group__1
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ListPeripherals__Group__0__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getListPeripheralsAccess().getListPeripheralsAction_0()); }
-	()
-	{ after(grammarAccess.getListPeripheralsAccess().getListPeripheralsAction_0()); }
-)
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ListPeripherals__Group__1
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-	rule__ListPeripherals__Group__1__Impl
-;
-finally {
-	restoreStackSize(stackSize);
-}
-
-rule__ListPeripherals__Group__1__Impl
-	@init {
-		int stackSize = keepStackSize();
-	}
-:
-(
-	{ before(grammarAccess.getListPeripheralsAccess().getListPeripheralsKeyword_1()); }
-	'listPeripherals()'
-	{ after(grammarAccess.getListPeripheralsAccess().getListPeripheralsKeyword_1()); }
 )
 ;
 finally {

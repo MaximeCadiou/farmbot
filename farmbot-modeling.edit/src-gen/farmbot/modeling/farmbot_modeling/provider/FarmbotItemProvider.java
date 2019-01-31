@@ -190,9 +190,6 @@ public class FarmbotItemProvider extends ItemProviderAdapter implements IEditing
 				Farmbot_modelingFactory.eINSTANCE.createSchedule()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
-				Farmbot_modelingFactory.eINSTANCE.createListPeripherals()));
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createListSequences()));
 	}
 

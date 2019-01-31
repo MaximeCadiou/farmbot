@@ -354,17 +354,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Farmbot_modelingPackage.LIST_PERIPHERALS: {
-			ListPeripherals listPeripherals = (ListPeripherals) theEObject;
-			T result = caseListPeripherals(listPeripherals);
-			if (result == null)
-				result = caseCommand(listPeripherals);
-			if (result == null)
-				result = caseInstruction(listPeripherals);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Farmbot_modelingPackage.LIST_SEQUENCES: {
 			ListSequences listSequences = (ListSequences) theEObject;
 			T result = caseListSequences(listSequences);
@@ -738,21 +727,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommand(Command object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>List Peripherals</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>List Peripherals</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseListPeripherals(ListPeripherals object) {
 		return null;
 	}
 

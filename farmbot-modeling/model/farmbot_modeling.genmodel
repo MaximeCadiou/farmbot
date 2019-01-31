@@ -80,7 +80,6 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/endTime"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Command"/>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//ListPeripherals"/>
     <genClasses ecoreClass="farmbot_modeling.ecore#//ListSequences"/>
   </genPackages>
 </genmodel:GenModel>

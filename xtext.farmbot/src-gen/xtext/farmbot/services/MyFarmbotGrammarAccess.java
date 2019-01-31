@@ -73,24 +73,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.Command");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cScheduleParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cListPeripheralsParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cListSequencesParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cListSequencesParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Command:
-		//	Schedule | ListPeripherals | ListSequences;
+		//	Schedule | ListSequences;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//Schedule | ListPeripherals | ListSequences
+		//Schedule | ListSequences
 		public Alternatives getAlternatives() { return cAlternatives; }
 		
 		//Schedule
 		public RuleCall getScheduleParserRuleCall_0() { return cScheduleParserRuleCall_0; }
 		
-		//ListPeripherals
-		public RuleCall getListPeripheralsParserRuleCall_1() { return cListPeripheralsParserRuleCall_1; }
-		
 		//ListSequences
-		public RuleCall getListSequencesParserRuleCall_2() { return cListSequencesParserRuleCall_2; }
+		public RuleCall getListSequencesParserRuleCall_1() { return cListSequencesParserRuleCall_1; }
 	}
 	public class SequenceCommandElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.SequenceCommand");
@@ -1099,26 +1095,6 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//')'
 		public Keyword getRightParenthesisKeyword_34() { return cRightParenthesisKeyword_34; }
 	}
-	public class ListPeripheralsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.ListPeripherals");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Action cListPeripheralsAction_0 = (Action)cGroup.eContents().get(0);
-		private final Keyword cListPeripheralsKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		
-		//ListPeripherals:
-		//	{ListPeripherals}
-		//	'listPeripherals()';
-		@Override public ParserRule getRule() { return rule; }
-		
-		//{ListPeripherals} 'listPeripherals()'
-		public Group getGroup() { return cGroup; }
-		
-		//{ListPeripherals}
-		public Action getListPeripheralsAction_0() { return cListPeripheralsAction_0; }
-		
-		//'listPeripherals()'
-		public Keyword getListPeripheralsKeyword_1() { return cListPeripheralsKeyword_1; }
-	}
 	public class ListSequencesElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.ListSequences");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1486,7 +1462,6 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	private final RunFarmwareElements pRunFarmware;
 	private final TakePhotoElements pTakePhoto;
 	private final ScheduleElements pSchedule;
-	private final ListPeripheralsElements pListPeripherals;
 	private final ListSequencesElements pListSequences;
 	private final IsEqualToElements pIsEqualTo;
 	private final IsNotEqualToElements pIsNotEqualTo;
@@ -1523,7 +1498,6 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		this.pRunFarmware = new RunFarmwareElements();
 		this.pTakePhoto = new TakePhotoElements();
 		this.pSchedule = new ScheduleElements();
-		this.pListPeripherals = new ListPeripheralsElements();
 		this.pListSequences = new ListSequencesElements();
 		this.pIsEqualTo = new IsEqualToElements();
 		this.pIsNotEqualTo = new IsNotEqualToElements();
@@ -1581,7 +1555,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//Command:
-	//	Schedule | ListPeripherals | ListSequences;
+	//	Schedule | ListSequences;
 	public CommandElements getCommandAccess() {
 		return pCommand;
 	}
@@ -1768,17 +1742,6 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	
 	public ParserRule getScheduleRule() {
 		return getScheduleAccess().getRule();
-	}
-	
-	//ListPeripherals:
-	//	{ListPeripherals}
-	//	'listPeripherals()';
-	public ListPeripheralsElements getListPeripheralsAccess() {
-		return pListPeripherals;
-	}
-	
-	public ParserRule getListPeripheralsRule() {
-		return getListPeripheralsAccess().getRule();
 	}
 	
 	//ListSequences:

@@ -187,11 +187,6 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseListPeripherals(ListPeripherals object) {
-			return createListPeripheralsAdapter();
-		}
-
-		@Override
 		public Adapter caseListSequences(ListSequences object) {
 			return createListSequencesAdapter();
 		}
@@ -548,20 +543,6 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommandAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link farmbot.modeling.farmbot_modeling.ListPeripherals <em>List Peripherals</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see farmbot.modeling.farmbot_modeling.ListPeripherals
-	 * @generated
-	 */
-	public Adapter createListPeripheralsAdapter() {
 		return null;
 	}
 

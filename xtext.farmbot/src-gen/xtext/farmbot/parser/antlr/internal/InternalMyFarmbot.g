@@ -176,20 +176,11 @@ ruleCommand returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getCommandAccess().getListPeripheralsParserRuleCall_1());
+			newCompositeNode(grammarAccess.getCommandAccess().getListSequencesParserRuleCall_1());
 		}
-		this_ListPeripherals_1=ruleListPeripherals
+		this_ListSequences_1=ruleListSequences
 		{
-			$current = $this_ListPeripherals_1.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getCommandAccess().getListSequencesParserRuleCall_2());
-		}
-		this_ListSequences_2=ruleListSequences
-		{
-			$current = $this_ListSequences_2.current;
+			$current = $this_ListSequences_1.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1756,36 +1747,6 @@ ruleSchedule returns [EObject current=null]
 		otherlv_34=')'
 		{
 			newLeafNode(otherlv_34, grammarAccess.getScheduleAccess().getRightParenthesisKeyword_34());
-		}
-	)
-;
-
-// Entry rule entryRuleListPeripherals
-entryRuleListPeripherals returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getListPeripheralsRule()); }
-	iv_ruleListPeripherals=ruleListPeripherals
-	{ $current=$iv_ruleListPeripherals.current; }
-	EOF;
-
-// Rule ListPeripherals
-ruleListPeripherals returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getListPeripheralsAccess().getListPeripheralsAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='listPeripherals()'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getListPeripheralsAccess().getListPeripheralsKeyword_1());
 		}
 	)
 ;

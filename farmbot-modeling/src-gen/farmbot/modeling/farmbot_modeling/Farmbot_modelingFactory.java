@@ -184,15 +184,6 @@ public interface Farmbot_modelingFactory extends EFactory {
 	Schedule createSchedule();
 
 	/**
-	 * Returns a new object of class '<em>List Peripherals</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>List Peripherals</em>'.
-	 * @generated
-	 */
-	ListPeripherals createListPeripherals();
-
-	/**
 	 * Returns a new object of class '<em>List Sequences</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

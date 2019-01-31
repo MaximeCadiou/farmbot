@@ -12,7 +12,7 @@ Instruction returns Instruction:
 	SequenceInstruction | Sequence | Command;
 
 Command returns Command:
-	Schedule | ListPeripherals | ListSequences;
+	Schedule | ListSequences;
 
 SequenceCommand returns SequenceCommand:
 	TurnOn | TurnOff | MoveRelative | FindHome | MoveAbsolute | ExecuteSequence | Wait | SendMessage | RunFarmware | TakePhoto;
@@ -80,11 +80,6 @@ TakePhoto returns TakePhoto:
 Schedule returns Schedule:
 	{Schedule}
 	'schedule' '(' 'sequence' '=' sequence=STRING ',' 'startDate' '=' startDate=STRING ',' 'startTime' '=' startTime=STRING ',' 'repeat' '=' repeat=EBoolean ','  'repeatFrequency' '=' repeatFrequency=INT ',' 'repeatUnit' '=' repeatUnit=STRING ',' 'endDate' '=' endDate=STRING ',' 'endTime' '=' endTime=STRING ')';
-
-ListPeripherals returns ListPeripherals:
-	{ListPeripherals}
-	'listPeripherals()'
-	;
 
 ListSequences returns ListSequences:
 	{ListSequences}

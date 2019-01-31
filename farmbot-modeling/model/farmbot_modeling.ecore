@@ -78,6 +78,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="endTime" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Command" abstract="true" eSuperTypes="#//Instruction"/>
-  <eClassifiers xsi:type="ecore:EClass" name="ListPeripherals" eSuperTypes="#//Command"/>
   <eClassifiers xsi:type="ecore:EClass" name="ListSequences" eSuperTypes="#//Command"/>
 </ecore:EPackage>

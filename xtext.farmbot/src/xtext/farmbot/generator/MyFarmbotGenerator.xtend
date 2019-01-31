@@ -67,7 +67,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	     
 	    	public static void main(String[] args) throws JSONException {
 		    	«FOR instruction:farmbot.instructions»
-		            «instruction.compile»
+	            «instruction.compile»
 	    	    «ENDFOR»
 	    	}
 	    }
@@ -146,13 +146,13 @@ class MyFarmbotGenerator extends AbstractGenerator {
 			.put("args", new JSONObject()
 				.put("speed", 100)
 				«IF findHome.findX»
-					.put("axis, "x")
+				.put("axis, "x")
 				«ELSEIF findHome.findY»
-					.put("axis", "y")
+				.put("axis", "y")
 				«ELSEIF findHome.findZ»
-					.put("axis", "z")
+				.put("axis", "z")
 				«ELSE»
-					.put("axis", "all")
+				.put("axis", "all")
 				«ENDIF»
 			)
 	'''
@@ -163,7 +163,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
         .put("body", new JSONArray() 
 
 		«FOR instruction:sequence.sequenceInstructions»
-			.put(«instruction.compile»)
+		.put(«instruction.compile»)
         «ENDFOR»
 
     	).toString();    
@@ -194,12 +194,33 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	'''
 
 	def dispatch compile(If ifExpression) '''
-		if («ifExpression.booleanExpression.compile») {
-			«ifExpression.then.compile»
-		} «IF ifExpression.getElse() !== null» else {
-			«ifExpression.getElse().compile»
-		«ENDIF»
-		}
+		new JSONObject()
+					.put("kind", "_if")
+					.put("args", new JSONObject()
+						«ifExpression.booleanExpression.compile»
+						.put("_then", new JSONObject()
+							«IF ifExpression.getThen() !== null»
+							.put("kind", "execute")
+							.put("args", new JSONObject()
+								.put("sequence_id", «ifExpression.getThen().id») 
+							)
+							«ELSE»
+							.put("kind", "nothing")
+							.put("args", new JSONObject())
+							«ENDIF»
+						)
+						.put("_else", new JSONObject()
+							«IF ifExpression.getElse() !== null»
+							.put("kind", "execute")
+							.put("args", new JSONObject()
+								.put("sequence_id", «ifExpression.getElse().id») 
+							)
+							«ELSE»
+							.put("kind", "nothing")
+							.put("args", new JSONObject())
+							«ENDIF»
+						)
+					)
 	'''
 
 	def dispatch compile(ExecuteSequence executeSequence) '''
@@ -259,29 +280,29 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		System.out.println("Here is a list of the sequences");
 	 '''
 	
-	def dispatch compile(IsEqualTo isEqualTo){
-		var x = 2;
-		
-		'''«x» == «isEqualTo.value»'''	
-	}
+	def dispatch compile(IsEqualTo isEqualTo) '''
+		.put("rhs", «isEqualTo.value»)
+		.put("op", "is")
+		.put("lhs", "«isEqualTo.axe»")
+	'''	
 
-	def dispatch compile(IsNotEqualTo isNotEqualTo){
-		var x = 2;
-		
-		'''«x» != «isNotEqualTo.value»'''	
-	}
+	def dispatch compile(IsNotEqualTo isNotEqualTo) '''
+		.put("rhs", «isNotEqualTo.value»)
+		.put("op", "not")
+		.put("lhs", "«isNotEqualTo.axe»")
+	'''	
 	
-	def dispatch compile(IsGreaterThan isGreaterThan){
-		var x = 2;
-		
-		'''«x» > «isGreaterThan.value»'''	
-	}
+	
+	def dispatch compile(IsGreaterThan isGreaterThan) '''
+		.put("rhs", «isGreaterThan.value»)
+		.put("op", ">")
+		.put("lhs", "«isGreaterThan.axe»")
+	'''	
 
-	def dispatch compile(IsLowerThan isLowerThan){
-		var x = 2;
-		
-		'''«x» < «isLowerThan.value»'''	
-	}
-
-
+	def dispatch compile(IsLowerThan isLowerThan) '''
+		.put("rhs", «isLowerThan.value»)
+		.put("op", "<")
+		.put("lhs", "«isLowerThan.axe»")
+	'''	
+	
 }

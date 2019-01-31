@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'E'", "'e'", "'true'", "'false'", "'turnOn('", "'pin'", "'='", "','", "'mode'", "')'", "'turnOff('", "'moveRelative('", "'x'", "'y'", "'z'", "'speed'", "'findHome('", "'findX'", "'findY'", "'findZ'", "'sequence'", "'end'", "'if'", "'then'", "'else'", "'moveAbsolute('", "'executeSequence'", "'('", "'id'", "'wait'", "'duration'", "'isToolOn'", "'sendMessage'", "'type'", "'message'", "'runFarmware'", "'name'", "'takePhoto()'", "'schedule'", "'startDate'", "'startTime'", "'repeat'", "'repeatFrequency'", "'repeatUnit'", "'endDate'", "'endTime'", "'listPeripherals()'", "'listSequences()'", "'equals'", "'to'", "'not'", "'greater'", "'than'", "'lower'", "'-'", "'.'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'E'", "'e'", "'true'", "'false'", "'turnOn('", "'pin'", "'='", "','", "'mode'", "')'", "'turnOff('", "'moveRelative('", "'x'", "'y'", "'z'", "'speed'", "'findHome('", "'findX'", "'findY'", "'findZ'", "'sequence'", "'end'", "'if'", "'then'", "'else'", "'moveAbsolute('", "'executeSequence'", "'('", "'id'", "'wait'", "'duration'", "'isToolOn'", "'sendMessage'", "'type'", "'message'", "'runFarmware'", "'name'", "'takePhoto()'", "'schedule'", "'startDate'", "'startTime'", "'repeat'", "'repeatFrequency'", "'repeatUnit'", "'endDate'", "'endTime'", "'listPeripherals()'", "'listSequences()'", "'is'", "'equal'", "'to'", "'not'", "'greater'", "'than'", "'lower'", "'-'", "'.'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -55,6 +55,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     public static final int T__66=66;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__67=67;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__62=62;
@@ -2900,34 +2901,44 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
                 alt5=1;
             }
             else if ( (LA5_0==RULE_STRING) ) {
-                switch ( input.LA(2) ) {
-                case 64:
-                    {
-                    alt5=5;
+                int LA5_2 = input.LA(2);
+
+                if ( (LA5_2==59) ) {
+                    switch ( input.LA(3) ) {
+                    case 60:
+                        {
+                        alt5=2;
+                        }
+                        break;
+                    case 63:
+                        {
+                        alt5=4;
+                        }
+                        break;
+                    case 62:
+                        {
+                        alt5=3;
+                        }
+                        break;
+                    case 65:
+                        {
+                        alt5=5;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 5, 3, input);
+
+                        throw nvae;
                     }
-                    break;
-                case 59:
-                    {
-                    alt5=2;
-                    }
-                    break;
-                case 61:
-                    {
-                    alt5=3;
-                    }
-                    break;
-                case 62:
-                    {
-                    alt5=4;
-                    }
-                    break;
-                default:
+
+                }
+                else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 5, 2, input);
 
                     throw nvae;
                 }
-
             }
             else {
                 NoViableAltException nvae =
@@ -8106,7 +8117,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
             // InternalMyFarmbot.g:2695:1: ( rule__If__Group__4__Impl rule__If__Group__5 )
             // InternalMyFarmbot.g:2696:2: rule__If__Group__4__Impl rule__If__Group__5
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__If__Group__4__Impl();
 
             state._fsp--;
@@ -8135,27 +8146,38 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__If__Group__4__Impl"
-    // InternalMyFarmbot.g:2703:1: rule__If__Group__4__Impl : ( ( rule__If__ThenAssignment_4 ) ) ;
+    // InternalMyFarmbot.g:2703:1: rule__If__Group__4__Impl : ( ( rule__If__ThenAssignment_4 )? ) ;
     public final void rule__If__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:2707:1: ( ( ( rule__If__ThenAssignment_4 ) ) )
-            // InternalMyFarmbot.g:2708:1: ( ( rule__If__ThenAssignment_4 ) )
+            // InternalMyFarmbot.g:2707:1: ( ( ( rule__If__ThenAssignment_4 )? ) )
+            // InternalMyFarmbot.g:2708:1: ( ( rule__If__ThenAssignment_4 )? )
             {
-            // InternalMyFarmbot.g:2708:1: ( ( rule__If__ThenAssignment_4 ) )
-            // InternalMyFarmbot.g:2709:2: ( rule__If__ThenAssignment_4 )
+            // InternalMyFarmbot.g:2708:1: ( ( rule__If__ThenAssignment_4 )? )
+            // InternalMyFarmbot.g:2709:2: ( rule__If__ThenAssignment_4 )?
             {
              before(grammarAccess.getIfAccess().getThenAssignment_4()); 
-            // InternalMyFarmbot.g:2710:2: ( rule__If__ThenAssignment_4 )
-            // InternalMyFarmbot.g:2710:3: rule__If__ThenAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__If__ThenAssignment_4();
+            // InternalMyFarmbot.g:2710:2: ( rule__If__ThenAssignment_4 )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            state._fsp--;
+            if ( (LA10_0==37) ) {
+                alt10=1;
+            }
+            switch (alt10) {
+                case 1 :
+                    // InternalMyFarmbot.g:2710:3: rule__If__ThenAssignment_4
+                    {
+                    pushFollow(FOLLOW_2);
+                    rule__If__ThenAssignment_4();
 
+                    state._fsp--;
+
+
+                    }
+                    break;
 
             }
 
@@ -8191,7 +8213,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
             // InternalMyFarmbot.g:2722:1: ( rule__If__Group__5__Impl rule__If__Group__6 )
             // InternalMyFarmbot.g:2723:2: rule__If__Group__5__Impl rule__If__Group__6
             {
-            pushFollow(FOLLOW_31);
+            pushFollow(FOLLOW_30);
             rule__If__Group__5__Impl();
 
             state._fsp--;
@@ -8234,13 +8256,13 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
             {
              before(grammarAccess.getIfAccess().getGroup_5()); 
             // InternalMyFarmbot.g:2737:2: ( rule__If__Group_5__0 )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==35) ) {
-                alt10=1;
+            if ( (LA11_0==35) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
                     // InternalMyFarmbot.g:2737:3: rule__If__Group_5__0
                     {
@@ -8357,7 +8379,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
             // InternalMyFarmbot.g:2776:1: ( rule__If__Group_5__0__Impl rule__If__Group_5__1 )
             // InternalMyFarmbot.g:2777:2: rule__If__Group_5__0__Impl rule__If__Group_5__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_31);
             rule__If__Group_5__0__Impl();
 
             state._fsp--;
@@ -9897,7 +9919,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
             // InternalMyFarmbot.g:3316:1: ( rule__ExecuteSequence__Group__0__Impl rule__ExecuteSequence__Group__1 )
             // InternalMyFarmbot.g:3317:2: rule__ExecuteSequence__Group__0__Impl rule__ExecuteSequence__Group__1
             {
-            pushFollow(FOLLOW_30);
+            pushFollow(FOLLOW_31);
             rule__ExecuteSequence__Group__0__Impl();
 
             state._fsp--;
@@ -16181,21 +16203,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsEqualTo__Group__2__Impl"
-    // InternalMyFarmbot.g:5538:1: rule__IsEqualTo__Group__2__Impl : ( 'equals' ) ;
+    // InternalMyFarmbot.g:5538:1: rule__IsEqualTo__Group__2__Impl : ( 'is' ) ;
     public final void rule__IsEqualTo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5542:1: ( ( 'equals' ) )
-            // InternalMyFarmbot.g:5543:1: ( 'equals' )
+            // InternalMyFarmbot.g:5542:1: ( ( 'is' ) )
+            // InternalMyFarmbot.g:5543:1: ( 'is' )
             {
-            // InternalMyFarmbot.g:5543:1: ( 'equals' )
-            // InternalMyFarmbot.g:5544:2: 'equals'
+            // InternalMyFarmbot.g:5543:1: ( 'is' )
+            // InternalMyFarmbot.g:5544:2: 'is'
             {
-             before(grammarAccess.getIsEqualToAccess().getEqualsKeyword_2()); 
+             before(grammarAccess.getIsEqualToAccess().getIsKeyword_2()); 
             match(input,59,FOLLOW_2); 
-             after(grammarAccess.getIsEqualToAccess().getEqualsKeyword_2()); 
+             after(grammarAccess.getIsEqualToAccess().getIsKeyword_2()); 
 
             }
 
@@ -16227,7 +16249,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
             // InternalMyFarmbot.g:5557:1: ( rule__IsEqualTo__Group__3__Impl rule__IsEqualTo__Group__4 )
             // InternalMyFarmbot.g:5558:2: rule__IsEqualTo__Group__3__Impl rule__IsEqualTo__Group__4
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_56);
             rule__IsEqualTo__Group__3__Impl();
 
             state._fsp--;
@@ -16256,21 +16278,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsEqualTo__Group__3__Impl"
-    // InternalMyFarmbot.g:5565:1: rule__IsEqualTo__Group__3__Impl : ( 'to' ) ;
+    // InternalMyFarmbot.g:5565:1: rule__IsEqualTo__Group__3__Impl : ( 'equal' ) ;
     public final void rule__IsEqualTo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5569:1: ( ( 'to' ) )
-            // InternalMyFarmbot.g:5570:1: ( 'to' )
+            // InternalMyFarmbot.g:5569:1: ( ( 'equal' ) )
+            // InternalMyFarmbot.g:5570:1: ( 'equal' )
             {
-            // InternalMyFarmbot.g:5570:1: ( 'to' )
-            // InternalMyFarmbot.g:5571:2: 'to'
+            // InternalMyFarmbot.g:5570:1: ( 'equal' )
+            // InternalMyFarmbot.g:5571:2: 'equal'
             {
-             before(grammarAccess.getIsEqualToAccess().getToKeyword_3()); 
+             before(grammarAccess.getIsEqualToAccess().getEqualKeyword_3()); 
             match(input,60,FOLLOW_2); 
-             after(grammarAccess.getIsEqualToAccess().getToKeyword_3()); 
+             after(grammarAccess.getIsEqualToAccess().getEqualKeyword_3()); 
 
             }
 
@@ -16293,17 +16315,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsEqualTo__Group__4"
-    // InternalMyFarmbot.g:5580:1: rule__IsEqualTo__Group__4 : rule__IsEqualTo__Group__4__Impl ;
+    // InternalMyFarmbot.g:5580:1: rule__IsEqualTo__Group__4 : rule__IsEqualTo__Group__4__Impl rule__IsEqualTo__Group__5 ;
     public final void rule__IsEqualTo__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5584:1: ( rule__IsEqualTo__Group__4__Impl )
-            // InternalMyFarmbot.g:5585:2: rule__IsEqualTo__Group__4__Impl
+            // InternalMyFarmbot.g:5584:1: ( rule__IsEqualTo__Group__4__Impl rule__IsEqualTo__Group__5 )
+            // InternalMyFarmbot.g:5585:2: rule__IsEqualTo__Group__4__Impl rule__IsEqualTo__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__IsEqualTo__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__IsEqualTo__Group__5();
 
             state._fsp--;
 
@@ -16326,31 +16353,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsEqualTo__Group__4__Impl"
-    // InternalMyFarmbot.g:5591:1: rule__IsEqualTo__Group__4__Impl : ( ( rule__IsEqualTo__ValueAssignment_4 ) ) ;
+    // InternalMyFarmbot.g:5592:1: rule__IsEqualTo__Group__4__Impl : ( 'to' ) ;
     public final void rule__IsEqualTo__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5595:1: ( ( ( rule__IsEqualTo__ValueAssignment_4 ) ) )
-            // InternalMyFarmbot.g:5596:1: ( ( rule__IsEqualTo__ValueAssignment_4 ) )
+            // InternalMyFarmbot.g:5596:1: ( ( 'to' ) )
+            // InternalMyFarmbot.g:5597:1: ( 'to' )
             {
-            // InternalMyFarmbot.g:5596:1: ( ( rule__IsEqualTo__ValueAssignment_4 ) )
-            // InternalMyFarmbot.g:5597:2: ( rule__IsEqualTo__ValueAssignment_4 )
+            // InternalMyFarmbot.g:5597:1: ( 'to' )
+            // InternalMyFarmbot.g:5598:2: 'to'
             {
-             before(grammarAccess.getIsEqualToAccess().getValueAssignment_4()); 
-            // InternalMyFarmbot.g:5598:2: ( rule__IsEqualTo__ValueAssignment_4 )
-            // InternalMyFarmbot.g:5598:3: rule__IsEqualTo__ValueAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__IsEqualTo__ValueAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIsEqualToAccess().getValueAssignment_4()); 
+             before(grammarAccess.getIsEqualToAccess().getToKeyword_4()); 
+            match(input,61,FOLLOW_2); 
+             after(grammarAccess.getIsEqualToAccess().getToKeyword_4()); 
 
             }
 
@@ -16372,15 +16389,95 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsEqualTo__Group__4__Impl"
 
 
+    // $ANTLR start "rule__IsEqualTo__Group__5"
+    // InternalMyFarmbot.g:5607:1: rule__IsEqualTo__Group__5 : rule__IsEqualTo__Group__5__Impl ;
+    public final void rule__IsEqualTo__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:5611:1: ( rule__IsEqualTo__Group__5__Impl )
+            // InternalMyFarmbot.g:5612:2: rule__IsEqualTo__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsEqualTo__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsEqualTo__Group__5"
+
+
+    // $ANTLR start "rule__IsEqualTo__Group__5__Impl"
+    // InternalMyFarmbot.g:5618:1: rule__IsEqualTo__Group__5__Impl : ( ( rule__IsEqualTo__ValueAssignment_5 ) ) ;
+    public final void rule__IsEqualTo__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:5622:1: ( ( ( rule__IsEqualTo__ValueAssignment_5 ) ) )
+            // InternalMyFarmbot.g:5623:1: ( ( rule__IsEqualTo__ValueAssignment_5 ) )
+            {
+            // InternalMyFarmbot.g:5623:1: ( ( rule__IsEqualTo__ValueAssignment_5 ) )
+            // InternalMyFarmbot.g:5624:2: ( rule__IsEqualTo__ValueAssignment_5 )
+            {
+             before(grammarAccess.getIsEqualToAccess().getValueAssignment_5()); 
+            // InternalMyFarmbot.g:5625:2: ( rule__IsEqualTo__ValueAssignment_5 )
+            // InternalMyFarmbot.g:5625:3: rule__IsEqualTo__ValueAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsEqualTo__ValueAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIsEqualToAccess().getValueAssignment_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsEqualTo__Group__5__Impl"
+
+
     // $ANTLR start "rule__IsNotEqualTo__Group__0"
-    // InternalMyFarmbot.g:5607:1: rule__IsNotEqualTo__Group__0 : rule__IsNotEqualTo__Group__0__Impl rule__IsNotEqualTo__Group__1 ;
+    // InternalMyFarmbot.g:5634:1: rule__IsNotEqualTo__Group__0 : rule__IsNotEqualTo__Group__0__Impl rule__IsNotEqualTo__Group__1 ;
     public final void rule__IsNotEqualTo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5611:1: ( rule__IsNotEqualTo__Group__0__Impl rule__IsNotEqualTo__Group__1 )
-            // InternalMyFarmbot.g:5612:2: rule__IsNotEqualTo__Group__0__Impl rule__IsNotEqualTo__Group__1
+            // InternalMyFarmbot.g:5638:1: ( rule__IsNotEqualTo__Group__0__Impl rule__IsNotEqualTo__Group__1 )
+            // InternalMyFarmbot.g:5639:2: rule__IsNotEqualTo__Group__0__Impl rule__IsNotEqualTo__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__IsNotEqualTo__Group__0__Impl();
@@ -16411,21 +16508,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__0__Impl"
-    // InternalMyFarmbot.g:5619:1: rule__IsNotEqualTo__Group__0__Impl : ( () ) ;
+    // InternalMyFarmbot.g:5646:1: rule__IsNotEqualTo__Group__0__Impl : ( () ) ;
     public final void rule__IsNotEqualTo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5623:1: ( ( () ) )
-            // InternalMyFarmbot.g:5624:1: ( () )
+            // InternalMyFarmbot.g:5650:1: ( ( () ) )
+            // InternalMyFarmbot.g:5651:1: ( () )
             {
-            // InternalMyFarmbot.g:5624:1: ( () )
-            // InternalMyFarmbot.g:5625:2: ()
+            // InternalMyFarmbot.g:5651:1: ( () )
+            // InternalMyFarmbot.g:5652:2: ()
             {
              before(grammarAccess.getIsNotEqualToAccess().getIsNotEqualToAction_0()); 
-            // InternalMyFarmbot.g:5626:2: ()
-            // InternalMyFarmbot.g:5626:3: 
+            // InternalMyFarmbot.g:5653:2: ()
+            // InternalMyFarmbot.g:5653:3: 
             {
             }
 
@@ -16448,16 +16545,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__1"
-    // InternalMyFarmbot.g:5634:1: rule__IsNotEqualTo__Group__1 : rule__IsNotEqualTo__Group__1__Impl rule__IsNotEqualTo__Group__2 ;
+    // InternalMyFarmbot.g:5661:1: rule__IsNotEqualTo__Group__1 : rule__IsNotEqualTo__Group__1__Impl rule__IsNotEqualTo__Group__2 ;
     public final void rule__IsNotEqualTo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5638:1: ( rule__IsNotEqualTo__Group__1__Impl rule__IsNotEqualTo__Group__2 )
-            // InternalMyFarmbot.g:5639:2: rule__IsNotEqualTo__Group__1__Impl rule__IsNotEqualTo__Group__2
+            // InternalMyFarmbot.g:5665:1: ( rule__IsNotEqualTo__Group__1__Impl rule__IsNotEqualTo__Group__2 )
+            // InternalMyFarmbot.g:5666:2: rule__IsNotEqualTo__Group__1__Impl rule__IsNotEqualTo__Group__2
             {
-            pushFollow(FOLLOW_56);
+            pushFollow(FOLLOW_54);
             rule__IsNotEqualTo__Group__1__Impl();
 
             state._fsp--;
@@ -16486,21 +16583,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__1__Impl"
-    // InternalMyFarmbot.g:5646:1: rule__IsNotEqualTo__Group__1__Impl : ( ( rule__IsNotEqualTo__AxeAssignment_1 ) ) ;
+    // InternalMyFarmbot.g:5673:1: rule__IsNotEqualTo__Group__1__Impl : ( ( rule__IsNotEqualTo__AxeAssignment_1 ) ) ;
     public final void rule__IsNotEqualTo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5650:1: ( ( ( rule__IsNotEqualTo__AxeAssignment_1 ) ) )
-            // InternalMyFarmbot.g:5651:1: ( ( rule__IsNotEqualTo__AxeAssignment_1 ) )
+            // InternalMyFarmbot.g:5677:1: ( ( ( rule__IsNotEqualTo__AxeAssignment_1 ) ) )
+            // InternalMyFarmbot.g:5678:1: ( ( rule__IsNotEqualTo__AxeAssignment_1 ) )
             {
-            // InternalMyFarmbot.g:5651:1: ( ( rule__IsNotEqualTo__AxeAssignment_1 ) )
-            // InternalMyFarmbot.g:5652:2: ( rule__IsNotEqualTo__AxeAssignment_1 )
+            // InternalMyFarmbot.g:5678:1: ( ( rule__IsNotEqualTo__AxeAssignment_1 ) )
+            // InternalMyFarmbot.g:5679:2: ( rule__IsNotEqualTo__AxeAssignment_1 )
             {
              before(grammarAccess.getIsNotEqualToAccess().getAxeAssignment_1()); 
-            // InternalMyFarmbot.g:5653:2: ( rule__IsNotEqualTo__AxeAssignment_1 )
-            // InternalMyFarmbot.g:5653:3: rule__IsNotEqualTo__AxeAssignment_1
+            // InternalMyFarmbot.g:5680:2: ( rule__IsNotEqualTo__AxeAssignment_1 )
+            // InternalMyFarmbot.g:5680:3: rule__IsNotEqualTo__AxeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__IsNotEqualTo__AxeAssignment_1();
@@ -16533,16 +16630,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__2"
-    // InternalMyFarmbot.g:5661:1: rule__IsNotEqualTo__Group__2 : rule__IsNotEqualTo__Group__2__Impl rule__IsNotEqualTo__Group__3 ;
+    // InternalMyFarmbot.g:5688:1: rule__IsNotEqualTo__Group__2 : rule__IsNotEqualTo__Group__2__Impl rule__IsNotEqualTo__Group__3 ;
     public final void rule__IsNotEqualTo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5665:1: ( rule__IsNotEqualTo__Group__2__Impl rule__IsNotEqualTo__Group__3 )
-            // InternalMyFarmbot.g:5666:2: rule__IsNotEqualTo__Group__2__Impl rule__IsNotEqualTo__Group__3
+            // InternalMyFarmbot.g:5692:1: ( rule__IsNotEqualTo__Group__2__Impl rule__IsNotEqualTo__Group__3 )
+            // InternalMyFarmbot.g:5693:2: rule__IsNotEqualTo__Group__2__Impl rule__IsNotEqualTo__Group__3
             {
-            pushFollow(FOLLOW_54);
+            pushFollow(FOLLOW_57);
             rule__IsNotEqualTo__Group__2__Impl();
 
             state._fsp--;
@@ -16571,21 +16668,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__2__Impl"
-    // InternalMyFarmbot.g:5673:1: rule__IsNotEqualTo__Group__2__Impl : ( 'not' ) ;
+    // InternalMyFarmbot.g:5700:1: rule__IsNotEqualTo__Group__2__Impl : ( 'is' ) ;
     public final void rule__IsNotEqualTo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5677:1: ( ( 'not' ) )
-            // InternalMyFarmbot.g:5678:1: ( 'not' )
+            // InternalMyFarmbot.g:5704:1: ( ( 'is' ) )
+            // InternalMyFarmbot.g:5705:1: ( 'is' )
             {
-            // InternalMyFarmbot.g:5678:1: ( 'not' )
-            // InternalMyFarmbot.g:5679:2: 'not'
+            // InternalMyFarmbot.g:5705:1: ( 'is' )
+            // InternalMyFarmbot.g:5706:2: 'is'
             {
-             before(grammarAccess.getIsNotEqualToAccess().getNotKeyword_2()); 
-            match(input,61,FOLLOW_2); 
-             after(grammarAccess.getIsNotEqualToAccess().getNotKeyword_2()); 
+             before(grammarAccess.getIsNotEqualToAccess().getIsKeyword_2()); 
+            match(input,59,FOLLOW_2); 
+             after(grammarAccess.getIsNotEqualToAccess().getIsKeyword_2()); 
 
             }
 
@@ -16608,14 +16705,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__3"
-    // InternalMyFarmbot.g:5688:1: rule__IsNotEqualTo__Group__3 : rule__IsNotEqualTo__Group__3__Impl rule__IsNotEqualTo__Group__4 ;
+    // InternalMyFarmbot.g:5715:1: rule__IsNotEqualTo__Group__3 : rule__IsNotEqualTo__Group__3__Impl rule__IsNotEqualTo__Group__4 ;
     public final void rule__IsNotEqualTo__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5692:1: ( rule__IsNotEqualTo__Group__3__Impl rule__IsNotEqualTo__Group__4 )
-            // InternalMyFarmbot.g:5693:2: rule__IsNotEqualTo__Group__3__Impl rule__IsNotEqualTo__Group__4
+            // InternalMyFarmbot.g:5719:1: ( rule__IsNotEqualTo__Group__3__Impl rule__IsNotEqualTo__Group__4 )
+            // InternalMyFarmbot.g:5720:2: rule__IsNotEqualTo__Group__3__Impl rule__IsNotEqualTo__Group__4
             {
             pushFollow(FOLLOW_55);
             rule__IsNotEqualTo__Group__3__Impl();
@@ -16646,21 +16743,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__3__Impl"
-    // InternalMyFarmbot.g:5700:1: rule__IsNotEqualTo__Group__3__Impl : ( 'equals' ) ;
+    // InternalMyFarmbot.g:5727:1: rule__IsNotEqualTo__Group__3__Impl : ( 'not' ) ;
     public final void rule__IsNotEqualTo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5704:1: ( ( 'equals' ) )
-            // InternalMyFarmbot.g:5705:1: ( 'equals' )
+            // InternalMyFarmbot.g:5731:1: ( ( 'not' ) )
+            // InternalMyFarmbot.g:5732:1: ( 'not' )
             {
-            // InternalMyFarmbot.g:5705:1: ( 'equals' )
-            // InternalMyFarmbot.g:5706:2: 'equals'
+            // InternalMyFarmbot.g:5732:1: ( 'not' )
+            // InternalMyFarmbot.g:5733:2: 'not'
             {
-             before(grammarAccess.getIsNotEqualToAccess().getEqualsKeyword_3()); 
-            match(input,59,FOLLOW_2); 
-             after(grammarAccess.getIsNotEqualToAccess().getEqualsKeyword_3()); 
+             before(grammarAccess.getIsNotEqualToAccess().getNotKeyword_3()); 
+            match(input,62,FOLLOW_2); 
+             after(grammarAccess.getIsNotEqualToAccess().getNotKeyword_3()); 
 
             }
 
@@ -16683,16 +16780,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__4"
-    // InternalMyFarmbot.g:5715:1: rule__IsNotEqualTo__Group__4 : rule__IsNotEqualTo__Group__4__Impl rule__IsNotEqualTo__Group__5 ;
+    // InternalMyFarmbot.g:5742:1: rule__IsNotEqualTo__Group__4 : rule__IsNotEqualTo__Group__4__Impl rule__IsNotEqualTo__Group__5 ;
     public final void rule__IsNotEqualTo__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5719:1: ( rule__IsNotEqualTo__Group__4__Impl rule__IsNotEqualTo__Group__5 )
-            // InternalMyFarmbot.g:5720:2: rule__IsNotEqualTo__Group__4__Impl rule__IsNotEqualTo__Group__5
+            // InternalMyFarmbot.g:5746:1: ( rule__IsNotEqualTo__Group__4__Impl rule__IsNotEqualTo__Group__5 )
+            // InternalMyFarmbot.g:5747:2: rule__IsNotEqualTo__Group__4__Impl rule__IsNotEqualTo__Group__5
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_56);
             rule__IsNotEqualTo__Group__4__Impl();
 
             state._fsp--;
@@ -16721,21 +16818,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__4__Impl"
-    // InternalMyFarmbot.g:5727:1: rule__IsNotEqualTo__Group__4__Impl : ( 'to' ) ;
+    // InternalMyFarmbot.g:5754:1: rule__IsNotEqualTo__Group__4__Impl : ( 'equal' ) ;
     public final void rule__IsNotEqualTo__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5731:1: ( ( 'to' ) )
-            // InternalMyFarmbot.g:5732:1: ( 'to' )
+            // InternalMyFarmbot.g:5758:1: ( ( 'equal' ) )
+            // InternalMyFarmbot.g:5759:1: ( 'equal' )
             {
-            // InternalMyFarmbot.g:5732:1: ( 'to' )
-            // InternalMyFarmbot.g:5733:2: 'to'
+            // InternalMyFarmbot.g:5759:1: ( 'equal' )
+            // InternalMyFarmbot.g:5760:2: 'equal'
             {
-             before(grammarAccess.getIsNotEqualToAccess().getToKeyword_4()); 
+             before(grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4()); 
             match(input,60,FOLLOW_2); 
-             after(grammarAccess.getIsNotEqualToAccess().getToKeyword_4()); 
+             after(grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4()); 
 
             }
 
@@ -16758,17 +16855,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__5"
-    // InternalMyFarmbot.g:5742:1: rule__IsNotEqualTo__Group__5 : rule__IsNotEqualTo__Group__5__Impl ;
+    // InternalMyFarmbot.g:5769:1: rule__IsNotEqualTo__Group__5 : rule__IsNotEqualTo__Group__5__Impl rule__IsNotEqualTo__Group__6 ;
     public final void rule__IsNotEqualTo__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5746:1: ( rule__IsNotEqualTo__Group__5__Impl )
-            // InternalMyFarmbot.g:5747:2: rule__IsNotEqualTo__Group__5__Impl
+            // InternalMyFarmbot.g:5773:1: ( rule__IsNotEqualTo__Group__5__Impl rule__IsNotEqualTo__Group__6 )
+            // InternalMyFarmbot.g:5774:2: rule__IsNotEqualTo__Group__5__Impl rule__IsNotEqualTo__Group__6
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__IsNotEqualTo__Group__5__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__IsNotEqualTo__Group__6();
 
             state._fsp--;
 
@@ -16791,31 +16893,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsNotEqualTo__Group__5__Impl"
-    // InternalMyFarmbot.g:5753:1: rule__IsNotEqualTo__Group__5__Impl : ( ( rule__IsNotEqualTo__ValueAssignment_5 ) ) ;
+    // InternalMyFarmbot.g:5781:1: rule__IsNotEqualTo__Group__5__Impl : ( 'to' ) ;
     public final void rule__IsNotEqualTo__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5757:1: ( ( ( rule__IsNotEqualTo__ValueAssignment_5 ) ) )
-            // InternalMyFarmbot.g:5758:1: ( ( rule__IsNotEqualTo__ValueAssignment_5 ) )
+            // InternalMyFarmbot.g:5785:1: ( ( 'to' ) )
+            // InternalMyFarmbot.g:5786:1: ( 'to' )
             {
-            // InternalMyFarmbot.g:5758:1: ( ( rule__IsNotEqualTo__ValueAssignment_5 ) )
-            // InternalMyFarmbot.g:5759:2: ( rule__IsNotEqualTo__ValueAssignment_5 )
+            // InternalMyFarmbot.g:5786:1: ( 'to' )
+            // InternalMyFarmbot.g:5787:2: 'to'
             {
-             before(grammarAccess.getIsNotEqualToAccess().getValueAssignment_5()); 
-            // InternalMyFarmbot.g:5760:2: ( rule__IsNotEqualTo__ValueAssignment_5 )
-            // InternalMyFarmbot.g:5760:3: rule__IsNotEqualTo__ValueAssignment_5
-            {
-            pushFollow(FOLLOW_2);
-            rule__IsNotEqualTo__ValueAssignment_5();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIsNotEqualToAccess().getValueAssignment_5()); 
+             before(grammarAccess.getIsNotEqualToAccess().getToKeyword_5()); 
+            match(input,61,FOLLOW_2); 
+             after(grammarAccess.getIsNotEqualToAccess().getToKeyword_5()); 
 
             }
 
@@ -16837,15 +16929,95 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsNotEqualTo__Group__5__Impl"
 
 
+    // $ANTLR start "rule__IsNotEqualTo__Group__6"
+    // InternalMyFarmbot.g:5796:1: rule__IsNotEqualTo__Group__6 : rule__IsNotEqualTo__Group__6__Impl ;
+    public final void rule__IsNotEqualTo__Group__6() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:5800:1: ( rule__IsNotEqualTo__Group__6__Impl )
+            // InternalMyFarmbot.g:5801:2: rule__IsNotEqualTo__Group__6__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsNotEqualTo__Group__6__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsNotEqualTo__Group__6"
+
+
+    // $ANTLR start "rule__IsNotEqualTo__Group__6__Impl"
+    // InternalMyFarmbot.g:5807:1: rule__IsNotEqualTo__Group__6__Impl : ( ( rule__IsNotEqualTo__ValueAssignment_6 ) ) ;
+    public final void rule__IsNotEqualTo__Group__6__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:5811:1: ( ( ( rule__IsNotEqualTo__ValueAssignment_6 ) ) )
+            // InternalMyFarmbot.g:5812:1: ( ( rule__IsNotEqualTo__ValueAssignment_6 ) )
+            {
+            // InternalMyFarmbot.g:5812:1: ( ( rule__IsNotEqualTo__ValueAssignment_6 ) )
+            // InternalMyFarmbot.g:5813:2: ( rule__IsNotEqualTo__ValueAssignment_6 )
+            {
+             before(grammarAccess.getIsNotEqualToAccess().getValueAssignment_6()); 
+            // InternalMyFarmbot.g:5814:2: ( rule__IsNotEqualTo__ValueAssignment_6 )
+            // InternalMyFarmbot.g:5814:3: rule__IsNotEqualTo__ValueAssignment_6
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsNotEqualTo__ValueAssignment_6();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIsNotEqualToAccess().getValueAssignment_6()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsNotEqualTo__Group__6__Impl"
+
+
     // $ANTLR start "rule__IsGreaterThan__Group__0"
-    // InternalMyFarmbot.g:5769:1: rule__IsGreaterThan__Group__0 : rule__IsGreaterThan__Group__0__Impl rule__IsGreaterThan__Group__1 ;
+    // InternalMyFarmbot.g:5823:1: rule__IsGreaterThan__Group__0 : rule__IsGreaterThan__Group__0__Impl rule__IsGreaterThan__Group__1 ;
     public final void rule__IsGreaterThan__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5773:1: ( rule__IsGreaterThan__Group__0__Impl rule__IsGreaterThan__Group__1 )
-            // InternalMyFarmbot.g:5774:2: rule__IsGreaterThan__Group__0__Impl rule__IsGreaterThan__Group__1
+            // InternalMyFarmbot.g:5827:1: ( rule__IsGreaterThan__Group__0__Impl rule__IsGreaterThan__Group__1 )
+            // InternalMyFarmbot.g:5828:2: rule__IsGreaterThan__Group__0__Impl rule__IsGreaterThan__Group__1
             {
             pushFollow(FOLLOW_11);
             rule__IsGreaterThan__Group__0__Impl();
@@ -16876,21 +17048,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__0__Impl"
-    // InternalMyFarmbot.g:5781:1: rule__IsGreaterThan__Group__0__Impl : ( () ) ;
+    // InternalMyFarmbot.g:5835:1: rule__IsGreaterThan__Group__0__Impl : ( () ) ;
     public final void rule__IsGreaterThan__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5785:1: ( ( () ) )
-            // InternalMyFarmbot.g:5786:1: ( () )
+            // InternalMyFarmbot.g:5839:1: ( ( () ) )
+            // InternalMyFarmbot.g:5840:1: ( () )
             {
-            // InternalMyFarmbot.g:5786:1: ( () )
-            // InternalMyFarmbot.g:5787:2: ()
+            // InternalMyFarmbot.g:5840:1: ( () )
+            // InternalMyFarmbot.g:5841:2: ()
             {
              before(grammarAccess.getIsGreaterThanAccess().getIsGreaterThanAction_0()); 
-            // InternalMyFarmbot.g:5788:2: ()
-            // InternalMyFarmbot.g:5788:3: 
+            // InternalMyFarmbot.g:5842:2: ()
+            // InternalMyFarmbot.g:5842:3: 
             {
             }
 
@@ -16913,16 +17085,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__1"
-    // InternalMyFarmbot.g:5796:1: rule__IsGreaterThan__Group__1 : rule__IsGreaterThan__Group__1__Impl rule__IsGreaterThan__Group__2 ;
+    // InternalMyFarmbot.g:5850:1: rule__IsGreaterThan__Group__1 : rule__IsGreaterThan__Group__1__Impl rule__IsGreaterThan__Group__2 ;
     public final void rule__IsGreaterThan__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5800:1: ( rule__IsGreaterThan__Group__1__Impl rule__IsGreaterThan__Group__2 )
-            // InternalMyFarmbot.g:5801:2: rule__IsGreaterThan__Group__1__Impl rule__IsGreaterThan__Group__2
+            // InternalMyFarmbot.g:5854:1: ( rule__IsGreaterThan__Group__1__Impl rule__IsGreaterThan__Group__2 )
+            // InternalMyFarmbot.g:5855:2: rule__IsGreaterThan__Group__1__Impl rule__IsGreaterThan__Group__2
             {
-            pushFollow(FOLLOW_57);
+            pushFollow(FOLLOW_54);
             rule__IsGreaterThan__Group__1__Impl();
 
             state._fsp--;
@@ -16951,21 +17123,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__1__Impl"
-    // InternalMyFarmbot.g:5808:1: rule__IsGreaterThan__Group__1__Impl : ( ( rule__IsGreaterThan__AxeAssignment_1 ) ) ;
+    // InternalMyFarmbot.g:5862:1: rule__IsGreaterThan__Group__1__Impl : ( ( rule__IsGreaterThan__AxeAssignment_1 ) ) ;
     public final void rule__IsGreaterThan__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5812:1: ( ( ( rule__IsGreaterThan__AxeAssignment_1 ) ) )
-            // InternalMyFarmbot.g:5813:1: ( ( rule__IsGreaterThan__AxeAssignment_1 ) )
+            // InternalMyFarmbot.g:5866:1: ( ( ( rule__IsGreaterThan__AxeAssignment_1 ) ) )
+            // InternalMyFarmbot.g:5867:1: ( ( rule__IsGreaterThan__AxeAssignment_1 ) )
             {
-            // InternalMyFarmbot.g:5813:1: ( ( rule__IsGreaterThan__AxeAssignment_1 ) )
-            // InternalMyFarmbot.g:5814:2: ( rule__IsGreaterThan__AxeAssignment_1 )
+            // InternalMyFarmbot.g:5867:1: ( ( rule__IsGreaterThan__AxeAssignment_1 ) )
+            // InternalMyFarmbot.g:5868:2: ( rule__IsGreaterThan__AxeAssignment_1 )
             {
              before(grammarAccess.getIsGreaterThanAccess().getAxeAssignment_1()); 
-            // InternalMyFarmbot.g:5815:2: ( rule__IsGreaterThan__AxeAssignment_1 )
-            // InternalMyFarmbot.g:5815:3: rule__IsGreaterThan__AxeAssignment_1
+            // InternalMyFarmbot.g:5869:2: ( rule__IsGreaterThan__AxeAssignment_1 )
+            // InternalMyFarmbot.g:5869:3: rule__IsGreaterThan__AxeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__IsGreaterThan__AxeAssignment_1();
@@ -16998,14 +17170,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__2"
-    // InternalMyFarmbot.g:5823:1: rule__IsGreaterThan__Group__2 : rule__IsGreaterThan__Group__2__Impl rule__IsGreaterThan__Group__3 ;
+    // InternalMyFarmbot.g:5877:1: rule__IsGreaterThan__Group__2 : rule__IsGreaterThan__Group__2__Impl rule__IsGreaterThan__Group__3 ;
     public final void rule__IsGreaterThan__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5827:1: ( rule__IsGreaterThan__Group__2__Impl rule__IsGreaterThan__Group__3 )
-            // InternalMyFarmbot.g:5828:2: rule__IsGreaterThan__Group__2__Impl rule__IsGreaterThan__Group__3
+            // InternalMyFarmbot.g:5881:1: ( rule__IsGreaterThan__Group__2__Impl rule__IsGreaterThan__Group__3 )
+            // InternalMyFarmbot.g:5882:2: rule__IsGreaterThan__Group__2__Impl rule__IsGreaterThan__Group__3
             {
             pushFollow(FOLLOW_58);
             rule__IsGreaterThan__Group__2__Impl();
@@ -17036,21 +17208,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__2__Impl"
-    // InternalMyFarmbot.g:5835:1: rule__IsGreaterThan__Group__2__Impl : ( 'greater' ) ;
+    // InternalMyFarmbot.g:5889:1: rule__IsGreaterThan__Group__2__Impl : ( 'is' ) ;
     public final void rule__IsGreaterThan__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5839:1: ( ( 'greater' ) )
-            // InternalMyFarmbot.g:5840:1: ( 'greater' )
+            // InternalMyFarmbot.g:5893:1: ( ( 'is' ) )
+            // InternalMyFarmbot.g:5894:1: ( 'is' )
             {
-            // InternalMyFarmbot.g:5840:1: ( 'greater' )
-            // InternalMyFarmbot.g:5841:2: 'greater'
+            // InternalMyFarmbot.g:5894:1: ( 'is' )
+            // InternalMyFarmbot.g:5895:2: 'is'
             {
-             before(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_2()); 
-            match(input,62,FOLLOW_2); 
-             after(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_2()); 
+             before(grammarAccess.getIsGreaterThanAccess().getIsKeyword_2()); 
+            match(input,59,FOLLOW_2); 
+             after(grammarAccess.getIsGreaterThanAccess().getIsKeyword_2()); 
 
             }
 
@@ -17073,16 +17245,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__3"
-    // InternalMyFarmbot.g:5850:1: rule__IsGreaterThan__Group__3 : rule__IsGreaterThan__Group__3__Impl rule__IsGreaterThan__Group__4 ;
+    // InternalMyFarmbot.g:5904:1: rule__IsGreaterThan__Group__3 : rule__IsGreaterThan__Group__3__Impl rule__IsGreaterThan__Group__4 ;
     public final void rule__IsGreaterThan__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5854:1: ( rule__IsGreaterThan__Group__3__Impl rule__IsGreaterThan__Group__4 )
-            // InternalMyFarmbot.g:5855:2: rule__IsGreaterThan__Group__3__Impl rule__IsGreaterThan__Group__4
+            // InternalMyFarmbot.g:5908:1: ( rule__IsGreaterThan__Group__3__Impl rule__IsGreaterThan__Group__4 )
+            // InternalMyFarmbot.g:5909:2: rule__IsGreaterThan__Group__3__Impl rule__IsGreaterThan__Group__4
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_59);
             rule__IsGreaterThan__Group__3__Impl();
 
             state._fsp--;
@@ -17111,21 +17283,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__3__Impl"
-    // InternalMyFarmbot.g:5862:1: rule__IsGreaterThan__Group__3__Impl : ( 'than' ) ;
+    // InternalMyFarmbot.g:5916:1: rule__IsGreaterThan__Group__3__Impl : ( 'greater' ) ;
     public final void rule__IsGreaterThan__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5866:1: ( ( 'than' ) )
-            // InternalMyFarmbot.g:5867:1: ( 'than' )
+            // InternalMyFarmbot.g:5920:1: ( ( 'greater' ) )
+            // InternalMyFarmbot.g:5921:1: ( 'greater' )
             {
-            // InternalMyFarmbot.g:5867:1: ( 'than' )
-            // InternalMyFarmbot.g:5868:2: 'than'
+            // InternalMyFarmbot.g:5921:1: ( 'greater' )
+            // InternalMyFarmbot.g:5922:2: 'greater'
             {
-             before(grammarAccess.getIsGreaterThanAccess().getThanKeyword_3()); 
+             before(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3()); 
             match(input,63,FOLLOW_2); 
-             after(grammarAccess.getIsGreaterThanAccess().getThanKeyword_3()); 
+             after(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3()); 
 
             }
 
@@ -17148,17 +17320,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__4"
-    // InternalMyFarmbot.g:5877:1: rule__IsGreaterThan__Group__4 : rule__IsGreaterThan__Group__4__Impl ;
+    // InternalMyFarmbot.g:5931:1: rule__IsGreaterThan__Group__4 : rule__IsGreaterThan__Group__4__Impl rule__IsGreaterThan__Group__5 ;
     public final void rule__IsGreaterThan__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5881:1: ( rule__IsGreaterThan__Group__4__Impl )
-            // InternalMyFarmbot.g:5882:2: rule__IsGreaterThan__Group__4__Impl
+            // InternalMyFarmbot.g:5935:1: ( rule__IsGreaterThan__Group__4__Impl rule__IsGreaterThan__Group__5 )
+            // InternalMyFarmbot.g:5936:2: rule__IsGreaterThan__Group__4__Impl rule__IsGreaterThan__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__IsGreaterThan__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__IsGreaterThan__Group__5();
 
             state._fsp--;
 
@@ -17181,31 +17358,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsGreaterThan__Group__4__Impl"
-    // InternalMyFarmbot.g:5888:1: rule__IsGreaterThan__Group__4__Impl : ( ( rule__IsGreaterThan__ValueAssignment_4 ) ) ;
+    // InternalMyFarmbot.g:5943:1: rule__IsGreaterThan__Group__4__Impl : ( 'than' ) ;
     public final void rule__IsGreaterThan__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5892:1: ( ( ( rule__IsGreaterThan__ValueAssignment_4 ) ) )
-            // InternalMyFarmbot.g:5893:1: ( ( rule__IsGreaterThan__ValueAssignment_4 ) )
+            // InternalMyFarmbot.g:5947:1: ( ( 'than' ) )
+            // InternalMyFarmbot.g:5948:1: ( 'than' )
             {
-            // InternalMyFarmbot.g:5893:1: ( ( rule__IsGreaterThan__ValueAssignment_4 ) )
-            // InternalMyFarmbot.g:5894:2: ( rule__IsGreaterThan__ValueAssignment_4 )
+            // InternalMyFarmbot.g:5948:1: ( 'than' )
+            // InternalMyFarmbot.g:5949:2: 'than'
             {
-             before(grammarAccess.getIsGreaterThanAccess().getValueAssignment_4()); 
-            // InternalMyFarmbot.g:5895:2: ( rule__IsGreaterThan__ValueAssignment_4 )
-            // InternalMyFarmbot.g:5895:3: rule__IsGreaterThan__ValueAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__IsGreaterThan__ValueAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIsGreaterThanAccess().getValueAssignment_4()); 
+             before(grammarAccess.getIsGreaterThanAccess().getThanKeyword_4()); 
+            match(input,64,FOLLOW_2); 
+             after(grammarAccess.getIsGreaterThanAccess().getThanKeyword_4()); 
 
             }
 
@@ -17227,15 +17394,95 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsGreaterThan__Group__4__Impl"
 
 
+    // $ANTLR start "rule__IsGreaterThan__Group__5"
+    // InternalMyFarmbot.g:5958:1: rule__IsGreaterThan__Group__5 : rule__IsGreaterThan__Group__5__Impl ;
+    public final void rule__IsGreaterThan__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:5962:1: ( rule__IsGreaterThan__Group__5__Impl )
+            // InternalMyFarmbot.g:5963:2: rule__IsGreaterThan__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsGreaterThan__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsGreaterThan__Group__5"
+
+
+    // $ANTLR start "rule__IsGreaterThan__Group__5__Impl"
+    // InternalMyFarmbot.g:5969:1: rule__IsGreaterThan__Group__5__Impl : ( ( rule__IsGreaterThan__ValueAssignment_5 ) ) ;
+    public final void rule__IsGreaterThan__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:5973:1: ( ( ( rule__IsGreaterThan__ValueAssignment_5 ) ) )
+            // InternalMyFarmbot.g:5974:1: ( ( rule__IsGreaterThan__ValueAssignment_5 ) )
+            {
+            // InternalMyFarmbot.g:5974:1: ( ( rule__IsGreaterThan__ValueAssignment_5 ) )
+            // InternalMyFarmbot.g:5975:2: ( rule__IsGreaterThan__ValueAssignment_5 )
+            {
+             before(grammarAccess.getIsGreaterThanAccess().getValueAssignment_5()); 
+            // InternalMyFarmbot.g:5976:2: ( rule__IsGreaterThan__ValueAssignment_5 )
+            // InternalMyFarmbot.g:5976:3: rule__IsGreaterThan__ValueAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsGreaterThan__ValueAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIsGreaterThanAccess().getValueAssignment_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsGreaterThan__Group__5__Impl"
+
+
     // $ANTLR start "rule__IsLowerThan__Group__0"
-    // InternalMyFarmbot.g:5904:1: rule__IsLowerThan__Group__0 : rule__IsLowerThan__Group__0__Impl rule__IsLowerThan__Group__1 ;
+    // InternalMyFarmbot.g:5985:1: rule__IsLowerThan__Group__0 : rule__IsLowerThan__Group__0__Impl rule__IsLowerThan__Group__1 ;
     public final void rule__IsLowerThan__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5908:1: ( rule__IsLowerThan__Group__0__Impl rule__IsLowerThan__Group__1 )
-            // InternalMyFarmbot.g:5909:2: rule__IsLowerThan__Group__0__Impl rule__IsLowerThan__Group__1
+            // InternalMyFarmbot.g:5989:1: ( rule__IsLowerThan__Group__0__Impl rule__IsLowerThan__Group__1 )
+            // InternalMyFarmbot.g:5990:2: rule__IsLowerThan__Group__0__Impl rule__IsLowerThan__Group__1
             {
             pushFollow(FOLLOW_28);
             rule__IsLowerThan__Group__0__Impl();
@@ -17266,21 +17513,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__0__Impl"
-    // InternalMyFarmbot.g:5916:1: rule__IsLowerThan__Group__0__Impl : ( () ) ;
+    // InternalMyFarmbot.g:5997:1: rule__IsLowerThan__Group__0__Impl : ( () ) ;
     public final void rule__IsLowerThan__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5920:1: ( ( () ) )
-            // InternalMyFarmbot.g:5921:1: ( () )
+            // InternalMyFarmbot.g:6001:1: ( ( () ) )
+            // InternalMyFarmbot.g:6002:1: ( () )
             {
-            // InternalMyFarmbot.g:5921:1: ( () )
-            // InternalMyFarmbot.g:5922:2: ()
+            // InternalMyFarmbot.g:6002:1: ( () )
+            // InternalMyFarmbot.g:6003:2: ()
             {
              before(grammarAccess.getIsLowerThanAccess().getIsLowerThanAction_0()); 
-            // InternalMyFarmbot.g:5923:2: ()
-            // InternalMyFarmbot.g:5923:3: 
+            // InternalMyFarmbot.g:6004:2: ()
+            // InternalMyFarmbot.g:6004:3: 
             {
             }
 
@@ -17303,16 +17550,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__1"
-    // InternalMyFarmbot.g:5931:1: rule__IsLowerThan__Group__1 : rule__IsLowerThan__Group__1__Impl rule__IsLowerThan__Group__2 ;
+    // InternalMyFarmbot.g:6012:1: rule__IsLowerThan__Group__1 : rule__IsLowerThan__Group__1__Impl rule__IsLowerThan__Group__2 ;
     public final void rule__IsLowerThan__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5935:1: ( rule__IsLowerThan__Group__1__Impl rule__IsLowerThan__Group__2 )
-            // InternalMyFarmbot.g:5936:2: rule__IsLowerThan__Group__1__Impl rule__IsLowerThan__Group__2
+            // InternalMyFarmbot.g:6016:1: ( rule__IsLowerThan__Group__1__Impl rule__IsLowerThan__Group__2 )
+            // InternalMyFarmbot.g:6017:2: rule__IsLowerThan__Group__1__Impl rule__IsLowerThan__Group__2
             {
-            pushFollow(FOLLOW_59);
+            pushFollow(FOLLOW_54);
             rule__IsLowerThan__Group__1__Impl();
 
             state._fsp--;
@@ -17341,21 +17588,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__1__Impl"
-    // InternalMyFarmbot.g:5943:1: rule__IsLowerThan__Group__1__Impl : ( ( rule__IsLowerThan__AxeAssignment_1 ) ) ;
+    // InternalMyFarmbot.g:6024:1: rule__IsLowerThan__Group__1__Impl : ( ( rule__IsLowerThan__AxeAssignment_1 ) ) ;
     public final void rule__IsLowerThan__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5947:1: ( ( ( rule__IsLowerThan__AxeAssignment_1 ) ) )
-            // InternalMyFarmbot.g:5948:1: ( ( rule__IsLowerThan__AxeAssignment_1 ) )
+            // InternalMyFarmbot.g:6028:1: ( ( ( rule__IsLowerThan__AxeAssignment_1 ) ) )
+            // InternalMyFarmbot.g:6029:1: ( ( rule__IsLowerThan__AxeAssignment_1 ) )
             {
-            // InternalMyFarmbot.g:5948:1: ( ( rule__IsLowerThan__AxeAssignment_1 ) )
-            // InternalMyFarmbot.g:5949:2: ( rule__IsLowerThan__AxeAssignment_1 )
+            // InternalMyFarmbot.g:6029:1: ( ( rule__IsLowerThan__AxeAssignment_1 ) )
+            // InternalMyFarmbot.g:6030:2: ( rule__IsLowerThan__AxeAssignment_1 )
             {
              before(grammarAccess.getIsLowerThanAccess().getAxeAssignment_1()); 
-            // InternalMyFarmbot.g:5950:2: ( rule__IsLowerThan__AxeAssignment_1 )
-            // InternalMyFarmbot.g:5950:3: rule__IsLowerThan__AxeAssignment_1
+            // InternalMyFarmbot.g:6031:2: ( rule__IsLowerThan__AxeAssignment_1 )
+            // InternalMyFarmbot.g:6031:3: rule__IsLowerThan__AxeAssignment_1
             {
             pushFollow(FOLLOW_2);
             rule__IsLowerThan__AxeAssignment_1();
@@ -17388,16 +17635,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__2"
-    // InternalMyFarmbot.g:5958:1: rule__IsLowerThan__Group__2 : rule__IsLowerThan__Group__2__Impl rule__IsLowerThan__Group__3 ;
+    // InternalMyFarmbot.g:6039:1: rule__IsLowerThan__Group__2 : rule__IsLowerThan__Group__2__Impl rule__IsLowerThan__Group__3 ;
     public final void rule__IsLowerThan__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5962:1: ( rule__IsLowerThan__Group__2__Impl rule__IsLowerThan__Group__3 )
-            // InternalMyFarmbot.g:5963:2: rule__IsLowerThan__Group__2__Impl rule__IsLowerThan__Group__3
+            // InternalMyFarmbot.g:6043:1: ( rule__IsLowerThan__Group__2__Impl rule__IsLowerThan__Group__3 )
+            // InternalMyFarmbot.g:6044:2: rule__IsLowerThan__Group__2__Impl rule__IsLowerThan__Group__3
             {
-            pushFollow(FOLLOW_58);
+            pushFollow(FOLLOW_60);
             rule__IsLowerThan__Group__2__Impl();
 
             state._fsp--;
@@ -17426,21 +17673,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__2__Impl"
-    // InternalMyFarmbot.g:5970:1: rule__IsLowerThan__Group__2__Impl : ( 'lower' ) ;
+    // InternalMyFarmbot.g:6051:1: rule__IsLowerThan__Group__2__Impl : ( 'is' ) ;
     public final void rule__IsLowerThan__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5974:1: ( ( 'lower' ) )
-            // InternalMyFarmbot.g:5975:1: ( 'lower' )
+            // InternalMyFarmbot.g:6055:1: ( ( 'is' ) )
+            // InternalMyFarmbot.g:6056:1: ( 'is' )
             {
-            // InternalMyFarmbot.g:5975:1: ( 'lower' )
-            // InternalMyFarmbot.g:5976:2: 'lower'
+            // InternalMyFarmbot.g:6056:1: ( 'is' )
+            // InternalMyFarmbot.g:6057:2: 'is'
             {
-             before(grammarAccess.getIsLowerThanAccess().getLowerKeyword_2()); 
-            match(input,64,FOLLOW_2); 
-             after(grammarAccess.getIsLowerThanAccess().getLowerKeyword_2()); 
+             before(grammarAccess.getIsLowerThanAccess().getIsKeyword_2()); 
+            match(input,59,FOLLOW_2); 
+             after(grammarAccess.getIsLowerThanAccess().getIsKeyword_2()); 
 
             }
 
@@ -17463,16 +17710,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__3"
-    // InternalMyFarmbot.g:5985:1: rule__IsLowerThan__Group__3 : rule__IsLowerThan__Group__3__Impl rule__IsLowerThan__Group__4 ;
+    // InternalMyFarmbot.g:6066:1: rule__IsLowerThan__Group__3 : rule__IsLowerThan__Group__3__Impl rule__IsLowerThan__Group__4 ;
     public final void rule__IsLowerThan__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:5989:1: ( rule__IsLowerThan__Group__3__Impl rule__IsLowerThan__Group__4 )
-            // InternalMyFarmbot.g:5990:2: rule__IsLowerThan__Group__3__Impl rule__IsLowerThan__Group__4
+            // InternalMyFarmbot.g:6070:1: ( rule__IsLowerThan__Group__3__Impl rule__IsLowerThan__Group__4 )
+            // InternalMyFarmbot.g:6071:2: rule__IsLowerThan__Group__3__Impl rule__IsLowerThan__Group__4
             {
-            pushFollow(FOLLOW_8);
+            pushFollow(FOLLOW_59);
             rule__IsLowerThan__Group__3__Impl();
 
             state._fsp--;
@@ -17501,21 +17748,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__3__Impl"
-    // InternalMyFarmbot.g:5997:1: rule__IsLowerThan__Group__3__Impl : ( 'than' ) ;
+    // InternalMyFarmbot.g:6078:1: rule__IsLowerThan__Group__3__Impl : ( 'lower' ) ;
     public final void rule__IsLowerThan__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6001:1: ( ( 'than' ) )
-            // InternalMyFarmbot.g:6002:1: ( 'than' )
+            // InternalMyFarmbot.g:6082:1: ( ( 'lower' ) )
+            // InternalMyFarmbot.g:6083:1: ( 'lower' )
             {
-            // InternalMyFarmbot.g:6002:1: ( 'than' )
-            // InternalMyFarmbot.g:6003:2: 'than'
+            // InternalMyFarmbot.g:6083:1: ( 'lower' )
+            // InternalMyFarmbot.g:6084:2: 'lower'
             {
-             before(grammarAccess.getIsLowerThanAccess().getThanKeyword_3()); 
-            match(input,63,FOLLOW_2); 
-             after(grammarAccess.getIsLowerThanAccess().getThanKeyword_3()); 
+             before(grammarAccess.getIsLowerThanAccess().getLowerKeyword_3()); 
+            match(input,65,FOLLOW_2); 
+             after(grammarAccess.getIsLowerThanAccess().getLowerKeyword_3()); 
 
             }
 
@@ -17538,17 +17785,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__4"
-    // InternalMyFarmbot.g:6012:1: rule__IsLowerThan__Group__4 : rule__IsLowerThan__Group__4__Impl ;
+    // InternalMyFarmbot.g:6093:1: rule__IsLowerThan__Group__4 : rule__IsLowerThan__Group__4__Impl rule__IsLowerThan__Group__5 ;
     public final void rule__IsLowerThan__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6016:1: ( rule__IsLowerThan__Group__4__Impl )
-            // InternalMyFarmbot.g:6017:2: rule__IsLowerThan__Group__4__Impl
+            // InternalMyFarmbot.g:6097:1: ( rule__IsLowerThan__Group__4__Impl rule__IsLowerThan__Group__5 )
+            // InternalMyFarmbot.g:6098:2: rule__IsLowerThan__Group__4__Impl rule__IsLowerThan__Group__5
             {
-            pushFollow(FOLLOW_2);
+            pushFollow(FOLLOW_8);
             rule__IsLowerThan__Group__4__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_2);
+            rule__IsLowerThan__Group__5();
 
             state._fsp--;
 
@@ -17571,31 +17823,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsLowerThan__Group__4__Impl"
-    // InternalMyFarmbot.g:6023:1: rule__IsLowerThan__Group__4__Impl : ( ( rule__IsLowerThan__ValueAssignment_4 ) ) ;
+    // InternalMyFarmbot.g:6105:1: rule__IsLowerThan__Group__4__Impl : ( 'than' ) ;
     public final void rule__IsLowerThan__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6027:1: ( ( ( rule__IsLowerThan__ValueAssignment_4 ) ) )
-            // InternalMyFarmbot.g:6028:1: ( ( rule__IsLowerThan__ValueAssignment_4 ) )
+            // InternalMyFarmbot.g:6109:1: ( ( 'than' ) )
+            // InternalMyFarmbot.g:6110:1: ( 'than' )
             {
-            // InternalMyFarmbot.g:6028:1: ( ( rule__IsLowerThan__ValueAssignment_4 ) )
-            // InternalMyFarmbot.g:6029:2: ( rule__IsLowerThan__ValueAssignment_4 )
+            // InternalMyFarmbot.g:6110:1: ( 'than' )
+            // InternalMyFarmbot.g:6111:2: 'than'
             {
-             before(grammarAccess.getIsLowerThanAccess().getValueAssignment_4()); 
-            // InternalMyFarmbot.g:6030:2: ( rule__IsLowerThan__ValueAssignment_4 )
-            // InternalMyFarmbot.g:6030:3: rule__IsLowerThan__ValueAssignment_4
-            {
-            pushFollow(FOLLOW_2);
-            rule__IsLowerThan__ValueAssignment_4();
-
-            state._fsp--;
-
-
-            }
-
-             after(grammarAccess.getIsLowerThanAccess().getValueAssignment_4()); 
+             before(grammarAccess.getIsLowerThanAccess().getThanKeyword_4()); 
+            match(input,64,FOLLOW_2); 
+             after(grammarAccess.getIsLowerThanAccess().getThanKeyword_4()); 
 
             }
 
@@ -17617,15 +17859,95 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsLowerThan__Group__4__Impl"
 
 
+    // $ANTLR start "rule__IsLowerThan__Group__5"
+    // InternalMyFarmbot.g:6120:1: rule__IsLowerThan__Group__5 : rule__IsLowerThan__Group__5__Impl ;
+    public final void rule__IsLowerThan__Group__5() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:6124:1: ( rule__IsLowerThan__Group__5__Impl )
+            // InternalMyFarmbot.g:6125:2: rule__IsLowerThan__Group__5__Impl
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsLowerThan__Group__5__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsLowerThan__Group__5"
+
+
+    // $ANTLR start "rule__IsLowerThan__Group__5__Impl"
+    // InternalMyFarmbot.g:6131:1: rule__IsLowerThan__Group__5__Impl : ( ( rule__IsLowerThan__ValueAssignment_5 ) ) ;
+    public final void rule__IsLowerThan__Group__5__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+        	
+        try {
+            // InternalMyFarmbot.g:6135:1: ( ( ( rule__IsLowerThan__ValueAssignment_5 ) ) )
+            // InternalMyFarmbot.g:6136:1: ( ( rule__IsLowerThan__ValueAssignment_5 ) )
+            {
+            // InternalMyFarmbot.g:6136:1: ( ( rule__IsLowerThan__ValueAssignment_5 ) )
+            // InternalMyFarmbot.g:6137:2: ( rule__IsLowerThan__ValueAssignment_5 )
+            {
+             before(grammarAccess.getIsLowerThanAccess().getValueAssignment_5()); 
+            // InternalMyFarmbot.g:6138:2: ( rule__IsLowerThan__ValueAssignment_5 )
+            // InternalMyFarmbot.g:6138:3: rule__IsLowerThan__ValueAssignment_5
+            {
+            pushFollow(FOLLOW_2);
+            rule__IsLowerThan__ValueAssignment_5();
+
+            state._fsp--;
+
+
+            }
+
+             after(grammarAccess.getIsLowerThanAccess().getValueAssignment_5()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__IsLowerThan__Group__5__Impl"
+
+
     // $ANTLR start "rule__EDouble__Group__0"
-    // InternalMyFarmbot.g:6039:1: rule__EDouble__Group__0 : rule__EDouble__Group__0__Impl rule__EDouble__Group__1 ;
+    // InternalMyFarmbot.g:6147:1: rule__EDouble__Group__0 : rule__EDouble__Group__0__Impl rule__EDouble__Group__1 ;
     public final void rule__EDouble__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6043:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
-            // InternalMyFarmbot.g:6044:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
+            // InternalMyFarmbot.g:6151:1: ( rule__EDouble__Group__0__Impl rule__EDouble__Group__1 )
+            // InternalMyFarmbot.g:6152:2: rule__EDouble__Group__0__Impl rule__EDouble__Group__1
             {
             pushFollow(FOLLOW_37);
             rule__EDouble__Group__0__Impl();
@@ -17656,31 +17978,31 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__0__Impl"
-    // InternalMyFarmbot.g:6051:1: rule__EDouble__Group__0__Impl : ( ( '-' )? ) ;
+    // InternalMyFarmbot.g:6159:1: rule__EDouble__Group__0__Impl : ( ( '-' )? ) ;
     public final void rule__EDouble__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6055:1: ( ( ( '-' )? ) )
-            // InternalMyFarmbot.g:6056:1: ( ( '-' )? )
+            // InternalMyFarmbot.g:6163:1: ( ( ( '-' )? ) )
+            // InternalMyFarmbot.g:6164:1: ( ( '-' )? )
             {
-            // InternalMyFarmbot.g:6056:1: ( ( '-' )? )
-            // InternalMyFarmbot.g:6057:2: ( '-' )?
+            // InternalMyFarmbot.g:6164:1: ( ( '-' )? )
+            // InternalMyFarmbot.g:6165:2: ( '-' )?
             {
              before(grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_0()); 
-            // InternalMyFarmbot.g:6058:2: ( '-' )?
-            int alt11=2;
-            int LA11_0 = input.LA(1);
+            // InternalMyFarmbot.g:6166:2: ( '-' )?
+            int alt12=2;
+            int LA12_0 = input.LA(1);
 
-            if ( (LA11_0==65) ) {
-                alt11=1;
+            if ( (LA12_0==66) ) {
+                alt12=1;
             }
-            switch (alt11) {
+            switch (alt12) {
                 case 1 :
-                    // InternalMyFarmbot.g:6058:3: '-'
+                    // InternalMyFarmbot.g:6166:3: '-'
                     {
-                    match(input,65,FOLLOW_2); 
+                    match(input,66,FOLLOW_2); 
 
                     }
                     break;
@@ -17710,14 +18032,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__1"
-    // InternalMyFarmbot.g:6066:1: rule__EDouble__Group__1 : rule__EDouble__Group__1__Impl rule__EDouble__Group__2 ;
+    // InternalMyFarmbot.g:6174:1: rule__EDouble__Group__1 : rule__EDouble__Group__1__Impl rule__EDouble__Group__2 ;
     public final void rule__EDouble__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6070:1: ( rule__EDouble__Group__1__Impl rule__EDouble__Group__2 )
-            // InternalMyFarmbot.g:6071:2: rule__EDouble__Group__1__Impl rule__EDouble__Group__2
+            // InternalMyFarmbot.g:6178:1: ( rule__EDouble__Group__1__Impl rule__EDouble__Group__2 )
+            // InternalMyFarmbot.g:6179:2: rule__EDouble__Group__1__Impl rule__EDouble__Group__2
             {
             pushFollow(FOLLOW_37);
             rule__EDouble__Group__1__Impl();
@@ -17748,29 +18070,29 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__1__Impl"
-    // InternalMyFarmbot.g:6078:1: rule__EDouble__Group__1__Impl : ( ( RULE_INT )? ) ;
+    // InternalMyFarmbot.g:6186:1: rule__EDouble__Group__1__Impl : ( ( RULE_INT )? ) ;
     public final void rule__EDouble__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6082:1: ( ( ( RULE_INT )? ) )
-            // InternalMyFarmbot.g:6083:1: ( ( RULE_INT )? )
+            // InternalMyFarmbot.g:6190:1: ( ( ( RULE_INT )? ) )
+            // InternalMyFarmbot.g:6191:1: ( ( RULE_INT )? )
             {
-            // InternalMyFarmbot.g:6083:1: ( ( RULE_INT )? )
-            // InternalMyFarmbot.g:6084:2: ( RULE_INT )?
+            // InternalMyFarmbot.g:6191:1: ( ( RULE_INT )? )
+            // InternalMyFarmbot.g:6192:2: ( RULE_INT )?
             {
              before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_1()); 
-            // InternalMyFarmbot.g:6085:2: ( RULE_INT )?
-            int alt12=2;
-            int LA12_0 = input.LA(1);
+            // InternalMyFarmbot.g:6193:2: ( RULE_INT )?
+            int alt13=2;
+            int LA13_0 = input.LA(1);
 
-            if ( (LA12_0==RULE_INT) ) {
-                alt12=1;
+            if ( (LA13_0==RULE_INT) ) {
+                alt13=1;
             }
-            switch (alt12) {
+            switch (alt13) {
                 case 1 :
-                    // InternalMyFarmbot.g:6085:3: RULE_INT
+                    // InternalMyFarmbot.g:6193:3: RULE_INT
                     {
                     match(input,RULE_INT,FOLLOW_2); 
 
@@ -17802,14 +18124,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__2"
-    // InternalMyFarmbot.g:6093:1: rule__EDouble__Group__2 : rule__EDouble__Group__2__Impl rule__EDouble__Group__3 ;
+    // InternalMyFarmbot.g:6201:1: rule__EDouble__Group__2 : rule__EDouble__Group__2__Impl rule__EDouble__Group__3 ;
     public final void rule__EDouble__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6097:1: ( rule__EDouble__Group__2__Impl rule__EDouble__Group__3 )
-            // InternalMyFarmbot.g:6098:2: rule__EDouble__Group__2__Impl rule__EDouble__Group__3
+            // InternalMyFarmbot.g:6205:1: ( rule__EDouble__Group__2__Impl rule__EDouble__Group__3 )
+            // InternalMyFarmbot.g:6206:2: rule__EDouble__Group__2__Impl rule__EDouble__Group__3
             {
             pushFollow(FOLLOW_8);
             rule__EDouble__Group__2__Impl();
@@ -17840,20 +18162,20 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__2__Impl"
-    // InternalMyFarmbot.g:6105:1: rule__EDouble__Group__2__Impl : ( '.' ) ;
+    // InternalMyFarmbot.g:6213:1: rule__EDouble__Group__2__Impl : ( '.' ) ;
     public final void rule__EDouble__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6109:1: ( ( '.' ) )
-            // InternalMyFarmbot.g:6110:1: ( '.' )
+            // InternalMyFarmbot.g:6217:1: ( ( '.' ) )
+            // InternalMyFarmbot.g:6218:1: ( '.' )
             {
-            // InternalMyFarmbot.g:6110:1: ( '.' )
-            // InternalMyFarmbot.g:6111:2: '.'
+            // InternalMyFarmbot.g:6218:1: ( '.' )
+            // InternalMyFarmbot.g:6219:2: '.'
             {
              before(grammarAccess.getEDoubleAccess().getFullStopKeyword_2()); 
-            match(input,66,FOLLOW_2); 
+            match(input,67,FOLLOW_2); 
              after(grammarAccess.getEDoubleAccess().getFullStopKeyword_2()); 
 
             }
@@ -17877,16 +18199,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__3"
-    // InternalMyFarmbot.g:6120:1: rule__EDouble__Group__3 : rule__EDouble__Group__3__Impl rule__EDouble__Group__4 ;
+    // InternalMyFarmbot.g:6228:1: rule__EDouble__Group__3 : rule__EDouble__Group__3__Impl rule__EDouble__Group__4 ;
     public final void rule__EDouble__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6124:1: ( rule__EDouble__Group__3__Impl rule__EDouble__Group__4 )
-            // InternalMyFarmbot.g:6125:2: rule__EDouble__Group__3__Impl rule__EDouble__Group__4
+            // InternalMyFarmbot.g:6232:1: ( rule__EDouble__Group__3__Impl rule__EDouble__Group__4 )
+            // InternalMyFarmbot.g:6233:2: rule__EDouble__Group__3__Impl rule__EDouble__Group__4
             {
-            pushFollow(FOLLOW_60);
+            pushFollow(FOLLOW_61);
             rule__EDouble__Group__3__Impl();
 
             state._fsp--;
@@ -17915,17 +18237,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__3__Impl"
-    // InternalMyFarmbot.g:6132:1: rule__EDouble__Group__3__Impl : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6240:1: rule__EDouble__Group__3__Impl : ( RULE_INT ) ;
     public final void rule__EDouble__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6136:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6137:1: ( RULE_INT )
+            // InternalMyFarmbot.g:6244:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6245:1: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6137:1: ( RULE_INT )
-            // InternalMyFarmbot.g:6138:2: RULE_INT
+            // InternalMyFarmbot.g:6245:1: ( RULE_INT )
+            // InternalMyFarmbot.g:6246:2: RULE_INT
             {
              before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -17952,14 +18274,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__4"
-    // InternalMyFarmbot.g:6147:1: rule__EDouble__Group__4 : rule__EDouble__Group__4__Impl ;
+    // InternalMyFarmbot.g:6255:1: rule__EDouble__Group__4 : rule__EDouble__Group__4__Impl ;
     public final void rule__EDouble__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6151:1: ( rule__EDouble__Group__4__Impl )
-            // InternalMyFarmbot.g:6152:2: rule__EDouble__Group__4__Impl
+            // InternalMyFarmbot.g:6259:1: ( rule__EDouble__Group__4__Impl )
+            // InternalMyFarmbot.g:6260:2: rule__EDouble__Group__4__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EDouble__Group__4__Impl();
@@ -17985,29 +18307,29 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group__4__Impl"
-    // InternalMyFarmbot.g:6158:1: rule__EDouble__Group__4__Impl : ( ( rule__EDouble__Group_4__0 )? ) ;
+    // InternalMyFarmbot.g:6266:1: rule__EDouble__Group__4__Impl : ( ( rule__EDouble__Group_4__0 )? ) ;
     public final void rule__EDouble__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6162:1: ( ( ( rule__EDouble__Group_4__0 )? ) )
-            // InternalMyFarmbot.g:6163:1: ( ( rule__EDouble__Group_4__0 )? )
+            // InternalMyFarmbot.g:6270:1: ( ( ( rule__EDouble__Group_4__0 )? ) )
+            // InternalMyFarmbot.g:6271:1: ( ( rule__EDouble__Group_4__0 )? )
             {
-            // InternalMyFarmbot.g:6163:1: ( ( rule__EDouble__Group_4__0 )? )
-            // InternalMyFarmbot.g:6164:2: ( rule__EDouble__Group_4__0 )?
+            // InternalMyFarmbot.g:6271:1: ( ( rule__EDouble__Group_4__0 )? )
+            // InternalMyFarmbot.g:6272:2: ( rule__EDouble__Group_4__0 )?
             {
              before(grammarAccess.getEDoubleAccess().getGroup_4()); 
-            // InternalMyFarmbot.g:6165:2: ( rule__EDouble__Group_4__0 )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalMyFarmbot.g:6273:2: ( rule__EDouble__Group_4__0 )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( ((LA13_0>=11 && LA13_0<=12)) ) {
-                alt13=1;
+            if ( ((LA14_0>=11 && LA14_0<=12)) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalMyFarmbot.g:6165:3: rule__EDouble__Group_4__0
+                    // InternalMyFarmbot.g:6273:3: rule__EDouble__Group_4__0
                     {
                     pushFollow(FOLLOW_2);
                     rule__EDouble__Group_4__0();
@@ -18043,16 +18365,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group_4__0"
-    // InternalMyFarmbot.g:6174:1: rule__EDouble__Group_4__0 : rule__EDouble__Group_4__0__Impl rule__EDouble__Group_4__1 ;
+    // InternalMyFarmbot.g:6282:1: rule__EDouble__Group_4__0 : rule__EDouble__Group_4__0__Impl rule__EDouble__Group_4__1 ;
     public final void rule__EDouble__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6178:1: ( rule__EDouble__Group_4__0__Impl rule__EDouble__Group_4__1 )
-            // InternalMyFarmbot.g:6179:2: rule__EDouble__Group_4__0__Impl rule__EDouble__Group_4__1
+            // InternalMyFarmbot.g:6286:1: ( rule__EDouble__Group_4__0__Impl rule__EDouble__Group_4__1 )
+            // InternalMyFarmbot.g:6287:2: rule__EDouble__Group_4__0__Impl rule__EDouble__Group_4__1
             {
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_62);
             rule__EDouble__Group_4__0__Impl();
 
             state._fsp--;
@@ -18081,21 +18403,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group_4__0__Impl"
-    // InternalMyFarmbot.g:6186:1: rule__EDouble__Group_4__0__Impl : ( ( rule__EDouble__Alternatives_4_0 ) ) ;
+    // InternalMyFarmbot.g:6294:1: rule__EDouble__Group_4__0__Impl : ( ( rule__EDouble__Alternatives_4_0 ) ) ;
     public final void rule__EDouble__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6190:1: ( ( ( rule__EDouble__Alternatives_4_0 ) ) )
-            // InternalMyFarmbot.g:6191:1: ( ( rule__EDouble__Alternatives_4_0 ) )
+            // InternalMyFarmbot.g:6298:1: ( ( ( rule__EDouble__Alternatives_4_0 ) ) )
+            // InternalMyFarmbot.g:6299:1: ( ( rule__EDouble__Alternatives_4_0 ) )
             {
-            // InternalMyFarmbot.g:6191:1: ( ( rule__EDouble__Alternatives_4_0 ) )
-            // InternalMyFarmbot.g:6192:2: ( rule__EDouble__Alternatives_4_0 )
+            // InternalMyFarmbot.g:6299:1: ( ( rule__EDouble__Alternatives_4_0 ) )
+            // InternalMyFarmbot.g:6300:2: ( rule__EDouble__Alternatives_4_0 )
             {
              before(grammarAccess.getEDoubleAccess().getAlternatives_4_0()); 
-            // InternalMyFarmbot.g:6193:2: ( rule__EDouble__Alternatives_4_0 )
-            // InternalMyFarmbot.g:6193:3: rule__EDouble__Alternatives_4_0
+            // InternalMyFarmbot.g:6301:2: ( rule__EDouble__Alternatives_4_0 )
+            // InternalMyFarmbot.g:6301:3: rule__EDouble__Alternatives_4_0
             {
             pushFollow(FOLLOW_2);
             rule__EDouble__Alternatives_4_0();
@@ -18128,16 +18450,16 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group_4__1"
-    // InternalMyFarmbot.g:6201:1: rule__EDouble__Group_4__1 : rule__EDouble__Group_4__1__Impl rule__EDouble__Group_4__2 ;
+    // InternalMyFarmbot.g:6309:1: rule__EDouble__Group_4__1 : rule__EDouble__Group_4__1__Impl rule__EDouble__Group_4__2 ;
     public final void rule__EDouble__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6205:1: ( rule__EDouble__Group_4__1__Impl rule__EDouble__Group_4__2 )
-            // InternalMyFarmbot.g:6206:2: rule__EDouble__Group_4__1__Impl rule__EDouble__Group_4__2
+            // InternalMyFarmbot.g:6313:1: ( rule__EDouble__Group_4__1__Impl rule__EDouble__Group_4__2 )
+            // InternalMyFarmbot.g:6314:2: rule__EDouble__Group_4__1__Impl rule__EDouble__Group_4__2
             {
-            pushFollow(FOLLOW_61);
+            pushFollow(FOLLOW_62);
             rule__EDouble__Group_4__1__Impl();
 
             state._fsp--;
@@ -18166,31 +18488,31 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group_4__1__Impl"
-    // InternalMyFarmbot.g:6213:1: rule__EDouble__Group_4__1__Impl : ( ( '-' )? ) ;
+    // InternalMyFarmbot.g:6321:1: rule__EDouble__Group_4__1__Impl : ( ( '-' )? ) ;
     public final void rule__EDouble__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6217:1: ( ( ( '-' )? ) )
-            // InternalMyFarmbot.g:6218:1: ( ( '-' )? )
+            // InternalMyFarmbot.g:6325:1: ( ( ( '-' )? ) )
+            // InternalMyFarmbot.g:6326:1: ( ( '-' )? )
             {
-            // InternalMyFarmbot.g:6218:1: ( ( '-' )? )
-            // InternalMyFarmbot.g:6219:2: ( '-' )?
+            // InternalMyFarmbot.g:6326:1: ( ( '-' )? )
+            // InternalMyFarmbot.g:6327:2: ( '-' )?
             {
              before(grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_4_1()); 
-            // InternalMyFarmbot.g:6220:2: ( '-' )?
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalMyFarmbot.g:6328:2: ( '-' )?
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==65) ) {
-                alt14=1;
+            if ( (LA15_0==66) ) {
+                alt15=1;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalMyFarmbot.g:6220:3: '-'
+                    // InternalMyFarmbot.g:6328:3: '-'
                     {
-                    match(input,65,FOLLOW_2); 
+                    match(input,66,FOLLOW_2); 
 
                     }
                     break;
@@ -18220,14 +18542,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group_4__2"
-    // InternalMyFarmbot.g:6228:1: rule__EDouble__Group_4__2 : rule__EDouble__Group_4__2__Impl ;
+    // InternalMyFarmbot.g:6336:1: rule__EDouble__Group_4__2 : rule__EDouble__Group_4__2__Impl ;
     public final void rule__EDouble__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6232:1: ( rule__EDouble__Group_4__2__Impl )
-            // InternalMyFarmbot.g:6233:2: rule__EDouble__Group_4__2__Impl
+            // InternalMyFarmbot.g:6340:1: ( rule__EDouble__Group_4__2__Impl )
+            // InternalMyFarmbot.g:6341:2: rule__EDouble__Group_4__2__Impl
             {
             pushFollow(FOLLOW_2);
             rule__EDouble__Group_4__2__Impl();
@@ -18253,17 +18575,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__EDouble__Group_4__2__Impl"
-    // InternalMyFarmbot.g:6239:1: rule__EDouble__Group_4__2__Impl : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6347:1: rule__EDouble__Group_4__2__Impl : ( RULE_INT ) ;
     public final void rule__EDouble__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6243:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6244:1: ( RULE_INT )
+            // InternalMyFarmbot.g:6351:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6352:1: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6244:1: ( RULE_INT )
-            // InternalMyFarmbot.g:6245:2: RULE_INT
+            // InternalMyFarmbot.g:6352:1: ( RULE_INT )
+            // InternalMyFarmbot.g:6353:2: RULE_INT
             {
              before(grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_4_2()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18290,17 +18612,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Farmbot__InstructionsAssignment_1"
-    // InternalMyFarmbot.g:6255:1: rule__Farmbot__InstructionsAssignment_1 : ( ruleInstruction ) ;
+    // InternalMyFarmbot.g:6363:1: rule__Farmbot__InstructionsAssignment_1 : ( ruleInstruction ) ;
     public final void rule__Farmbot__InstructionsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6259:1: ( ( ruleInstruction ) )
-            // InternalMyFarmbot.g:6260:2: ( ruleInstruction )
+            // InternalMyFarmbot.g:6367:1: ( ( ruleInstruction ) )
+            // InternalMyFarmbot.g:6368:2: ( ruleInstruction )
             {
-            // InternalMyFarmbot.g:6260:2: ( ruleInstruction )
-            // InternalMyFarmbot.g:6261:3: ruleInstruction
+            // InternalMyFarmbot.g:6368:2: ( ruleInstruction )
+            // InternalMyFarmbot.g:6369:3: ruleInstruction
             {
              before(grammarAccess.getFarmbotAccess().getInstructionsInstructionParserRuleCall_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18331,17 +18653,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TurnOn__PinAssignment_4"
-    // InternalMyFarmbot.g:6270:1: rule__TurnOn__PinAssignment_4 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6378:1: rule__TurnOn__PinAssignment_4 : ( RULE_INT ) ;
     public final void rule__TurnOn__PinAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6274:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6275:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6382:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6383:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6275:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6276:3: RULE_INT
+            // InternalMyFarmbot.g:6383:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6384:3: RULE_INT
             {
              before(grammarAccess.getTurnOnAccess().getPinINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18368,17 +18690,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TurnOn__ModeAssignment_8"
-    // InternalMyFarmbot.g:6285:1: rule__TurnOn__ModeAssignment_8 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6393:1: rule__TurnOn__ModeAssignment_8 : ( RULE_STRING ) ;
     public final void rule__TurnOn__ModeAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6289:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6290:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6397:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6398:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6290:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6291:3: RULE_STRING
+            // InternalMyFarmbot.g:6398:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6399:3: RULE_STRING
             {
              before(grammarAccess.getTurnOnAccess().getModeSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18405,17 +18727,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TurnOff__PinAssignment_4"
-    // InternalMyFarmbot.g:6300:1: rule__TurnOff__PinAssignment_4 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6408:1: rule__TurnOff__PinAssignment_4 : ( RULE_INT ) ;
     public final void rule__TurnOff__PinAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6304:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6305:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6412:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6413:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6305:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6306:3: RULE_INT
+            // InternalMyFarmbot.g:6413:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6414:3: RULE_INT
             {
              before(grammarAccess.getTurnOffAccess().getPinINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18442,17 +18764,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__TurnOff__ModeAssignment_8"
-    // InternalMyFarmbot.g:6315:1: rule__TurnOff__ModeAssignment_8 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6423:1: rule__TurnOff__ModeAssignment_8 : ( RULE_STRING ) ;
     public final void rule__TurnOff__ModeAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6319:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6320:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6427:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6428:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6320:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6321:3: RULE_STRING
+            // InternalMyFarmbot.g:6428:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6429:3: RULE_STRING
             {
              before(grammarAccess.getTurnOffAccess().getModeSTRINGTerminalRuleCall_8_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18479,17 +18801,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveRelative__XAssignment_4"
-    // InternalMyFarmbot.g:6330:1: rule__MoveRelative__XAssignment_4 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6438:1: rule__MoveRelative__XAssignment_4 : ( RULE_INT ) ;
     public final void rule__MoveRelative__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6334:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6335:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6442:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6443:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6335:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6336:3: RULE_INT
+            // InternalMyFarmbot.g:6443:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6444:3: RULE_INT
             {
              before(grammarAccess.getMoveRelativeAccess().getXINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18516,17 +18838,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveRelative__YAssignment_8"
-    // InternalMyFarmbot.g:6345:1: rule__MoveRelative__YAssignment_8 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6453:1: rule__MoveRelative__YAssignment_8 : ( RULE_INT ) ;
     public final void rule__MoveRelative__YAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6349:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6350:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6457:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6458:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6350:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6351:3: RULE_INT
+            // InternalMyFarmbot.g:6458:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6459:3: RULE_INT
             {
              before(grammarAccess.getMoveRelativeAccess().getYINTTerminalRuleCall_8_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18553,17 +18875,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveRelative__ZAssignment_12"
-    // InternalMyFarmbot.g:6360:1: rule__MoveRelative__ZAssignment_12 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6468:1: rule__MoveRelative__ZAssignment_12 : ( RULE_INT ) ;
     public final void rule__MoveRelative__ZAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6364:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6365:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6472:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6473:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6365:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6366:3: RULE_INT
+            // InternalMyFarmbot.g:6473:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6474:3: RULE_INT
             {
              before(grammarAccess.getMoveRelativeAccess().getZINTTerminalRuleCall_12_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18590,17 +18912,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveRelative__SpeedAssignment_16"
-    // InternalMyFarmbot.g:6375:1: rule__MoveRelative__SpeedAssignment_16 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6483:1: rule__MoveRelative__SpeedAssignment_16 : ( RULE_INT ) ;
     public final void rule__MoveRelative__SpeedAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6379:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6380:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6487:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6488:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6380:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6381:3: RULE_INT
+            // InternalMyFarmbot.g:6488:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6489:3: RULE_INT
             {
              before(grammarAccess.getMoveRelativeAccess().getSpeedINTTerminalRuleCall_16_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18627,17 +18949,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__FindHome__FindXAssignment_4"
-    // InternalMyFarmbot.g:6390:1: rule__FindHome__FindXAssignment_4 : ( ruleEBoolean ) ;
+    // InternalMyFarmbot.g:6498:1: rule__FindHome__FindXAssignment_4 : ( ruleEBoolean ) ;
     public final void rule__FindHome__FindXAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6394:1: ( ( ruleEBoolean ) )
-            // InternalMyFarmbot.g:6395:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6502:1: ( ( ruleEBoolean ) )
+            // InternalMyFarmbot.g:6503:2: ( ruleEBoolean )
             {
-            // InternalMyFarmbot.g:6395:2: ( ruleEBoolean )
-            // InternalMyFarmbot.g:6396:3: ruleEBoolean
+            // InternalMyFarmbot.g:6503:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6504:3: ruleEBoolean
             {
              before(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -18668,17 +18990,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__FindHome__FindYAssignment_8"
-    // InternalMyFarmbot.g:6405:1: rule__FindHome__FindYAssignment_8 : ( ruleEBoolean ) ;
+    // InternalMyFarmbot.g:6513:1: rule__FindHome__FindYAssignment_8 : ( ruleEBoolean ) ;
     public final void rule__FindHome__FindYAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6409:1: ( ( ruleEBoolean ) )
-            // InternalMyFarmbot.g:6410:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6517:1: ( ( ruleEBoolean ) )
+            // InternalMyFarmbot.g:6518:2: ( ruleEBoolean )
             {
-            // InternalMyFarmbot.g:6410:2: ( ruleEBoolean )
-            // InternalMyFarmbot.g:6411:3: ruleEBoolean
+            // InternalMyFarmbot.g:6518:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6519:3: ruleEBoolean
             {
              before(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_8_0()); 
             pushFollow(FOLLOW_2);
@@ -18709,17 +19031,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__FindHome__FindZAssignment_12"
-    // InternalMyFarmbot.g:6420:1: rule__FindHome__FindZAssignment_12 : ( ruleEBoolean ) ;
+    // InternalMyFarmbot.g:6528:1: rule__FindHome__FindZAssignment_12 : ( ruleEBoolean ) ;
     public final void rule__FindHome__FindZAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6424:1: ( ( ruleEBoolean ) )
-            // InternalMyFarmbot.g:6425:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6532:1: ( ( ruleEBoolean ) )
+            // InternalMyFarmbot.g:6533:2: ( ruleEBoolean )
             {
-            // InternalMyFarmbot.g:6425:2: ( ruleEBoolean )
-            // InternalMyFarmbot.g:6426:3: ruleEBoolean
+            // InternalMyFarmbot.g:6533:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6534:3: ruleEBoolean
             {
              before(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_12_0()); 
             pushFollow(FOLLOW_2);
@@ -18750,17 +19072,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sequence__NameAssignment_2"
-    // InternalMyFarmbot.g:6435:1: rule__Sequence__NameAssignment_2 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6543:1: rule__Sequence__NameAssignment_2 : ( RULE_STRING ) ;
     public final void rule__Sequence__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6439:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6440:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6547:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6548:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6440:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6441:3: RULE_STRING
+            // InternalMyFarmbot.g:6548:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6549:3: RULE_STRING
             {
              before(grammarAccess.getSequenceAccess().getNameSTRINGTerminalRuleCall_2_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -18787,17 +19109,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Sequence__SequenceInstructionsAssignment_3"
-    // InternalMyFarmbot.g:6450:1: rule__Sequence__SequenceInstructionsAssignment_3 : ( ruleSequenceInstruction ) ;
+    // InternalMyFarmbot.g:6558:1: rule__Sequence__SequenceInstructionsAssignment_3 : ( ruleSequenceInstruction ) ;
     public final void rule__Sequence__SequenceInstructionsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6454:1: ( ( ruleSequenceInstruction ) )
-            // InternalMyFarmbot.g:6455:2: ( ruleSequenceInstruction )
+            // InternalMyFarmbot.g:6562:1: ( ( ruleSequenceInstruction ) )
+            // InternalMyFarmbot.g:6563:2: ( ruleSequenceInstruction )
             {
-            // InternalMyFarmbot.g:6455:2: ( ruleSequenceInstruction )
-            // InternalMyFarmbot.g:6456:3: ruleSequenceInstruction
+            // InternalMyFarmbot.g:6563:2: ( ruleSequenceInstruction )
+            // InternalMyFarmbot.g:6564:3: ruleSequenceInstruction
             {
              before(grammarAccess.getSequenceAccess().getSequenceInstructionsSequenceInstructionParserRuleCall_3_0()); 
             pushFollow(FOLLOW_2);
@@ -18828,17 +19150,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__If__BooleanExpressionAssignment_2"
-    // InternalMyFarmbot.g:6465:1: rule__If__BooleanExpressionAssignment_2 : ( ruleBooleanExpression ) ;
+    // InternalMyFarmbot.g:6573:1: rule__If__BooleanExpressionAssignment_2 : ( ruleBooleanExpression ) ;
     public final void rule__If__BooleanExpressionAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6469:1: ( ( ruleBooleanExpression ) )
-            // InternalMyFarmbot.g:6470:2: ( ruleBooleanExpression )
+            // InternalMyFarmbot.g:6577:1: ( ( ruleBooleanExpression ) )
+            // InternalMyFarmbot.g:6578:2: ( ruleBooleanExpression )
             {
-            // InternalMyFarmbot.g:6470:2: ( ruleBooleanExpression )
-            // InternalMyFarmbot.g:6471:3: ruleBooleanExpression
+            // InternalMyFarmbot.g:6578:2: ( ruleBooleanExpression )
+            // InternalMyFarmbot.g:6579:3: ruleBooleanExpression
             {
              before(grammarAccess.getIfAccess().getBooleanExpressionBooleanExpressionParserRuleCall_2_0()); 
             pushFollow(FOLLOW_2);
@@ -18869,17 +19191,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__If__ThenAssignment_4"
-    // InternalMyFarmbot.g:6480:1: rule__If__ThenAssignment_4 : ( ruleExecuteSequence ) ;
+    // InternalMyFarmbot.g:6588:1: rule__If__ThenAssignment_4 : ( ruleExecuteSequence ) ;
     public final void rule__If__ThenAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6484:1: ( ( ruleExecuteSequence ) )
-            // InternalMyFarmbot.g:6485:2: ( ruleExecuteSequence )
+            // InternalMyFarmbot.g:6592:1: ( ( ruleExecuteSequence ) )
+            // InternalMyFarmbot.g:6593:2: ( ruleExecuteSequence )
             {
-            // InternalMyFarmbot.g:6485:2: ( ruleExecuteSequence )
-            // InternalMyFarmbot.g:6486:3: ruleExecuteSequence
+            // InternalMyFarmbot.g:6593:2: ( ruleExecuteSequence )
+            // InternalMyFarmbot.g:6594:3: ruleExecuteSequence
             {
              before(grammarAccess.getIfAccess().getThenExecuteSequenceParserRuleCall_4_0()); 
             pushFollow(FOLLOW_2);
@@ -18910,17 +19232,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__If__ElseAssignment_5_1"
-    // InternalMyFarmbot.g:6495:1: rule__If__ElseAssignment_5_1 : ( ruleExecuteSequence ) ;
+    // InternalMyFarmbot.g:6603:1: rule__If__ElseAssignment_5_1 : ( ruleExecuteSequence ) ;
     public final void rule__If__ElseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6499:1: ( ( ruleExecuteSequence ) )
-            // InternalMyFarmbot.g:6500:2: ( ruleExecuteSequence )
+            // InternalMyFarmbot.g:6607:1: ( ( ruleExecuteSequence ) )
+            // InternalMyFarmbot.g:6608:2: ( ruleExecuteSequence )
             {
-            // InternalMyFarmbot.g:6500:2: ( ruleExecuteSequence )
-            // InternalMyFarmbot.g:6501:3: ruleExecuteSequence
+            // InternalMyFarmbot.g:6608:2: ( ruleExecuteSequence )
+            // InternalMyFarmbot.g:6609:3: ruleExecuteSequence
             {
              before(grammarAccess.getIfAccess().getElseExecuteSequenceParserRuleCall_5_1_0()); 
             pushFollow(FOLLOW_2);
@@ -18951,17 +19273,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveAbsolute__XAssignment_4"
-    // InternalMyFarmbot.g:6510:1: rule__MoveAbsolute__XAssignment_4 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6618:1: rule__MoveAbsolute__XAssignment_4 : ( RULE_INT ) ;
     public final void rule__MoveAbsolute__XAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6514:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6515:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6622:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6623:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6515:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6516:3: RULE_INT
+            // InternalMyFarmbot.g:6623:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6624:3: RULE_INT
             {
              before(grammarAccess.getMoveAbsoluteAccess().getXINTTerminalRuleCall_4_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -18988,17 +19310,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveAbsolute__YAssignment_8"
-    // InternalMyFarmbot.g:6525:1: rule__MoveAbsolute__YAssignment_8 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6633:1: rule__MoveAbsolute__YAssignment_8 : ( RULE_INT ) ;
     public final void rule__MoveAbsolute__YAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6529:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6530:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6637:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6638:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6530:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6531:3: RULE_INT
+            // InternalMyFarmbot.g:6638:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6639:3: RULE_INT
             {
              before(grammarAccess.getMoveAbsoluteAccess().getYINTTerminalRuleCall_8_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -19025,17 +19347,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveAbsolute__ZAssignment_12"
-    // InternalMyFarmbot.g:6540:1: rule__MoveAbsolute__ZAssignment_12 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6648:1: rule__MoveAbsolute__ZAssignment_12 : ( RULE_INT ) ;
     public final void rule__MoveAbsolute__ZAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6544:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6545:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6652:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6653:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6545:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6546:3: RULE_INT
+            // InternalMyFarmbot.g:6653:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6654:3: RULE_INT
             {
              before(grammarAccess.getMoveAbsoluteAccess().getZINTTerminalRuleCall_12_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -19062,17 +19384,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__MoveAbsolute__SpeedAssignment_16"
-    // InternalMyFarmbot.g:6555:1: rule__MoveAbsolute__SpeedAssignment_16 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6663:1: rule__MoveAbsolute__SpeedAssignment_16 : ( RULE_INT ) ;
     public final void rule__MoveAbsolute__SpeedAssignment_16() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6559:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6560:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6667:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6668:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6560:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6561:3: RULE_INT
+            // InternalMyFarmbot.g:6668:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6669:3: RULE_INT
             {
              before(grammarAccess.getMoveAbsoluteAccess().getSpeedINTTerminalRuleCall_16_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -19099,17 +19421,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__ExecuteSequence__IdAssignment_5"
-    // InternalMyFarmbot.g:6570:1: rule__ExecuteSequence__IdAssignment_5 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6678:1: rule__ExecuteSequence__IdAssignment_5 : ( RULE_INT ) ;
     public final void rule__ExecuteSequence__IdAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6574:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6575:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6682:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6683:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6575:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6576:3: RULE_INT
+            // InternalMyFarmbot.g:6683:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6684:3: RULE_INT
             {
              before(grammarAccess.getExecuteSequenceAccess().getIdINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -19136,17 +19458,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Wait__DurationAssignment_5"
-    // InternalMyFarmbot.g:6585:1: rule__Wait__DurationAssignment_5 : ( ruleEDouble ) ;
+    // InternalMyFarmbot.g:6693:1: rule__Wait__DurationAssignment_5 : ( ruleEDouble ) ;
     public final void rule__Wait__DurationAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6589:1: ( ( ruleEDouble ) )
-            // InternalMyFarmbot.g:6590:2: ( ruleEDouble )
+            // InternalMyFarmbot.g:6697:1: ( ( ruleEDouble ) )
+            // InternalMyFarmbot.g:6698:2: ( ruleEDouble )
             {
-            // InternalMyFarmbot.g:6590:2: ( ruleEDouble )
-            // InternalMyFarmbot.g:6591:3: ruleEDouble
+            // InternalMyFarmbot.g:6698:2: ( ruleEDouble )
+            // InternalMyFarmbot.g:6699:3: ruleEDouble
             {
              before(grammarAccess.getWaitAccess().getDurationEDoubleParserRuleCall_5_0()); 
             pushFollow(FOLLOW_2);
@@ -19177,17 +19499,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsToolOn__PinAssignment_5"
-    // InternalMyFarmbot.g:6600:1: rule__IsToolOn__PinAssignment_5 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6708:1: rule__IsToolOn__PinAssignment_5 : ( RULE_INT ) ;
     public final void rule__IsToolOn__PinAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6604:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6605:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6712:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6713:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6605:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6606:3: RULE_INT
+            // InternalMyFarmbot.g:6713:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6714:3: RULE_INT
             {
              before(grammarAccess.getIsToolOnAccess().getPinINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -19214,17 +19536,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SendMessage__MessageTypeAssignment_5"
-    // InternalMyFarmbot.g:6615:1: rule__SendMessage__MessageTypeAssignment_5 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6723:1: rule__SendMessage__MessageTypeAssignment_5 : ( RULE_STRING ) ;
     public final void rule__SendMessage__MessageTypeAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6619:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6620:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6727:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6728:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6620:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6621:3: RULE_STRING
+            // InternalMyFarmbot.g:6728:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6729:3: RULE_STRING
             {
              before(grammarAccess.getSendMessageAccess().getMessageTypeSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19251,17 +19573,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__SendMessage__MessageAssignment_9"
-    // InternalMyFarmbot.g:6630:1: rule__SendMessage__MessageAssignment_9 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6738:1: rule__SendMessage__MessageAssignment_9 : ( RULE_STRING ) ;
     public final void rule__SendMessage__MessageAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6634:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6635:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6742:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6743:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6635:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6636:3: RULE_STRING
+            // InternalMyFarmbot.g:6743:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6744:3: RULE_STRING
             {
              before(grammarAccess.getSendMessageAccess().getMessageSTRINGTerminalRuleCall_9_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19288,17 +19610,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__RunFarmware__NameAssignment_5"
-    // InternalMyFarmbot.g:6645:1: rule__RunFarmware__NameAssignment_5 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6753:1: rule__RunFarmware__NameAssignment_5 : ( RULE_STRING ) ;
     public final void rule__RunFarmware__NameAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6649:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6650:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6757:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6758:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6650:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6651:3: RULE_STRING
+            // InternalMyFarmbot.g:6758:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6759:3: RULE_STRING
             {
              before(grammarAccess.getRunFarmwareAccess().getNameSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19325,17 +19647,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__SequenceAssignment_5"
-    // InternalMyFarmbot.g:6660:1: rule__Schedule__SequenceAssignment_5 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6768:1: rule__Schedule__SequenceAssignment_5 : ( RULE_STRING ) ;
     public final void rule__Schedule__SequenceAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6664:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6665:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6772:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6773:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6665:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6666:3: RULE_STRING
+            // InternalMyFarmbot.g:6773:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6774:3: RULE_STRING
             {
              before(grammarAccess.getScheduleAccess().getSequenceSTRINGTerminalRuleCall_5_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19362,17 +19684,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__StartDateAssignment_9"
-    // InternalMyFarmbot.g:6675:1: rule__Schedule__StartDateAssignment_9 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6783:1: rule__Schedule__StartDateAssignment_9 : ( RULE_STRING ) ;
     public final void rule__Schedule__StartDateAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6679:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6680:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6787:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6788:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6680:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6681:3: RULE_STRING
+            // InternalMyFarmbot.g:6788:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6789:3: RULE_STRING
             {
              before(grammarAccess.getScheduleAccess().getStartDateSTRINGTerminalRuleCall_9_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19399,17 +19721,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__StartTimeAssignment_13"
-    // InternalMyFarmbot.g:6690:1: rule__Schedule__StartTimeAssignment_13 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6798:1: rule__Schedule__StartTimeAssignment_13 : ( RULE_STRING ) ;
     public final void rule__Schedule__StartTimeAssignment_13() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6694:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6695:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6802:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6803:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6695:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6696:3: RULE_STRING
+            // InternalMyFarmbot.g:6803:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6804:3: RULE_STRING
             {
              before(grammarAccess.getScheduleAccess().getStartTimeSTRINGTerminalRuleCall_13_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19436,17 +19758,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__RepeatAssignment_17"
-    // InternalMyFarmbot.g:6705:1: rule__Schedule__RepeatAssignment_17 : ( ruleEBoolean ) ;
+    // InternalMyFarmbot.g:6813:1: rule__Schedule__RepeatAssignment_17 : ( ruleEBoolean ) ;
     public final void rule__Schedule__RepeatAssignment_17() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6709:1: ( ( ruleEBoolean ) )
-            // InternalMyFarmbot.g:6710:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6817:1: ( ( ruleEBoolean ) )
+            // InternalMyFarmbot.g:6818:2: ( ruleEBoolean )
             {
-            // InternalMyFarmbot.g:6710:2: ( ruleEBoolean )
-            // InternalMyFarmbot.g:6711:3: ruleEBoolean
+            // InternalMyFarmbot.g:6818:2: ( ruleEBoolean )
+            // InternalMyFarmbot.g:6819:3: ruleEBoolean
             {
              before(grammarAccess.getScheduleAccess().getRepeatEBooleanParserRuleCall_17_0()); 
             pushFollow(FOLLOW_2);
@@ -19477,17 +19799,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__RepeatFrequencyAssignment_21"
-    // InternalMyFarmbot.g:6720:1: rule__Schedule__RepeatFrequencyAssignment_21 : ( RULE_INT ) ;
+    // InternalMyFarmbot.g:6828:1: rule__Schedule__RepeatFrequencyAssignment_21 : ( RULE_INT ) ;
     public final void rule__Schedule__RepeatFrequencyAssignment_21() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6724:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6725:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6832:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6833:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6725:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6726:3: RULE_INT
+            // InternalMyFarmbot.g:6833:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6834:3: RULE_INT
             {
              before(grammarAccess.getScheduleAccess().getRepeatFrequencyINTTerminalRuleCall_21_0()); 
             match(input,RULE_INT,FOLLOW_2); 
@@ -19514,17 +19836,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__RepeatUnitAssignment_25"
-    // InternalMyFarmbot.g:6735:1: rule__Schedule__RepeatUnitAssignment_25 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6843:1: rule__Schedule__RepeatUnitAssignment_25 : ( RULE_STRING ) ;
     public final void rule__Schedule__RepeatUnitAssignment_25() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6739:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6740:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6847:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6848:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6740:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6741:3: RULE_STRING
+            // InternalMyFarmbot.g:6848:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6849:3: RULE_STRING
             {
              before(grammarAccess.getScheduleAccess().getRepeatUnitSTRINGTerminalRuleCall_25_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19551,17 +19873,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__EndDateAssignment_29"
-    // InternalMyFarmbot.g:6750:1: rule__Schedule__EndDateAssignment_29 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6858:1: rule__Schedule__EndDateAssignment_29 : ( RULE_STRING ) ;
     public final void rule__Schedule__EndDateAssignment_29() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6754:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6755:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6862:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6863:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6755:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6756:3: RULE_STRING
+            // InternalMyFarmbot.g:6863:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6864:3: RULE_STRING
             {
              before(grammarAccess.getScheduleAccess().getEndDateSTRINGTerminalRuleCall_29_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19588,17 +19910,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__Schedule__EndTimeAssignment_33"
-    // InternalMyFarmbot.g:6765:1: rule__Schedule__EndTimeAssignment_33 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6873:1: rule__Schedule__EndTimeAssignment_33 : ( RULE_STRING ) ;
     public final void rule__Schedule__EndTimeAssignment_33() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6769:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6770:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6877:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6878:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6770:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6771:3: RULE_STRING
+            // InternalMyFarmbot.g:6878:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6879:3: RULE_STRING
             {
              before(grammarAccess.getScheduleAccess().getEndTimeSTRINGTerminalRuleCall_33_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19625,17 +19947,17 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
 
 
     // $ANTLR start "rule__IsEqualTo__AxeAssignment_1"
-    // InternalMyFarmbot.g:6780:1: rule__IsEqualTo__AxeAssignment_1 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6888:1: rule__IsEqualTo__AxeAssignment_1 : ( RULE_STRING ) ;
     public final void rule__IsEqualTo__AxeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6784:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6785:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6892:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6893:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6785:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6786:3: RULE_STRING
+            // InternalMyFarmbot.g:6893:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6894:3: RULE_STRING
             {
              before(grammarAccess.getIsEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19661,22 +19983,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsEqualTo__AxeAssignment_1"
 
 
-    // $ANTLR start "rule__IsEqualTo__ValueAssignment_4"
-    // InternalMyFarmbot.g:6795:1: rule__IsEqualTo__ValueAssignment_4 : ( RULE_INT ) ;
-    public final void rule__IsEqualTo__ValueAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__IsEqualTo__ValueAssignment_5"
+    // InternalMyFarmbot.g:6903:1: rule__IsEqualTo__ValueAssignment_5 : ( RULE_INT ) ;
+    public final void rule__IsEqualTo__ValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6799:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6800:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6907:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6908:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6800:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6801:3: RULE_INT
+            // InternalMyFarmbot.g:6908:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6909:3: RULE_INT
             {
-             before(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0()); 
+             before(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0()); 
+             after(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0()); 
 
             }
 
@@ -19695,21 +20017,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__IsEqualTo__ValueAssignment_4"
+    // $ANTLR end "rule__IsEqualTo__ValueAssignment_5"
 
 
     // $ANTLR start "rule__IsNotEqualTo__AxeAssignment_1"
-    // InternalMyFarmbot.g:6810:1: rule__IsNotEqualTo__AxeAssignment_1 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6918:1: rule__IsNotEqualTo__AxeAssignment_1 : ( RULE_STRING ) ;
     public final void rule__IsNotEqualTo__AxeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6814:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6815:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6922:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6923:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6815:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6816:3: RULE_STRING
+            // InternalMyFarmbot.g:6923:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6924:3: RULE_STRING
             {
              before(grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19735,22 +20057,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsNotEqualTo__AxeAssignment_1"
 
 
-    // $ANTLR start "rule__IsNotEqualTo__ValueAssignment_5"
-    // InternalMyFarmbot.g:6825:1: rule__IsNotEqualTo__ValueAssignment_5 : ( RULE_INT ) ;
-    public final void rule__IsNotEqualTo__ValueAssignment_5() throws RecognitionException {
+    // $ANTLR start "rule__IsNotEqualTo__ValueAssignment_6"
+    // InternalMyFarmbot.g:6933:1: rule__IsNotEqualTo__ValueAssignment_6 : ( RULE_INT ) ;
+    public final void rule__IsNotEqualTo__ValueAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6829:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6830:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6937:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6938:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6830:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6831:3: RULE_INT
+            // InternalMyFarmbot.g:6938:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6939:3: RULE_INT
             {
-             before(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0()); 
+             before(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0()); 
+             after(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0()); 
 
             }
 
@@ -19769,21 +20091,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__IsNotEqualTo__ValueAssignment_5"
+    // $ANTLR end "rule__IsNotEqualTo__ValueAssignment_6"
 
 
     // $ANTLR start "rule__IsGreaterThan__AxeAssignment_1"
-    // InternalMyFarmbot.g:6840:1: rule__IsGreaterThan__AxeAssignment_1 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6948:1: rule__IsGreaterThan__AxeAssignment_1 : ( RULE_STRING ) ;
     public final void rule__IsGreaterThan__AxeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6844:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6845:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6952:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6953:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6845:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6846:3: RULE_STRING
+            // InternalMyFarmbot.g:6953:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6954:3: RULE_STRING
             {
              before(grammarAccess.getIsGreaterThanAccess().getAxeSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19809,22 +20131,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsGreaterThan__AxeAssignment_1"
 
 
-    // $ANTLR start "rule__IsGreaterThan__ValueAssignment_4"
-    // InternalMyFarmbot.g:6855:1: rule__IsGreaterThan__ValueAssignment_4 : ( RULE_INT ) ;
-    public final void rule__IsGreaterThan__ValueAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__IsGreaterThan__ValueAssignment_5"
+    // InternalMyFarmbot.g:6963:1: rule__IsGreaterThan__ValueAssignment_5 : ( RULE_INT ) ;
+    public final void rule__IsGreaterThan__ValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6859:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6860:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6967:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6968:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6860:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6861:3: RULE_INT
+            // InternalMyFarmbot.g:6968:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6969:3: RULE_INT
             {
-             before(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0()); 
+             before(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0()); 
+             after(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0()); 
 
             }
 
@@ -19843,21 +20165,21 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__IsGreaterThan__ValueAssignment_4"
+    // $ANTLR end "rule__IsGreaterThan__ValueAssignment_5"
 
 
     // $ANTLR start "rule__IsLowerThan__AxeAssignment_1"
-    // InternalMyFarmbot.g:6870:1: rule__IsLowerThan__AxeAssignment_1 : ( RULE_STRING ) ;
+    // InternalMyFarmbot.g:6978:1: rule__IsLowerThan__AxeAssignment_1 : ( RULE_STRING ) ;
     public final void rule__IsLowerThan__AxeAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6874:1: ( ( RULE_STRING ) )
-            // InternalMyFarmbot.g:6875:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6982:1: ( ( RULE_STRING ) )
+            // InternalMyFarmbot.g:6983:2: ( RULE_STRING )
             {
-            // InternalMyFarmbot.g:6875:2: ( RULE_STRING )
-            // InternalMyFarmbot.g:6876:3: RULE_STRING
+            // InternalMyFarmbot.g:6983:2: ( RULE_STRING )
+            // InternalMyFarmbot.g:6984:3: RULE_STRING
             {
              before(grammarAccess.getIsLowerThanAccess().getAxeSTRINGTerminalRuleCall_1_0()); 
             match(input,RULE_STRING,FOLLOW_2); 
@@ -19883,22 +20205,22 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     // $ANTLR end "rule__IsLowerThan__AxeAssignment_1"
 
 
-    // $ANTLR start "rule__IsLowerThan__ValueAssignment_4"
-    // InternalMyFarmbot.g:6885:1: rule__IsLowerThan__ValueAssignment_4 : ( RULE_INT ) ;
-    public final void rule__IsLowerThan__ValueAssignment_4() throws RecognitionException {
+    // $ANTLR start "rule__IsLowerThan__ValueAssignment_5"
+    // InternalMyFarmbot.g:6993:1: rule__IsLowerThan__ValueAssignment_5 : ( RULE_INT ) ;
+    public final void rule__IsLowerThan__ValueAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
         	
         try {
-            // InternalMyFarmbot.g:6889:1: ( ( RULE_INT ) )
-            // InternalMyFarmbot.g:6890:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6997:1: ( ( RULE_INT ) )
+            // InternalMyFarmbot.g:6998:2: ( RULE_INT )
             {
-            // InternalMyFarmbot.g:6890:2: ( RULE_INT )
-            // InternalMyFarmbot.g:6891:3: RULE_INT
+            // InternalMyFarmbot.g:6998:2: ( RULE_INT )
+            // InternalMyFarmbot.g:6999:3: RULE_INT
             {
-             before(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0()); 
+             before(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0()); 
             match(input,RULE_INT,FOLLOW_2); 
-             after(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0()); 
+             after(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0()); 
 
             }
 
@@ -19917,7 +20239,7 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
         }
         return ;
     }
-    // $ANTLR end "rule__IsLowerThan__ValueAssignment_4"
+    // $ANTLR end "rule__IsLowerThan__ValueAssignment_5"
 
     // Delegated rules
 
@@ -19953,14 +20275,14 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000200000000L});
     public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000040000000020L});
     public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000000900000000L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000002900000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000002000000000L});
     public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000001000000000L});
     public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000004000000000L});
     public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000008000000000L});
     public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000010000000000L});
     public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000006L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0000000000000010L,0x000000000000000CL});
     public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0000040000000000L});
     public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0000080000000000L});
     public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0000100000000000L});
@@ -19983,7 +20305,8 @@ public class InternalMyFarmbotParser extends AbstractInternalContentAssistParser
     public static final BitSet FOLLOW_57 = new BitSet(new long[]{0x4000000000000000L});
     public static final BitSet FOLLOW_58 = new BitSet(new long[]{0x8000000000000000L});
     public static final BitSet FOLLOW_59 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000001L});
-    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000001800L});
-    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000002L});
+    public static final BitSet FOLLOW_60 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000002L});
+    public static final BitSet FOLLOW_61 = new BitSet(new long[]{0x0000000000001800L});
+    public static final BitSet FOLLOW_62 = new BitSet(new long[]{0x0000000000000010L,0x0000000000000004L});
 
 }

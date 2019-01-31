@@ -2707,7 +2707,7 @@ rule__If__Group__4__Impl
 :
 (
 	{ before(grammarAccess.getIfAccess().getThenAssignment_4()); }
-	(rule__If__ThenAssignment_4)
+	(rule__If__ThenAssignment_4)?
 	{ after(grammarAccess.getIfAccess().getThenAssignment_4()); }
 )
 ;
@@ -5541,9 +5541,9 @@ rule__IsEqualTo__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsEqualToAccess().getEqualsKeyword_2()); }
-	'equals'
-	{ after(grammarAccess.getIsEqualToAccess().getEqualsKeyword_2()); }
+	{ before(grammarAccess.getIsEqualToAccess().getIsKeyword_2()); }
+	'is'
+	{ after(grammarAccess.getIsEqualToAccess().getIsKeyword_2()); }
 )
 ;
 finally {
@@ -5568,9 +5568,9 @@ rule__IsEqualTo__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsEqualToAccess().getToKeyword_3()); }
-	'to'
-	{ after(grammarAccess.getIsEqualToAccess().getToKeyword_3()); }
+	{ before(grammarAccess.getIsEqualToAccess().getEqualKeyword_3()); }
+	'equal'
+	{ after(grammarAccess.getIsEqualToAccess().getEqualKeyword_3()); }
 )
 ;
 finally {
@@ -5583,6 +5583,7 @@ rule__IsEqualTo__Group__4
 	}
 :
 	rule__IsEqualTo__Group__4__Impl
+	rule__IsEqualTo__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5594,9 +5595,35 @@ rule__IsEqualTo__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsEqualToAccess().getValueAssignment_4()); }
-	(rule__IsEqualTo__ValueAssignment_4)
-	{ after(grammarAccess.getIsEqualToAccess().getValueAssignment_4()); }
+	{ before(grammarAccess.getIsEqualToAccess().getToKeyword_4()); }
+	'to'
+	{ after(grammarAccess.getIsEqualToAccess().getToKeyword_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsEqualTo__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__IsEqualTo__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsEqualTo__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getIsEqualToAccess().getValueAssignment_5()); }
+	(rule__IsEqualTo__ValueAssignment_5)
+	{ after(grammarAccess.getIsEqualToAccess().getValueAssignment_5()); }
 )
 ;
 finally {
@@ -5676,9 +5703,9 @@ rule__IsNotEqualTo__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsNotEqualToAccess().getNotKeyword_2()); }
-	'not'
-	{ after(grammarAccess.getIsNotEqualToAccess().getNotKeyword_2()); }
+	{ before(grammarAccess.getIsNotEqualToAccess().getIsKeyword_2()); }
+	'is'
+	{ after(grammarAccess.getIsNotEqualToAccess().getIsKeyword_2()); }
 )
 ;
 finally {
@@ -5703,9 +5730,9 @@ rule__IsNotEqualTo__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsNotEqualToAccess().getEqualsKeyword_3()); }
-	'equals'
-	{ after(grammarAccess.getIsNotEqualToAccess().getEqualsKeyword_3()); }
+	{ before(grammarAccess.getIsNotEqualToAccess().getNotKeyword_3()); }
+	'not'
+	{ after(grammarAccess.getIsNotEqualToAccess().getNotKeyword_3()); }
 )
 ;
 finally {
@@ -5730,9 +5757,9 @@ rule__IsNotEqualTo__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsNotEqualToAccess().getToKeyword_4()); }
-	'to'
-	{ after(grammarAccess.getIsNotEqualToAccess().getToKeyword_4()); }
+	{ before(grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4()); }
+	'equal'
+	{ after(grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4()); }
 )
 ;
 finally {
@@ -5745,6 +5772,7 @@ rule__IsNotEqualTo__Group__5
 	}
 :
 	rule__IsNotEqualTo__Group__5__Impl
+	rule__IsNotEqualTo__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5756,9 +5784,35 @@ rule__IsNotEqualTo__Group__5__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsNotEqualToAccess().getValueAssignment_5()); }
-	(rule__IsNotEqualTo__ValueAssignment_5)
-	{ after(grammarAccess.getIsNotEqualToAccess().getValueAssignment_5()); }
+	{ before(grammarAccess.getIsNotEqualToAccess().getToKeyword_5()); }
+	'to'
+	{ after(grammarAccess.getIsNotEqualToAccess().getToKeyword_5()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsNotEqualTo__Group__6
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__IsNotEqualTo__Group__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsNotEqualTo__Group__6__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getIsNotEqualToAccess().getValueAssignment_6()); }
+	(rule__IsNotEqualTo__ValueAssignment_6)
+	{ after(grammarAccess.getIsNotEqualToAccess().getValueAssignment_6()); }
 )
 ;
 finally {
@@ -5838,9 +5892,9 @@ rule__IsGreaterThan__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_2()); }
-	'greater'
-	{ after(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_2()); }
+	{ before(grammarAccess.getIsGreaterThanAccess().getIsKeyword_2()); }
+	'is'
+	{ after(grammarAccess.getIsGreaterThanAccess().getIsKeyword_2()); }
 )
 ;
 finally {
@@ -5865,9 +5919,9 @@ rule__IsGreaterThan__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsGreaterThanAccess().getThanKeyword_3()); }
-	'than'
-	{ after(grammarAccess.getIsGreaterThanAccess().getThanKeyword_3()); }
+	{ before(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3()); }
+	'greater'
+	{ after(grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3()); }
 )
 ;
 finally {
@@ -5880,6 +5934,7 @@ rule__IsGreaterThan__Group__4
 	}
 :
 	rule__IsGreaterThan__Group__4__Impl
+	rule__IsGreaterThan__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -5891,9 +5946,35 @@ rule__IsGreaterThan__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsGreaterThanAccess().getValueAssignment_4()); }
-	(rule__IsGreaterThan__ValueAssignment_4)
-	{ after(grammarAccess.getIsGreaterThanAccess().getValueAssignment_4()); }
+	{ before(grammarAccess.getIsGreaterThanAccess().getThanKeyword_4()); }
+	'than'
+	{ after(grammarAccess.getIsGreaterThanAccess().getThanKeyword_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsGreaterThan__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__IsGreaterThan__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsGreaterThan__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getIsGreaterThanAccess().getValueAssignment_5()); }
+	(rule__IsGreaterThan__ValueAssignment_5)
+	{ after(grammarAccess.getIsGreaterThanAccess().getValueAssignment_5()); }
 )
 ;
 finally {
@@ -5973,9 +6054,9 @@ rule__IsLowerThan__Group__2__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsLowerThanAccess().getLowerKeyword_2()); }
-	'lower'
-	{ after(grammarAccess.getIsLowerThanAccess().getLowerKeyword_2()); }
+	{ before(grammarAccess.getIsLowerThanAccess().getIsKeyword_2()); }
+	'is'
+	{ after(grammarAccess.getIsLowerThanAccess().getIsKeyword_2()); }
 )
 ;
 finally {
@@ -6000,9 +6081,9 @@ rule__IsLowerThan__Group__3__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsLowerThanAccess().getThanKeyword_3()); }
-	'than'
-	{ after(grammarAccess.getIsLowerThanAccess().getThanKeyword_3()); }
+	{ before(grammarAccess.getIsLowerThanAccess().getLowerKeyword_3()); }
+	'lower'
+	{ after(grammarAccess.getIsLowerThanAccess().getLowerKeyword_3()); }
 )
 ;
 finally {
@@ -6015,6 +6096,7 @@ rule__IsLowerThan__Group__4
 	}
 :
 	rule__IsLowerThan__Group__4__Impl
+	rule__IsLowerThan__Group__5
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -6026,9 +6108,35 @@ rule__IsLowerThan__Group__4__Impl
 	}
 :
 (
-	{ before(grammarAccess.getIsLowerThanAccess().getValueAssignment_4()); }
-	(rule__IsLowerThan__ValueAssignment_4)
-	{ after(grammarAccess.getIsLowerThanAccess().getValueAssignment_4()); }
+	{ before(grammarAccess.getIsLowerThanAccess().getThanKeyword_4()); }
+	'than'
+	{ after(grammarAccess.getIsLowerThanAccess().getThanKeyword_4()); }
+)
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsLowerThan__Group__5
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+	rule__IsLowerThan__Group__5__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__IsLowerThan__Group__5__Impl
+	@init {
+		int stackSize = keepStackSize();
+	}
+:
+(
+	{ before(grammarAccess.getIsLowerThanAccess().getValueAssignment_5()); }
+	(rule__IsLowerThan__ValueAssignment_5)
+	{ after(grammarAccess.getIsLowerThanAccess().getValueAssignment_5()); }
 )
 ;
 finally {
@@ -6792,15 +6900,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__IsEqualTo__ValueAssignment_4
+rule__IsEqualTo__ValueAssignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0()); }
+		{ before(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0()); }
 		RULE_INT
-		{ after(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0()); }
+		{ after(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0()); }
 	)
 ;
 finally {
@@ -6822,15 +6930,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__IsNotEqualTo__ValueAssignment_5
+rule__IsNotEqualTo__ValueAssignment_6
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0()); }
+		{ before(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0()); }
 		RULE_INT
-		{ after(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0()); }
+		{ after(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0()); }
 	)
 ;
 finally {
@@ -6852,15 +6960,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__IsGreaterThan__ValueAssignment_4
+rule__IsGreaterThan__ValueAssignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0()); }
+		{ before(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0()); }
 		RULE_INT
-		{ after(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0()); }
+		{ after(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0()); }
 	)
 ;
 finally {
@@ -6882,15 +6990,15 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__IsLowerThan__ValueAssignment_4
+rule__IsLowerThan__ValueAssignment_5
 	@init {
 		int stackSize = keepStackSize();
 	}
 :
 	(
-		{ before(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0()); }
+		{ before(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0()); }
 		RULE_INT
-		{ after(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0()); }
+		{ after(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0()); }
 	)
 ;
 finally {

@@ -187,7 +187,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     If returns If
 	 *
 	 * Constraint:
-	 *     (booleanExpression=BooleanExpression then=ExecuteSequence else=ExecuteSequence?)
+	 *     (booleanExpression=BooleanExpression then=ExecuteSequence? else=ExecuteSequence?)
 	 */
 	protected void sequence_If(ISerializationContext context, If semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -211,7 +211,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIsEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -233,7 +233,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIsGreaterThanAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -255,7 +255,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIsLowerThanAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	
@@ -277,7 +277,7 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
+		feeder.accept(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0(), semanticObject.getValue());
 		feeder.finish();
 	}
 	

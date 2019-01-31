@@ -560,11 +560,11 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//If:
 		//	{If}
 		//	'if' booleanExpression=BooleanExpression
-		//	'then' then=ExecuteSequence ('else' else=ExecuteSequence)?
+		//	'then' then=ExecuteSequence? ('else' else=ExecuteSequence)?
 		//	'end';
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{If} 'if' booleanExpression=BooleanExpression 'then' then=ExecuteSequence ('else' else=ExecuteSequence)? 'end'
+		//{If} 'if' booleanExpression=BooleanExpression 'then' then=ExecuteSequence? ('else' else=ExecuteSequence)? 'end'
 		public Group getGroup() { return cGroup; }
 		
 		//{If}
@@ -582,7 +582,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//'then'
 		public Keyword getThenKeyword_3() { return cThenKeyword_3; }
 		
-		//then=ExecuteSequence
+		//then=ExecuteSequence?
 		public Assignment getThenAssignment_4() { return cThenAssignment_4; }
 		
 		//ExecuteSequence
@@ -1197,16 +1197,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cIsEqualToAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAxeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAxeSTRINGTerminalRuleCall_1_0 = (RuleCall)cAxeAssignment_1.eContents().get(0);
-		private final Keyword cEqualsKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cToKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueINTTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cEqualKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueINTTerminalRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
 		
 		//IsEqualTo:
-		//	{IsEqualTo} axe=STRING 'equals' 'to' value=INT;
+		//	{IsEqualTo} axe=STRING 'is' 'equal' 'to' value=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IsEqualTo} axe=STRING 'equals' 'to' value=INT
+		//{IsEqualTo} axe=STRING 'is' 'equal' 'to' value=INT
 		public Group getGroup() { return cGroup; }
 		
 		//{IsEqualTo}
@@ -1218,17 +1219,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAxeSTRINGTerminalRuleCall_1_0() { return cAxeSTRINGTerminalRuleCall_1_0; }
 		
-		//'equals'
-		public Keyword getEqualsKeyword_2() { return cEqualsKeyword_2; }
+		//'is'
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
+		
+		//'equal'
+		public Keyword getEqualKeyword_3() { return cEqualKeyword_3; }
 		
 		//'to'
-		public Keyword getToKeyword_3() { return cToKeyword_3; }
+		public Keyword getToKeyword_4() { return cToKeyword_4; }
 		
 		//value=INT
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
 		
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_4_0() { return cValueINTTerminalRuleCall_4_0; }
+		public RuleCall getValueINTTerminalRuleCall_5_0() { return cValueINTTerminalRuleCall_5_0; }
 	}
 	public class IsNotEqualToElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.IsNotEqualTo");
@@ -1236,17 +1240,18 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cIsNotEqualToAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAxeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAxeSTRINGTerminalRuleCall_1_0 = (RuleCall)cAxeAssignment_1.eContents().get(0);
-		private final Keyword cNotKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cEqualsKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Keyword cToKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cValueINTTerminalRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
+		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cNotKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cEqualKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Keyword cToKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cValueAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cValueINTTerminalRuleCall_6_0 = (RuleCall)cValueAssignment_6.eContents().get(0);
 		
 		//IsNotEqualTo:
-		//	{IsNotEqualTo} axe=STRING 'not' 'equals' 'to' value=INT;
+		//	{IsNotEqualTo} axe=STRING 'is' 'not' 'equal' 'to' value=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IsNotEqualTo} axe=STRING 'not' 'equals' 'to' value=INT
+		//{IsNotEqualTo} axe=STRING 'is' 'not' 'equal' 'to' value=INT
 		public Group getGroup() { return cGroup; }
 		
 		//{IsNotEqualTo}
@@ -1258,20 +1263,23 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAxeSTRINGTerminalRuleCall_1_0() { return cAxeSTRINGTerminalRuleCall_1_0; }
 		
-		//'not'
-		public Keyword getNotKeyword_2() { return cNotKeyword_2; }
+		//'is'
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
 		
-		//'equals'
-		public Keyword getEqualsKeyword_3() { return cEqualsKeyword_3; }
+		//'not'
+		public Keyword getNotKeyword_3() { return cNotKeyword_3; }
+		
+		//'equal'
+		public Keyword getEqualKeyword_4() { return cEqualKeyword_4; }
 		
 		//'to'
-		public Keyword getToKeyword_4() { return cToKeyword_4; }
+		public Keyword getToKeyword_5() { return cToKeyword_5; }
 		
 		//value=INT
-		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
+		public Assignment getValueAssignment_6() { return cValueAssignment_6; }
 		
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_5_0() { return cValueINTTerminalRuleCall_5_0; }
+		public RuleCall getValueINTTerminalRuleCall_6_0() { return cValueINTTerminalRuleCall_6_0; }
 	}
 	public class IsGreaterThanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.IsGreaterThan");
@@ -1279,16 +1287,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cIsGreaterThanAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAxeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAxeSTRINGTerminalRuleCall_1_0 = (RuleCall)cAxeAssignment_1.eContents().get(0);
-		private final Keyword cGreaterKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cThanKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueINTTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cGreaterKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cThanKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueINTTerminalRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
 		
 		//IsGreaterThan:
-		//	{IsGreaterThan} axe=STRING 'greater' 'than' value=INT;
+		//	{IsGreaterThan} axe=STRING 'is' 'greater' 'than' value=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IsGreaterThan} axe=STRING 'greater' 'than' value=INT
+		//{IsGreaterThan} axe=STRING 'is' 'greater' 'than' value=INT
 		public Group getGroup() { return cGroup; }
 		
 		//{IsGreaterThan}
@@ -1300,17 +1309,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAxeSTRINGTerminalRuleCall_1_0() { return cAxeSTRINGTerminalRuleCall_1_0; }
 		
+		//'is'
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
+		
 		//'greater'
-		public Keyword getGreaterKeyword_2() { return cGreaterKeyword_2; }
+		public Keyword getGreaterKeyword_3() { return cGreaterKeyword_3; }
 		
 		//'than'
-		public Keyword getThanKeyword_3() { return cThanKeyword_3; }
+		public Keyword getThanKeyword_4() { return cThanKeyword_4; }
 		
 		//value=INT
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
 		
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_4_0() { return cValueINTTerminalRuleCall_4_0; }
+		public RuleCall getValueINTTerminalRuleCall_5_0() { return cValueINTTerminalRuleCall_5_0; }
 	}
 	public class IsLowerThanElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.IsLowerThan");
@@ -1318,16 +1330,17 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		private final Action cIsLowerThanAction_0 = (Action)cGroup.eContents().get(0);
 		private final Assignment cAxeAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cAxeSTRINGTerminalRuleCall_1_0 = (RuleCall)cAxeAssignment_1.eContents().get(0);
-		private final Keyword cLowerKeyword_2 = (Keyword)cGroup.eContents().get(2);
-		private final Keyword cThanKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cValueAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cValueINTTerminalRuleCall_4_0 = (RuleCall)cValueAssignment_4.eContents().get(0);
+		private final Keyword cIsKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Keyword cLowerKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Keyword cThanKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cValueAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cValueINTTerminalRuleCall_5_0 = (RuleCall)cValueAssignment_5.eContents().get(0);
 		
 		//IsLowerThan:
-		//	{IsLowerThan} axe=STRING 'lower' 'than' value=INT;
+		//	{IsLowerThan} axe=STRING 'is' 'lower' 'than' value=INT;
 		@Override public ParserRule getRule() { return rule; }
 		
-		//{IsLowerThan} axe=STRING 'lower' 'than' value=INT
+		//{IsLowerThan} axe=STRING 'is' 'lower' 'than' value=INT
 		public Group getGroup() { return cGroup; }
 		
 		//{IsLowerThan}
@@ -1339,17 +1352,20 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 		//STRING
 		public RuleCall getAxeSTRINGTerminalRuleCall_1_0() { return cAxeSTRINGTerminalRuleCall_1_0; }
 		
+		//'is'
+		public Keyword getIsKeyword_2() { return cIsKeyword_2; }
+		
 		//'lower'
-		public Keyword getLowerKeyword_2() { return cLowerKeyword_2; }
+		public Keyword getLowerKeyword_3() { return cLowerKeyword_3; }
 		
 		//'than'
-		public Keyword getThanKeyword_3() { return cThanKeyword_3; }
+		public Keyword getThanKeyword_4() { return cThanKeyword_4; }
 		
 		//value=INT
-		public Assignment getValueAssignment_4() { return cValueAssignment_4; }
+		public Assignment getValueAssignment_5() { return cValueAssignment_5; }
 		
 		//INT
-		public RuleCall getValueINTTerminalRuleCall_4_0() { return cValueINTTerminalRuleCall_4_0; }
+		public RuleCall getValueINTTerminalRuleCall_5_0() { return cValueINTTerminalRuleCall_5_0; }
 	}
 	public class EDoubleElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "xtext.farmbot.MyFarmbot.EDouble");
@@ -1639,7 +1655,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	//If:
 	//	{If}
 	//	'if' booleanExpression=BooleanExpression
-	//	'then' then=ExecuteSequence ('else' else=ExecuteSequence)?
+	//	'then' then=ExecuteSequence? ('else' else=ExecuteSequence)?
 	//	'end';
 	public IfElements getIfAccess() {
 		return pIf;
@@ -1762,7 +1778,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IsEqualTo:
-	//	{IsEqualTo} axe=STRING 'equals' 'to' value=INT;
+	//	{IsEqualTo} axe=STRING 'is' 'equal' 'to' value=INT;
 	public IsEqualToElements getIsEqualToAccess() {
 		return pIsEqualTo;
 	}
@@ -1772,7 +1788,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IsNotEqualTo:
-	//	{IsNotEqualTo} axe=STRING 'not' 'equals' 'to' value=INT;
+	//	{IsNotEqualTo} axe=STRING 'is' 'not' 'equal' 'to' value=INT;
 	public IsNotEqualToElements getIsNotEqualToAccess() {
 		return pIsNotEqualTo;
 	}
@@ -1782,7 +1798,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IsGreaterThan:
-	//	{IsGreaterThan} axe=STRING 'greater' 'than' value=INT;
+	//	{IsGreaterThan} axe=STRING 'is' 'greater' 'than' value=INT;
 	public IsGreaterThanElements getIsGreaterThanAccess() {
 		return pIsGreaterThan;
 	}
@@ -1792,7 +1808,7 @@ public class MyFarmbotGrammarAccess extends AbstractGrammarElementFinder {
 	}
 	
 	//IsLowerThan:
-	//	{IsLowerThan} axe=STRING 'lower' 'than' value=INT;
+	//	{IsLowerThan} axe=STRING 'is' 'lower' 'than' value=INT;
 	public IsLowerThanElements getIsLowerThanAccess() {
 		return pIsLowerThan;
 	}

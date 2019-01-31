@@ -98,13 +98,13 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getScheduleAccess().getEndDateAssignment_29(), "rule__Schedule__EndDateAssignment_29");
 			builder.put(grammarAccess.getScheduleAccess().getEndTimeAssignment_33(), "rule__Schedule__EndTimeAssignment_33");
 			builder.put(grammarAccess.getIsEqualToAccess().getAxeAssignment_1(), "rule__IsEqualTo__AxeAssignment_1");
-			builder.put(grammarAccess.getIsEqualToAccess().getValueAssignment_4(), "rule__IsEqualTo__ValueAssignment_4");
+			builder.put(grammarAccess.getIsEqualToAccess().getValueAssignment_5(), "rule__IsEqualTo__ValueAssignment_5");
 			builder.put(grammarAccess.getIsNotEqualToAccess().getAxeAssignment_1(), "rule__IsNotEqualTo__AxeAssignment_1");
-			builder.put(grammarAccess.getIsNotEqualToAccess().getValueAssignment_5(), "rule__IsNotEqualTo__ValueAssignment_5");
+			builder.put(grammarAccess.getIsNotEqualToAccess().getValueAssignment_6(), "rule__IsNotEqualTo__ValueAssignment_6");
 			builder.put(grammarAccess.getIsGreaterThanAccess().getAxeAssignment_1(), "rule__IsGreaterThan__AxeAssignment_1");
-			builder.put(grammarAccess.getIsGreaterThanAccess().getValueAssignment_4(), "rule__IsGreaterThan__ValueAssignment_4");
+			builder.put(grammarAccess.getIsGreaterThanAccess().getValueAssignment_5(), "rule__IsGreaterThan__ValueAssignment_5");
 			builder.put(grammarAccess.getIsLowerThanAccess().getAxeAssignment_1(), "rule__IsLowerThan__AxeAssignment_1");
-			builder.put(grammarAccess.getIsLowerThanAccess().getValueAssignment_4(), "rule__IsLowerThan__ValueAssignment_4");
+			builder.put(grammarAccess.getIsLowerThanAccess().getValueAssignment_5(), "rule__IsLowerThan__ValueAssignment_5");
 		}
 	}
 	

@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'turnOn('", "'pin'", "'='", "','", "'mode'", "')'", "'turnOff('", "'moveRelative('", "'x'", "'y'", "'z'", "'speed'", "'findHome('", "'findX'", "'findY'", "'findZ'", "'sequence'", "'end'", "'if'", "'then'", "'else'", "'moveAbsolute('", "'executeSequence'", "'('", "'id'", "'wait'", "'duration'", "'isToolOn'", "'sendMessage'", "'type'", "'message'", "'runFarmware'", "'name'", "'takePhoto()'", "'schedule'", "'startDate'", "'startTime'", "'repeat'", "'repeatFrequency'", "'repeatUnit'", "'endDate'", "'endTime'", "'listPeripherals()'", "'listSequences()'", "'equals'", "'to'", "'not'", "'greater'", "'than'", "'lower'", "'-'", "'.'", "'E'", "'e'", "'true'", "'false'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_INT", "RULE_STRING", "RULE_ID", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "RULE_ANY_OTHER", "'turnOn('", "'pin'", "'='", "','", "'mode'", "')'", "'turnOff('", "'moveRelative('", "'x'", "'y'", "'z'", "'speed'", "'findHome('", "'findX'", "'findY'", "'findZ'", "'sequence'", "'end'", "'if'", "'then'", "'else'", "'moveAbsolute('", "'executeSequence'", "'('", "'id'", "'wait'", "'duration'", "'isToolOn'", "'sendMessage'", "'type'", "'message'", "'runFarmware'", "'name'", "'takePhoto()'", "'schedule'", "'startDate'", "'startTime'", "'repeat'", "'repeatFrequency'", "'repeatUnit'", "'endDate'", "'endTime'", "'listPeripherals()'", "'listSequences()'", "'is'", "'equal'", "'to'", "'not'", "'greater'", "'than'", "'lower'", "'-'", "'.'", "'E'", "'e'", "'true'", "'false'"
     };
     public static final int T__50=50;
     public static final int T__19=19;
@@ -54,6 +54,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
     public static final int T__66=66;
     public static final int RULE_ML_COMMENT=7;
     public static final int T__23=23;
+    public static final int T__67=67;
     public static final int T__24=24;
     public static final int T__25=25;
     public static final int T__62=62;
@@ -1147,34 +1148,44 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
                 alt6=1;
             }
             else if ( (LA6_0==RULE_STRING) ) {
-                switch ( input.LA(2) ) {
-                case 57:
-                    {
-                    alt6=3;
+                int LA6_2 = input.LA(2);
+
+                if ( (LA6_2==55) ) {
+                    switch ( input.LA(3) ) {
+                    case 56:
+                        {
+                        alt6=2;
+                        }
+                        break;
+                    case 58:
+                        {
+                        alt6=3;
+                        }
+                        break;
+                    case 59:
+                        {
+                        alt6=4;
+                        }
+                        break;
+                    case 61:
+                        {
+                        alt6=5;
+                        }
+                        break;
+                    default:
+                        NoViableAltException nvae =
+                            new NoViableAltException("", 6, 3, input);
+
+                        throw nvae;
                     }
-                    break;
-                case 60:
-                    {
-                    alt6=5;
-                    }
-                    break;
-                case 55:
-                    {
-                    alt6=2;
-                    }
-                    break;
-                case 58:
-                    {
-                    alt6=4;
-                    }
-                    break;
-                default:
+
+                }
+                else {
                     NoViableAltException nvae =
                         new NoViableAltException("", 6, 2, input);
 
                     throw nvae;
                 }
-
             }
             else {
                 NoViableAltException nvae =
@@ -2345,7 +2356,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIf"
-    // InternalMyFarmbot.g:946:1: ruleIf returns [EObject current=null] : ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) ) (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' ) ;
+    // InternalMyFarmbot.g:946:1: ruleIf returns [EObject current=null] : ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) )? (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' ) ;
     public final EObject ruleIf() throws RecognitionException {
         EObject current = null;
 
@@ -2364,11 +2375,11 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFarmbot.g:952:2: ( ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) ) (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' ) )
-            // InternalMyFarmbot.g:953:2: ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) ) (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' )
+            // InternalMyFarmbot.g:952:2: ( ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) )? (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' ) )
+            // InternalMyFarmbot.g:953:2: ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) )? (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' )
             {
-            // InternalMyFarmbot.g:953:2: ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) ) (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' )
-            // InternalMyFarmbot.g:954:3: () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) ) (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end'
+            // InternalMyFarmbot.g:953:2: ( () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) )? (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end' )
+            // InternalMyFarmbot.g:954:3: () otherlv_1= 'if' ( (lv_booleanExpression_2_0= ruleBooleanExpression ) ) otherlv_3= 'then' ( (lv_then_4_0= ruleExecuteSequence ) )? (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )? otherlv_7= 'end'
             {
             // InternalMyFarmbot.g:954:3: ()
             // InternalMyFarmbot.g:955:4: 
@@ -2420,49 +2431,60 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getIfAccess().getThenKeyword_3());
             		
-            // InternalMyFarmbot.g:988:3: ( (lv_then_4_0= ruleExecuteSequence ) )
-            // InternalMyFarmbot.g:989:4: (lv_then_4_0= ruleExecuteSequence )
-            {
-            // InternalMyFarmbot.g:989:4: (lv_then_4_0= ruleExecuteSequence )
-            // InternalMyFarmbot.g:990:5: lv_then_4_0= ruleExecuteSequence
-            {
-
-            					newCompositeNode(grammarAccess.getIfAccess().getThenExecuteSequenceParserRuleCall_4_0());
-            				
-            pushFollow(FOLLOW_23);
-            lv_then_4_0=ruleExecuteSequence();
-
-            state._fsp--;
-
-
-            					if (current==null) {
-            						current = createModelElementForParent(grammarAccess.getIfRule());
-            					}
-            					set(
-            						current,
-            						"then",
-            						lv_then_4_0,
-            						"xtext.farmbot.MyFarmbot.ExecuteSequence");
-            					afterParserOrEnumRuleCall();
-            				
-
-            }
-
-
-            }
-
-            // InternalMyFarmbot.g:1007:3: (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )?
+            // InternalMyFarmbot.g:988:3: ( (lv_then_4_0= ruleExecuteSequence ) )?
             int alt8=2;
             int LA8_0 = input.LA(1);
 
-            if ( (LA8_0==31) ) {
+            if ( (LA8_0==33) ) {
                 alt8=1;
             }
             switch (alt8) {
                 case 1 :
+                    // InternalMyFarmbot.g:989:4: (lv_then_4_0= ruleExecuteSequence )
+                    {
+                    // InternalMyFarmbot.g:989:4: (lv_then_4_0= ruleExecuteSequence )
+                    // InternalMyFarmbot.g:990:5: lv_then_4_0= ruleExecuteSequence
+                    {
+
+                    					newCompositeNode(grammarAccess.getIfAccess().getThenExecuteSequenceParserRuleCall_4_0());
+                    				
+                    pushFollow(FOLLOW_23);
+                    lv_then_4_0=ruleExecuteSequence();
+
+                    state._fsp--;
+
+
+                    					if (current==null) {
+                    						current = createModelElementForParent(grammarAccess.getIfRule());
+                    					}
+                    					set(
+                    						current,
+                    						"then",
+                    						lv_then_4_0,
+                    						"xtext.farmbot.MyFarmbot.ExecuteSequence");
+                    					afterParserOrEnumRuleCall();
+                    				
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            // InternalMyFarmbot.g:1007:3: (otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) ) )?
+            int alt9=2;
+            int LA9_0 = input.LA(1);
+
+            if ( (LA9_0==31) ) {
+                alt9=1;
+            }
+            switch (alt9) {
+                case 1 :
                     // InternalMyFarmbot.g:1008:4: otherlv_5= 'else' ( (lv_else_6_0= ruleExecuteSequence ) )
                     {
-                    otherlv_5=(Token)match(input,31,FOLLOW_22); 
+                    otherlv_5=(Token)match(input,31,FOLLOW_24); 
 
                     				newLeafNode(otherlv_5, grammarAccess.getIfAccess().getElseKeyword_5_0());
                     			
@@ -2475,7 +2497,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
                     						newCompositeNode(grammarAccess.getIfAccess().getElseExecuteSequenceParserRuleCall_5_1_0());
                     					
-                    pushFollow(FOLLOW_24);
+                    pushFollow(FOLLOW_25);
                     lv_else_6_0=ruleExecuteSequence();
 
                     state._fsp--;
@@ -2856,11 +2878,11 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,33,FOLLOW_25); 
+            otherlv_1=(Token)match(input,33,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getExecuteSequenceAccess().getExecuteSequenceKeyword_1());
             		
-            otherlv_2=(Token)match(input,34,FOLLOW_26); 
+            otherlv_2=(Token)match(input,34,FOLLOW_27); 
 
             			newLeafNode(otherlv_2, grammarAccess.getExecuteSequenceAccess().getLeftParenthesisKeyword_2());
             		
@@ -2994,11 +3016,11 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,36,FOLLOW_25); 
+            otherlv_1=(Token)match(input,36,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getWaitAccess().getWaitKeyword_1());
             		
-            otherlv_2=(Token)match(input,34,FOLLOW_27); 
+            otherlv_2=(Token)match(input,34,FOLLOW_28); 
 
             			newLeafNode(otherlv_2, grammarAccess.getWaitAccess().getLeftParenthesisKeyword_2());
             		
@@ -3006,7 +3028,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             			newLeafNode(otherlv_3, grammarAccess.getWaitAccess().getDurationKeyword_3());
             		
-            otherlv_4=(Token)match(input,13,FOLLOW_28); 
+            otherlv_4=(Token)match(input,13,FOLLOW_29); 
 
             			newLeafNode(otherlv_4, grammarAccess.getWaitAccess().getEqualsSignKeyword_4());
             		
@@ -3136,7 +3158,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,38,FOLLOW_25); 
+            otherlv_1=(Token)match(input,38,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getIsToolOnAccess().getIsToolOnKeyword_1());
             		
@@ -3277,11 +3299,11 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,39,FOLLOW_25); 
+            otherlv_1=(Token)match(input,39,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getSendMessageAccess().getSendMessageKeyword_1());
             		
-            otherlv_2=(Token)match(input,34,FOLLOW_29); 
+            otherlv_2=(Token)match(input,34,FOLLOW_30); 
 
             			newLeafNode(otherlv_2, grammarAccess.getSendMessageAccess().getLeftParenthesisKeyword_2());
             		
@@ -3319,7 +3341,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,14,FOLLOW_30); 
+            otherlv_6=(Token)match(input,14,FOLLOW_31); 
 
             			newLeafNode(otherlv_6, grammarAccess.getSendMessageAccess().getCommaKeyword_6());
             		
@@ -3452,11 +3474,11 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,42,FOLLOW_25); 
+            otherlv_1=(Token)match(input,42,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getRunFarmwareAccess().getRunFarmwareKeyword_1());
             		
-            otherlv_2=(Token)match(input,34,FOLLOW_31); 
+            otherlv_2=(Token)match(input,34,FOLLOW_32); 
 
             			newLeafNode(otherlv_2, grammarAccess.getRunFarmwareAccess().getLeftParenthesisKeyword_2());
             		
@@ -3708,11 +3730,11 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_1=(Token)match(input,45,FOLLOW_25); 
+            otherlv_1=(Token)match(input,45,FOLLOW_26); 
 
             			newLeafNode(otherlv_1, grammarAccess.getScheduleAccess().getScheduleKeyword_1());
             		
-            otherlv_2=(Token)match(input,34,FOLLOW_32); 
+            otherlv_2=(Token)match(input,34,FOLLOW_33); 
 
             			newLeafNode(otherlv_2, grammarAccess.getScheduleAccess().getLeftParenthesisKeyword_2());
             		
@@ -3750,7 +3772,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_6=(Token)match(input,14,FOLLOW_33); 
+            otherlv_6=(Token)match(input,14,FOLLOW_34); 
 
             			newLeafNode(otherlv_6, grammarAccess.getScheduleAccess().getCommaKeyword_6());
             		
@@ -3788,7 +3810,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_10=(Token)match(input,14,FOLLOW_34); 
+            otherlv_10=(Token)match(input,14,FOLLOW_35); 
 
             			newLeafNode(otherlv_10, grammarAccess.getScheduleAccess().getCommaKeyword_10());
             		
@@ -3826,7 +3848,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_14=(Token)match(input,14,FOLLOW_35); 
+            otherlv_14=(Token)match(input,14,FOLLOW_36); 
 
             			newLeafNode(otherlv_14, grammarAccess.getScheduleAccess().getCommaKeyword_14());
             		
@@ -3869,7 +3891,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_18=(Token)match(input,14,FOLLOW_36); 
+            otherlv_18=(Token)match(input,14,FOLLOW_37); 
 
             			newLeafNode(otherlv_18, grammarAccess.getScheduleAccess().getCommaKeyword_18());
             		
@@ -3907,7 +3929,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_22=(Token)match(input,14,FOLLOW_37); 
+            otherlv_22=(Token)match(input,14,FOLLOW_38); 
 
             			newLeafNode(otherlv_22, grammarAccess.getScheduleAccess().getCommaKeyword_22());
             		
@@ -3945,7 +3967,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_26=(Token)match(input,14,FOLLOW_38); 
+            otherlv_26=(Token)match(input,14,FOLLOW_39); 
 
             			newLeafNode(otherlv_26, grammarAccess.getScheduleAccess().getCommaKeyword_26());
             		
@@ -3983,7 +4005,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_30=(Token)match(input,14,FOLLOW_39); 
+            otherlv_30=(Token)match(input,14,FOLLOW_40); 
 
             			newLeafNode(otherlv_30, grammarAccess.getScheduleAccess().getCommaKeyword_30());
             		
@@ -4264,24 +4286,25 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIsEqualTo"
-    // InternalMyFarmbot.g:1913:1: ruleIsEqualTo returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'equals' otherlv_3= 'to' ( (lv_value_4_0= RULE_INT ) ) ) ;
+    // InternalMyFarmbot.g:1913:1: ruleIsEqualTo returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'equal' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) ) ;
     public final EObject ruleIsEqualTo() throws RecognitionException {
         EObject current = null;
 
         Token lv_axe_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_value_4_0=null;
+        Token otherlv_4=null;
+        Token lv_value_5_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyFarmbot.g:1919:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'equals' otherlv_3= 'to' ( (lv_value_4_0= RULE_INT ) ) ) )
-            // InternalMyFarmbot.g:1920:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'equals' otherlv_3= 'to' ( (lv_value_4_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:1919:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'equal' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) ) )
+            // InternalMyFarmbot.g:1920:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'equal' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) )
             {
-            // InternalMyFarmbot.g:1920:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'equals' otherlv_3= 'to' ( (lv_value_4_0= RULE_INT ) ) )
-            // InternalMyFarmbot.g:1921:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'equals' otherlv_3= 'to' ( (lv_value_4_0= RULE_INT ) )
+            // InternalMyFarmbot.g:1920:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'equal' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:1921:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'equal' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) )
             {
             // InternalMyFarmbot.g:1921:3: ()
             // InternalMyFarmbot.g:1922:4: 
@@ -4300,7 +4323,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
             // InternalMyFarmbot.g:1929:4: (lv_axe_1_0= RULE_STRING )
             // InternalMyFarmbot.g:1930:5: lv_axe_1_0= RULE_STRING
             {
-            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_40); 
+            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
             					newLeafNode(lv_axe_1_0, grammarAccess.getIsEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0());
             				
@@ -4320,181 +4343,31 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,55,FOLLOW_41); 
+            otherlv_2=(Token)match(input,55,FOLLOW_42); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getIsEqualToAccess().getEqualsKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getIsEqualToAccess().getIsKeyword_2());
             		
-            otherlv_3=(Token)match(input,56,FOLLOW_6); 
+            otherlv_3=(Token)match(input,56,FOLLOW_43); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getIsEqualToAccess().getToKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getIsEqualToAccess().getEqualKeyword_3());
             		
-            // InternalMyFarmbot.g:1954:3: ( (lv_value_4_0= RULE_INT ) )
-            // InternalMyFarmbot.g:1955:4: (lv_value_4_0= RULE_INT )
-            {
-            // InternalMyFarmbot.g:1955:4: (lv_value_4_0= RULE_INT )
-            // InternalMyFarmbot.g:1956:5: lv_value_4_0= RULE_INT
-            {
-            lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            otherlv_4=(Token)match(input,57,FOLLOW_6); 
 
-            					newLeafNode(lv_value_4_0, grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0());
+            			newLeafNode(otherlv_4, grammarAccess.getIsEqualToAccess().getToKeyword_4());
+            		
+            // InternalMyFarmbot.g:1958:3: ( (lv_value_5_0= RULE_INT ) )
+            // InternalMyFarmbot.g:1959:4: (lv_value_5_0= RULE_INT )
+            {
+            // InternalMyFarmbot.g:1959:4: (lv_value_5_0= RULE_INT )
+            // InternalMyFarmbot.g:1960:5: lv_value_5_0= RULE_INT
+            {
+            lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_value_5_0, grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0());
             				
 
             					if (current==null) {
             						current = createModelElement(grammarAccess.getIsEqualToRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"value",
-            						lv_value_4_0,
-            						"org.eclipse.xtext.common.Terminals.INT");
-            				
-
-            }
-
-
-            }
-
-
-            }
-
-
-            }
-
-
-            	leaveRule();
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleIsEqualTo"
-
-
-    // $ANTLR start "entryRuleIsNotEqualTo"
-    // InternalMyFarmbot.g:1976:1: entryRuleIsNotEqualTo returns [EObject current=null] : iv_ruleIsNotEqualTo= ruleIsNotEqualTo EOF ;
-    public final EObject entryRuleIsNotEqualTo() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleIsNotEqualTo = null;
-
-
-        try {
-            // InternalMyFarmbot.g:1976:53: (iv_ruleIsNotEqualTo= ruleIsNotEqualTo EOF )
-            // InternalMyFarmbot.g:1977:2: iv_ruleIsNotEqualTo= ruleIsNotEqualTo EOF
-            {
-             newCompositeNode(grammarAccess.getIsNotEqualToRule()); 
-            pushFollow(FOLLOW_1);
-            iv_ruleIsNotEqualTo=ruleIsNotEqualTo();
-
-            state._fsp--;
-
-             current =iv_ruleIsNotEqualTo; 
-            match(input,EOF,FOLLOW_2); 
-
-            }
-
-        }
-
-            catch (RecognitionException re) {
-                recover(input,re);
-                appendSkippedTokens();
-            }
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleIsNotEqualTo"
-
-
-    // $ANTLR start "ruleIsNotEqualTo"
-    // InternalMyFarmbot.g:1983:1: ruleIsNotEqualTo returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'not' otherlv_3= 'equals' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) ) ;
-    public final EObject ruleIsNotEqualTo() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_axe_1_0=null;
-        Token otherlv_2=null;
-        Token otherlv_3=null;
-        Token otherlv_4=null;
-        Token lv_value_5_0=null;
-
-
-        	enterRule();
-
-        try {
-            // InternalMyFarmbot.g:1989:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'not' otherlv_3= 'equals' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) ) )
-            // InternalMyFarmbot.g:1990:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'not' otherlv_3= 'equals' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) )
-            {
-            // InternalMyFarmbot.g:1990:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'not' otherlv_3= 'equals' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) ) )
-            // InternalMyFarmbot.g:1991:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'not' otherlv_3= 'equals' otherlv_4= 'to' ( (lv_value_5_0= RULE_INT ) )
-            {
-            // InternalMyFarmbot.g:1991:3: ()
-            // InternalMyFarmbot.g:1992:4: 
-            {
-
-            				current = forceCreateModelElement(
-            					grammarAccess.getIsNotEqualToAccess().getIsNotEqualToAction_0(),
-            					current);
-            			
-
-            }
-
-            // InternalMyFarmbot.g:1998:3: ( (lv_axe_1_0= RULE_STRING ) )
-            // InternalMyFarmbot.g:1999:4: (lv_axe_1_0= RULE_STRING )
-            {
-            // InternalMyFarmbot.g:1999:4: (lv_axe_1_0= RULE_STRING )
-            // InternalMyFarmbot.g:2000:5: lv_axe_1_0= RULE_STRING
-            {
-            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_42); 
-
-            					newLeafNode(lv_axe_1_0, grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getIsNotEqualToRule());
-            					}
-            					setWithLastConsumed(
-            						current,
-            						"axe",
-            						lv_axe_1_0,
-            						"org.eclipse.xtext.common.Terminals.STRING");
-            				
-
-            }
-
-
-            }
-
-            otherlv_2=(Token)match(input,57,FOLLOW_40); 
-
-            			newLeafNode(otherlv_2, grammarAccess.getIsNotEqualToAccess().getNotKeyword_2());
-            		
-            otherlv_3=(Token)match(input,55,FOLLOW_41); 
-
-            			newLeafNode(otherlv_3, grammarAccess.getIsNotEqualToAccess().getEqualsKeyword_3());
-            		
-            otherlv_4=(Token)match(input,56,FOLLOW_6); 
-
-            			newLeafNode(otherlv_4, grammarAccess.getIsNotEqualToAccess().getToKeyword_4());
-            		
-            // InternalMyFarmbot.g:2028:3: ( (lv_value_5_0= RULE_INT ) )
-            // InternalMyFarmbot.g:2029:4: (lv_value_5_0= RULE_INT )
-            {
-            // InternalMyFarmbot.g:2029:4: (lv_value_5_0= RULE_INT )
-            // InternalMyFarmbot.g:2030:5: lv_value_5_0= RULE_INT
-            {
-            lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_2); 
-
-            					newLeafNode(lv_value_5_0, grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0());
-            				
-
-            					if (current==null) {
-            						current = createModelElement(grammarAccess.getIsNotEqualToRule());
             					}
             					setWithLastConsumed(
             						current,
@@ -4527,11 +4400,170 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
         }
         return current;
     }
+    // $ANTLR end "ruleIsEqualTo"
+
+
+    // $ANTLR start "entryRuleIsNotEqualTo"
+    // InternalMyFarmbot.g:1980:1: entryRuleIsNotEqualTo returns [EObject current=null] : iv_ruleIsNotEqualTo= ruleIsNotEqualTo EOF ;
+    public final EObject entryRuleIsNotEqualTo() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleIsNotEqualTo = null;
+
+
+        try {
+            // InternalMyFarmbot.g:1980:53: (iv_ruleIsNotEqualTo= ruleIsNotEqualTo EOF )
+            // InternalMyFarmbot.g:1981:2: iv_ruleIsNotEqualTo= ruleIsNotEqualTo EOF
+            {
+             newCompositeNode(grammarAccess.getIsNotEqualToRule()); 
+            pushFollow(FOLLOW_1);
+            iv_ruleIsNotEqualTo=ruleIsNotEqualTo();
+
+            state._fsp--;
+
+             current =iv_ruleIsNotEqualTo; 
+            match(input,EOF,FOLLOW_2); 
+
+            }
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleIsNotEqualTo"
+
+
+    // $ANTLR start "ruleIsNotEqualTo"
+    // InternalMyFarmbot.g:1987:1: ruleIsNotEqualTo returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'not' otherlv_4= 'equal' otherlv_5= 'to' ( (lv_value_6_0= RULE_INT ) ) ) ;
+    public final EObject ruleIsNotEqualTo() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_axe_1_0=null;
+        Token otherlv_2=null;
+        Token otherlv_3=null;
+        Token otherlv_4=null;
+        Token otherlv_5=null;
+        Token lv_value_6_0=null;
+
+
+        	enterRule();
+
+        try {
+            // InternalMyFarmbot.g:1993:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'not' otherlv_4= 'equal' otherlv_5= 'to' ( (lv_value_6_0= RULE_INT ) ) ) )
+            // InternalMyFarmbot.g:1994:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'not' otherlv_4= 'equal' otherlv_5= 'to' ( (lv_value_6_0= RULE_INT ) ) )
+            {
+            // InternalMyFarmbot.g:1994:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'not' otherlv_4= 'equal' otherlv_5= 'to' ( (lv_value_6_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:1995:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'not' otherlv_4= 'equal' otherlv_5= 'to' ( (lv_value_6_0= RULE_INT ) )
+            {
+            // InternalMyFarmbot.g:1995:3: ()
+            // InternalMyFarmbot.g:1996:4: 
+            {
+
+            				current = forceCreateModelElement(
+            					grammarAccess.getIsNotEqualToAccess().getIsNotEqualToAction_0(),
+            					current);
+            			
+
+            }
+
+            // InternalMyFarmbot.g:2002:3: ( (lv_axe_1_0= RULE_STRING ) )
+            // InternalMyFarmbot.g:2003:4: (lv_axe_1_0= RULE_STRING )
+            {
+            // InternalMyFarmbot.g:2003:4: (lv_axe_1_0= RULE_STRING )
+            // InternalMyFarmbot.g:2004:5: lv_axe_1_0= RULE_STRING
+            {
+            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
+
+            					newLeafNode(lv_axe_1_0, grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getIsNotEqualToRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"axe",
+            						lv_axe_1_0,
+            						"org.eclipse.xtext.common.Terminals.STRING");
+            				
+
+            }
+
+
+            }
+
+            otherlv_2=(Token)match(input,55,FOLLOW_44); 
+
+            			newLeafNode(otherlv_2, grammarAccess.getIsNotEqualToAccess().getIsKeyword_2());
+            		
+            otherlv_3=(Token)match(input,58,FOLLOW_42); 
+
+            			newLeafNode(otherlv_3, grammarAccess.getIsNotEqualToAccess().getNotKeyword_3());
+            		
+            otherlv_4=(Token)match(input,56,FOLLOW_43); 
+
+            			newLeafNode(otherlv_4, grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4());
+            		
+            otherlv_5=(Token)match(input,57,FOLLOW_6); 
+
+            			newLeafNode(otherlv_5, grammarAccess.getIsNotEqualToAccess().getToKeyword_5());
+            		
+            // InternalMyFarmbot.g:2036:3: ( (lv_value_6_0= RULE_INT ) )
+            // InternalMyFarmbot.g:2037:4: (lv_value_6_0= RULE_INT )
+            {
+            // InternalMyFarmbot.g:2037:4: (lv_value_6_0= RULE_INT )
+            // InternalMyFarmbot.g:2038:5: lv_value_6_0= RULE_INT
+            {
+            lv_value_6_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_value_6_0, grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0());
+            				
+
+            					if (current==null) {
+            						current = createModelElement(grammarAccess.getIsNotEqualToRule());
+            					}
+            					setWithLastConsumed(
+            						current,
+            						"value",
+            						lv_value_6_0,
+            						"org.eclipse.xtext.common.Terminals.INT");
+            				
+
+            }
+
+
+            }
+
+
+            }
+
+
+            }
+
+
+            	leaveRule();
+
+        }
+
+            catch (RecognitionException re) {
+                recover(input,re);
+                appendSkippedTokens();
+            }
+        finally {
+        }
+        return current;
+    }
     // $ANTLR end "ruleIsNotEqualTo"
 
 
     // $ANTLR start "entryRuleIsGreaterThan"
-    // InternalMyFarmbot.g:2050:1: entryRuleIsGreaterThan returns [EObject current=null] : iv_ruleIsGreaterThan= ruleIsGreaterThan EOF ;
+    // InternalMyFarmbot.g:2058:1: entryRuleIsGreaterThan returns [EObject current=null] : iv_ruleIsGreaterThan= ruleIsGreaterThan EOF ;
     public final EObject entryRuleIsGreaterThan() throws RecognitionException {
         EObject current = null;
 
@@ -4539,8 +4571,8 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFarmbot.g:2050:54: (iv_ruleIsGreaterThan= ruleIsGreaterThan EOF )
-            // InternalMyFarmbot.g:2051:2: iv_ruleIsGreaterThan= ruleIsGreaterThan EOF
+            // InternalMyFarmbot.g:2058:54: (iv_ruleIsGreaterThan= ruleIsGreaterThan EOF )
+            // InternalMyFarmbot.g:2059:2: iv_ruleIsGreaterThan= ruleIsGreaterThan EOF
             {
              newCompositeNode(grammarAccess.getIsGreaterThanRule()); 
             pushFollow(FOLLOW_1);
@@ -4567,27 +4599,28 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIsGreaterThan"
-    // InternalMyFarmbot.g:2057:1: ruleIsGreaterThan returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'greater' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) ) ;
+    // InternalMyFarmbot.g:2065:1: ruleIsGreaterThan returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'greater' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) ) ;
     public final EObject ruleIsGreaterThan() throws RecognitionException {
         EObject current = null;
 
         Token lv_axe_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_value_4_0=null;
+        Token otherlv_4=null;
+        Token lv_value_5_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyFarmbot.g:2063:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'greater' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) ) )
-            // InternalMyFarmbot.g:2064:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'greater' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:2071:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'greater' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) ) )
+            // InternalMyFarmbot.g:2072:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'greater' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) )
             {
-            // InternalMyFarmbot.g:2064:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'greater' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) )
-            // InternalMyFarmbot.g:2065:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'greater' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) )
+            // InternalMyFarmbot.g:2072:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'greater' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:2073:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'greater' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) )
             {
-            // InternalMyFarmbot.g:2065:3: ()
-            // InternalMyFarmbot.g:2066:4: 
+            // InternalMyFarmbot.g:2073:3: ()
+            // InternalMyFarmbot.g:2074:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4597,13 +4630,13 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyFarmbot.g:2072:3: ( (lv_axe_1_0= RULE_STRING ) )
-            // InternalMyFarmbot.g:2073:4: (lv_axe_1_0= RULE_STRING )
+            // InternalMyFarmbot.g:2080:3: ( (lv_axe_1_0= RULE_STRING ) )
+            // InternalMyFarmbot.g:2081:4: (lv_axe_1_0= RULE_STRING )
             {
-            // InternalMyFarmbot.g:2073:4: (lv_axe_1_0= RULE_STRING )
-            // InternalMyFarmbot.g:2074:5: lv_axe_1_0= RULE_STRING
+            // InternalMyFarmbot.g:2081:4: (lv_axe_1_0= RULE_STRING )
+            // InternalMyFarmbot.g:2082:5: lv_axe_1_0= RULE_STRING
             {
-            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_43); 
+            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
             					newLeafNode(lv_axe_1_0, grammarAccess.getIsGreaterThanAccess().getAxeSTRINGTerminalRuleCall_1_0());
             				
@@ -4623,23 +4656,27 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,58,FOLLOW_44); 
+            otherlv_2=(Token)match(input,55,FOLLOW_45); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getIsGreaterThanAccess().getIsKeyword_2());
             		
-            otherlv_3=(Token)match(input,59,FOLLOW_6); 
+            otherlv_3=(Token)match(input,59,FOLLOW_46); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getIsGreaterThanAccess().getThanKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3());
             		
-            // InternalMyFarmbot.g:2098:3: ( (lv_value_4_0= RULE_INT ) )
-            // InternalMyFarmbot.g:2099:4: (lv_value_4_0= RULE_INT )
-            {
-            // InternalMyFarmbot.g:2099:4: (lv_value_4_0= RULE_INT )
-            // InternalMyFarmbot.g:2100:5: lv_value_4_0= RULE_INT
-            {
-            lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            otherlv_4=(Token)match(input,60,FOLLOW_6); 
 
-            					newLeafNode(lv_value_4_0, grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0());
+            			newLeafNode(otherlv_4, grammarAccess.getIsGreaterThanAccess().getThanKeyword_4());
+            		
+            // InternalMyFarmbot.g:2110:3: ( (lv_value_5_0= RULE_INT ) )
+            // InternalMyFarmbot.g:2111:4: (lv_value_5_0= RULE_INT )
+            {
+            // InternalMyFarmbot.g:2111:4: (lv_value_5_0= RULE_INT )
+            // InternalMyFarmbot.g:2112:5: lv_value_5_0= RULE_INT
+            {
+            lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_value_5_0, grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0());
             				
 
             					if (current==null) {
@@ -4648,7 +4685,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"value",
-            						lv_value_4_0,
+            						lv_value_5_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -4680,7 +4717,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleIsLowerThan"
-    // InternalMyFarmbot.g:2120:1: entryRuleIsLowerThan returns [EObject current=null] : iv_ruleIsLowerThan= ruleIsLowerThan EOF ;
+    // InternalMyFarmbot.g:2132:1: entryRuleIsLowerThan returns [EObject current=null] : iv_ruleIsLowerThan= ruleIsLowerThan EOF ;
     public final EObject entryRuleIsLowerThan() throws RecognitionException {
         EObject current = null;
 
@@ -4688,8 +4725,8 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFarmbot.g:2120:52: (iv_ruleIsLowerThan= ruleIsLowerThan EOF )
-            // InternalMyFarmbot.g:2121:2: iv_ruleIsLowerThan= ruleIsLowerThan EOF
+            // InternalMyFarmbot.g:2132:52: (iv_ruleIsLowerThan= ruleIsLowerThan EOF )
+            // InternalMyFarmbot.g:2133:2: iv_ruleIsLowerThan= ruleIsLowerThan EOF
             {
              newCompositeNode(grammarAccess.getIsLowerThanRule()); 
             pushFollow(FOLLOW_1);
@@ -4716,27 +4753,28 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleIsLowerThan"
-    // InternalMyFarmbot.g:2127:1: ruleIsLowerThan returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'lower' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) ) ;
+    // InternalMyFarmbot.g:2139:1: ruleIsLowerThan returns [EObject current=null] : ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'lower' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) ) ;
     public final EObject ruleIsLowerThan() throws RecognitionException {
         EObject current = null;
 
         Token lv_axe_1_0=null;
         Token otherlv_2=null;
         Token otherlv_3=null;
-        Token lv_value_4_0=null;
+        Token otherlv_4=null;
+        Token lv_value_5_0=null;
 
 
         	enterRule();
 
         try {
-            // InternalMyFarmbot.g:2133:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'lower' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) ) )
-            // InternalMyFarmbot.g:2134:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'lower' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:2145:2: ( ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'lower' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) ) )
+            // InternalMyFarmbot.g:2146:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'lower' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) )
             {
-            // InternalMyFarmbot.g:2134:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'lower' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) ) )
-            // InternalMyFarmbot.g:2135:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'lower' otherlv_3= 'than' ( (lv_value_4_0= RULE_INT ) )
+            // InternalMyFarmbot.g:2146:2: ( () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'lower' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) ) )
+            // InternalMyFarmbot.g:2147:3: () ( (lv_axe_1_0= RULE_STRING ) ) otherlv_2= 'is' otherlv_3= 'lower' otherlv_4= 'than' ( (lv_value_5_0= RULE_INT ) )
             {
-            // InternalMyFarmbot.g:2135:3: ()
-            // InternalMyFarmbot.g:2136:4: 
+            // InternalMyFarmbot.g:2147:3: ()
+            // InternalMyFarmbot.g:2148:4: 
             {
 
             				current = forceCreateModelElement(
@@ -4746,13 +4784,13 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyFarmbot.g:2142:3: ( (lv_axe_1_0= RULE_STRING ) )
-            // InternalMyFarmbot.g:2143:4: (lv_axe_1_0= RULE_STRING )
+            // InternalMyFarmbot.g:2154:3: ( (lv_axe_1_0= RULE_STRING ) )
+            // InternalMyFarmbot.g:2155:4: (lv_axe_1_0= RULE_STRING )
             {
-            // InternalMyFarmbot.g:2143:4: (lv_axe_1_0= RULE_STRING )
-            // InternalMyFarmbot.g:2144:5: lv_axe_1_0= RULE_STRING
+            // InternalMyFarmbot.g:2155:4: (lv_axe_1_0= RULE_STRING )
+            // InternalMyFarmbot.g:2156:5: lv_axe_1_0= RULE_STRING
             {
-            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_45); 
+            lv_axe_1_0=(Token)match(input,RULE_STRING,FOLLOW_41); 
 
             					newLeafNode(lv_axe_1_0, grammarAccess.getIsLowerThanAccess().getAxeSTRINGTerminalRuleCall_1_0());
             				
@@ -4772,23 +4810,27 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            otherlv_2=(Token)match(input,60,FOLLOW_44); 
+            otherlv_2=(Token)match(input,55,FOLLOW_47); 
 
-            			newLeafNode(otherlv_2, grammarAccess.getIsLowerThanAccess().getLowerKeyword_2());
+            			newLeafNode(otherlv_2, grammarAccess.getIsLowerThanAccess().getIsKeyword_2());
             		
-            otherlv_3=(Token)match(input,59,FOLLOW_6); 
+            otherlv_3=(Token)match(input,61,FOLLOW_46); 
 
-            			newLeafNode(otherlv_3, grammarAccess.getIsLowerThanAccess().getThanKeyword_3());
+            			newLeafNode(otherlv_3, grammarAccess.getIsLowerThanAccess().getLowerKeyword_3());
             		
-            // InternalMyFarmbot.g:2168:3: ( (lv_value_4_0= RULE_INT ) )
-            // InternalMyFarmbot.g:2169:4: (lv_value_4_0= RULE_INT )
-            {
-            // InternalMyFarmbot.g:2169:4: (lv_value_4_0= RULE_INT )
-            // InternalMyFarmbot.g:2170:5: lv_value_4_0= RULE_INT
-            {
-            lv_value_4_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+            otherlv_4=(Token)match(input,60,FOLLOW_6); 
 
-            					newLeafNode(lv_value_4_0, grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0());
+            			newLeafNode(otherlv_4, grammarAccess.getIsLowerThanAccess().getThanKeyword_4());
+            		
+            // InternalMyFarmbot.g:2184:3: ( (lv_value_5_0= RULE_INT ) )
+            // InternalMyFarmbot.g:2185:4: (lv_value_5_0= RULE_INT )
+            {
+            // InternalMyFarmbot.g:2185:4: (lv_value_5_0= RULE_INT )
+            // InternalMyFarmbot.g:2186:5: lv_value_5_0= RULE_INT
+            {
+            lv_value_5_0=(Token)match(input,RULE_INT,FOLLOW_2); 
+
+            					newLeafNode(lv_value_5_0, grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0());
             				
 
             					if (current==null) {
@@ -4797,7 +4839,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
             					setWithLastConsumed(
             						current,
             						"value",
-            						lv_value_4_0,
+            						lv_value_5_0,
             						"org.eclipse.xtext.common.Terminals.INT");
             				
 
@@ -4829,7 +4871,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEDouble"
-    // InternalMyFarmbot.g:2190:1: entryRuleEDouble returns [String current=null] : iv_ruleEDouble= ruleEDouble EOF ;
+    // InternalMyFarmbot.g:2206:1: entryRuleEDouble returns [String current=null] : iv_ruleEDouble= ruleEDouble EOF ;
     public final String entryRuleEDouble() throws RecognitionException {
         String current = null;
 
@@ -4837,8 +4879,8 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFarmbot.g:2190:47: (iv_ruleEDouble= ruleEDouble EOF )
-            // InternalMyFarmbot.g:2191:2: iv_ruleEDouble= ruleEDouble EOF
+            // InternalMyFarmbot.g:2206:47: (iv_ruleEDouble= ruleEDouble EOF )
+            // InternalMyFarmbot.g:2207:2: iv_ruleEDouble= ruleEDouble EOF
             {
              newCompositeNode(grammarAccess.getEDoubleRule()); 
             pushFollow(FOLLOW_1);
@@ -4865,7 +4907,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEDouble"
-    // InternalMyFarmbot.g:2197:1: ruleEDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? ) ;
+    // InternalMyFarmbot.g:2213:1: ruleEDouble returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? ) ;
     public final AntlrDatatypeRuleToken ruleEDouble() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -4878,24 +4920,24 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFarmbot.g:2203:2: ( ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? ) )
-            // InternalMyFarmbot.g:2204:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? )
+            // InternalMyFarmbot.g:2219:2: ( ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? ) )
+            // InternalMyFarmbot.g:2220:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? )
             {
-            // InternalMyFarmbot.g:2204:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? )
-            // InternalMyFarmbot.g:2205:3: (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )?
+            // InternalMyFarmbot.g:2220:2: ( (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )? )
+            // InternalMyFarmbot.g:2221:3: (kw= '-' )? (this_INT_1= RULE_INT )? kw= '.' this_INT_3= RULE_INT ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )?
             {
-            // InternalMyFarmbot.g:2205:3: (kw= '-' )?
-            int alt9=2;
-            int LA9_0 = input.LA(1);
+            // InternalMyFarmbot.g:2221:3: (kw= '-' )?
+            int alt10=2;
+            int LA10_0 = input.LA(1);
 
-            if ( (LA9_0==61) ) {
-                alt9=1;
+            if ( (LA10_0==62) ) {
+                alt10=1;
             }
-            switch (alt9) {
+            switch (alt10) {
                 case 1 :
-                    // InternalMyFarmbot.g:2206:4: kw= '-'
+                    // InternalMyFarmbot.g:2222:4: kw= '-'
                     {
-                    kw=(Token)match(input,61,FOLLOW_46); 
+                    kw=(Token)match(input,62,FOLLOW_48); 
 
                     				current.merge(kw);
                     				newLeafNode(kw, grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_0());
@@ -4906,18 +4948,18 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            // InternalMyFarmbot.g:2212:3: (this_INT_1= RULE_INT )?
-            int alt10=2;
-            int LA10_0 = input.LA(1);
+            // InternalMyFarmbot.g:2228:3: (this_INT_1= RULE_INT )?
+            int alt11=2;
+            int LA11_0 = input.LA(1);
 
-            if ( (LA10_0==RULE_INT) ) {
-                alt10=1;
+            if ( (LA11_0==RULE_INT) ) {
+                alt11=1;
             }
-            switch (alt10) {
+            switch (alt11) {
                 case 1 :
-                    // InternalMyFarmbot.g:2213:4: this_INT_1= RULE_INT
+                    // InternalMyFarmbot.g:2229:4: this_INT_1= RULE_INT
                     {
-                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_47); 
+                    this_INT_1=(Token)match(input,RULE_INT,FOLLOW_49); 
 
                     				current.merge(this_INT_1);
                     			
@@ -4930,50 +4972,50 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
             }
 
-            kw=(Token)match(input,62,FOLLOW_6); 
+            kw=(Token)match(input,63,FOLLOW_6); 
 
             			current.merge(kw);
             			newLeafNode(kw, grammarAccess.getEDoubleAccess().getFullStopKeyword_2());
             		
-            this_INT_3=(Token)match(input,RULE_INT,FOLLOW_48); 
+            this_INT_3=(Token)match(input,RULE_INT,FOLLOW_50); 
 
             			current.merge(this_INT_3);
             		
 
             			newLeafNode(this_INT_3, grammarAccess.getEDoubleAccess().getINTTerminalRuleCall_3());
             		
-            // InternalMyFarmbot.g:2233:3: ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )?
-            int alt13=2;
-            int LA13_0 = input.LA(1);
+            // InternalMyFarmbot.g:2249:3: ( (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT )?
+            int alt14=2;
+            int LA14_0 = input.LA(1);
 
-            if ( ((LA13_0>=63 && LA13_0<=64)) ) {
-                alt13=1;
+            if ( ((LA14_0>=64 && LA14_0<=65)) ) {
+                alt14=1;
             }
-            switch (alt13) {
+            switch (alt14) {
                 case 1 :
-                    // InternalMyFarmbot.g:2234:4: (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT
+                    // InternalMyFarmbot.g:2250:4: (kw= 'E' | kw= 'e' ) (kw= '-' )? this_INT_7= RULE_INT
                     {
-                    // InternalMyFarmbot.g:2234:4: (kw= 'E' | kw= 'e' )
-                    int alt11=2;
-                    int LA11_0 = input.LA(1);
+                    // InternalMyFarmbot.g:2250:4: (kw= 'E' | kw= 'e' )
+                    int alt12=2;
+                    int LA12_0 = input.LA(1);
 
-                    if ( (LA11_0==63) ) {
-                        alt11=1;
+                    if ( (LA12_0==64) ) {
+                        alt12=1;
                     }
-                    else if ( (LA11_0==64) ) {
-                        alt11=2;
+                    else if ( (LA12_0==65) ) {
+                        alt12=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 11, 0, input);
+                            new NoViableAltException("", 12, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt11) {
+                    switch (alt12) {
                         case 1 :
-                            // InternalMyFarmbot.g:2235:5: kw= 'E'
+                            // InternalMyFarmbot.g:2251:5: kw= 'E'
                             {
-                            kw=(Token)match(input,63,FOLLOW_49); 
+                            kw=(Token)match(input,64,FOLLOW_51); 
 
                             					current.merge(kw);
                             					newLeafNode(kw, grammarAccess.getEDoubleAccess().getEKeyword_4_0_0());
@@ -4982,9 +5024,9 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
                             }
                             break;
                         case 2 :
-                            // InternalMyFarmbot.g:2241:5: kw= 'e'
+                            // InternalMyFarmbot.g:2257:5: kw= 'e'
                             {
-                            kw=(Token)match(input,64,FOLLOW_49); 
+                            kw=(Token)match(input,65,FOLLOW_51); 
 
                             					current.merge(kw);
                             					newLeafNode(kw, grammarAccess.getEDoubleAccess().getEKeyword_4_0_1());
@@ -4995,18 +5037,18 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
                     }
 
-                    // InternalMyFarmbot.g:2247:4: (kw= '-' )?
-                    int alt12=2;
-                    int LA12_0 = input.LA(1);
+                    // InternalMyFarmbot.g:2263:4: (kw= '-' )?
+                    int alt13=2;
+                    int LA13_0 = input.LA(1);
 
-                    if ( (LA12_0==61) ) {
-                        alt12=1;
+                    if ( (LA13_0==62) ) {
+                        alt13=1;
                     }
-                    switch (alt12) {
+                    switch (alt13) {
                         case 1 :
-                            // InternalMyFarmbot.g:2248:5: kw= '-'
+                            // InternalMyFarmbot.g:2264:5: kw= '-'
                             {
-                            kw=(Token)match(input,61,FOLLOW_6); 
+                            kw=(Token)match(input,62,FOLLOW_6); 
 
                             					current.merge(kw);
                             					newLeafNode(kw, grammarAccess.getEDoubleAccess().getHyphenMinusKeyword_4_1());
@@ -5053,7 +5095,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "entryRuleEBoolean"
-    // InternalMyFarmbot.g:2266:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
+    // InternalMyFarmbot.g:2282:1: entryRuleEBoolean returns [String current=null] : iv_ruleEBoolean= ruleEBoolean EOF ;
     public final String entryRuleEBoolean() throws RecognitionException {
         String current = null;
 
@@ -5061,8 +5103,8 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
         try {
-            // InternalMyFarmbot.g:2266:48: (iv_ruleEBoolean= ruleEBoolean EOF )
-            // InternalMyFarmbot.g:2267:2: iv_ruleEBoolean= ruleEBoolean EOF
+            // InternalMyFarmbot.g:2282:48: (iv_ruleEBoolean= ruleEBoolean EOF )
+            // InternalMyFarmbot.g:2283:2: iv_ruleEBoolean= ruleEBoolean EOF
             {
              newCompositeNode(grammarAccess.getEBooleanRule()); 
             pushFollow(FOLLOW_1);
@@ -5089,7 +5131,7 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
 
 
     // $ANTLR start "ruleEBoolean"
-    // InternalMyFarmbot.g:2273:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
+    // InternalMyFarmbot.g:2289:1: ruleEBoolean returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (kw= 'true' | kw= 'false' ) ;
     public final AntlrDatatypeRuleToken ruleEBoolean() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -5099,30 +5141,30 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
         	enterRule();
 
         try {
-            // InternalMyFarmbot.g:2279:2: ( (kw= 'true' | kw= 'false' ) )
-            // InternalMyFarmbot.g:2280:2: (kw= 'true' | kw= 'false' )
+            // InternalMyFarmbot.g:2295:2: ( (kw= 'true' | kw= 'false' ) )
+            // InternalMyFarmbot.g:2296:2: (kw= 'true' | kw= 'false' )
             {
-            // InternalMyFarmbot.g:2280:2: (kw= 'true' | kw= 'false' )
-            int alt14=2;
-            int LA14_0 = input.LA(1);
+            // InternalMyFarmbot.g:2296:2: (kw= 'true' | kw= 'false' )
+            int alt15=2;
+            int LA15_0 = input.LA(1);
 
-            if ( (LA14_0==65) ) {
-                alt14=1;
+            if ( (LA15_0==66) ) {
+                alt15=1;
             }
-            else if ( (LA14_0==66) ) {
-                alt14=2;
+            else if ( (LA15_0==67) ) {
+                alt15=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 14, 0, input);
+                    new NoViableAltException("", 15, 0, input);
 
                 throw nvae;
             }
-            switch (alt14) {
+            switch (alt15) {
                 case 1 :
-                    // InternalMyFarmbot.g:2281:3: kw= 'true'
+                    // InternalMyFarmbot.g:2297:3: kw= 'true'
                     {
-                    kw=(Token)match(input,65,FOLLOW_2); 
+                    kw=(Token)match(input,66,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanAccess().getTrueKeyword_0());
@@ -5131,9 +5173,9 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
                     }
                     break;
                 case 2 :
-                    // InternalMyFarmbot.g:2287:3: kw= 'false'
+                    // InternalMyFarmbot.g:2303:3: kw= 'false'
                     {
-                    kw=(Token)match(input,66,FOLLOW_2); 
+                    kw=(Token)match(input,67,FOLLOW_2); 
 
                     			current.merge(kw);
                     			newLeafNode(kw, grammarAccess.getEBooleanAccess().getFalseKeyword_1());
@@ -5182,39 +5224,41 @@ public class InternalMyFarmbotParser extends AbstractInternalAntlrParser {
     public static final BitSet FOLLOW_13 = new BitSet(new long[]{0x0000000000200000L});
     public static final BitSet FOLLOW_14 = new BitSet(new long[]{0x0000000000400000L});
     public static final BitSet FOLLOW_15 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x0000000000000006L});
+    public static final BitSet FOLLOW_16 = new BitSet(new long[]{0x0000000000000000L,0x000000000000000CL});
     public static final BitSet FOLLOW_17 = new BitSet(new long[]{0x0000000002000000L});
     public static final BitSet FOLLOW_18 = new BitSet(new long[]{0x0000000004000000L});
     public static final BitSet FOLLOW_19 = new BitSet(new long[]{0x000014D330860800L});
     public static final BitSet FOLLOW_20 = new BitSet(new long[]{0x0000004000000020L});
     public static final BitSet FOLLOW_21 = new BitSet(new long[]{0x0000000040000000L});
-    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_22 = new BitSet(new long[]{0x0000000290000000L});
     public static final BitSet FOLLOW_23 = new BitSet(new long[]{0x0000000090000000L});
-    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x6000000000000010L});
-    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000020000000000L});
-    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000400000000000L});
-    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000800000000000L});
-    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0001000000000000L});
-    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0004000000000000L});
-    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0008000000000000L});
-    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0100000000000000L});
-    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0400000000000000L});
-    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0800000000000000L});
-    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x1000000000000000L});
-    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x4000000000000010L});
-    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x4000000000000000L});
-    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x8000000000000002L,0x0000000000000001L});
-    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x2000000000000010L});
+    public static final BitSet FOLLOW_24 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_25 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_26 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_27 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_28 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_29 = new BitSet(new long[]{0xC000000000000010L});
+    public static final BitSet FOLLOW_30 = new BitSet(new long[]{0x0000010000000000L});
+    public static final BitSet FOLLOW_31 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_32 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_33 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_34 = new BitSet(new long[]{0x0000400000000000L});
+    public static final BitSet FOLLOW_35 = new BitSet(new long[]{0x0000800000000000L});
+    public static final BitSet FOLLOW_36 = new BitSet(new long[]{0x0001000000000000L});
+    public static final BitSet FOLLOW_37 = new BitSet(new long[]{0x0002000000000000L});
+    public static final BitSet FOLLOW_38 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_39 = new BitSet(new long[]{0x0008000000000000L});
+    public static final BitSet FOLLOW_40 = new BitSet(new long[]{0x0010000000000000L});
+    public static final BitSet FOLLOW_41 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_42 = new BitSet(new long[]{0x0100000000000000L});
+    public static final BitSet FOLLOW_43 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_44 = new BitSet(new long[]{0x0400000000000000L});
+    public static final BitSet FOLLOW_45 = new BitSet(new long[]{0x0800000000000000L});
+    public static final BitSet FOLLOW_46 = new BitSet(new long[]{0x1000000000000000L});
+    public static final BitSet FOLLOW_47 = new BitSet(new long[]{0x2000000000000000L});
+    public static final BitSet FOLLOW_48 = new BitSet(new long[]{0x8000000000000010L});
+    public static final BitSet FOLLOW_49 = new BitSet(new long[]{0x8000000000000000L});
+    public static final BitSet FOLLOW_50 = new BitSet(new long[]{0x0000000000000002L,0x0000000000000003L});
+    public static final BitSet FOLLOW_51 = new BitSet(new long[]{0x4000000000000010L});
 
 }

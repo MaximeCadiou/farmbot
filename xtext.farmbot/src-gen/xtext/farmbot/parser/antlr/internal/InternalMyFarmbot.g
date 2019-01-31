@@ -1003,7 +1003,7 @@ ruleIf returns [EObject current=null]
 					afterParserOrEnumRuleCall();
 				}
 			)
-		)
+		)?
 		(
 			otherlv_5='else'
 			{
@@ -1943,19 +1943,23 @@ ruleIsEqualTo returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='equals'
+		otherlv_2='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsEqualToAccess().getEqualsKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getIsEqualToAccess().getIsKeyword_2());
 		}
-		otherlv_3='to'
+		otherlv_3='equal'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsEqualToAccess().getToKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getIsEqualToAccess().getEqualKeyword_3());
+		}
+		otherlv_4='to'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getIsEqualToAccess().getToKeyword_4());
 		}
 		(
 			(
-				lv_value_4_0=RULE_INT
+				lv_value_5_0=RULE_INT
 				{
-					newLeafNode(lv_value_4_0, grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_4_0());
+					newLeafNode(lv_value_5_0, grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -1964,7 +1968,7 @@ ruleIsEqualTo returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_4_0,
+						lv_value_5_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -2013,23 +2017,27 @@ ruleIsNotEqualTo returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='not'
+		otherlv_2='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsNotEqualToAccess().getNotKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getIsNotEqualToAccess().getIsKeyword_2());
 		}
-		otherlv_3='equals'
+		otherlv_3='not'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsNotEqualToAccess().getEqualsKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getIsNotEqualToAccess().getNotKeyword_3());
 		}
-		otherlv_4='to'
+		otherlv_4='equal'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getIsNotEqualToAccess().getToKeyword_4());
+			newLeafNode(otherlv_4, grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4());
+		}
+		otherlv_5='to'
+		{
+			newLeafNode(otherlv_5, grammarAccess.getIsNotEqualToAccess().getToKeyword_5());
 		}
 		(
 			(
-				lv_value_5_0=RULE_INT
+				lv_value_6_0=RULE_INT
 				{
-					newLeafNode(lv_value_5_0, grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_5_0());
+					newLeafNode(lv_value_6_0, grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -2038,7 +2046,7 @@ ruleIsNotEqualTo returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_5_0,
+						lv_value_6_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -2087,19 +2095,23 @@ ruleIsGreaterThan returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='greater'
+		otherlv_2='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getIsGreaterThanAccess().getIsKeyword_2());
 		}
-		otherlv_3='than'
+		otherlv_3='greater'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsGreaterThanAccess().getThanKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3());
+		}
+		otherlv_4='than'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getIsGreaterThanAccess().getThanKeyword_4());
 		}
 		(
 			(
-				lv_value_4_0=RULE_INT
+				lv_value_5_0=RULE_INT
 				{
-					newLeafNode(lv_value_4_0, grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_4_0());
+					newLeafNode(lv_value_5_0, grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -2108,7 +2120,7 @@ ruleIsGreaterThan returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_4_0,
+						lv_value_5_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -2157,19 +2169,23 @@ ruleIsLowerThan returns [EObject current=null]
 				}
 			)
 		)
-		otherlv_2='lower'
+		otherlv_2='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsLowerThanAccess().getLowerKeyword_2());
+			newLeafNode(otherlv_2, grammarAccess.getIsLowerThanAccess().getIsKeyword_2());
 		}
-		otherlv_3='than'
+		otherlv_3='lower'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsLowerThanAccess().getThanKeyword_3());
+			newLeafNode(otherlv_3, grammarAccess.getIsLowerThanAccess().getLowerKeyword_3());
+		}
+		otherlv_4='than'
+		{
+			newLeafNode(otherlv_4, grammarAccess.getIsLowerThanAccess().getThanKeyword_4());
 		}
 		(
 			(
-				lv_value_4_0=RULE_INT
+				lv_value_5_0=RULE_INT
 				{
-					newLeafNode(lv_value_4_0, grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_4_0());
+					newLeafNode(lv_value_5_0, grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -2178,7 +2194,7 @@ ruleIsLowerThan returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_4_0,
+						lv_value_5_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

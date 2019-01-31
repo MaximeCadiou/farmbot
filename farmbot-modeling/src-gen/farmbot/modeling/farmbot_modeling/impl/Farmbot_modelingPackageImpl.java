@@ -1140,7 +1140,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		initEReference(getIf_BooleanExpression(), this.getBooleanExpression(), null, "booleanExpression", null, 1, 1,
 				If.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE,
 				IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getIf_Then(), this.getExecuteSequence(), null, "then", null, 1, 1, If.class, !IS_TRANSIENT,
+		initEReference(getIf_Then(), this.getExecuteSequence(), null, "then", null, 0, 1, If.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 		initEReference(getIf_Else(), this.getExecuteSequence(), null, "else", null, 0, 1, If.class, !IS_TRANSIENT,

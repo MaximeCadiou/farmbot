@@ -36,7 +36,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="If" eSuperTypes="#//SequenceInstruction">
     <eStructuralFeatures xsi:type="ecore:EReference" name="booleanExpression" lowerBound="1"
         eType="#//BooleanExpression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="then" lowerBound="1" eType="#//ExecuteSequence"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="then" eType="#//ExecuteSequence"
         containment="true"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="else" eType="#//ExecuteSequence"
         containment="true"/>

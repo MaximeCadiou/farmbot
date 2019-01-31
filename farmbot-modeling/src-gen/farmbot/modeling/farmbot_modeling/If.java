@@ -58,7 +58,7 @@ public interface If extends SequenceInstruction {
 	 * @return the value of the '<em>Then</em>' containment reference.
 	 * @see #setThen(ExecuteSequence)
 	 * @see farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage#getIf_Then()
-	 * @model containment="true" required="true"
+	 * @model containment="true"
 	 * @generated
 	 */
 	ExecuteSequence getThen();

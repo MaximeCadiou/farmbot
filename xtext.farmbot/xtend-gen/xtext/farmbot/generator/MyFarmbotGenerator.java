@@ -472,29 +472,90 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final If ifExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("if (");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"_if\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
     Object _compile = this.compile(ifExpression.getBooleanExpression());
-    _builder.append(_compile);
-    _builder.append(") {");
+    _builder.append(_compile, "\t\t\t\t");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t");
-    Object _compile_1 = this.compile(ifExpression.getThen());
-    _builder.append(_compile_1, "\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("} ");
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"_then\", new JSONObject()");
+    _builder.newLine();
     {
-      ExecuteSequence _else = ifExpression.getElse();
-      boolean _tripleNotEquals = (_else != null);
+      ExecuteSequence _then = ifExpression.getThen();
+      boolean _tripleNotEquals = (_then != null);
       if (_tripleNotEquals) {
-        _builder.append(" else {");
-        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"execute\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject()");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
         _builder.append("\t");
-        Object _compile_2 = this.compile(ifExpression.getElse());
-        _builder.append(_compile_2, "\t");
+        _builder.append(".put(\"sequence_id\", ");
+        int _id = ifExpression.getThen().getId();
+        _builder.append(_id, "\t\t\t\t\t\t");
+        _builder.append(") ");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(")");
+        _builder.newLine();
+      } else {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"nothing\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject())");
+        _builder.newLine();
       }
     }
-    _builder.append("}");
+    _builder.append("\t\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"_else\", new JSONObject()");
+    _builder.newLine();
+    {
+      ExecuteSequence _else = ifExpression.getElse();
+      boolean _tripleNotEquals_1 = (_else != null);
+      if (_tripleNotEquals_1) {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"execute\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject()");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append("\t");
+        _builder.append(".put(\"sequence_id\", ");
+        int _id_1 = ifExpression.getElse().getId();
+        _builder.append(_id_1, "\t\t\t\t\t\t");
+        _builder.append(") ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(")");
+        _builder.newLine();
+      } else {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"nothing\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject())");
+        _builder.newLine();
+      }
+    }
+    _builder.append("\t\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(")");
     _builder.newLine();
     return _builder;
   }
@@ -665,59 +726,71 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   }
   
   protected CharSequence _compile(final IsEqualTo isEqualTo) {
-    CharSequence _xblockexpression = null;
-    {
-      int x = 2;
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append(x);
-      _builder.append(" == ");
-      int _value = isEqualTo.getValue();
-      _builder.append(_value);
-      _xblockexpression = _builder;
-    }
-    return _xblockexpression;
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".put(\"rhs\", ");
+    int _value = isEqualTo.getValue();
+    _builder.append(_value);
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append(".put(\"op\", \"is\")");
+    _builder.newLine();
+    _builder.append(".put(\"lhs\", \"");
+    String _axe = isEqualTo.getAxe();
+    _builder.append(_axe);
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
   
   protected CharSequence _compile(final IsNotEqualTo isNotEqualTo) {
-    CharSequence _xblockexpression = null;
-    {
-      int x = 2;
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append(x);
-      _builder.append(" != ");
-      int _value = isNotEqualTo.getValue();
-      _builder.append(_value);
-      _xblockexpression = _builder;
-    }
-    return _xblockexpression;
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".put(\"rhs\", ");
+    int _value = isNotEqualTo.getValue();
+    _builder.append(_value);
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append(".put(\"op\", \"not\")");
+    _builder.newLine();
+    _builder.append(".put(\"lhs\", \"");
+    String _axe = isNotEqualTo.getAxe();
+    _builder.append(_axe);
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
   
   protected CharSequence _compile(final IsGreaterThan isGreaterThan) {
-    CharSequence _xblockexpression = null;
-    {
-      int x = 2;
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append(x);
-      _builder.append(" > ");
-      int _value = isGreaterThan.getValue();
-      _builder.append(_value);
-      _xblockexpression = _builder;
-    }
-    return _xblockexpression;
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".put(\"rhs\", ");
+    int _value = isGreaterThan.getValue();
+    _builder.append(_value);
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append(".put(\"op\", \">\")");
+    _builder.newLine();
+    _builder.append(".put(\"lhs\", \"");
+    String _axe = isGreaterThan.getAxe();
+    _builder.append(_axe);
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
   
   protected CharSequence _compile(final IsLowerThan isLowerThan) {
-    CharSequence _xblockexpression = null;
-    {
-      int x = 2;
-      StringConcatenation _builder = new StringConcatenation();
-      _builder.append(x);
-      _builder.append(" < ");
-      int _value = isLowerThan.getValue();
-      _builder.append(_value);
-      _xblockexpression = _builder;
-    }
-    return _xblockexpression;
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append(".put(\"rhs\", ");
+    int _value = isLowerThan.getValue();
+    _builder.append(_value);
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append(".put(\"op\", \"<\")");
+    _builder.newLine();
+    _builder.append(".put(\"lhs\", \"");
+    String _axe = isLowerThan.getAxe();
+    _builder.append(_axe);
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    return _builder;
   }
   
   public CharSequence compile(final EObject move) {

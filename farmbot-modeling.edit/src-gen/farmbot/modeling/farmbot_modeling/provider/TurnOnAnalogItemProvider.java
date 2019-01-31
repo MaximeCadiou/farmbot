@@ -3,7 +3,7 @@
 package farmbot.modeling.farmbot_modeling.provider;
 
 import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
-import farmbot.modeling.farmbot_modeling.TurnOn;
+import farmbot.modeling.farmbot_modeling.TurnOnAnalog;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.TurnOn} object.
+ * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.TurnOnAnalog} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class TurnOnItemProvider extends SequenceCommandItemProvider {
+public class TurnOnAnalogItemProvider extends SequenceCommandItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TurnOnItemProvider(AdapterFactory adapterFactory) {
+	public TurnOnAnalogItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -45,7 +45,7 @@ public class TurnOnItemProvider extends SequenceCommandItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addPinPropertyDescriptor(object);
-			addModePropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -59,36 +59,38 @@ public class TurnOnItemProvider extends SequenceCommandItemProvider {
 	protected void addPinPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TurnOn_pin_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TurnOn_pin_feature", "_UI_TurnOn_type"),
-						Farmbot_modelingPackage.Literals.TURN_ON__PIN, true, false, false,
+						getResourceLocator(), getString("_UI_TurnOnAnalog_pin_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TurnOnAnalog_pin_feature",
+								"_UI_TurnOnAnalog_type"),
+						Farmbot_modelingPackage.Literals.TURN_ON_ANALOG__PIN, true, false, false,
 						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This adds a property descriptor for the Mode feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addModePropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_TurnOn_mode_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_TurnOn_mode_feature", "_UI_TurnOn_type"),
-						Farmbot_modelingPackage.Literals.TURN_ON__MODE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_TurnOnAnalog_value_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TurnOnAnalog_value_feature",
+								"_UI_TurnOnAnalog_type"),
+						Farmbot_modelingPackage.Literals.TURN_ON_ANALOG__VALUE, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns TurnOn.gif.
+	 * This returns TurnOnAnalog.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/TurnOn"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TurnOnAnalog"));
 	}
 
 	/**
@@ -109,8 +111,8 @@ public class TurnOnItemProvider extends SequenceCommandItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		TurnOn turnOn = (TurnOn) object;
-		return getString("_UI_TurnOn_type") + " " + turnOn.getPin();
+		TurnOnAnalog turnOnAnalog = (TurnOnAnalog) object;
+		return getString("_UI_TurnOnAnalog_type") + " " + turnOnAnalog.getPin();
 	}
 
 	/**
@@ -124,9 +126,9 @@ public class TurnOnItemProvider extends SequenceCommandItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(TurnOn.class)) {
-		case Farmbot_modelingPackage.TURN_ON__PIN:
-		case Farmbot_modelingPackage.TURN_ON__MODE:
+		switch (notification.getFeatureID(TurnOnAnalog.class)) {
+		case Farmbot_modelingPackage.TURN_ON_ANALOG__PIN:
+		case Farmbot_modelingPackage.TURN_ON_ANALOG__VALUE:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

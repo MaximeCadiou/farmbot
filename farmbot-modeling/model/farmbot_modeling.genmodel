@@ -21,19 +21,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Move/z"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Move/speed"/>
     </genClasses>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//TurnOn">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOn/pin"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOn/mode"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//TurnOnDigital">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOnDigital/pin"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//TurnOff">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOff/pin"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOff/mode"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//MoveRelative"/>
     <genClasses ecoreClass="farmbot_modeling.ecore#//FindHome">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findX"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findY"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/findZ"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//FindHome/axis"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Sequence">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Sequence/name"/>
@@ -81,5 +77,10 @@
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Command"/>
     <genClasses ecoreClass="farmbot_modeling.ecore#//ListSequences"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//ListScheduledEvents"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//TurnOnAnalog">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOnAnalog/pin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//TurnOnAnalog/value"/>
+    </genClasses>
   </genPackages>
 </genmodel:GenModel>

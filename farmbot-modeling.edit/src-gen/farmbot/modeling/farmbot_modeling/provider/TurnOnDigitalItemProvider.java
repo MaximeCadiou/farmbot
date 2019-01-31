@@ -3,7 +3,7 @@
 package farmbot.modeling.farmbot_modeling.provider;
 
 import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
-import farmbot.modeling.farmbot_modeling.FindHome;
+import farmbot.modeling.farmbot_modeling.TurnOnDigital;
 
 import java.util.Collection;
 import java.util.List;
@@ -17,19 +17,19 @@ import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.FindHome} object.
+ * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.TurnOnDigital} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindHomeItemProvider extends SequenceCommandItemProvider {
+public class TurnOnDigitalItemProvider extends SequenceCommandItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FindHomeItemProvider(AdapterFactory adapterFactory) {
+	public TurnOnDigitalItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,36 +44,36 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAxisPropertyDescriptor(object);
+			addPinPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Axis feature.
+	 * This adds a property descriptor for the Pin feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addAxisPropertyDescriptor(Object object) {
+	protected void addPinPropertyDescriptor(Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_FindHome_axis_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_FindHome_axis_feature",
-								"_UI_FindHome_type"),
-						Farmbot_modelingPackage.Literals.FIND_HOME__AXIS, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+						getResourceLocator(), getString("_UI_TurnOnDigital_pin_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_TurnOnDigital_pin_feature",
+								"_UI_TurnOnDigital_type"),
+						Farmbot_modelingPackage.Literals.TURN_ON_DIGITAL__PIN, true, false, false,
+						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
-	 * This returns FindHome.gif.
+	 * This returns TurnOnDigital.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FindHome"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/TurnOnDigital"));
 	}
 
 	/**
@@ -94,9 +94,8 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FindHome) object).getAxis();
-		return label == null || label.length() == 0 ? getString("_UI_FindHome_type")
-				: getString("_UI_FindHome_type") + " " + label;
+		TurnOnDigital turnOnDigital = (TurnOnDigital) object;
+		return getString("_UI_TurnOnDigital_type") + " " + turnOnDigital.getPin();
 	}
 
 	/**
@@ -110,8 +109,8 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(FindHome.class)) {
-		case Farmbot_modelingPackage.FIND_HOME__AXIS:
+		switch (notification.getFeatureID(TurnOnDigital.class)) {
+		case Farmbot_modelingPackage.TURN_ON_DIGITAL__PIN:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

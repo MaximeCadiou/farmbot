@@ -151,7 +151,7 @@ public class FarmbotItemProvider extends ItemProviderAdapter implements IEditing
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
-				Farmbot_modelingFactory.eINSTANCE.createTurnOn()));
+				Farmbot_modelingFactory.eINSTANCE.createTurnOnDigital()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createTurnOff()));
@@ -191,6 +191,12 @@ public class FarmbotItemProvider extends ItemProviderAdapter implements IEditing
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createListSequences()));
+
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
+				Farmbot_modelingFactory.eINSTANCE.createListScheduledEvents()));
+
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.FARMBOT__INSTRUCTIONS,
+				Farmbot_modelingFactory.eINSTANCE.createTurnOnAnalog()));
 	}
 
 	/**

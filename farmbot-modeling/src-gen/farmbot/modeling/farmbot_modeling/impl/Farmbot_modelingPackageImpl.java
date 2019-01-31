@@ -15,6 +15,7 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
+import farmbot.modeling.farmbot_modeling.ListScheduledEvents;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.Move;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
@@ -27,7 +28,8 @@ import farmbot.modeling.farmbot_modeling.SequenceCommand;
 import farmbot.modeling.farmbot_modeling.SequenceInstruction;
 import farmbot.modeling.farmbot_modeling.TakePhoto;
 import farmbot.modeling.farmbot_modeling.TurnOff;
-import farmbot.modeling.farmbot_modeling.TurnOn;
+import farmbot.modeling.farmbot_modeling.TurnOnAnalog;
+import farmbot.modeling.farmbot_modeling.TurnOnDigital;
 import farmbot.modeling.farmbot_modeling.Wait;
 
 import org.eclipse.emf.ecore.EAttribute;
@@ -77,7 +79,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass turnOnEClass = null;
+	private EClass turnOnDigitalEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -218,6 +220,20 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * @generated
 	 */
 	private EClass listSequencesEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass listScheduledEventsEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass turnOnAnalogEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -369,8 +385,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTurnOn() {
-		return turnOnEClass;
+	public EClass getTurnOnDigital() {
+		return turnOnDigitalEClass;
 	}
 
 	/**
@@ -378,17 +394,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTurnOn_Pin() {
-		return (EAttribute) turnOnEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getTurnOn_Mode() {
-		return (EAttribute) turnOnEClass.getEStructuralFeatures().get(1);
+	public EAttribute getTurnOnDigital_Pin() {
+		return (EAttribute) turnOnDigitalEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -414,15 +421,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTurnOff_Mode() {
-		return (EAttribute) turnOffEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getMoveRelative() {
 		return moveRelativeEClass;
 	}
@@ -441,26 +439,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getFindHome_FindX() {
+	public EAttribute getFindHome_Axis() {
 		return (EAttribute) findHomeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFindHome_FindY() {
-		return (EAttribute) findHomeEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getFindHome_FindZ() {
-		return (EAttribute) findHomeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -810,6 +790,42 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getListScheduledEvents() {
+		return listScheduledEventsEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EClass getTurnOnAnalog() {
+		return turnOnAnalogEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTurnOnAnalog_Pin() {
+		return (EAttribute) turnOnAnalogEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getTurnOnAnalog_Value() {
+		return (EAttribute) turnOnAnalogEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public Farmbot_modelingFactory getFarmbot_modelingFactory() {
 		return (Farmbot_modelingFactory) getEFactoryInstance();
 	}
@@ -847,20 +863,16 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		createEAttribute(moveEClass, MOVE__Z);
 		createEAttribute(moveEClass, MOVE__SPEED);
 
-		turnOnEClass = createEClass(TURN_ON);
-		createEAttribute(turnOnEClass, TURN_ON__PIN);
-		createEAttribute(turnOnEClass, TURN_ON__MODE);
+		turnOnDigitalEClass = createEClass(TURN_ON_DIGITAL);
+		createEAttribute(turnOnDigitalEClass, TURN_ON_DIGITAL__PIN);
 
 		turnOffEClass = createEClass(TURN_OFF);
 		createEAttribute(turnOffEClass, TURN_OFF__PIN);
-		createEAttribute(turnOffEClass, TURN_OFF__MODE);
 
 		moveRelativeEClass = createEClass(MOVE_RELATIVE);
 
 		findHomeEClass = createEClass(FIND_HOME);
-		createEAttribute(findHomeEClass, FIND_HOME__FIND_X);
-		createEAttribute(findHomeEClass, FIND_HOME__FIND_Y);
-		createEAttribute(findHomeEClass, FIND_HOME__FIND_Z);
+		createEAttribute(findHomeEClass, FIND_HOME__AXIS);
 
 		sequenceEClass = createEClass(SEQUENCE);
 		createEAttribute(sequenceEClass, SEQUENCE__NAME);
@@ -916,6 +928,12 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		commandEClass = createEClass(COMMAND);
 
 		listSequencesEClass = createEClass(LIST_SEQUENCES);
+
+		listScheduledEventsEClass = createEClass(LIST_SCHEDULED_EVENTS);
+
+		turnOnAnalogEClass = createEClass(TURN_ON_ANALOG);
+		createEAttribute(turnOnAnalogEClass, TURN_ON_ANALOG__PIN);
+		createEAttribute(turnOnAnalogEClass, TURN_ON_ANALOG__VALUE);
 	}
 
 	/**
@@ -950,7 +968,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		sequenceCommandEClass.getESuperTypes().add(this.getCommand());
 		sequenceCommandEClass.getESuperTypes().add(this.getSequenceInstruction());
 		moveEClass.getESuperTypes().add(this.getSequenceCommand());
-		turnOnEClass.getESuperTypes().add(this.getSequenceCommand());
+		turnOnDigitalEClass.getESuperTypes().add(this.getSequenceCommand());
 		turnOffEClass.getESuperTypes().add(this.getSequenceCommand());
 		moveRelativeEClass.getESuperTypes().add(this.getMove());
 		findHomeEClass.getESuperTypes().add(this.getSequenceCommand());
@@ -970,6 +988,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		scheduleEClass.getESuperTypes().add(this.getCommand());
 		commandEClass.getESuperTypes().add(this.getInstruction());
 		listSequencesEClass.getESuperTypes().add(this.getCommand());
+		listScheduledEventsEClass.getESuperTypes().add(this.getCommand());
+		turnOnAnalogEClass.getESuperTypes().add(this.getSequenceCommand());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(farmbotEClass, Farmbot.class, "Farmbot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -993,16 +1013,13 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		initEAttribute(getMove_Speed(), ecorePackage.getEInt(), "speed", null, 0, 1, Move.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(turnOnEClass, TurnOn.class, "TurnOn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTurnOn_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, TurnOn.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTurnOn_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, TurnOn.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(turnOnDigitalEClass, TurnOnDigital.class, "TurnOnDigital", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTurnOnDigital_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, TurnOnDigital.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(turnOffEClass, TurnOff.class, "TurnOff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getTurnOff_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, TurnOff.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getTurnOff_Mode(), ecorePackage.getEString(), "mode", null, 0, 1, TurnOff.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(moveRelativeEClass, MoveRelative.class, "MoveRelative", !IS_ABSTRACT, !IS_INTERFACE,
@@ -1010,12 +1027,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		initEClass(findHomeEClass, FindHome.class, "FindHome", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getFindHome_FindX(), ecorePackage.getEBoolean(), "findX", null, 0, 1, FindHome.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFindHome_FindY(), ecorePackage.getEBoolean(), "findY", null, 0, 1, FindHome.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getFindHome_FindZ(), ecorePackage.getEBoolean(), "findZ", null, 0, 1, FindHome.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getFindHome_Axis(), ecorePackage.getEString(), "axis", null, 0, 1, FindHome.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(sequenceEClass, Sequence.class, "Sequence", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1115,6 +1128,16 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		initEClass(listSequencesEClass, ListSequences.class, "ListSequences", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(listScheduledEventsEClass, ListScheduledEvents.class, "ListScheduledEvents", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		initEClass(turnOnAnalogEClass, TurnOnAnalog.class, "TurnOnAnalog", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getTurnOnAnalog_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, TurnOnAnalog.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getTurnOnAnalog_Value(), ecorePackage.getEInt(), "value", null, 0, 1, TurnOnAnalog.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

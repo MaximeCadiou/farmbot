@@ -58,8 +58,8 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 		switch (eClass.getClassifierID()) {
 		case Farmbot_modelingPackage.FARMBOT:
 			return createFarmbot();
-		case Farmbot_modelingPackage.TURN_ON:
-			return createTurnOn();
+		case Farmbot_modelingPackage.TURN_ON_DIGITAL:
+			return createTurnOnDigital();
 		case Farmbot_modelingPackage.TURN_OFF:
 			return createTurnOff();
 		case Farmbot_modelingPackage.MOVE_RELATIVE:
@@ -94,6 +94,10 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 			return createSchedule();
 		case Farmbot_modelingPackage.LIST_SEQUENCES:
 			return createListSequences();
+		case Farmbot_modelingPackage.LIST_SCHEDULED_EVENTS:
+			return createListScheduledEvents();
+		case Farmbot_modelingPackage.TURN_ON_ANALOG:
+			return createTurnOnAnalog();
 		default:
 			throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -114,9 +118,9 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public TurnOn createTurnOn() {
-		TurnOnImpl turnOn = new TurnOnImpl();
-		return turnOn;
+	public TurnOnDigital createTurnOnDigital() {
+		TurnOnDigitalImpl turnOnDigital = new TurnOnDigitalImpl();
+		return turnOnDigital;
 	}
 
 	/**
@@ -287,6 +291,26 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 	public ListSequences createListSequences() {
 		ListSequencesImpl listSequences = new ListSequencesImpl();
 		return listSequences;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ListScheduledEvents createListScheduledEvents() {
+		ListScheduledEventsImpl listScheduledEvents = new ListScheduledEventsImpl();
+		return listScheduledEvents;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public TurnOnAnalog createTurnOnAnalog() {
+		TurnOnAnalogImpl turnOnAnalog = new TurnOnAnalogImpl();
+		return turnOnAnalog;
 	}
 
 	/**

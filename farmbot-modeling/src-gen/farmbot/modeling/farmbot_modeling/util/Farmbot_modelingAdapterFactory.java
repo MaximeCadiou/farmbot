@@ -87,8 +87,8 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseTurnOn(TurnOn object) {
-			return createTurnOnAdapter();
+		public Adapter caseTurnOnDigital(TurnOnDigital object) {
+			return createTurnOnDigitalAdapter();
 		}
 
 		@Override
@@ -192,6 +192,16 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
+		public Adapter caseListScheduledEvents(ListScheduledEvents object) {
+			return createListScheduledEventsAdapter();
+		}
+
+		@Override
+		public Adapter caseTurnOnAnalog(TurnOnAnalog object) {
+			return createTurnOnAnalogAdapter();
+		}
+
+		@Override
 		public Adapter defaultCase(EObject object) {
 			return createEObjectAdapter();
 		}
@@ -267,16 +277,16 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link farmbot.modeling.farmbot_modeling.TurnOn <em>Turn On</em>}'.
+	 * Creates a new adapter for an object of class '{@link farmbot.modeling.farmbot_modeling.TurnOnDigital <em>Turn On Digital</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see farmbot.modeling.farmbot_modeling.TurnOn
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnDigital
 	 * @generated
 	 */
-	public Adapter createTurnOnAdapter() {
+	public Adapter createTurnOnDigitalAdapter() {
 		return null;
 	}
 
@@ -557,6 +567,34 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createListSequencesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link farmbot.modeling.farmbot_modeling.ListScheduledEvents <em>List Scheduled Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see farmbot.modeling.farmbot_modeling.ListScheduledEvents
+	 * @generated
+	 */
+	public Adapter createListScheduledEventsAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link farmbot.modeling.farmbot_modeling.TurnOnAnalog <em>Turn On Analog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnAnalog
+	 * @generated
+	 */
+	public Adapter createTurnOnAnalogAdapter() {
 		return null;
 	}
 

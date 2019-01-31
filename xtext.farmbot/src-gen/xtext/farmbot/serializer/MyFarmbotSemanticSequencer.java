@@ -13,6 +13,7 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
+import farmbot.modeling.farmbot_modeling.ListScheduledEvents;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
 import farmbot.modeling.farmbot_modeling.MoveRelative;
@@ -22,7 +23,8 @@ import farmbot.modeling.farmbot_modeling.SendMessage;
 import farmbot.modeling.farmbot_modeling.Sequence;
 import farmbot.modeling.farmbot_modeling.TakePhoto;
 import farmbot.modeling.farmbot_modeling.TurnOff;
-import farmbot.modeling.farmbot_modeling.TurnOn;
+import farmbot.modeling.farmbot_modeling.TurnOnAnalog;
+import farmbot.modeling.farmbot_modeling.TurnOnDigital;
 import farmbot.modeling.farmbot_modeling.Wait;
 import java.util.Set;
 import org.eclipse.emf.ecore.EObject;
@@ -74,6 +76,9 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case Farmbot_modelingPackage.IS_NOT_EQUAL_TO:
 				sequence_IsNotEqualTo(context, (IsNotEqualTo) semanticObject); 
 				return; 
+			case Farmbot_modelingPackage.LIST_SCHEDULED_EVENTS:
+				sequence_ListScheduledEvents(context, (ListScheduledEvents) semanticObject); 
+				return; 
 			case Farmbot_modelingPackage.LIST_SEQUENCES:
 				sequence_ListSequences(context, (ListSequences) semanticObject); 
 				return; 
@@ -101,8 +106,11 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 			case Farmbot_modelingPackage.TURN_OFF:
 				sequence_TurnOff(context, (TurnOff) semanticObject); 
 				return; 
-			case Farmbot_modelingPackage.TURN_ON:
-				sequence_TurnOn(context, (TurnOn) semanticObject); 
+			case Farmbot_modelingPackage.TURN_ON_ANALOG:
+				sequence_TurnOnAnalog(context, (TurnOnAnalog) semanticObject); 
+				return; 
+			case Farmbot_modelingPackage.TURN_ON_DIGITAL:
+				sequence_TurnOnDigital(context, (TurnOnDigital) semanticObject); 
 				return; 
 			case Farmbot_modelingPackage.WAIT:
 				sequence_Wait(context, (Wait) semanticObject); 
@@ -153,21 +161,15 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     FindHome returns FindHome
 	 *
 	 * Constraint:
-	 *     (findX=EBoolean findY=EBoolean findZ=EBoolean)
+	 *     axis=STRING
 	 */
 	protected void sequence_FindHome(ISerializationContext context, FindHome semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_X) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_X));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Y) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Y));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Z) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__FIND_Z));
+			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__AXIS) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.FIND_HOME__AXIS));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindXEBooleanParserRuleCall_4_0(), semanticObject.isFindX());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindYEBooleanParserRuleCall_8_0(), semanticObject.isFindY());
-		feeder.accept(grammarAccess.getFindHomeAccess().getFindZEBooleanParserRuleCall_12_0(), semanticObject.isFindZ());
+		feeder.accept(grammarAccess.getFindHomeAccess().getAxisSTRINGTerminalRuleCall_4_0(), semanticObject.getAxis());
 		feeder.finish();
 	}
 	
@@ -234,6 +236,20 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     ((axe=STRING | pinNumber=INT) value=INT)
 	 */
 	protected void sequence_IsNotEqualTo(ISerializationContext context, IsNotEqualTo semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns ListScheduledEvents
+	 *     Command returns ListScheduledEvents
+	 *     ListScheduledEvents returns ListScheduledEvents
+	 *
+	 * Constraint:
+	 *     {ListScheduledEvents}
+	 */
+	protected void sequence_ListScheduledEvents(ISerializationContext context, ListScheduledEvents semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -443,42 +459,60 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     TurnOff returns TurnOff
 	 *
 	 * Constraint:
-	 *     (pin=INT mode=STRING)
+	 *     pin=INT
 	 */
 	protected void sequence_TurnOff(ISerializationContext context, TurnOff semanticObject) {
 		if (errorAcceptor != null) {
 			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_OFF__PIN) == ValueTransient.YES)
 				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_OFF__PIN));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_OFF__MODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_OFF__MODE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
 		feeder.accept(grammarAccess.getTurnOffAccess().getPinINTTerminalRuleCall_4_0(), semanticObject.getPin());
-		feeder.accept(grammarAccess.getTurnOffAccess().getModeSTRINGTerminalRuleCall_8_0(), semanticObject.getMode());
 		feeder.finish();
 	}
 	
 	
 	/**
 	 * Contexts:
-	 *     Instruction returns TurnOn
-	 *     SequenceCommand returns TurnOn
-	 *     SequenceInstruction returns TurnOn
-	 *     TurnOn returns TurnOn
+	 *     Instruction returns TurnOnAnalog
+	 *     SequenceCommand returns TurnOnAnalog
+	 *     SequenceInstruction returns TurnOnAnalog
+	 *     TurnOnAnalog returns TurnOnAnalog
 	 *
 	 * Constraint:
-	 *     (pin=INT mode=STRING)
+	 *     (pin=INT value=INT)
 	 */
-	protected void sequence_TurnOn(ISerializationContext context, TurnOn semanticObject) {
+	protected void sequence_TurnOnAnalog(ISerializationContext context, TurnOnAnalog semanticObject) {
 		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON__PIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON__PIN));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON__MODE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON__MODE));
+			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON_ANALOG__PIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON_ANALOG__PIN));
+			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON_ANALOG__VALUE) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON_ANALOG__VALUE));
 		}
 		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getTurnOnAccess().getPinINTTerminalRuleCall_4_0(), semanticObject.getPin());
-		feeder.accept(grammarAccess.getTurnOnAccess().getModeSTRINGTerminalRuleCall_8_0(), semanticObject.getMode());
+		feeder.accept(grammarAccess.getTurnOnAnalogAccess().getPinINTTerminalRuleCall_4_0(), semanticObject.getPin());
+		feeder.accept(grammarAccess.getTurnOnAnalogAccess().getValueINTTerminalRuleCall_8_0(), semanticObject.getValue());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Contexts:
+	 *     Instruction returns TurnOnDigital
+	 *     SequenceCommand returns TurnOnDigital
+	 *     SequenceInstruction returns TurnOnDigital
+	 *     TurnOnDigital returns TurnOnDigital
+	 *
+	 * Constraint:
+	 *     pin=INT
+	 */
+	protected void sequence_TurnOnDigital(ISerializationContext context, TurnOnDigital semanticObject) {
+		if (errorAcceptor != null) {
+			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON_DIGITAL__PIN) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.TURN_ON_DIGITAL__PIN));
+		}
+		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
+		feeder.accept(grammarAccess.getTurnOnDigitalAccess().getPinINTTerminalRuleCall_4_0(), semanticObject.getPin());
 		feeder.finish();
 	}
 	

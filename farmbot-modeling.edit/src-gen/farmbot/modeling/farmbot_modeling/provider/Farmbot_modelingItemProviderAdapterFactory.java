@@ -96,26 +96,26 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.TurnOn} instances.
+	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.TurnOnDigital} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected TurnOnItemProvider turnOnItemProvider;
+	protected TurnOnDigitalItemProvider turnOnDigitalItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link farmbot.modeling.farmbot_modeling.TurnOn}.
+	 * This creates an adapter for a {@link farmbot.modeling.farmbot_modeling.TurnOnDigital}.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
-	public Adapter createTurnOnAdapter() {
-		if (turnOnItemProvider == null) {
-			turnOnItemProvider = new TurnOnItemProvider(this);
+	public Adapter createTurnOnDigitalAdapter() {
+		if (turnOnDigitalItemProvider == null) {
+			turnOnDigitalItemProvider = new TurnOnDigitalItemProvider(this);
 		}
 
-		return turnOnItemProvider;
+		return turnOnDigitalItemProvider;
 	}
 
 	/**
@@ -510,6 +510,52 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.ListScheduledEvents} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected ListScheduledEventsItemProvider listScheduledEventsItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link farmbot.modeling.farmbot_modeling.ListScheduledEvents}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createListScheduledEventsAdapter() {
+		if (listScheduledEventsItemProvider == null) {
+			listScheduledEventsItemProvider = new ListScheduledEventsItemProvider(this);
+		}
+
+		return listScheduledEventsItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.TurnOnAnalog} instances.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected TurnOnAnalogItemProvider turnOnAnalogItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link farmbot.modeling.farmbot_modeling.TurnOnAnalog}.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Adapter createTurnOnAnalogAdapter() {
+		if (turnOnAnalogItemProvider == null) {
+			turnOnAnalogItemProvider = new TurnOnAnalogItemProvider(this);
+		}
+
+		return turnOnAnalogItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -610,8 +656,8 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 	public void dispose() {
 		if (farmbotItemProvider != null)
 			farmbotItemProvider.dispose();
-		if (turnOnItemProvider != null)
-			turnOnItemProvider.dispose();
+		if (turnOnDigitalItemProvider != null)
+			turnOnDigitalItemProvider.dispose();
 		if (turnOffItemProvider != null)
 			turnOffItemProvider.dispose();
 		if (moveRelativeItemProvider != null)
@@ -646,6 +692,10 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 			scheduleItemProvider.dispose();
 		if (listSequencesItemProvider != null)
 			listSequencesItemProvider.dispose();
+		if (listScheduledEventsItemProvider != null)
+			listScheduledEventsItemProvider.dispose();
+		if (turnOnAnalogItemProvider != null)
+			turnOnAnalogItemProvider.dispose();
 	}
 
 }

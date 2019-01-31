@@ -12,10 +12,10 @@ Instruction returns Instruction:
 	SequenceInstruction | Sequence | Command;
 
 Command returns Command:
-	Schedule | ListSequences;
+	Schedule | ListSequences | ListScheduledEvents;
 
 SequenceCommand returns SequenceCommand:
-	TurnOn | TurnOff | MoveRelative | FindHome | MoveAbsolute | ExecuteSequence | Wait | SendMessage | RunFarmware | TakePhoto;
+	TurnOnDigital | TurnOnAnalog | TurnOff | MoveRelative | FindHome | MoveAbsolute | ExecuteSequence | Wait | SendMessage | RunFarmware | TakePhoto;
 
 SequenceInstruction returns SequenceInstruction:
 	If | SequenceCommand;
@@ -24,13 +24,17 @@ BooleanExpression returns BooleanExpression:
 	IsEqualTo | IsNotEqualTo | IsGreaterThan | IsLowerThan;
 
 
-TurnOn returns TurnOn:
-	{TurnOn}
-	'turnOn(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
+TurnOnDigital returns TurnOnDigital:
+	{TurnOnDigital}
+	'turnOnDigital(' 'pin' '=' pin=INT ')';
+	
+TurnOnAnalog returns TurnOnAnalog:
+	{TurnOnAnalog}
+	'turnOnAnalog(' 'pin' '=' pin=INT ',' 'value' '=' value=INT ')';
 
 TurnOff returns TurnOff:
 	{TurnOff}
-	'turnOff(' 'pin' '=' pin=INT ',' 'mode' '=' mode=STRING ')';
+	'turnOff(' 'pin' '=' pin=INT ')';
 
 MoveRelative returns MoveRelative:
 	{MoveRelative}
@@ -38,7 +42,7 @@ MoveRelative returns MoveRelative:
 
 FindHome returns FindHome:
 	{FindHome}
-	'findHome(' 'findX' '=' findX=EBoolean ',' 'findY' '=' findY=EBoolean ',' 'findZ' '=' findZ=EBoolean ')';
+	'findHome(' 'axis' '=' axis=STRING ')';
 
 Sequence returns Sequence:
 	{Sequence}
@@ -84,6 +88,10 @@ Schedule returns Schedule:
 ListSequences returns ListSequences:
 	{ListSequences}
 	'listSequences()';
+	
+ListScheduledEvents returns ListScheduledEvents:
+	{ListScheduledEvents}
+	'listScheduledEvents()';
 
 IsEqualTo returns IsEqualTo:
 	{IsEqualTo}

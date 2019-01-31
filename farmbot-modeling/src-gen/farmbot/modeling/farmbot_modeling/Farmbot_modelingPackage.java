@@ -242,14 +242,14 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int MOVE_OPERATION_COUNT = SEQUENCE_COMMAND_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOnImpl <em>Turn On</em>}' class.
+	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOnDigitalImpl <em>Turn On Digital</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see farmbot.modeling.farmbot_modeling.impl.TurnOnImpl
-	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTurnOn()
+	 * @see farmbot.modeling.farmbot_modeling.impl.TurnOnDigitalImpl
+	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTurnOnDigital()
 	 * @generated
 	 */
-	int TURN_ON = 4;
+	int TURN_ON_DIGITAL = 4;
 
 	/**
 	 * The feature id for the '<em><b>Pin</b></em>' attribute.
@@ -258,34 +258,25 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int TURN_ON__PIN = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
+	int TURN_ON_DIGITAL__PIN = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Mode</b></em>' attribute.
+	 * The number of structural features of the '<em>Turn On Digital</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TURN_ON__MODE = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
+	int TURN_ON_DIGITAL_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Turn On</em>' class.
+	 * The number of operations of the '<em>Turn On Digital</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TURN_ON_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of operations of the '<em>Turn On</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TURN_ON_OPERATION_COUNT = SEQUENCE_COMMAND_OPERATION_COUNT + 0;
+	int TURN_ON_DIGITAL_OPERATION_COUNT = SEQUENCE_COMMAND_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOffImpl <em>Turn Off</em>}' class.
@@ -307,22 +298,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int TURN_OFF__PIN = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Mode</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TURN_OFF__MODE = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
-
-	/**
 	 * The number of structural features of the '<em>Turn Off</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TURN_OFF_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
+	int TURN_OFF_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Turn Off</em>' class.
@@ -408,31 +390,13 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int FIND_HOME = 7;
 
 	/**
-	 * The feature id for the '<em><b>Find X</b></em>' attribute.
+	 * The feature id for the '<em><b>Axis</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FIND_HOME__FIND_X = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Find Y</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIND_HOME__FIND_Y = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Find Z</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int FIND_HOME__FIND_Z = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
+	int FIND_HOME__AXIS = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Find Home</em>' class.
@@ -441,7 +405,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int FIND_HOME_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 3;
+	int FIND_HOME_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Find Home</em>' class.
@@ -1234,6 +1198,80 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int LIST_SEQUENCES_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.ListScheduledEventsImpl <em>List Scheduled Events</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see farmbot.modeling.farmbot_modeling.impl.ListScheduledEventsImpl
+	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListScheduledEvents()
+	 * @generated
+	 */
+	int LIST_SCHEDULED_EVENTS = 25;
+
+	/**
+	 * The number of structural features of the '<em>List Scheduled Events</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_SCHEDULED_EVENTS_FEATURE_COUNT = COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of operations of the '<em>List Scheduled Events</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LIST_SCHEDULED_EVENTS_OPERATION_COUNT = COMMAND_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOnAnalogImpl <em>Turn On Analog</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see farmbot.modeling.farmbot_modeling.impl.TurnOnAnalogImpl
+	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTurnOnAnalog()
+	 * @generated
+	 */
+	int TURN_ON_ANALOG = 26;
+
+	/**
+	 * The feature id for the '<em><b>Pin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TURN_ON_ANALOG__PIN = SEQUENCE_COMMAND_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TURN_ON_ANALOG__VALUE = SEQUENCE_COMMAND_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>Turn On Analog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TURN_ON_ANALOG_FEATURE_COUNT = SEQUENCE_COMMAND_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of operations of the '<em>Turn On Analog</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TURN_ON_ANALOG_OPERATION_COUNT = SEQUENCE_COMMAND_OPERATION_COUNT + 0;
+
+	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.Farmbot <em>Farmbot</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1329,36 +1367,25 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EAttribute getMove_Speed();
 
 	/**
-	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.TurnOn <em>Turn On</em>}'.
+	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.TurnOnDigital <em>Turn On Digital</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Turn On</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.TurnOn
+	 * @return the meta object for class '<em>Turn On Digital</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnDigital
 	 * @generated
 	 */
-	EClass getTurnOn();
+	EClass getTurnOnDigital();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.TurnOn#getPin <em>Pin</em>}'.
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.TurnOnDigital#getPin <em>Pin</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Pin</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.TurnOn#getPin()
-	 * @see #getTurnOn()
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnDigital#getPin()
+	 * @see #getTurnOnDigital()
 	 * @generated
 	 */
-	EAttribute getTurnOn_Pin();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.TurnOn#getMode <em>Mode</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mode</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.TurnOn#getMode()
-	 * @see #getTurnOn()
-	 * @generated
-	 */
-	EAttribute getTurnOn_Mode();
+	EAttribute getTurnOnDigital_Pin();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.TurnOff <em>Turn Off</em>}'.
@@ -1382,17 +1409,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EAttribute getTurnOff_Pin();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.TurnOff#getMode <em>Mode</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Mode</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.TurnOff#getMode()
-	 * @see #getTurnOff()
-	 * @generated
-	 */
-	EAttribute getTurnOff_Mode();
-
-	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.MoveRelative <em>Move Relative</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1413,37 +1429,15 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getFindHome();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.FindHome#isFindX <em>Find X</em>}'.
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.FindHome#getAxis <em>Axis</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Find X</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.FindHome#isFindX()
+	 * @return the meta object for the attribute '<em>Axis</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.FindHome#getAxis()
 	 * @see #getFindHome()
 	 * @generated
 	 */
-	EAttribute getFindHome_FindX();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.FindHome#isFindY <em>Find Y</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Find Y</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.FindHome#isFindY()
-	 * @see #getFindHome()
-	 * @generated
-	 */
-	EAttribute getFindHome_FindY();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.FindHome#isFindZ <em>Find Z</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Find Z</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.FindHome#isFindZ()
-	 * @see #getFindHome()
-	 * @generated
-	 */
-	EAttribute getFindHome_FindZ();
+	EAttribute getFindHome_Axis();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.Sequence <em>Sequence</em>}'.
@@ -1847,6 +1841,48 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getListSequences();
 
 	/**
+	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.ListScheduledEvents <em>List Scheduled Events</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>List Scheduled Events</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.ListScheduledEvents
+	 * @generated
+	 */
+	EClass getListScheduledEvents();
+
+	/**
+	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.TurnOnAnalog <em>Turn On Analog</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Turn On Analog</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnAnalog
+	 * @generated
+	 */
+	EClass getTurnOnAnalog();
+
+	/**
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.TurnOnAnalog#getPin <em>Pin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Pin</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnAnalog#getPin()
+	 * @see #getTurnOnAnalog()
+	 * @generated
+	 */
+	EAttribute getTurnOnAnalog_Pin();
+
+	/**
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.TurnOnAnalog#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.TurnOnAnalog#getValue()
+	 * @see #getTurnOnAnalog()
+	 * @generated
+	 */
+	EAttribute getTurnOnAnalog_Value();
+
+	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1950,14 +1986,14 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EAttribute MOVE__SPEED = eINSTANCE.getMove_Speed();
 
 		/**
-		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOnImpl <em>Turn On</em>}' class.
+		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOnDigitalImpl <em>Turn On Digital</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see farmbot.modeling.farmbot_modeling.impl.TurnOnImpl
-		 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTurnOn()
+		 * @see farmbot.modeling.farmbot_modeling.impl.TurnOnDigitalImpl
+		 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTurnOnDigital()
 		 * @generated
 		 */
-		EClass TURN_ON = eINSTANCE.getTurnOn();
+		EClass TURN_ON_DIGITAL = eINSTANCE.getTurnOnDigital();
 
 		/**
 		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
@@ -1965,15 +2001,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TURN_ON__PIN = eINSTANCE.getTurnOn_Pin();
-
-		/**
-		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TURN_ON__MODE = eINSTANCE.getTurnOn_Mode();
+		EAttribute TURN_ON_DIGITAL__PIN = eINSTANCE.getTurnOnDigital_Pin();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOffImpl <em>Turn Off</em>}' class.
@@ -1992,14 +2020,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute TURN_OFF__PIN = eINSTANCE.getTurnOff_Pin();
-
-		/**
-		 * The meta object literal for the '<em><b>Mode</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute TURN_OFF__MODE = eINSTANCE.getTurnOff_Mode();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.MoveRelativeImpl <em>Move Relative</em>}' class.
@@ -2022,28 +2042,12 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EClass FIND_HOME = eINSTANCE.getFindHome();
 
 		/**
-		 * The meta object literal for the '<em><b>Find X</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Axis</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FIND_HOME__FIND_X = eINSTANCE.getFindHome_FindX();
-
-		/**
-		 * The meta object literal for the '<em><b>Find Y</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FIND_HOME__FIND_Y = eINSTANCE.getFindHome_FindY();
-
-		/**
-		 * The meta object literal for the '<em><b>Find Z</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute FIND_HOME__FIND_Z = eINSTANCE.getFindHome_FindZ();
+		EAttribute FIND_HOME__AXIS = eINSTANCE.getFindHome_Axis();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.SequenceImpl <em>Sequence</em>}' class.
@@ -2382,6 +2386,42 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass LIST_SEQUENCES = eINSTANCE.getListSequences();
+
+		/**
+		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.ListScheduledEventsImpl <em>List Scheduled Events</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see farmbot.modeling.farmbot_modeling.impl.ListScheduledEventsImpl
+		 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListScheduledEvents()
+		 * @generated
+		 */
+		EClass LIST_SCHEDULED_EVENTS = eINSTANCE.getListScheduledEvents();
+
+		/**
+		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.TurnOnAnalogImpl <em>Turn On Analog</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see farmbot.modeling.farmbot_modeling.impl.TurnOnAnalogImpl
+		 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTurnOnAnalog()
+		 * @generated
+		 */
+		EClass TURN_ON_ANALOG = eINSTANCE.getTurnOnAnalog();
+
+		/**
+		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TURN_ON_ANALOG__PIN = eINSTANCE.getTurnOnAnalog_Pin();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute TURN_ON_ANALOG__VALUE = eINSTANCE.getTurnOnAnalog_Value();
 
 	}
 

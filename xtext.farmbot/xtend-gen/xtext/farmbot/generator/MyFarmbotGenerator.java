@@ -15,6 +15,7 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
+import farmbot.modeling.farmbot_modeling.ListScheduledEvents;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.Move;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
@@ -27,7 +28,8 @@ import farmbot.modeling.farmbot_modeling.SequenceCommand;
 import farmbot.modeling.farmbot_modeling.SequenceInstruction;
 import farmbot.modeling.farmbot_modeling.TakePhoto;
 import farmbot.modeling.farmbot_modeling.TurnOff;
-import farmbot.modeling.farmbot_modeling.TurnOn;
+import farmbot.modeling.farmbot_modeling.TurnOnAnalog;
+import farmbot.modeling.farmbot_modeling.TurnOnDigital;
 import farmbot.modeling.farmbot_modeling.Wait;
 import java.util.Arrays;
 import org.eclipse.emf.common.util.EList;
@@ -248,7 +250,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final TurnOn turnon) {
+  protected CharSequence _compile(final TurnOnDigital turnon) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("new JSONObject()");
     _builder.newLine();
@@ -259,14 +261,42 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append(".put(\"args\", new JSONObject()");
     _builder.newLine();
     _builder.append("\t\t");
-    _builder.append(".put(\"pin_mode\", ");
-    String _mode = turnon.getMode();
-    _builder.append(_mode, "\t\t");
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
+    _builder.append(".put(\"pin_mode\", 0)");
+    _builder.newLine();
     _builder.append("\t\t");
     _builder.append(".put(\"pin_value\", 1)");
     _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_number\", ");
+    int _pin = turnon.getPin();
+    _builder.append(_pin, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("\t");
+    _builder.append(")");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final TurnOnAnalog turnon) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"kind\", \"write_pin\")");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_mode\", 1)");
+    _builder.newLine();
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_value\", ");
+    int _value = turnon.getValue();
+    _builder.append(_value, "\t\t");
+    _builder.append(")");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t\t");
     _builder.append(".put(\"pin_number\", ");
     int _pin = turnon.getPin();
@@ -283,28 +313,25 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("new JSONObject()");
     _builder.newLine();
-    _builder.append("\t\t\t");
+    _builder.append("\t");
     _builder.append(".put(\"kind\", \"write_pin\")");
     _builder.newLine();
-    _builder.append("\t\t\t");
+    _builder.append("\t");
     _builder.append(".put(\"args\", new JSONObject()");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append(".put(\"pin_mode\", ");
-    String _mode = turnoff.getMode();
-    _builder.append(_mode, "\t\t\t\t");
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t");
-    _builder.append(".put(\"pin_value\", 1)");
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_mode\", 0)");
     _builder.newLine();
-    _builder.append("\t\t\t\t");
+    _builder.append("\t\t");
+    _builder.append(".put(\"pin_value\", 0)");
+    _builder.newLine();
+    _builder.append("\t\t");
     _builder.append(".put(\"pin_number\", ");
     int _pin = turnoff.getPin();
-    _builder.append(_pin, "\t\t\t\t");
+    _builder.append(_pin, "\t\t");
     _builder.append(")");
     _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t");
+    _builder.append("\t");
     _builder.append(")");
     _builder.newLine();
     return _builder;
@@ -451,32 +478,12 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append("\t\t");
     _builder.append(".put(\"speed\", 100)");
     _builder.newLine();
-    {
-      boolean _isFindX = findHome.isFindX();
-      if (_isFindX) {
-        _builder.append("\t\t");
-        _builder.append(".put(\"axis, \"x\")");
-        _builder.newLine();
-      } else {
-        boolean _isFindY = findHome.isFindY();
-        if (_isFindY) {
-          _builder.append("\t\t");
-          _builder.append(".put(\"axis\", \"y\")");
-          _builder.newLine();
-        } else {
-          boolean _isFindZ = findHome.isFindZ();
-          if (_isFindZ) {
-            _builder.append("\t\t");
-            _builder.append(".put(\"axis\", \"z\")");
-            _builder.newLine();
-          } else {
-            _builder.append("\t\t");
-            _builder.append(".put(\"axis\", \"all\")");
-            _builder.newLine();
-          }
-        }
-      }
-    }
+    _builder.append("\t\t");
+    _builder.append(".put(\"axis\", \"");
+    String _axis = findHome.getAxis();
+    _builder.append(_axis, "\t\t");
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
     _builder.append("\t");
     _builder.append(")");
     _builder.newLine();
@@ -838,6 +845,104 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
+  protected CharSequence _compile(final ListScheduledEvents listScheduledEvents) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("        ");
+    _builder.append("try {");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.append("System.out.println(\"\\nFetching scheduled events...\");");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("url = new URL(API_URL + \"/farm_events\");");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("con = (HttpURLConnection) url.openConnection();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestMethod(\"GET\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Content-Type\", \"application/json\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Authorization\", TOKEN);");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("BufferedReader br = new BufferedReader(new InputStreamReader((con.getInputStream())));");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("StringBuilder events = new StringBuilder();");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("String line;");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("while ((line = br.readLine()) != null) {");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("events.append(line);");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("JSONArray eventsJson = new JSONArray(events.toString());");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("JSONObject event;");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("for (int i = 0; i < eventsJson.length(); i++) {");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("event = eventsJson.getJSONObject(i);");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("String start = \"starts on \" + event.get(\"start_time\").toString();");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("String end = \"starts on \" + event.get(\"end_time\").toString();");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("String repeat = Integer.valueOf(event.get(\"repeat\").toString()) == 1 ? \" repeat \" + event.get(\"time_unit\").toString() : \" no repeat\";");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("System.out.println(\"Sequence \" + event.get(\"executable_id\").toString() + \" : \" + start + repeat);");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("} catch (MalformedURLException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("} catch (IOException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
+  }
+  
   protected CharSequence _compile(final ListSequences listSequences) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("        ");
@@ -942,12 +1047,16 @@ public class MyFarmbotGenerator extends AbstractGenerator {
       return _compile((TakePhoto)move);
     } else if (move instanceof TurnOff) {
       return _compile((TurnOff)move);
-    } else if (move instanceof TurnOn) {
-      return _compile((TurnOn)move);
+    } else if (move instanceof TurnOnAnalog) {
+      return _compile((TurnOnAnalog)move);
+    } else if (move instanceof TurnOnDigital) {
+      return _compile((TurnOnDigital)move);
     } else if (move instanceof Wait) {
       return _compile((Wait)move);
     } else if (move instanceof If) {
       return _compile((If)move);
+    } else if (move instanceof ListScheduledEvents) {
+      return _compile((ListScheduledEvents)move);
     } else if (move instanceof ListSequences) {
       return _compile((ListSequences)move);
     } else if (move instanceof Schedule) {

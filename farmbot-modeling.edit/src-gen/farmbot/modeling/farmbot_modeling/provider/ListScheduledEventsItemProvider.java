@@ -2,34 +2,28 @@
  */
 package farmbot.modeling.farmbot_modeling.provider;
 
-import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
-import farmbot.modeling.farmbot_modeling.FindHome;
-
 import java.util.Collection;
 import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
 
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
- * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.FindHome} object.
+ * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.ListScheduledEvents} object.
  * <!-- begin-user-doc -->
  * <!-- end-user-doc -->
  * @generated
  */
-public class FindHomeItemProvider extends SequenceCommandItemProvider {
+public class ListScheduledEventsItemProvider extends CommandItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public FindHomeItemProvider(AdapterFactory adapterFactory) {
+	public ListScheduledEventsItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -44,36 +38,19 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addAxisPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Axis feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAxisPropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_FindHome_axis_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_FindHome_axis_feature",
-								"_UI_FindHome_type"),
-						Farmbot_modelingPackage.Literals.FIND_HOME__AXIS, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This returns FindHome.gif.
+	 * This returns ListScheduledEvents.gif.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	@Override
 	public Object getImage(Object object) {
-		return overlayImage(object, getResourceLocator().getImage("full/obj16/FindHome"));
+		return overlayImage(object, getResourceLocator().getImage("full/obj16/ListScheduledEvents"));
 	}
 
 	/**
@@ -94,9 +71,7 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((FindHome) object).getAxis();
-		return label == null || label.length() == 0 ? getString("_UI_FindHome_type")
-				: getString("_UI_FindHome_type") + " " + label;
+		return getString("_UI_ListScheduledEvents_type");
 	}
 
 	/**
@@ -109,12 +84,6 @@ public class FindHomeItemProvider extends SequenceCommandItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(FindHome.class)) {
-		case Farmbot_modelingPackage.FIND_HOME__AXIS:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

@@ -31,13 +31,13 @@ public interface Farmbot_modelingFactory extends EFactory {
 	Farmbot createFarmbot();
 
 	/**
-	 * Returns a new object of class '<em>Turn On</em>'.
+	 * Returns a new object of class '<em>Turn On Digital</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Turn On</em>'.
+	 * @return a new object of class '<em>Turn On Digital</em>'.
 	 * @generated
 	 */
-	TurnOn createTurnOn();
+	TurnOnDigital createTurnOnDigital();
 
 	/**
 	 * Returns a new object of class '<em>Turn Off</em>'.
@@ -191,6 +191,24 @@ public interface Farmbot_modelingFactory extends EFactory {
 	 * @generated
 	 */
 	ListSequences createListSequences();
+
+	/**
+	 * Returns a new object of class '<em>List Scheduled Events</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>List Scheduled Events</em>'.
+	 * @generated
+	 */
+	ListScheduledEvents createListScheduledEvents();
+
+	/**
+	 * Returns a new object of class '<em>Turn On Analog</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Turn On Analog</em>'.
+	 * @generated
+	 */
+	TurnOnAnalog createTurnOnAnalog();
 
 	/**
 	 * Returns the package supported by this factory.

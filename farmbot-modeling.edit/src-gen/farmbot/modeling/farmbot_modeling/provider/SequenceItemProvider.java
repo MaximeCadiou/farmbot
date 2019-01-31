@@ -166,7 +166,7 @@ public class SequenceItemProvider extends InstructionItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
-				Farmbot_modelingFactory.eINSTANCE.createTurnOn()));
+				Farmbot_modelingFactory.eINSTANCE.createTurnOnDigital()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createTurnOff()));
@@ -197,6 +197,9 @@ public class SequenceItemProvider extends InstructionItemProvider {
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createTakePhoto()));
+
+		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
+				Farmbot_modelingFactory.eINSTANCE.createTurnOnAnalog()));
 	}
 
 }

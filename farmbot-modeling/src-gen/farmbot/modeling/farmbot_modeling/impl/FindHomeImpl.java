@@ -19,73 +19,31 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
  * The following features are implemented:
  * </p>
  * <ul>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#isFindX <em>Find X</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#isFindY <em>Find Y</em>}</li>
- *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#isFindZ <em>Find Z</em>}</li>
+ *   <li>{@link farmbot.modeling.farmbot_modeling.impl.FindHomeImpl#getAxis <em>Axis</em>}</li>
  * </ul>
  *
  * @generated
  */
 public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	/**
-	 * The default value of the '{@link #isFindX() <em>Find X</em>}' attribute.
+	 * The default value of the '{@link #getAxis() <em>Axis</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isFindX()
+	 * @see #getAxis()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean FIND_X_EDEFAULT = false;
+	protected static final String AXIS_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #isFindX() <em>Find X</em>}' attribute.
+	 * The cached value of the '{@link #getAxis() <em>Axis</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isFindX()
+	 * @see #getAxis()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean findX = FIND_X_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isFindY() <em>Find Y</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFindY()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean FIND_Y_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isFindY() <em>Find Y</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFindY()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean findY = FIND_Y_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isFindZ() <em>Find Z</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFindZ()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean FIND_Z_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isFindZ() <em>Find Z</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFindZ()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean findZ = FIND_Z_EDEFAULT;
+	protected String axis = AXIS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,8 +69,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isFindX() {
-		return findX;
+	public String getAxis() {
+		return axis;
 	}
 
 	/**
@@ -120,56 +78,12 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFindX(boolean newFindX) {
-		boolean oldFindX = findX;
-		findX = newFindX;
+	public void setAxis(String newAxis) {
+		String oldAxis = axis;
+		axis = newAxis;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.FIND_HOME__FIND_X, oldFindX,
-					findX));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isFindY() {
-		return findY;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFindY(boolean newFindY) {
-		boolean oldFindY = findY;
-		findY = newFindY;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.FIND_HOME__FIND_Y, oldFindY,
-					findY));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isFindZ() {
-		return findZ;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFindZ(boolean newFindZ) {
-		boolean oldFindZ = findZ;
-		findZ = newFindZ;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.FIND_HOME__FIND_Z, oldFindZ,
-					findZ));
+			eNotify(new ENotificationImpl(this, Notification.SET, Farmbot_modelingPackage.FIND_HOME__AXIS, oldAxis,
+					axis));
 	}
 
 	/**
@@ -180,12 +94,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FIND_HOME__FIND_X:
-			return isFindX();
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Y:
-			return isFindY();
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
-			return isFindZ();
+		case Farmbot_modelingPackage.FIND_HOME__AXIS:
+			return getAxis();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -198,14 +108,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FIND_HOME__FIND_X:
-			setFindX((Boolean) newValue);
-			return;
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Y:
-			setFindY((Boolean) newValue);
-			return;
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
-			setFindZ((Boolean) newValue);
+		case Farmbot_modelingPackage.FIND_HOME__AXIS:
+			setAxis((String) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -219,14 +123,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FIND_HOME__FIND_X:
-			setFindX(FIND_X_EDEFAULT);
-			return;
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Y:
-			setFindY(FIND_Y_EDEFAULT);
-			return;
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
-			setFindZ(FIND_Z_EDEFAULT);
+		case Farmbot_modelingPackage.FIND_HOME__AXIS:
+			setAxis(AXIS_EDEFAULT);
 			return;
 		}
 		super.eUnset(featureID);
@@ -240,12 +138,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case Farmbot_modelingPackage.FIND_HOME__FIND_X:
-			return findX != FIND_X_EDEFAULT;
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Y:
-			return findY != FIND_Y_EDEFAULT;
-		case Farmbot_modelingPackage.FIND_HOME__FIND_Z:
-			return findZ != FIND_Z_EDEFAULT;
+		case Farmbot_modelingPackage.FIND_HOME__AXIS:
+			return AXIS_EDEFAULT == null ? axis != null : !AXIS_EDEFAULT.equals(axis);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -261,12 +155,8 @@ public class FindHomeImpl extends SequenceCommandImpl implements FindHome {
 			return super.toString();
 
 		StringBuilder result = new StringBuilder(super.toString());
-		result.append(" (findX: ");
-		result.append(findX);
-		result.append(", findY: ");
-		result.append(findY);
-		result.append(", findZ: ");
-		result.append(findZ);
+		result.append(" (axis: ");
+		result.append(axis);
 		result.append(')');
 		return result.toString();
 	}

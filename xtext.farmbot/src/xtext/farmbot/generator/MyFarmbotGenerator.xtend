@@ -13,7 +13,8 @@ import farmbot.modeling.farmbot_modeling.Command
 import farmbot.modeling.farmbot_modeling.SequenceCommand
 import farmbot.modeling.farmbot_modeling.SequenceInstruction
 import farmbot.modeling.farmbot_modeling.BooleanExpression
-import farmbot.modeling.farmbot_modeling.TurnOn
+import farmbot.modeling.farmbot_modeling.TurnOnDigital
+import farmbot.modeling.farmbot_modeling.TurnOnAnalog
 import farmbot.modeling.farmbot_modeling.TurnOff
 import farmbot.modeling.farmbot_modeling.MoveRelative
 import farmbot.modeling.farmbot_modeling.MoveAbsolute
@@ -32,6 +33,7 @@ import farmbot.modeling.farmbot_modeling.IsGreaterThan
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo
 import farmbot.modeling.farmbot_modeling.IsLowerThan
 import farmbot.modeling.farmbot_modeling.Move
+import farmbot.modeling.farmbot_modeling.ListScheduledEvents
 
 /**
  * Generates code from your model files on save.
@@ -130,25 +132,41 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 
 
-	def dispatch compile(TurnOn turnon) '''
+
+
+
+	def dispatch compile(TurnOnDigital turnon)	'''
 		new JSONObject()
 			.put("kind", "write_pin")
 			.put("args", new JSONObject()
-				.put("pin_mode", «turnon.mode»)
+				.put("pin_mode", 0)
 				.put("pin_value", 1)
+				.put("pin_number", «turnon.pin»)
+			)
+	'''
+	
+	def dispatch compile(TurnOnAnalog turnon)	'''
+		new JSONObject()
+			.put("kind", "write_pin")
+			.put("args", new JSONObject()
+				.put("pin_mode", 1)
+				.put("pin_value", «turnon.value»)
 				.put("pin_number", «turnon.pin»)
 			)
 	'''
 
 	def dispatch compile(TurnOff turnoff) '''
 		new JSONObject()
-					.put("kind", "write_pin")
-					.put("args", new JSONObject()
-						.put("pin_mode", «turnoff.mode»)
-						.put("pin_value", 1)
-						.put("pin_number", «turnoff.pin»)
-					)
+			.put("kind", "write_pin")
+			.put("args", new JSONObject()
+				.put("pin_mode", 0)
+				.put("pin_value", 0)
+				.put("pin_number", «turnoff.pin»)
+			)
 	'''
+
+
+
 
 
 
@@ -193,15 +211,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 			.put("kind", "find_home")
 			.put("args", new JSONObject()
 				.put("speed", 100)
-				«IF findHome.findX»
-				.put("axis, "x")
-				«ELSEIF findHome.findY»
-				.put("axis", "y")
-				«ELSEIF findHome.findZ»
-				.put("axis", "z")
-				«ELSE»
-				.put("axis", "all")
-				«ENDIF»
+				.put("axis", "«findHome.axis»")
 			)
 	'''
 	
@@ -365,6 +375,43 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 
 
+
+	def dispatch compile(ListScheduledEvents listScheduledEvents) '''
+        try {
+        	System.out.println("\nFetching scheduled events...");
+        	
+			url = new URL(API_URL + "/farm_events");
+			con = (HttpURLConnection) url.openConnection();
+	        con.setRequestMethod("GET");
+	        
+	        con.setRequestProperty("Content-Type", "application/json");
+	        con.setRequestProperty("Authorization", TOKEN);
+	        
+            BufferedReader br = new BufferedReader(new InputStreamReader((con.getInputStream())));
+            StringBuilder events = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                events.append(line);
+            }
+            
+            JSONArray eventsJson = new JSONArray(events.toString());
+            JSONObject event;
+            
+            for (int i = 0; i < eventsJson.length(); i++) {
+        	  event = eventsJson.getJSONObject(i);
+        	  
+        	  String start = "starts on " + event.get("start_time").toString();
+        	  String end = "starts on " + event.get("end_time").toString();
+        	  String repeat = Integer.valueOf(event.get("repeat").toString()) == 1 ? " repeat " + event.get("time_unit").toString() : " no repeat";
+        	  
+        	  System.out.println("Sequence " + event.get("executable_id").toString() + " : " + start + repeat);
+        	}
+	    } catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	 '''
 
 	def dispatch compile(ListSequences listSequences) '''
         try {

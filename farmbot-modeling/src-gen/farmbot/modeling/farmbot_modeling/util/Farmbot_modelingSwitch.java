@@ -108,17 +108,17 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Farmbot_modelingPackage.TURN_ON: {
-			TurnOn turnOn = (TurnOn) theEObject;
-			T result = caseTurnOn(turnOn);
+		case Farmbot_modelingPackage.TURN_ON_DIGITAL: {
+			TurnOnDigital turnOnDigital = (TurnOnDigital) theEObject;
+			T result = caseTurnOnDigital(turnOnDigital);
 			if (result == null)
-				result = caseSequenceCommand(turnOn);
+				result = caseSequenceCommand(turnOnDigital);
 			if (result == null)
-				result = caseCommand(turnOn);
+				result = caseCommand(turnOnDigital);
 			if (result == null)
-				result = caseSequenceInstruction(turnOn);
+				result = caseSequenceInstruction(turnOnDigital);
 			if (result == null)
-				result = caseInstruction(turnOn);
+				result = caseInstruction(turnOnDigital);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -365,6 +365,32 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case Farmbot_modelingPackage.LIST_SCHEDULED_EVENTS: {
+			ListScheduledEvents listScheduledEvents = (ListScheduledEvents) theEObject;
+			T result = caseListScheduledEvents(listScheduledEvents);
+			if (result == null)
+				result = caseCommand(listScheduledEvents);
+			if (result == null)
+				result = caseInstruction(listScheduledEvents);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case Farmbot_modelingPackage.TURN_ON_ANALOG: {
+			TurnOnAnalog turnOnAnalog = (TurnOnAnalog) theEObject;
+			T result = caseTurnOnAnalog(turnOnAnalog);
+			if (result == null)
+				result = caseSequenceCommand(turnOnAnalog);
+			if (result == null)
+				result = caseCommand(turnOnAnalog);
+			if (result == null)
+				result = caseSequenceInstruction(turnOnAnalog);
+			if (result == null)
+				result = caseInstruction(turnOnAnalog);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -431,17 +457,17 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Turn On</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Turn On Digital</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Turn On</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Turn On Digital</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseTurnOn(TurnOn object) {
+	public T caseTurnOnDigital(TurnOnDigital object) {
 		return null;
 	}
 
@@ -742,6 +768,36 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseListSequences(ListSequences object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>List Scheduled Events</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>List Scheduled Events</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseListScheduledEvents(ListScheduledEvents object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Turn On Analog</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Turn On Analog</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseTurnOnAnalog(TurnOnAnalog object) {
 		return null;
 	}
 

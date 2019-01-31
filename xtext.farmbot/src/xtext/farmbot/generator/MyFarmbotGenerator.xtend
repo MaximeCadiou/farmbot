@@ -52,25 +52,32 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	def dispatch compile(Farmbot farmbot) ''' 
 	    package farmbot;
 	    
-	    import java.io.IOException;
-	    import java.net.HttpURLConnection;
-	    import java.net.MalformedURLException;
-	    import java.net.URL;
-	    import org.json.JSONObject;
-	    import org.json.JSONArray;
-	    import org.json.JSONException;
+		import java.io.BufferedReader;
+		import java.io.IOException;
+		import java.io.InputStreamReader;
+		import java.net.HttpURLConnection;
+		import java.net.MalformedURLException;
+		import java.net.URL;
+		import org.json.JSONObject;
+		import org.json.JSONArray;
+		import org.json.JSONException;
 	    
 	    public class Farmbot {
 		    static final String TOKEN = "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1bmtub3duIiwic3ViIjo0NDAwLCJpYXQiOjE1NDgxNTMzMjcsImp0aSI6IjQ3NzBlZWQ3LWVmMzMtNDM4NC1iNmJlLWVmY2IzNzg4Y2UzMCIsImlzcyI6Ii8vbXkuZmFybWJvdC5pbzo0NDMiLCJleHAiOjE1NTE2MDkzMjcsIm1xdHQiOiJicmlzay1iZWFyLnJtcS5jbG91ZGFtcXAuY29tIiwiYm90IjoiZGV2aWNlXzQzOTUiLCJ2aG9zdCI6InZiemN4c3FyIiwibXF0dF93cyI6IndzczovL2JyaXNrLWJlYXIucm1xLmNsb3VkYW1xcC5jb206NDQzL3dzL21xdHQiLCJvc191cGRhdGVfc2VydmVyIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9mYXJtYm90L2Zhcm1ib3Rfb3MvcmVsZWFzZXMvbGF0ZXN0IiwiZndfdXBkYXRlX3NlcnZlciI6IkRFUFJFQ0FURUQiLCJpbnRlcmltX2VtYWlsIjoiam9yZGhhbi5tYWRlY0BnbWFpbC5jb20iLCJiZXRhX29zX3VwZGF0ZV9zZXJ2ZXIiOiJodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL0Zhcm1Cb3QvZmFybWJvdF9vcy9yZWxlYXNlcy8xNDU4MTg3MSJ9.WDBwreST76bU3MCybjV6WNY4EuZfcPuUzPcrNpZzpE448HmHwDjNrMTXJARostEVrafdVttlErA2B4AVJkuF9WFMCwJCu1wza6HyeucG8TBQLIrOQmunkIbXxzUKdXdb4A9egYlI24gupJha2CejpfhMj3ZWJiQsQ7gMK4vn5sAnETXimnumwtj8writ5uDsA5a74Gqur_kkRZEj_5YrsnCY9ggzWdkAvqizzdvjrI1fN3_LTFT_XrEYUbohECLCHZ-Qy3ibHQm6eMPFEv_4MVYHGg-yyYDBsc-M4itMLuIH_h7_hYbBuW_nQui7EdRR96v0cO0WBrOvswxczAQHiQ";
 		    static final String API_URL = "https://my.farm.bot/api";
 	     
 	    	public static void main(String[] args) throws JSONException {
+		        URL url;
+		        HttpURLConnection con;
+		        
 		    	«FOR instruction:farmbot.instructions»
 	            «instruction.compile»
 	    	    «ENDFOR»
 	    	}
 	    }
 	'''
+	
+	
 	
 	def dispatch compile(Instruction instruction) '''this expression is not supported: '''
 
@@ -81,6 +88,48 @@ class MyFarmbotGenerator extends AbstractGenerator {
 	def dispatch compile(SequenceInstruction sequenceInstruction) '''this expression is not supported: '''
 
 	def dispatch compile(BooleanExpression booleanExpression) '''this expression is not supported: '''
+
+	def dispatch compile(Move move) '''this expression is not supported: '''
+
+
+
+	def dispatch compile(Sequence sequence) '''
+	    String body = new JSONObject()
+        .put("name", "«sequence.name»")
+        .put("body", new JSONArray() 
+
+		«FOR instruction:sequence.sequenceInstructions»
+		.put(«instruction.compile»)
+        «ENDFOR»
+
+    	).toString();    
+
+		System.out.println("\nCreating sequence «sequence.name»...");
+        System.out.println(body);
+
+        try {
+			url = new URL(API_URL + "/sequences");
+			con = (HttpURLConnection) url.openConnection();
+	        con.setRequestMethod("POST");
+	        
+	        con.setRequestProperty("Content-Type", "application/json");
+	        con.setRequestProperty("Authorization", TOKEN);
+	        
+	        con.setDoOutput(true);
+	        con.getOutputStream().write(body.getBytes());
+	        con.getOutputStream().flush();
+	        con.getOutputStream().close();
+	        
+            System.out.println(con.getResponseMessage());
+	    } catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	'''
+
+
+
 
 	def dispatch compile(TurnOn turnon) '''
 		new JSONObject()
@@ -102,7 +151,8 @@ class MyFarmbotGenerator extends AbstractGenerator {
 					)
 	'''
 
-	def dispatch compile(Move move) '''this expression is not supported: '''
+
+
 
 	def dispatch compile(MoveRelative move) '''
 		new JSONObject()
@@ -156,72 +206,9 @@ class MyFarmbotGenerator extends AbstractGenerator {
 			)
 	'''
 	
-	def dispatch compile(Sequence sequence) '''
-	    String body = new JSONObject()
-        .put("name", "«sequence.name»")
-        .put("body", new JSONArray() 
-
-		«FOR instruction:sequence.sequenceInstructions»
-		.put(«instruction.compile»)
-        «ENDFOR»
-
-    	).toString();    
-
-        System.out.println(body);
-		
-        URL url;
-        HttpURLConnection con;
-        try {
-			url = new URL(API_URL + "/sequences");
-			con = (HttpURLConnection) url.openConnection();
-	        con.setRequestMethod("POST");
-	        
-	        con.setRequestProperty("Content-Type", "application/json");
-	        con.setRequestProperty("Authorization", TOKEN);
-	        
-	        con.setDoOutput(true);
-	        con.getOutputStream().write(body.getBytes());
-	        con.getOutputStream().flush();
-	        con.getOutputStream().close();
-	        
-            System.out.println(con.getResponseMessage());
-	    } catch (MalformedURLException e) {
-			e.printStackTrace();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-	'''
-
-	def dispatch compile(If ifExpression) '''
-		new JSONObject()
-					.put("kind", "_if")
-					.put("args", new JSONObject()
-						«ifExpression.booleanExpression.compile»
-						.put("_then", new JSONObject()
-							«IF ifExpression.getThen() !== null»
-							.put("kind", "execute")
-							.put("args", new JSONObject()
-								.put("sequence_id", «ifExpression.getThen().id») 
-							)
-							«ELSE»
-							.put("kind", "nothing")
-							.put("args", new JSONObject())
-							«ENDIF»
-						)
-						.put("_else", new JSONObject()
-							«IF ifExpression.getElse() !== null»
-							.put("kind", "execute")
-							.put("args", new JSONObject()
-								.put("sequence_id", «ifExpression.getElse().id») 
-							)
-							«ELSE»
-							.put("kind", "nothing")
-							.put("args", new JSONObject())
-							«ENDIF»
-						)
-					)
-	'''
-
+	
+	
+	
 	def dispatch compile(ExecuteSequence executeSequence) '''
 		new JSONObject()
 					.put("kind", "execute")
@@ -262,20 +249,42 @@ class MyFarmbotGenerator extends AbstractGenerator {
 					)
 	'''
 	
-	def dispatch compile(Schedule schedule) '''
-		System.out.println("I scheduled the sequence «schedule.sequence» on «schedule.startDate» at «schedule.startTime»");
-		«IF schedule.repeat»
-			System.out.println("It will repeat every «schedule.repeatFrequency» «schedule.repeatUnit» until «schedule.endDate» at «schedule.endTime»");
-		«ENDIF»
-	'''
+	
+	
+	
+	
+	
 
-	def dispatch compile(ListPeripherals listPeripherals) '''
-		System.out.println("Here is a list of the peripherals");
-	'''
 
-	def dispatch compile(ListSequences listSequences) '''
-		System.out.println("Here is a list of the sequences");
-	 '''
+	def dispatch compile(If ifExpression) '''
+		new JSONObject()
+					.put("kind", "_if")
+					.put("args", new JSONObject()
+						«ifExpression.booleanExpression.compile»
+						.put("_then", new JSONObject()
+							«IF ifExpression.getThen() !== null»
+							.put("kind", "execute")
+							.put("args", new JSONObject()
+								.put("sequence_id", «ifExpression.getThen().id») 
+							)
+							«ELSE»
+							.put("kind", "nothing")
+							.put("args", new JSONObject())
+							«ENDIF»
+						)
+						.put("_else", new JSONObject()
+							«IF ifExpression.getElse() !== null»
+							.put("kind", "execute")
+							.put("args", new JSONObject()
+								.put("sequence_id", «ifExpression.getElse().id») 
+							)
+							«ELSE»
+							.put("kind", "nothing")
+							.put("args", new JSONObject())
+							«ENDIF»
+						)
+					)
+	'''
 	
 	def dispatch compile(IsEqualTo isEqualTo) {
 		var target = "";
@@ -342,4 +351,55 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		'''	
 	}	
 	
+	
+	
+	
+	
+	
+	def dispatch compile(Schedule schedule) '''
+		System.out.println("I scheduled the sequence «schedule.sequence» on «schedule.startDate» at «schedule.startTime»");
+		«IF schedule.repeat»
+			System.out.println("It will repeat every «schedule.repeatFrequency» «schedule.repeatUnit» until «schedule.endDate» at «schedule.endTime»");
+		«ENDIF»
+	'''
+
+
+
+
+
+	def dispatch compile(ListPeripherals listPeripherals) '''
+		System.out.println("Here is a list of the peripherals");
+	'''
+
+	def dispatch compile(ListSequences listSequences) '''
+        try {
+        	System.out.println("\nFetching sequences...");
+        	
+			url = new URL(API_URL + "/sequences");
+			con = (HttpURLConnection) url.openConnection();
+	        con.setRequestMethod("GET");
+	        
+	        con.setRequestProperty("Content-Type", "application/json");
+	        con.setRequestProperty("Authorization", TOKEN);
+	        
+            BufferedReader br = new BufferedReader(new InputStreamReader((con.getInputStream())));
+            StringBuilder sequences = new StringBuilder();
+            String line;
+            while ((line = br.readLine()) != null) {
+                sequences.append(line);
+            }
+            
+            JSONArray sequencesJson = new JSONArray(sequences.toString());
+            JSONObject sequence;
+            
+            for (int i = 0; i < sequencesJson.length(); i++) {
+        	  sequence = sequencesJson.getJSONObject(i);
+        	  System.out.println(sequence.get("name").toString() + " (" + sequence.get("id").toString() + ")");
+        	}
+	    } catch (MalformedURLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+	 '''
 }

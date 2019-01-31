@@ -55,10 +55,16 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final Farmbot farmbot) {
     StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t    ");
     _builder.append("package farmbot;");
     _builder.newLine();
+    _builder.append("\t    ");
+    _builder.newLine();
+    _builder.append("import java.io.BufferedReader;");
     _builder.newLine();
     _builder.append("import java.io.IOException;");
+    _builder.newLine();
+    _builder.append("import java.io.InputStreamReader;");
     _builder.newLine();
     _builder.append("import java.net.HttpURLConnection;");
     _builder.newLine();
@@ -72,19 +78,29 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.newLine();
     _builder.append("import org.json.JSONException;");
     _builder.newLine();
+    _builder.append("\t    ");
     _builder.newLine();
+    _builder.append("\t    ");
     _builder.append("public class Farmbot {");
     _builder.newLine();
-    _builder.append("\t\t    ");
+    _builder.append("    ");
     _builder.append("static final String TOKEN = \"eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdWQiOiJ1bmtub3duIiwic3ViIjo0NDAwLCJpYXQiOjE1NDgxNTMzMjcsImp0aSI6IjQ3NzBlZWQ3LWVmMzMtNDM4NC1iNmJlLWVmY2IzNzg4Y2UzMCIsImlzcyI6Ii8vbXkuZmFybWJvdC5pbzo0NDMiLCJleHAiOjE1NTE2MDkzMjcsIm1xdHQiOiJicmlzay1iZWFyLnJtcS5jbG91ZGFtcXAuY29tIiwiYm90IjoiZGV2aWNlXzQzOTUiLCJ2aG9zdCI6InZiemN4c3FyIiwibXF0dF93cyI6IndzczovL2JyaXNrLWJlYXIucm1xLmNsb3VkYW1xcC5jb206NDQzL3dzL21xdHQiLCJvc191cGRhdGVfc2VydmVyIjoiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS9yZXBvcy9mYXJtYm90L2Zhcm1ib3Rfb3MvcmVsZWFzZXMvbGF0ZXN0IiwiZndfdXBkYXRlX3NlcnZlciI6IkRFUFJFQ0FURUQiLCJpbnRlcmltX2VtYWlsIjoiam9yZGhhbi5tYWRlY0BnbWFpbC5jb20iLCJiZXRhX29zX3VwZGF0ZV9zZXJ2ZXIiOiJodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL0Zhcm1Cb3QvZmFybWJvdF9vcy9yZWxlYXNlcy8xNDU4MTg3MSJ9.WDBwreST76bU3MCybjV6WNY4EuZfcPuUzPcrNpZzpE448HmHwDjNrMTXJARostEVrafdVttlErA2B4AVJkuF9WFMCwJCu1wza6HyeucG8TBQLIrOQmunkIbXxzUKdXdb4A9egYlI24gupJha2CejpfhMj3ZWJiQsQ7gMK4vn5sAnETXimnumwtj8writ5uDsA5a74Gqur_kkRZEj_5YrsnCY9ggzWdkAvqizzdvjrI1fN3_LTFT_XrEYUbohECLCHZ-Qy3ibHQm6eMPFEv_4MVYHGg-yyYDBsc-M4itMLuIH_h7_hYbBuW_nQui7EdRR96v0cO0WBrOvswxczAQHiQ\";");
     _builder.newLine();
-    _builder.append("\t\t    ");
+    _builder.append("    ");
     _builder.append("static final String API_URL = \"https://my.farm.bot/api\";");
     _builder.newLine();
-    _builder.append(" ");
+    _builder.append("\t     ");
     _builder.newLine();
-    _builder.append("\t");
+    _builder.append("\t    \t");
     _builder.append("public static void main(String[] args) throws JSONException {");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("URL url;");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("HttpURLConnection con;");
+    _builder.newLine();
+    _builder.append("        ");
     _builder.newLine();
     {
       EList<Instruction> _instructions = farmbot.getInstructions();
@@ -94,9 +110,10 @@ public class MyFarmbotGenerator extends AbstractGenerator {
         _builder.newLineIfNotEmpty();
       }
     }
-    _builder.append("\t");
+    _builder.append("\t    \t");
     _builder.append("}");
     _builder.newLine();
+    _builder.append("\t    ");
     _builder.append("}");
     _builder.newLine();
     return _builder;
@@ -129,6 +146,106 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   protected CharSequence _compile(final BooleanExpression booleanExpression) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Move move) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("this expression is not supported: ");
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final Sequence sequence) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("\t    ");
+    _builder.append("String body = new JSONObject()");
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append(".put(\"name\", \"");
+    String _name = sequence.getName();
+    _builder.append(_name, "        ");
+    _builder.append("\")");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append(".put(\"body\", new JSONArray() ");
+    _builder.newLine();
+    _builder.newLine();
+    {
+      EList<SequenceInstruction> _sequenceInstructions = sequence.getSequenceInstructions();
+      for(final SequenceInstruction instruction : _sequenceInstructions) {
+        _builder.append(".put(");
+        Object _compile = this.compile(instruction);
+        _builder.append(_compile);
+        _builder.append(")");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    _builder.newLine();
+    _builder.append("    \t");
+    _builder.append(").toString();    ");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("System.out.println(\"\\nCreating sequence ");
+    String _name_1 = sequence.getName();
+    _builder.append(_name_1);
+    _builder.append("...\");");
+    _builder.newLineIfNotEmpty();
+    _builder.append("        ");
+    _builder.append("System.out.println(body);");
+    _builder.newLine();
+    _builder.newLine();
+    _builder.append("        ");
+    _builder.append("try {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("url = new URL(API_URL + \"/sequences\");");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("con = (HttpURLConnection) url.openConnection();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestMethod(\"POST\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Content-Type\", \"application/json\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Authorization\", TOKEN);");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setDoOutput(true);");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.getOutputStream().write(body.getBytes());");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.getOutputStream().flush();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.getOutputStream().close();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("System.out.println(con.getResponseMessage());");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("} catch (MalformedURLException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("} catch (IOException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
     return _builder;
   }
   
@@ -191,12 +308,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     _builder.append("\t\t\t");
     _builder.append(")");
     _builder.newLine();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final Move move) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("this expression is not supported: ");
     return _builder;
   }
   
@@ -373,191 +484,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final Sequence sequence) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("\t    ");
-    _builder.append("String body = new JSONObject()");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append(".put(\"name\", \"");
-    String _name = sequence.getName();
-    _builder.append(_name, "        ");
-    _builder.append("\")");
-    _builder.newLineIfNotEmpty();
-    _builder.append("        ");
-    _builder.append(".put(\"body\", new JSONArray() ");
-    _builder.newLine();
-    _builder.newLine();
-    {
-      EList<SequenceInstruction> _sequenceInstructions = sequence.getSequenceInstructions();
-      for(final SequenceInstruction instruction : _sequenceInstructions) {
-        _builder.append(".put(");
-        Object _compile = this.compile(instruction);
-        _builder.append(_compile);
-        _builder.append(")");
-        _builder.newLineIfNotEmpty();
-      }
-    }
-    _builder.newLine();
-    _builder.append("    \t");
-    _builder.append(").toString();    ");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("System.out.println(body);");
-    _builder.newLine();
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("URL url;");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("HttpURLConnection con;");
-    _builder.newLine();
-    _builder.append("        ");
-    _builder.append("try {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("url = new URL(API_URL + \"/sequences\");");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("con = (HttpURLConnection) url.openConnection();");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.setRequestMethod(\"POST\");");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.setRequestProperty(\"Content-Type\", \"application/json\");");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.setRequestProperty(\"Authorization\", TOKEN);");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.setDoOutput(true);");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.getOutputStream().write(body.getBytes());");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.getOutputStream().flush();");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.append("con.getOutputStream().close();");
-    _builder.newLine();
-    _builder.append("\t        ");
-    _builder.newLine();
-    _builder.append("            ");
-    _builder.append("System.out.println(con.getResponseMessage());");
-    _builder.newLine();
-    _builder.append("\t    ");
-    _builder.append("} catch (MalformedURLException e) {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("e.printStackTrace();");
-    _builder.newLine();
-    _builder.append("} catch (IOException e) {");
-    _builder.newLine();
-    _builder.append("\t");
-    _builder.append("e.printStackTrace();");
-    _builder.newLine();
-    _builder.append("}");
-    _builder.newLine();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final If ifExpression) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("new JSONObject()");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append(".put(\"kind\", \"_if\")");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append(".put(\"args\", new JSONObject()");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    Object _compile = this.compile(ifExpression.getBooleanExpression());
-    _builder.append(_compile, "\t\t\t\t");
-    _builder.newLineIfNotEmpty();
-    _builder.append("\t\t\t\t");
-    _builder.append(".put(\"_then\", new JSONObject()");
-    _builder.newLine();
-    {
-      ExecuteSequence _then = ifExpression.getThen();
-      boolean _tripleNotEquals = (_then != null);
-      if (_tripleNotEquals) {
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"kind\", \"execute\")");
-        _builder.newLine();
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"args\", new JSONObject()");
-        _builder.newLine();
-        _builder.append("\t\t\t\t\t");
-        _builder.append("\t");
-        _builder.append(".put(\"sequence_id\", ");
-        int _id = ifExpression.getThen().getId();
-        _builder.append(_id, "\t\t\t\t\t\t");
-        _builder.append(") ");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t\t");
-        _builder.append(")");
-        _builder.newLine();
-      } else {
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"kind\", \"nothing\")");
-        _builder.newLine();
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"args\", new JSONObject())");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t\t\t\t");
-    _builder.append(")");
-    _builder.newLine();
-    _builder.append("\t\t\t\t");
-    _builder.append(".put(\"_else\", new JSONObject()");
-    _builder.newLine();
-    {
-      ExecuteSequence _else = ifExpression.getElse();
-      boolean _tripleNotEquals_1 = (_else != null);
-      if (_tripleNotEquals_1) {
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"kind\", \"execute\")");
-        _builder.newLine();
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"args\", new JSONObject()");
-        _builder.newLine();
-        _builder.append("\t\t\t\t\t");
-        _builder.append("\t");
-        _builder.append(".put(\"sequence_id\", ");
-        int _id_1 = ifExpression.getElse().getId();
-        _builder.append(_id_1, "\t\t\t\t\t\t");
-        _builder.append(") ");
-        _builder.newLineIfNotEmpty();
-        _builder.append("\t\t\t\t\t");
-        _builder.append(")");
-        _builder.newLine();
-      } else {
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"kind\", \"nothing\")");
-        _builder.newLine();
-        _builder.append("\t\t\t\t\t");
-        _builder.append(".put(\"args\", new JSONObject())");
-        _builder.newLine();
-      }
-    }
-    _builder.append("\t\t\t\t");
-    _builder.append(")");
-    _builder.newLine();
-    _builder.append("\t\t\t");
-    _builder.append(")");
-    _builder.newLine();
-    return _builder;
-  }
-  
   protected CharSequence _compile(final ExecuteSequence executeSequence) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("new JSONObject()");
@@ -668,51 +594,92 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final Schedule schedule) {
+  protected CharSequence _compile(final If ifExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"I scheduled the sequence ");
-    String _sequence = schedule.getSequence();
-    _builder.append(_sequence);
-    _builder.append(" on ");
-    String _startDate = schedule.getStartDate();
-    _builder.append(_startDate);
-    _builder.append(" at ");
-    String _startTime = schedule.getStartTime();
-    _builder.append(_startTime);
-    _builder.append("\");");
+    _builder.append("new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"kind\", \"_if\")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(".put(\"args\", new JSONObject()");
+    _builder.newLine();
+    _builder.append("\t\t\t\t");
+    Object _compile = this.compile(ifExpression.getBooleanExpression());
+    _builder.append(_compile, "\t\t\t\t");
     _builder.newLineIfNotEmpty();
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"_then\", new JSONObject()");
+    _builder.newLine();
     {
-      boolean _isRepeat = schedule.isRepeat();
-      if (_isRepeat) {
-        _builder.append("System.out.println(\"It will repeat every ");
-        int _repeatFrequency = schedule.getRepeatFrequency();
-        _builder.append(_repeatFrequency);
-        _builder.append(" ");
-        String _repeatUnit = schedule.getRepeatUnit();
-        _builder.append(_repeatUnit);
-        _builder.append(" until ");
-        String _endDate = schedule.getEndDate();
-        _builder.append(_endDate);
-        _builder.append(" at ");
-        String _endTime = schedule.getEndTime();
-        _builder.append(_endTime);
-        _builder.append("\");");
+      ExecuteSequence _then = ifExpression.getThen();
+      boolean _tripleNotEquals = (_then != null);
+      if (_tripleNotEquals) {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"execute\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject()");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append("\t");
+        _builder.append(".put(\"sequence_id\", ");
+        int _id = ifExpression.getThen().getId();
+        _builder.append(_id, "\t\t\t\t\t\t");
+        _builder.append(") ");
         _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(")");
+        _builder.newLine();
+      } else {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"nothing\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject())");
+        _builder.newLine();
       }
     }
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final ListPeripherals listPeripherals) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"Here is a list of the peripherals\");");
+    _builder.append("\t\t\t\t");
+    _builder.append(")");
     _builder.newLine();
-    return _builder;
-  }
-  
-  protected CharSequence _compile(final ListSequences listSequences) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("System.out.println(\"Here is a list of the sequences\");");
+    _builder.append("\t\t\t\t");
+    _builder.append(".put(\"_else\", new JSONObject()");
+    _builder.newLine();
+    {
+      ExecuteSequence _else = ifExpression.getElse();
+      boolean _tripleNotEquals_1 = (_else != null);
+      if (_tripleNotEquals_1) {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"execute\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject()");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append("\t");
+        _builder.append(".put(\"sequence_id\", ");
+        int _id_1 = ifExpression.getElse().getId();
+        _builder.append(_id_1, "\t\t\t\t\t\t");
+        _builder.append(") ");
+        _builder.newLineIfNotEmpty();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(")");
+        _builder.newLine();
+      } else {
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"kind\", \"nothing\")");
+        _builder.newLine();
+        _builder.append("\t\t\t\t\t");
+        _builder.append(".put(\"args\", new JSONObject())");
+        _builder.newLine();
+      }
+    }
+    _builder.append("\t\t\t\t");
+    _builder.append(")");
+    _builder.newLine();
+    _builder.append("\t\t\t");
+    _builder.append(")");
     _builder.newLine();
     return _builder;
   }
@@ -835,6 +802,133 @@ public class MyFarmbotGenerator extends AbstractGenerator {
       _xblockexpression = _builder;
     }
     return _xblockexpression;
+  }
+  
+  protected CharSequence _compile(final Schedule schedule) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("System.out.println(\"I scheduled the sequence ");
+    String _sequence = schedule.getSequence();
+    _builder.append(_sequence);
+    _builder.append(" on ");
+    String _startDate = schedule.getStartDate();
+    _builder.append(_startDate);
+    _builder.append(" at ");
+    String _startTime = schedule.getStartTime();
+    _builder.append(_startTime);
+    _builder.append("\");");
+    _builder.newLineIfNotEmpty();
+    {
+      boolean _isRepeat = schedule.isRepeat();
+      if (_isRepeat) {
+        _builder.append("System.out.println(\"It will repeat every ");
+        int _repeatFrequency = schedule.getRepeatFrequency();
+        _builder.append(_repeatFrequency);
+        _builder.append(" ");
+        String _repeatUnit = schedule.getRepeatUnit();
+        _builder.append(_repeatUnit);
+        _builder.append(" until ");
+        String _endDate = schedule.getEndDate();
+        _builder.append(_endDate);
+        _builder.append(" at ");
+        String _endTime = schedule.getEndTime();
+        _builder.append(_endTime);
+        _builder.append("\");");
+        _builder.newLineIfNotEmpty();
+      }
+    }
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListPeripherals listPeripherals) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("System.out.println(\"Here is a list of the peripherals\");");
+    _builder.newLine();
+    return _builder;
+  }
+  
+  protected CharSequence _compile(final ListSequences listSequences) {
+    StringConcatenation _builder = new StringConcatenation();
+    _builder.append("        ");
+    _builder.append("try {");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.append("System.out.println(\"\\nFetching sequences...\");");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("url = new URL(API_URL + \"/sequences\");");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("con = (HttpURLConnection) url.openConnection();");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestMethod(\"GET\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Content-Type\", \"application/json\");");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.append("con.setRequestProperty(\"Authorization\", TOKEN);");
+    _builder.newLine();
+    _builder.append("\t        ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("BufferedReader br = new BufferedReader(new InputStreamReader((con.getInputStream())));");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("StringBuilder sequences = new StringBuilder();");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("String line;");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("while ((line = br.readLine()) != null) {");
+    _builder.newLine();
+    _builder.append("                ");
+    _builder.append("sequences.append(line);");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("JSONArray sequencesJson = new JSONArray(sequences.toString());");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("JSONObject sequence;");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.newLine();
+    _builder.append("            ");
+    _builder.append("for (int i = 0; i < sequencesJson.length(); i++) {");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("sequence = sequencesJson.getJSONObject(i);");
+    _builder.newLine();
+    _builder.append("        \t  ");
+    _builder.append("System.out.println(sequence.get(\"name\").toString() + \" (\" + sequence.get(\"id\").toString() + \")\");");
+    _builder.newLine();
+    _builder.append("        \t");
+    _builder.append("}");
+    _builder.newLine();
+    _builder.append("\t    ");
+    _builder.append("} catch (MalformedURLException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("} catch (IOException e) {");
+    _builder.newLine();
+    _builder.append("\t");
+    _builder.append("e.printStackTrace();");
+    _builder.newLine();
+    _builder.append("}");
+    _builder.newLine();
+    return _builder;
   }
   
   public CharSequence compile(final EObject move) {

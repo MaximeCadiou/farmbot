@@ -303,29 +303,6 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 	}
 
 	/**
-	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.IsToolOn} instances.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected IsToolOnItemProvider isToolOnItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link farmbot.modeling.farmbot_modeling.IsToolOn}.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Adapter createIsToolOnAdapter() {
-		if (isToolOnItemProvider == null) {
-			isToolOnItemProvider = new IsToolOnItemProvider(this);
-		}
-
-		return isToolOnItemProvider;
-	}
-
-	/**
 	 * This keeps track of the one adapter used for all {@link farmbot.modeling.farmbot_modeling.SendMessage} instances.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -674,8 +651,6 @@ public class Farmbot_modelingItemProviderAdapterFactory extends Farmbot_modeling
 			executeSequenceItemProvider.dispose();
 		if (waitItemProvider != null)
 			waitItemProvider.dispose();
-		if (isToolOnItemProvider != null)
-			isToolOnItemProvider.dispose();
 		if (sendMessageItemProvider != null)
 			sendMessageItemProvider.dispose();
 		if (runFarmwareItemProvider != null)

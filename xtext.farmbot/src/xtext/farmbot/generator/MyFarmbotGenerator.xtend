@@ -22,7 +22,6 @@ import farmbot.modeling.farmbot_modeling.Sequence
 import farmbot.modeling.farmbot_modeling.If
 import farmbot.modeling.farmbot_modeling.ExecuteSequence
 import farmbot.modeling.farmbot_modeling.Wait
-import farmbot.modeling.farmbot_modeling.IsToolOn
 import farmbot.modeling.farmbot_modeling.SendMessage
 import farmbot.modeling.farmbot_modeling.RunFarmware
 import farmbot.modeling.farmbot_modeling.TakePhoto
@@ -81,7 +80,7 @@ class MyFarmbotGenerator extends AbstractGenerator {
 
 	def dispatch compile(SequenceInstruction sequenceInstruction) '''this expression is not supported: '''
 
-	def dispatch compile(BooleanExpression booleanExpression) '''«booleanExpression.result»'''
+	def dispatch compile(BooleanExpression booleanExpression) '''this expression is not supported: '''
 
 	def dispatch compile(TurnOn turnon) '''
 		new JSONObject()
@@ -239,8 +238,6 @@ class MyFarmbotGenerator extends AbstractGenerator {
 			)
 	'''
 
-	def dispatch compile(IsToolOn isToolOn) '''true'''
-
 	def dispatch compile(SendMessage message) '''
 		new JSONObject()
 			.put("kind", "send_message")
@@ -280,29 +277,69 @@ class MyFarmbotGenerator extends AbstractGenerator {
 		System.out.println("Here is a list of the sequences");
 	 '''
 	
-	def dispatch compile(IsEqualTo isEqualTo) '''
-		.put("rhs", «isEqualTo.value»)
-		.put("op", "is")
-		.put("lhs", "«isEqualTo.axe»")
-	'''	
+	def dispatch compile(IsEqualTo isEqualTo) {
+		var target = "";
+		
+		if (isEqualTo.axe !== null) {
+			target = isEqualTo.axe;
+		} else {
+			target = "pin" + isEqualTo.pinNumber;
+		}
+		
+		'''
+			.put("rhs", «isEqualTo.value»)
+			.put("op", "is")
+			.put("lhs", "«target»")
+		'''	
+	}
 
-	def dispatch compile(IsNotEqualTo isNotEqualTo) '''
-		.put("rhs", «isNotEqualTo.value»)
-		.put("op", "not")
-		.put("lhs", "«isNotEqualTo.axe»")
-	'''	
+	def dispatch compile(IsNotEqualTo isNotEqualTo) {
+		var target = "";
+		
+		if (isNotEqualTo.axe !== null) {
+			target = isNotEqualTo.axe;
+		} else {
+			target = "pin" + isNotEqualTo.pinNumber;
+		}
+		
+		'''
+			.put("rhs", «isNotEqualTo.value»)
+			.put("op", "not")
+			.put("lhs", "«target»")
+		'''	
+	}
 	
 	
-	def dispatch compile(IsGreaterThan isGreaterThan) '''
-		.put("rhs", «isGreaterThan.value»)
-		.put("op", ">")
-		.put("lhs", "«isGreaterThan.axe»")
-	'''	
+	def dispatch compile(IsGreaterThan isGreaterThan) {
+		var target = "";
+		
+		if (isGreaterThan.axe !== null) {
+			target = isGreaterThan.axe;
+		} else {
+			target = "pin" + isGreaterThan.pinNumber;
+		}
+		
+		'''
+			.put("rhs", «isGreaterThan.value»)
+			.put("op", ">")
+			.put("lhs", "«target»")
+		'''	
+	}
 
-	def dispatch compile(IsLowerThan isLowerThan) '''
-		.put("rhs", «isLowerThan.value»)
-		.put("op", "<")
-		.put("lhs", "«isLowerThan.axe»")
-	'''	
+	def dispatch compile(IsLowerThan isLowerThan) {
+		var target = "";
+		
+		if (isLowerThan.axe !== null) {
+			target = isLowerThan.axe;
+		} else {
+			target = "pin" + isLowerThan.pinNumber;
+		}
+		
+		'''
+			.put("rhs", «isLowerThan.value»)
+			.put("op", "<")
+			.put("lhs", "«target»")
+		'''	
+	}	
 	
 }

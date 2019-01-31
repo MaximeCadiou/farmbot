@@ -15,7 +15,6 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
-import farmbot.modeling.farmbot_modeling.IsToolOn;
 import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.Move;
@@ -143,13 +142,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * @generated
 	 */
 	private EClass booleanExpressionEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass isToolOnEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -601,7 +593,7 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBooleanExpression_Result() {
+	public EAttribute getBooleanExpression_Value() {
 		return (EAttribute) booleanExpressionEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -610,8 +602,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getIsToolOn() {
-		return isToolOnEClass;
+	public EAttribute getBooleanExpression_Axe() {
+		return (EAttribute) booleanExpressionEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -619,8 +611,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIsToolOn_Pin() {
-		return (EAttribute) isToolOnEClass.getEStructuralFeatures().get(0);
+	public EAttribute getBooleanExpression_PinNumber() {
+		return (EAttribute) booleanExpressionEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -700,44 +692,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIsEqualTo_Value() {
-		return (EAttribute) isEqualToEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIsEqualTo_Axe() {
-		return (EAttribute) isEqualToEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIsNotEqualTo() {
 		return isNotEqualToEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIsNotEqualTo_Value() {
-		return (EAttribute) isNotEqualToEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIsNotEqualTo_Axe() {
-		return (EAttribute) isNotEqualToEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -754,44 +710,8 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getIsGreaterThan_Value() {
-		return (EAttribute) isGreaterThanEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIsGreaterThan_Axe() {
-		return (EAttribute) isGreaterThanEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIsLowerThan() {
 		return isLowerThanEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIsLowerThan_Value() {
-		return (EAttribute) isLowerThanEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getIsLowerThan_Axe() {
-		return (EAttribute) isLowerThanEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -977,10 +897,9 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		createEAttribute(waitEClass, WAIT__DURATION);
 
 		booleanExpressionEClass = createEClass(BOOLEAN_EXPRESSION);
-		createEAttribute(booleanExpressionEClass, BOOLEAN_EXPRESSION__RESULT);
-
-		isToolOnEClass = createEClass(IS_TOOL_ON);
-		createEAttribute(isToolOnEClass, IS_TOOL_ON__PIN);
+		createEAttribute(booleanExpressionEClass, BOOLEAN_EXPRESSION__VALUE);
+		createEAttribute(booleanExpressionEClass, BOOLEAN_EXPRESSION__AXE);
+		createEAttribute(booleanExpressionEClass, BOOLEAN_EXPRESSION__PIN_NUMBER);
 
 		sendMessageEClass = createEClass(SEND_MESSAGE);
 		createEAttribute(sendMessageEClass, SEND_MESSAGE__MESSAGE);
@@ -994,20 +913,12 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		sequenceInstructionEClass = createEClass(SEQUENCE_INSTRUCTION);
 
 		isEqualToEClass = createEClass(IS_EQUAL_TO);
-		createEAttribute(isEqualToEClass, IS_EQUAL_TO__VALUE);
-		createEAttribute(isEqualToEClass, IS_EQUAL_TO__AXE);
 
 		isNotEqualToEClass = createEClass(IS_NOT_EQUAL_TO);
-		createEAttribute(isNotEqualToEClass, IS_NOT_EQUAL_TO__VALUE);
-		createEAttribute(isNotEqualToEClass, IS_NOT_EQUAL_TO__AXE);
 
 		isGreaterThanEClass = createEClass(IS_GREATER_THAN);
-		createEAttribute(isGreaterThanEClass, IS_GREATER_THAN__VALUE);
-		createEAttribute(isGreaterThanEClass, IS_GREATER_THAN__AXE);
 
 		isLowerThanEClass = createEClass(IS_LOWER_THAN);
-		createEAttribute(isLowerThanEClass, IS_LOWER_THAN__VALUE);
-		createEAttribute(isLowerThanEClass, IS_LOWER_THAN__AXE);
 
 		scheduleEClass = createEClass(SCHEDULE);
 		createEAttribute(scheduleEClass, SCHEDULE__SEQUENCE);
@@ -1067,8 +978,6 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 		moveAbsoluteEClass.getESuperTypes().add(this.getMove());
 		executeSequenceEClass.getESuperTypes().add(this.getSequenceCommand());
 		waitEClass.getESuperTypes().add(this.getSequenceCommand());
-		isToolOnEClass.getESuperTypes().add(this.getBooleanExpression());
-		isToolOnEClass.getESuperTypes().add(this.getSequenceCommand());
 		sendMessageEClass.getESuperTypes().add(this.getSequenceCommand());
 		runFarmwareEClass.getESuperTypes().add(this.getSequenceCommand());
 		takePhotoEClass.getESuperTypes().add(this.getSequenceCommand());
@@ -1161,14 +1070,15 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		initEClass(booleanExpressionEClass, BooleanExpression.class, "BooleanExpression", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBooleanExpression_Result(), ecorePackage.getEBoolean(), "result", null, 0, 1,
+		initEAttribute(getBooleanExpression_Value(), ecorePackage.getEInt(), "value", null, 0, 1,
 				BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-
-		initEClass(isToolOnEClass, IsToolOn.class, "IsToolOn", !IS_ABSTRACT, !IS_INTERFACE,
-				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIsToolOn_Pin(), ecorePackage.getEInt(), "pin", null, 0, 1, IsToolOn.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanExpression_Axe(), ecorePackage.getEString(), "axe", null, 0, 1,
+				BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getBooleanExpression_PinNumber(), ecorePackage.getEInt(), "pinNumber", null, 0, 1,
+				BooleanExpression.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(sendMessageEClass, SendMessage.class, "SendMessage", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
@@ -1191,31 +1101,15 @@ public class Farmbot_modelingPackageImpl extends EPackageImpl implements Farmbot
 
 		initEClass(isEqualToEClass, IsEqualTo.class, "IsEqualTo", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIsEqualTo_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IsEqualTo.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIsEqualTo_Axe(), ecorePackage.getEString(), "axe", null, 0, 1, IsEqualTo.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isNotEqualToEClass, IsNotEqualTo.class, "IsNotEqualTo", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIsNotEqualTo_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IsNotEqualTo.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIsNotEqualTo_Axe(), ecorePackage.getEString(), "axe", null, 0, 1, IsNotEqualTo.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isGreaterThanEClass, IsGreaterThan.class, "IsGreaterThan", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIsGreaterThan_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IsGreaterThan.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIsGreaterThan_Axe(), ecorePackage.getEString(), "axe", null, 0, 1, IsGreaterThan.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(isLowerThanEClass, IsLowerThan.class, "IsLowerThan", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getIsLowerThan_Value(), ecorePackage.getEInt(), "value", null, 0, 1, IsLowerThan.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getIsLowerThan_Axe(), ecorePackage.getEString(), "axe", null, 0, 1, IsLowerThan.class,
-				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(scheduleEClass, Schedule.class, "Schedule", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);

@@ -244,23 +244,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case Farmbot_modelingPackage.IS_TOOL_ON: {
-			IsToolOn isToolOn = (IsToolOn) theEObject;
-			T result = caseIsToolOn(isToolOn);
-			if (result == null)
-				result = caseBooleanExpression(isToolOn);
-			if (result == null)
-				result = caseSequenceCommand(isToolOn);
-			if (result == null)
-				result = caseCommand(isToolOn);
-			if (result == null)
-				result = caseSequenceInstruction(isToolOn);
-			if (result == null)
-				result = caseInstruction(isToolOn);
-			if (result == null)
-				result = defaultCase(theEObject);
-			return result;
-		}
 		case Farmbot_modelingPackage.SEND_MESSAGE: {
 			SendMessage sendMessage = (SendMessage) theEObject;
 			T result = caseSendMessage(sendMessage);
@@ -605,21 +588,6 @@ public class Farmbot_modelingSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBooleanExpression(BooleanExpression object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Is Tool On</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Is Tool On</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseIsToolOn(IsToolOn object) {
 		return null;
 	}
 

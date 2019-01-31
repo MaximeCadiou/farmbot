@@ -112,15 +112,6 @@ public interface Farmbot_modelingFactory extends EFactory {
 	Wait createWait();
 
 	/**
-	 * Returns a new object of class '<em>Is Tool On</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Is Tool On</em>'.
-	 * @generated
-	 */
-	IsToolOn createIsToolOn();
-
-	/**
 	 * Returns a new object of class '<em>Send Message</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

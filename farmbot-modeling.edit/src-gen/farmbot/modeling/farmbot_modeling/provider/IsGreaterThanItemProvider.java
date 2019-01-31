@@ -2,7 +2,6 @@
  */
 package farmbot.modeling.farmbot_modeling.provider;
 
-import farmbot.modeling.farmbot_modeling.Farmbot_modelingPackage;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 
 import java.util.Collection;
@@ -10,11 +9,7 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
-
-import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ViewerNotification;
 
 /**
  * This is the item provider adapter for a {@link farmbot.modeling.farmbot_modeling.IsGreaterThan} object.
@@ -44,42 +39,8 @@ public class IsGreaterThanItemProvider extends BooleanExpressionItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addValuePropertyDescriptor(object);
-			addAxePropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
-	}
-
-	/**
-	 * This adds a property descriptor for the Value feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addValuePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_IsGreaterThan_value_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_IsGreaterThan_value_feature",
-								"_UI_IsGreaterThan_type"),
-						Farmbot_modelingPackage.Literals.IS_GREATER_THAN__VALUE, true, false, false,
-						ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Axe feature.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void addAxePropertyDescriptor(Object object) {
-		itemPropertyDescriptors
-				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
-						getResourceLocator(), getString("_UI_IsGreaterThan_axe_feature"),
-						getString("_UI_PropertyDescriptor_description", "_UI_IsGreaterThan_axe_feature",
-								"_UI_IsGreaterThan_type"),
-						Farmbot_modelingPackage.Literals.IS_GREATER_THAN__AXE, true, false, false,
-						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -112,7 +73,7 @@ public class IsGreaterThanItemProvider extends BooleanExpressionItemProvider {
 	@Override
 	public String getText(Object object) {
 		IsGreaterThan isGreaterThan = (IsGreaterThan) object;
-		return getString("_UI_IsGreaterThan_type") + " " + isGreaterThan.isResult();
+		return getString("_UI_IsGreaterThan_type") + " " + isGreaterThan.getValue();
 	}
 
 	/**
@@ -125,13 +86,6 @@ public class IsGreaterThanItemProvider extends BooleanExpressionItemProvider {
 	@Override
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
-
-		switch (notification.getFeatureID(IsGreaterThan.class)) {
-		case Farmbot_modelingPackage.IS_GREATER_THAN__VALUE:
-		case Farmbot_modelingPackage.IS_GREATER_THAN__AXE:
-			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
-			return;
-		}
 		super.notifyChanged(notification);
 	}
 

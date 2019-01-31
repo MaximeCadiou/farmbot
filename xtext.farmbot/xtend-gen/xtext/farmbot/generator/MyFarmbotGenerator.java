@@ -15,7 +15,6 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
-import farmbot.modeling.farmbot_modeling.IsToolOn;
 import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.Move;
@@ -129,8 +128,7 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   
   protected CharSequence _compile(final BooleanExpression booleanExpression) {
     StringConcatenation _builder = new StringConcatenation();
-    boolean _isResult = booleanExpression.isResult();
-    _builder.append(_isResult);
+    _builder.append("this expression is not supported: ");
     return _builder;
   }
   
@@ -604,12 +602,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
     return _builder;
   }
   
-  protected CharSequence _compile(final IsToolOn isToolOn) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append("true");
-    return _builder;
-  }
-  
   protected CharSequence _compile(final SendMessage message) {
     StringConcatenation _builder = new StringConcatenation();
     _builder.append("new JSONObject()");
@@ -726,71 +718,123 @@ public class MyFarmbotGenerator extends AbstractGenerator {
   }
   
   protected CharSequence _compile(final IsEqualTo isEqualTo) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".put(\"rhs\", ");
-    int _value = isEqualTo.getValue();
-    _builder.append(_value);
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
-    _builder.append(".put(\"op\", \"is\")");
-    _builder.newLine();
-    _builder.append(".put(\"lhs\", \"");
-    String _axe = isEqualTo.getAxe();
-    _builder.append(_axe);
-    _builder.append("\")");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      String target = "";
+      String _axe = isEqualTo.getAxe();
+      boolean _tripleNotEquals = (_axe != null);
+      if (_tripleNotEquals) {
+        target = isEqualTo.getAxe();
+      } else {
+        int _pinNumber = isEqualTo.getPinNumber();
+        String _plus = ("pin" + Integer.valueOf(_pinNumber));
+        target = _plus;
+      }
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(".put(\"rhs\", ");
+      int _value = isEqualTo.getValue();
+      _builder.append(_value);
+      _builder.append(")");
+      _builder.newLineIfNotEmpty();
+      _builder.append(".put(\"op\", \"is\")");
+      _builder.newLine();
+      _builder.append(".put(\"lhs\", \"");
+      _builder.append(target);
+      _builder.append("\")");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _compile(final IsNotEqualTo isNotEqualTo) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".put(\"rhs\", ");
-    int _value = isNotEqualTo.getValue();
-    _builder.append(_value);
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
-    _builder.append(".put(\"op\", \"not\")");
-    _builder.newLine();
-    _builder.append(".put(\"lhs\", \"");
-    String _axe = isNotEqualTo.getAxe();
-    _builder.append(_axe);
-    _builder.append("\")");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      String target = "";
+      String _axe = isNotEqualTo.getAxe();
+      boolean _tripleNotEquals = (_axe != null);
+      if (_tripleNotEquals) {
+        target = isNotEqualTo.getAxe();
+      } else {
+        int _pinNumber = isNotEqualTo.getPinNumber();
+        String _plus = ("pin" + Integer.valueOf(_pinNumber));
+        target = _plus;
+      }
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(".put(\"rhs\", ");
+      int _value = isNotEqualTo.getValue();
+      _builder.append(_value);
+      _builder.append(")");
+      _builder.newLineIfNotEmpty();
+      _builder.append(".put(\"op\", \"not\")");
+      _builder.newLine();
+      _builder.append(".put(\"lhs\", \"");
+      _builder.append(target);
+      _builder.append("\")");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _compile(final IsGreaterThan isGreaterThan) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".put(\"rhs\", ");
-    int _value = isGreaterThan.getValue();
-    _builder.append(_value);
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
-    _builder.append(".put(\"op\", \">\")");
-    _builder.newLine();
-    _builder.append(".put(\"lhs\", \"");
-    String _axe = isGreaterThan.getAxe();
-    _builder.append(_axe);
-    _builder.append("\")");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      String target = "";
+      String _axe = isGreaterThan.getAxe();
+      boolean _tripleNotEquals = (_axe != null);
+      if (_tripleNotEquals) {
+        target = isGreaterThan.getAxe();
+      } else {
+        int _pinNumber = isGreaterThan.getPinNumber();
+        String _plus = ("pin" + Integer.valueOf(_pinNumber));
+        target = _plus;
+      }
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(".put(\"rhs\", ");
+      int _value = isGreaterThan.getValue();
+      _builder.append(_value);
+      _builder.append(")");
+      _builder.newLineIfNotEmpty();
+      _builder.append(".put(\"op\", \">\")");
+      _builder.newLine();
+      _builder.append(".put(\"lhs\", \"");
+      _builder.append(target);
+      _builder.append("\")");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   protected CharSequence _compile(final IsLowerThan isLowerThan) {
-    StringConcatenation _builder = new StringConcatenation();
-    _builder.append(".put(\"rhs\", ");
-    int _value = isLowerThan.getValue();
-    _builder.append(_value);
-    _builder.append(")");
-    _builder.newLineIfNotEmpty();
-    _builder.append(".put(\"op\", \"<\")");
-    _builder.newLine();
-    _builder.append(".put(\"lhs\", \"");
-    String _axe = isLowerThan.getAxe();
-    _builder.append(_axe);
-    _builder.append("\")");
-    _builder.newLineIfNotEmpty();
-    return _builder;
+    CharSequence _xblockexpression = null;
+    {
+      String target = "";
+      String _axe = isLowerThan.getAxe();
+      boolean _tripleNotEquals = (_axe != null);
+      if (_tripleNotEquals) {
+        target = isLowerThan.getAxe();
+      } else {
+        int _pinNumber = isLowerThan.getPinNumber();
+        String _plus = ("pin" + Integer.valueOf(_pinNumber));
+        target = _plus;
+      }
+      StringConcatenation _builder = new StringConcatenation();
+      _builder.append(".put(\"rhs\", ");
+      int _value = isLowerThan.getValue();
+      _builder.append(_value);
+      _builder.append(")");
+      _builder.newLineIfNotEmpty();
+      _builder.append(".put(\"op\", \"<\")");
+      _builder.newLine();
+      _builder.append(".put(\"lhs\", \"");
+      _builder.append(target);
+      _builder.append("\")");
+      _builder.newLineIfNotEmpty();
+      _xblockexpression = _builder;
+    }
+    return _xblockexpression;
   }
   
   public CharSequence compile(final EObject move) {
@@ -802,8 +846,6 @@ public class MyFarmbotGenerator extends AbstractGenerator {
       return _compile((ExecuteSequence)move);
     } else if (move instanceof FindHome) {
       return _compile((FindHome)move);
-    } else if (move instanceof IsToolOn) {
-      return _compile((IsToolOn)move);
     } else if (move instanceof Move) {
       return _compile((Move)move);
     } else if (move instanceof RunFarmware) {

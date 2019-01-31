@@ -137,11 +137,6 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseIsToolOn(IsToolOn object) {
-			return createIsToolOnAdapter();
-		}
-
-		@Override
 		public Adapter caseSendMessage(SendMessage object) {
 			return createSendMessageAdapter();
 		}
@@ -413,20 +408,6 @@ public class Farmbot_modelingAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBooleanExpressionAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link farmbot.modeling.farmbot_modeling.IsToolOn <em>Is Tool On</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see farmbot.modeling.farmbot_modeling.IsToolOn
-	 * @generated
-	 */
-	public Adapter createIsToolOnAdapter() {
 		return null;
 	}
 

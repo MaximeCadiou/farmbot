@@ -53,25 +53,59 @@ public class BooleanExpressionItemProvider extends ItemProviderAdapter implement
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addResultPropertyDescriptor(object);
+			addValuePropertyDescriptor(object);
+			addAxePropertyDescriptor(object);
+			addPinNumberPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Result feature.
+	 * This adds a property descriptor for the Value feature.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected void addResultPropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
-				getString("_UI_BooleanExpression_result_feature"),
-				getString("_UI_PropertyDescriptor_description", "_UI_BooleanExpression_result_feature",
+				getString("_UI_BooleanExpression_value_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_BooleanExpression_value_feature",
 						"_UI_BooleanExpression_type"),
-				Farmbot_modelingPackage.Literals.BOOLEAN_EXPRESSION__RESULT, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+				Farmbot_modelingPackage.Literals.BOOLEAN_EXPRESSION__VALUE, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Axe feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addAxePropertyDescriptor(Object object) {
+		itemPropertyDescriptors
+				.add(createItemPropertyDescriptor(((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(),
+						getResourceLocator(), getString("_UI_BooleanExpression_axe_feature"),
+						getString("_UI_PropertyDescriptor_description", "_UI_BooleanExpression_axe_feature",
+								"_UI_BooleanExpression_type"),
+						Farmbot_modelingPackage.Literals.BOOLEAN_EXPRESSION__AXE, true, false, false,
+						ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Pin Number feature.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void addPinNumberPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory).getRootAdapterFactory(), getResourceLocator(),
+				getString("_UI_BooleanExpression_pinNumber_feature"),
+				getString("_UI_PropertyDescriptor_description", "_UI_BooleanExpression_pinNumber_feature",
+						"_UI_BooleanExpression_type"),
+				Farmbot_modelingPackage.Literals.BOOLEAN_EXPRESSION__PIN_NUMBER, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -104,7 +138,7 @@ public class BooleanExpressionItemProvider extends ItemProviderAdapter implement
 	@Override
 	public String getText(Object object) {
 		BooleanExpression booleanExpression = (BooleanExpression) object;
-		return getString("_UI_BooleanExpression_type") + " " + booleanExpression.isResult();
+		return getString("_UI_BooleanExpression_type") + " " + booleanExpression.getValue();
 	}
 
 	/**
@@ -119,7 +153,9 @@ public class BooleanExpressionItemProvider extends ItemProviderAdapter implement
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(BooleanExpression.class)) {
-		case Farmbot_modelingPackage.BOOLEAN_EXPRESSION__RESULT:
+		case Farmbot_modelingPackage.BOOLEAN_EXPRESSION__VALUE:
+		case Farmbot_modelingPackage.BOOLEAN_EXPRESSION__AXE:
+		case Farmbot_modelingPackage.BOOLEAN_EXPRESSION__PIN_NUMBER:
 			fireNotifyChanged(new ViewerNotification(notification, notification.getNotifier(), false, true));
 			return;
 		}

@@ -129,7 +129,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getCommand()
 	 * @generated
 	 */
-	int COMMAND = 24;
+	int COMMAND = 23;
 
 	/**
 	 * The number of structural features of the '<em>Command</em>' class.
@@ -506,7 +506,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getSequenceInstruction()
 	 * @generated
 	 */
-	int SEQUENCE_INSTRUCTION = 18;
+	int SEQUENCE_INSTRUCTION = 17;
 
 	/**
 	 * The number of structural features of the '<em>Sequence Instruction</em>' class.
@@ -730,13 +730,31 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int BOOLEAN_EXPRESSION = 13;
 
 	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_EXPRESSION__RESULT = 0;
+	int BOOLEAN_EXPRESSION__VALUE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Axe</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPRESSION__AXE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOLEAN_EXPRESSION__PIN_NUMBER = 2;
 
 	/**
 	 * The number of structural features of the '<em>Boolean Expression</em>' class.
@@ -745,7 +763,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOLEAN_EXPRESSION_FEATURE_COUNT = 1;
+	int BOOLEAN_EXPRESSION_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Boolean Expression</em>' class.
@@ -757,52 +775,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	int BOOLEAN_EXPRESSION_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.IsToolOnImpl <em>Is Tool On</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see farmbot.modeling.farmbot_modeling.impl.IsToolOnImpl
-	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getIsToolOn()
-	 * @generated
-	 */
-	int IS_TOOL_ON = 14;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_TOOL_ON__RESULT = BOOLEAN_EXPRESSION__RESULT;
-
-	/**
-	 * The feature id for the '<em><b>Pin</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_TOOL_ON__PIN = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Is Tool On</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_TOOL_ON_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Is Tool On</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_TOOL_ON_OPERATION_COUNT = BOOLEAN_EXPRESSION_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link farmbot.modeling.farmbot_modeling.impl.SendMessageImpl <em>Send Message</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -810,7 +782,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getSendMessage()
 	 * @generated
 	 */
-	int SEND_MESSAGE = 15;
+	int SEND_MESSAGE = 14;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -856,7 +828,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getRunFarmware()
 	 * @generated
 	 */
-	int RUN_FARMWARE = 16;
+	int RUN_FARMWARE = 15;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -893,7 +865,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getTakePhoto()
 	 * @generated
 	 */
-	int TAKE_PHOTO = 17;
+	int TAKE_PHOTO = 16;
 
 	/**
 	 * The number of structural features of the '<em>Take Photo</em>' class.
@@ -921,16 +893,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getIsEqualTo()
 	 * @generated
 	 */
-	int IS_EQUAL_TO = 19;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_EQUAL_TO__RESULT = BOOLEAN_EXPRESSION__RESULT;
+	int IS_EQUAL_TO = 18;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -939,7 +902,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_EQUAL_TO__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int IS_EQUAL_TO__VALUE = BOOLEAN_EXPRESSION__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Axe</b></em>' attribute.
@@ -948,7 +911,16 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_EQUAL_TO__AXE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int IS_EQUAL_TO__AXE = BOOLEAN_EXPRESSION__AXE;
+
+	/**
+	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_EQUAL_TO__PIN_NUMBER = BOOLEAN_EXPRESSION__PIN_NUMBER;
 
 	/**
 	 * The number of structural features of the '<em>Is Equal To</em>' class.
@@ -957,7 +929,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_EQUAL_TO_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int IS_EQUAL_TO_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Is Equal To</em>' class.
@@ -976,16 +948,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getIsNotEqualTo()
 	 * @generated
 	 */
-	int IS_NOT_EQUAL_TO = 20;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_NOT_EQUAL_TO__RESULT = BOOLEAN_EXPRESSION__RESULT;
+	int IS_NOT_EQUAL_TO = 19;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -994,7 +957,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_NOT_EQUAL_TO__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int IS_NOT_EQUAL_TO__VALUE = BOOLEAN_EXPRESSION__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Axe</b></em>' attribute.
@@ -1003,7 +966,16 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_NOT_EQUAL_TO__AXE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int IS_NOT_EQUAL_TO__AXE = BOOLEAN_EXPRESSION__AXE;
+
+	/**
+	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_NOT_EQUAL_TO__PIN_NUMBER = BOOLEAN_EXPRESSION__PIN_NUMBER;
 
 	/**
 	 * The number of structural features of the '<em>Is Not Equal To</em>' class.
@@ -1012,7 +984,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_NOT_EQUAL_TO_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int IS_NOT_EQUAL_TO_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Is Not Equal To</em>' class.
@@ -1031,16 +1003,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getIsGreaterThan()
 	 * @generated
 	 */
-	int IS_GREATER_THAN = 21;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_GREATER_THAN__RESULT = BOOLEAN_EXPRESSION__RESULT;
+	int IS_GREATER_THAN = 20;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1049,7 +1012,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_GREATER_THAN__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int IS_GREATER_THAN__VALUE = BOOLEAN_EXPRESSION__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Axe</b></em>' attribute.
@@ -1058,7 +1021,16 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_GREATER_THAN__AXE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int IS_GREATER_THAN__AXE = BOOLEAN_EXPRESSION__AXE;
+
+	/**
+	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_GREATER_THAN__PIN_NUMBER = BOOLEAN_EXPRESSION__PIN_NUMBER;
 
 	/**
 	 * The number of structural features of the '<em>Is Greater Than</em>' class.
@@ -1067,7 +1039,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_GREATER_THAN_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int IS_GREATER_THAN_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Is Greater Than</em>' class.
@@ -1086,16 +1058,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getIsLowerThan()
 	 * @generated
 	 */
-	int IS_LOWER_THAN = 22;
-
-	/**
-	 * The feature id for the '<em><b>Result</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IS_LOWER_THAN__RESULT = BOOLEAN_EXPRESSION__RESULT;
+	int IS_LOWER_THAN = 21;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1104,7 +1067,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_LOWER_THAN__VALUE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
+	int IS_LOWER_THAN__VALUE = BOOLEAN_EXPRESSION__VALUE;
 
 	/**
 	 * The feature id for the '<em><b>Axe</b></em>' attribute.
@@ -1113,7 +1076,16 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_LOWER_THAN__AXE = BOOLEAN_EXPRESSION_FEATURE_COUNT + 1;
+	int IS_LOWER_THAN__AXE = BOOLEAN_EXPRESSION__AXE;
+
+	/**
+	 * The feature id for the '<em><b>Pin Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IS_LOWER_THAN__PIN_NUMBER = BOOLEAN_EXPRESSION__PIN_NUMBER;
 
 	/**
 	 * The number of structural features of the '<em>Is Lower Than</em>' class.
@@ -1122,7 +1094,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IS_LOWER_THAN_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 2;
+	int IS_LOWER_THAN_FEATURE_COUNT = BOOLEAN_EXPRESSION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of operations of the '<em>Is Lower Than</em>' class.
@@ -1141,7 +1113,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getSchedule()
 	 * @generated
 	 */
-	int SCHEDULE = 23;
+	int SCHEDULE = 22;
 
 	/**
 	 * The feature id for the '<em><b>Sequence</b></em>' attribute.
@@ -1241,7 +1213,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListPeripherals()
 	 * @generated
 	 */
-	int LIST_PERIPHERALS = 25;
+	int LIST_PERIPHERALS = 24;
 
 	/**
 	 * The number of structural features of the '<em>List Peripherals</em>' class.
@@ -1269,7 +1241,7 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getListSequences()
 	 * @generated
 	 */
-	int LIST_SEQUENCES = 26;
+	int LIST_SEQUENCES = 25;
 
 	/**
 	 * The number of structural features of the '<em>List Sequences</em>' class.
@@ -1639,36 +1611,37 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getBooleanExpression();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.BooleanExpression#isResult <em>Result</em>}'.
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.BooleanExpression#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Result</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.BooleanExpression#isResult()
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.BooleanExpression#getValue()
 	 * @see #getBooleanExpression()
 	 * @generated
 	 */
-	EAttribute getBooleanExpression_Result();
+	EAttribute getBooleanExpression_Value();
 
 	/**
-	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.IsToolOn <em>Is Tool On</em>}'.
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.BooleanExpression#getAxe <em>Axe</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Is Tool On</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsToolOn
+	 * @return the meta object for the attribute '<em>Axe</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.BooleanExpression#getAxe()
+	 * @see #getBooleanExpression()
 	 * @generated
 	 */
-	EClass getIsToolOn();
+	EAttribute getBooleanExpression_Axe();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsToolOn#getPin <em>Pin</em>}'.
+	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.BooleanExpression#getPinNumber <em>Pin Number</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Pin</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsToolOn#getPin()
-	 * @see #getIsToolOn()
+	 * @return the meta object for the attribute '<em>Pin Number</em>'.
+	 * @see farmbot.modeling.farmbot_modeling.BooleanExpression#getPinNumber()
+	 * @see #getBooleanExpression()
 	 * @generated
 	 */
-	EAttribute getIsToolOn_Pin();
+	EAttribute getBooleanExpression_PinNumber();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.SendMessage <em>Send Message</em>}'.
@@ -1754,28 +1727,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getIsEqualTo();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsEqualTo#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsEqualTo#getValue()
-	 * @see #getIsEqualTo()
-	 * @generated
-	 */
-	EAttribute getIsEqualTo_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsEqualTo#getAxe <em>Axe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Axe</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsEqualTo#getAxe()
-	 * @see #getIsEqualTo()
-	 * @generated
-	 */
-	EAttribute getIsEqualTo_Axe();
-
-	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.IsNotEqualTo <em>Is Not Equal To</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1784,28 +1735,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIsNotEqualTo();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsNotEqualTo#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsNotEqualTo#getValue()
-	 * @see #getIsNotEqualTo()
-	 * @generated
-	 */
-	EAttribute getIsNotEqualTo_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsNotEqualTo#getAxe <em>Axe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Axe</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsNotEqualTo#getAxe()
-	 * @see #getIsNotEqualTo()
-	 * @generated
-	 */
-	EAttribute getIsNotEqualTo_Axe();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.IsGreaterThan <em>Is Greater Than</em>}'.
@@ -1818,28 +1747,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	EClass getIsGreaterThan();
 
 	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsGreaterThan#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsGreaterThan#getValue()
-	 * @see #getIsGreaterThan()
-	 * @generated
-	 */
-	EAttribute getIsGreaterThan_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsGreaterThan#getAxe <em>Axe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Axe</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsGreaterThan#getAxe()
-	 * @see #getIsGreaterThan()
-	 * @generated
-	 */
-	EAttribute getIsGreaterThan_Axe();
-
-	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.IsLowerThan <em>Is Lower Than</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1848,28 +1755,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIsLowerThan();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsLowerThan#getValue <em>Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Value</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsLowerThan#getValue()
-	 * @see #getIsLowerThan()
-	 * @generated
-	 */
-	EAttribute getIsLowerThan_Value();
-
-	/**
-	 * Returns the meta object for the attribute '{@link farmbot.modeling.farmbot_modeling.IsLowerThan#getAxe <em>Axe</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Axe</em>'.
-	 * @see farmbot.modeling.farmbot_modeling.IsLowerThan#getAxe()
-	 * @see #getIsLowerThan()
-	 * @generated
-	 */
-	EAttribute getIsLowerThan_Axe();
 
 	/**
 	 * Returns the meta object for class '{@link farmbot.modeling.farmbot_modeling.Schedule <em>Schedule</em>}'.
@@ -2315,30 +2200,28 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EClass BOOLEAN_EXPRESSION = eINSTANCE.getBooleanExpression();
 
 		/**
-		 * The meta object literal for the '<em><b>Result</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BOOLEAN_EXPRESSION__RESULT = eINSTANCE.getBooleanExpression_Result();
+		EAttribute BOOLEAN_EXPRESSION__VALUE = eINSTANCE.getBooleanExpression_Value();
 
 		/**
-		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.IsToolOnImpl <em>Is Tool On</em>}' class.
+		 * The meta object literal for the '<em><b>Axe</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see farmbot.modeling.farmbot_modeling.impl.IsToolOnImpl
-		 * @see farmbot.modeling.farmbot_modeling.impl.Farmbot_modelingPackageImpl#getIsToolOn()
 		 * @generated
 		 */
-		EClass IS_TOOL_ON = eINSTANCE.getIsToolOn();
+		EAttribute BOOLEAN_EXPRESSION__AXE = eINSTANCE.getBooleanExpression_Axe();
 
 		/**
-		 * The meta object literal for the '<em><b>Pin</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Pin Number</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute IS_TOOL_ON__PIN = eINSTANCE.getIsToolOn_Pin();
+		EAttribute BOOLEAN_EXPRESSION__PIN_NUMBER = eINSTANCE.getBooleanExpression_PinNumber();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.SendMessageImpl <em>Send Message</em>}' class.
@@ -2415,22 +2298,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EClass IS_EQUAL_TO = eINSTANCE.getIsEqualTo();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_EQUAL_TO__VALUE = eINSTANCE.getIsEqualTo_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Axe</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_EQUAL_TO__AXE = eINSTANCE.getIsEqualTo_Axe();
-
-		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.IsNotEqualToImpl <em>Is Not Equal To</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2439,22 +2306,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IS_NOT_EQUAL_TO = eINSTANCE.getIsNotEqualTo();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_NOT_EQUAL_TO__VALUE = eINSTANCE.getIsNotEqualTo_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Axe</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_NOT_EQUAL_TO__AXE = eINSTANCE.getIsNotEqualTo_Axe();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.IsGreaterThanImpl <em>Is Greater Than</em>}' class.
@@ -2467,22 +2318,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		EClass IS_GREATER_THAN = eINSTANCE.getIsGreaterThan();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_GREATER_THAN__VALUE = eINSTANCE.getIsGreaterThan_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Axe</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_GREATER_THAN__AXE = eINSTANCE.getIsGreaterThan_Axe();
-
-		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.IsLowerThanImpl <em>Is Lower Than</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2491,22 +2326,6 @@ public interface Farmbot_modelingPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IS_LOWER_THAN = eINSTANCE.getIsLowerThan();
-
-		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_LOWER_THAN__VALUE = eINSTANCE.getIsLowerThan_Value();
-
-		/**
-		 * The meta object literal for the '<em><b>Axe</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute IS_LOWER_THAN__AXE = eINSTANCE.getIsLowerThan_Axe();
 
 		/**
 		 * The meta object literal for the '{@link farmbot.modeling.farmbot_modeling.impl.ScheduleImpl <em>Schedule</em>}' class.

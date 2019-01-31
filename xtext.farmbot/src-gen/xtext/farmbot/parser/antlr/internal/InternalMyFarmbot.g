@@ -275,38 +275,29 @@ ruleSequenceCommand returns [EObject current=null]
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSequenceCommandAccess().getIsToolOnParserRuleCall_7());
+			newCompositeNode(grammarAccess.getSequenceCommandAccess().getSendMessageParserRuleCall_7());
 		}
-		this_IsToolOn_7=ruleIsToolOn
+		this_SendMessage_7=ruleSendMessage
 		{
-			$current = $this_IsToolOn_7.current;
+			$current = $this_SendMessage_7.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSequenceCommandAccess().getSendMessageParserRuleCall_8());
+			newCompositeNode(grammarAccess.getSequenceCommandAccess().getRunFarmwareParserRuleCall_8());
 		}
-		this_SendMessage_8=ruleSendMessage
+		this_RunFarmware_8=ruleRunFarmware
 		{
-			$current = $this_SendMessage_8.current;
+			$current = $this_RunFarmware_8.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getSequenceCommandAccess().getRunFarmwareParserRuleCall_9());
+			newCompositeNode(grammarAccess.getSequenceCommandAccess().getTakePhotoParserRuleCall_9());
 		}
-		this_RunFarmware_9=ruleRunFarmware
+		this_TakePhoto_9=ruleTakePhoto
 		{
-			$current = $this_RunFarmware_9.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getSequenceCommandAccess().getTakePhotoParserRuleCall_10());
-		}
-		this_TakePhoto_10=ruleTakePhoto
-		{
-			$current = $this_TakePhoto_10.current;
+			$current = $this_TakePhoto_9.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -365,47 +356,38 @@ ruleBooleanExpression returns [EObject current=null]
 }:
 	(
 		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsToolOnParserRuleCall_0());
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsEqualToParserRuleCall_0());
 		}
-		this_IsToolOn_0=ruleIsToolOn
+		this_IsEqualTo_0=ruleIsEqualTo
 		{
-			$current = $this_IsToolOn_0.current;
+			$current = $this_IsEqualTo_0.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsEqualToParserRuleCall_1());
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsNotEqualToParserRuleCall_1());
 		}
-		this_IsEqualTo_1=ruleIsEqualTo
+		this_IsNotEqualTo_1=ruleIsNotEqualTo
 		{
-			$current = $this_IsEqualTo_1.current;
+			$current = $this_IsNotEqualTo_1.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsNotEqualToParserRuleCall_2());
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsGreaterThanParserRuleCall_2());
 		}
-		this_IsNotEqualTo_2=ruleIsNotEqualTo
+		this_IsGreaterThan_2=ruleIsGreaterThan
 		{
-			$current = $this_IsNotEqualTo_2.current;
+			$current = $this_IsGreaterThan_2.current;
 			afterParserOrEnumRuleCall();
 		}
 		    |
 		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsGreaterThanParserRuleCall_3());
+			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsLowerThanParserRuleCall_3());
 		}
-		this_IsGreaterThan_3=ruleIsGreaterThan
+		this_IsLowerThan_3=ruleIsLowerThan
 		{
-			$current = $this_IsGreaterThan_3.current;
-			afterParserOrEnumRuleCall();
-		}
-		    |
-		{
-			newCompositeNode(grammarAccess.getBooleanExpressionAccess().getIsLowerThanParserRuleCall_4());
-		}
-		this_IsLowerThan_4=ruleIsLowerThan
-		{
-			$current = $this_IsLowerThan_4.current;
+			$current = $this_IsLowerThan_3.current;
 			afterParserOrEnumRuleCall();
 		}
 	)
@@ -1315,70 +1297,6 @@ ruleWait returns [EObject current=null]
 	)
 ;
 
-// Entry rule entryRuleIsToolOn
-entryRuleIsToolOn returns [EObject current=null]:
-	{ newCompositeNode(grammarAccess.getIsToolOnRule()); }
-	iv_ruleIsToolOn=ruleIsToolOn
-	{ $current=$iv_ruleIsToolOn.current; }
-	EOF;
-
-// Rule IsToolOn
-ruleIsToolOn returns [EObject current=null]
-@init {
-	enterRule();
-}
-@after {
-	leaveRule();
-}:
-	(
-		(
-			{
-				$current = forceCreateModelElement(
-					grammarAccess.getIsToolOnAccess().getIsToolOnAction_0(),
-					$current);
-			}
-		)
-		otherlv_1='isToolOn'
-		{
-			newLeafNode(otherlv_1, grammarAccess.getIsToolOnAccess().getIsToolOnKeyword_1());
-		}
-		otherlv_2='('
-		{
-			newLeafNode(otherlv_2, grammarAccess.getIsToolOnAccess().getLeftParenthesisKeyword_2());
-		}
-		otherlv_3='pin'
-		{
-			newLeafNode(otherlv_3, grammarAccess.getIsToolOnAccess().getPinKeyword_3());
-		}
-		otherlv_4='='
-		{
-			newLeafNode(otherlv_4, grammarAccess.getIsToolOnAccess().getEqualsSignKeyword_4());
-		}
-		(
-			(
-				lv_pin_5_0=RULE_INT
-				{
-					newLeafNode(lv_pin_5_0, grammarAccess.getIsToolOnAccess().getPinINTTerminalRuleCall_5_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIsToolOnRule());
-					}
-					setWithLastConsumed(
-						$current,
-						"pin",
-						lv_pin_5_0,
-						"org.eclipse.xtext.common.Terminals.INT");
-				}
-			)
-		)
-		otherlv_6=')'
-		{
-			newLeafNode(otherlv_6, grammarAccess.getIsToolOnAccess().getRightParenthesisKeyword_6());
-		}
-	)
-;
-
 // Entry rule entryRuleSendMessage
 entryRuleSendMessage returns [EObject current=null]:
 	{ newCompositeNode(grammarAccess.getSendMessageRule()); }
@@ -1927,39 +1845,66 @@ ruleIsEqualTo returns [EObject current=null]
 		)
 		(
 			(
-				lv_axe_1_0=RULE_STRING
-				{
-					newLeafNode(lv_axe_1_0, grammarAccess.getIsEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIsEqualToRule());
+				(
+					lv_axe_1_0=RULE_STRING
+					{
+						newLeafNode(lv_axe_1_0, grammarAccess.getIsEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"axe",
-						lv_axe_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIsEqualToRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"axe",
+							lv_axe_1_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			    |
+			(
+				otherlv_2='pin'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getIsEqualToAccess().getPinKeyword_1_1_0());
 				}
+				(
+					(
+						lv_pinNumber_3_0=RULE_INT
+						{
+							newLeafNode(lv_pinNumber_3_0, grammarAccess.getIsEqualToAccess().getPinNumberINTTerminalRuleCall_1_1_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getIsEqualToRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"pinNumber",
+								lv_pinNumber_3_0,
+								"org.eclipse.xtext.common.Terminals.INT");
+						}
+					)
+				)
 			)
 		)
-		otherlv_2='is'
+		otherlv_4='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsEqualToAccess().getIsKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getIsEqualToAccess().getIsKeyword_2());
 		}
-		otherlv_3='equal'
+		otherlv_5='equal'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsEqualToAccess().getEqualKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getIsEqualToAccess().getEqualKeyword_3());
 		}
-		otherlv_4='to'
+		otherlv_6='to'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getIsEqualToAccess().getToKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getIsEqualToAccess().getToKeyword_4());
 		}
 		(
 			(
-				lv_value_5_0=RULE_INT
+				lv_value_7_0=RULE_INT
 				{
-					newLeafNode(lv_value_5_0, grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0());
+					newLeafNode(lv_value_7_0, grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -1968,7 +1913,7 @@ ruleIsEqualTo returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_5_0,
+						lv_value_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -2001,43 +1946,70 @@ ruleIsNotEqualTo returns [EObject current=null]
 		)
 		(
 			(
-				lv_axe_1_0=RULE_STRING
-				{
-					newLeafNode(lv_axe_1_0, grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIsNotEqualToRule());
+				(
+					lv_axe_1_0=RULE_STRING
+					{
+						newLeafNode(lv_axe_1_0, grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"axe",
-						lv_axe_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIsNotEqualToRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"axe",
+							lv_axe_1_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			    |
+			(
+				otherlv_2='pin'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getIsNotEqualToAccess().getPinKeyword_1_1_0());
 				}
+				(
+					(
+						lv_pinNumber_3_0=RULE_INT
+						{
+							newLeafNode(lv_pinNumber_3_0, grammarAccess.getIsNotEqualToAccess().getPinNumberINTTerminalRuleCall_1_1_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getIsNotEqualToRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"pinNumber",
+								lv_pinNumber_3_0,
+								"org.eclipse.xtext.common.Terminals.INT");
+						}
+					)
+				)
 			)
 		)
-		otherlv_2='is'
+		otherlv_4='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsNotEqualToAccess().getIsKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getIsNotEqualToAccess().getIsKeyword_2());
 		}
-		otherlv_3='not'
+		otherlv_5='not'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsNotEqualToAccess().getNotKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getIsNotEqualToAccess().getNotKeyword_3());
 		}
-		otherlv_4='equal'
+		otherlv_6='equal'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getIsNotEqualToAccess().getEqualKeyword_4());
 		}
-		otherlv_5='to'
+		otherlv_7='to'
 		{
-			newLeafNode(otherlv_5, grammarAccess.getIsNotEqualToAccess().getToKeyword_5());
+			newLeafNode(otherlv_7, grammarAccess.getIsNotEqualToAccess().getToKeyword_5());
 		}
 		(
 			(
-				lv_value_6_0=RULE_INT
+				lv_value_8_0=RULE_INT
 				{
-					newLeafNode(lv_value_6_0, grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0());
+					newLeafNode(lv_value_8_0, grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0());
 				}
 				{
 					if ($current==null) {
@@ -2046,7 +2018,7 @@ ruleIsNotEqualTo returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_6_0,
+						lv_value_8_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -2079,39 +2051,66 @@ ruleIsGreaterThan returns [EObject current=null]
 		)
 		(
 			(
-				lv_axe_1_0=RULE_STRING
-				{
-					newLeafNode(lv_axe_1_0, grammarAccess.getIsGreaterThanAccess().getAxeSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIsGreaterThanRule());
+				(
+					lv_axe_1_0=RULE_STRING
+					{
+						newLeafNode(lv_axe_1_0, grammarAccess.getIsGreaterThanAccess().getAxeSTRINGTerminalRuleCall_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"axe",
-						lv_axe_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIsGreaterThanRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"axe",
+							lv_axe_1_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			    |
+			(
+				otherlv_2='pin'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getIsGreaterThanAccess().getPinKeyword_1_1_0());
 				}
+				(
+					(
+						lv_pinNumber_3_0=RULE_INT
+						{
+							newLeafNode(lv_pinNumber_3_0, grammarAccess.getIsGreaterThanAccess().getPinNumberINTTerminalRuleCall_1_1_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getIsGreaterThanRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"pinNumber",
+								lv_pinNumber_3_0,
+								"org.eclipse.xtext.common.Terminals.INT");
+						}
+					)
+				)
 			)
 		)
-		otherlv_2='is'
+		otherlv_4='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsGreaterThanAccess().getIsKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getIsGreaterThanAccess().getIsKeyword_2());
 		}
-		otherlv_3='greater'
+		otherlv_5='greater'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getIsGreaterThanAccess().getGreaterKeyword_3());
 		}
-		otherlv_4='than'
+		otherlv_6='than'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getIsGreaterThanAccess().getThanKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getIsGreaterThanAccess().getThanKeyword_4());
 		}
 		(
 			(
-				lv_value_5_0=RULE_INT
+				lv_value_7_0=RULE_INT
 				{
-					newLeafNode(lv_value_5_0, grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0());
+					newLeafNode(lv_value_7_0, grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -2120,7 +2119,7 @@ ruleIsGreaterThan returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_5_0,
+						lv_value_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)
@@ -2153,39 +2152,66 @@ ruleIsLowerThan returns [EObject current=null]
 		)
 		(
 			(
-				lv_axe_1_0=RULE_STRING
-				{
-					newLeafNode(lv_axe_1_0, grammarAccess.getIsLowerThanAccess().getAxeSTRINGTerminalRuleCall_1_0());
-				}
-				{
-					if ($current==null) {
-						$current = createModelElement(grammarAccess.getIsLowerThanRule());
+				(
+					lv_axe_1_0=RULE_STRING
+					{
+						newLeafNode(lv_axe_1_0, grammarAccess.getIsLowerThanAccess().getAxeSTRINGTerminalRuleCall_1_0_0());
 					}
-					setWithLastConsumed(
-						$current,
-						"axe",
-						lv_axe_1_0,
-						"org.eclipse.xtext.common.Terminals.STRING");
+					{
+						if ($current==null) {
+							$current = createModelElement(grammarAccess.getIsLowerThanRule());
+						}
+						setWithLastConsumed(
+							$current,
+							"axe",
+							lv_axe_1_0,
+							"org.eclipse.xtext.common.Terminals.STRING");
+					}
+				)
+			)
+			    |
+			(
+				otherlv_2='pin'
+				{
+					newLeafNode(otherlv_2, grammarAccess.getIsLowerThanAccess().getPinKeyword_1_1_0());
 				}
+				(
+					(
+						lv_pinNumber_3_0=RULE_INT
+						{
+							newLeafNode(lv_pinNumber_3_0, grammarAccess.getIsLowerThanAccess().getPinNumberINTTerminalRuleCall_1_1_1_0());
+						}
+						{
+							if ($current==null) {
+								$current = createModelElement(grammarAccess.getIsLowerThanRule());
+							}
+							setWithLastConsumed(
+								$current,
+								"pinNumber",
+								lv_pinNumber_3_0,
+								"org.eclipse.xtext.common.Terminals.INT");
+						}
+					)
+				)
 			)
 		)
-		otherlv_2='is'
+		otherlv_4='is'
 		{
-			newLeafNode(otherlv_2, grammarAccess.getIsLowerThanAccess().getIsKeyword_2());
+			newLeafNode(otherlv_4, grammarAccess.getIsLowerThanAccess().getIsKeyword_2());
 		}
-		otherlv_3='lower'
+		otherlv_5='lower'
 		{
-			newLeafNode(otherlv_3, grammarAccess.getIsLowerThanAccess().getLowerKeyword_3());
+			newLeafNode(otherlv_5, grammarAccess.getIsLowerThanAccess().getLowerKeyword_3());
 		}
-		otherlv_4='than'
+		otherlv_6='than'
 		{
-			newLeafNode(otherlv_4, grammarAccess.getIsLowerThanAccess().getThanKeyword_4());
+			newLeafNode(otherlv_6, grammarAccess.getIsLowerThanAccess().getThanKeyword_4());
 		}
 		(
 			(
-				lv_value_5_0=RULE_INT
+				lv_value_7_0=RULE_INT
 				{
-					newLeafNode(lv_value_5_0, grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0());
+					newLeafNode(lv_value_7_0, grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0());
 				}
 				{
 					if ($current==null) {
@@ -2194,7 +2220,7 @@ ruleIsLowerThan returns [EObject current=null]
 					setWithLastConsumed(
 						$current,
 						"value",
-						lv_value_5_0,
+						lv_value_7_0,
 						"org.eclipse.xtext.common.Terminals.INT");
 				}
 			)

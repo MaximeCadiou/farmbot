@@ -76,8 +76,6 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 			return createExecuteSequence();
 		case Farmbot_modelingPackage.WAIT:
 			return createWait();
-		case Farmbot_modelingPackage.IS_TOOL_ON:
-			return createIsToolOn();
 		case Farmbot_modelingPackage.SEND_MESSAGE:
 			return createSendMessage();
 		case Farmbot_modelingPackage.RUN_FARMWARE:
@@ -201,16 +199,6 @@ public class Farmbot_modelingFactoryImpl extends EFactoryImpl implements Farmbot
 	public Wait createWait() {
 		WaitImpl wait = new WaitImpl();
 		return wait;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IsToolOn createIsToolOn() {
-		IsToolOnImpl isToolOn = new IsToolOnImpl();
-		return isToolOn;
 	}
 
 	/**

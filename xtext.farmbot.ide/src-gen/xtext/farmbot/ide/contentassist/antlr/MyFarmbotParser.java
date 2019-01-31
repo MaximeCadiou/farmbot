@@ -36,6 +36,10 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getSequenceCommandAccess().getAlternatives(), "rule__SequenceCommand__Alternatives");
 			builder.put(grammarAccess.getSequenceInstructionAccess().getAlternatives(), "rule__SequenceInstruction__Alternatives");
 			builder.put(grammarAccess.getBooleanExpressionAccess().getAlternatives(), "rule__BooleanExpression__Alternatives");
+			builder.put(grammarAccess.getIsEqualToAccess().getAlternatives_1(), "rule__IsEqualTo__Alternatives_1");
+			builder.put(grammarAccess.getIsNotEqualToAccess().getAlternatives_1(), "rule__IsNotEqualTo__Alternatives_1");
+			builder.put(grammarAccess.getIsGreaterThanAccess().getAlternatives_1(), "rule__IsGreaterThan__Alternatives_1");
+			builder.put(grammarAccess.getIsLowerThanAccess().getAlternatives_1(), "rule__IsLowerThan__Alternatives_1");
 			builder.put(grammarAccess.getEDoubleAccess().getAlternatives_4_0(), "rule__EDouble__Alternatives_4_0");
 			builder.put(grammarAccess.getEBooleanAccess().getAlternatives(), "rule__EBoolean__Alternatives");
 			builder.put(grammarAccess.getFarmbotAccess().getGroup(), "rule__Farmbot__Group__0");
@@ -49,7 +53,6 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMoveAbsoluteAccess().getGroup(), "rule__MoveAbsolute__Group__0");
 			builder.put(grammarAccess.getExecuteSequenceAccess().getGroup(), "rule__ExecuteSequence__Group__0");
 			builder.put(grammarAccess.getWaitAccess().getGroup(), "rule__Wait__Group__0");
-			builder.put(grammarAccess.getIsToolOnAccess().getGroup(), "rule__IsToolOn__Group__0");
 			builder.put(grammarAccess.getSendMessageAccess().getGroup(), "rule__SendMessage__Group__0");
 			builder.put(grammarAccess.getRunFarmwareAccess().getGroup(), "rule__RunFarmware__Group__0");
 			builder.put(grammarAccess.getTakePhotoAccess().getGroup(), "rule__TakePhoto__Group__0");
@@ -57,9 +60,13 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getListPeripheralsAccess().getGroup(), "rule__ListPeripherals__Group__0");
 			builder.put(grammarAccess.getListSequencesAccess().getGroup(), "rule__ListSequences__Group__0");
 			builder.put(grammarAccess.getIsEqualToAccess().getGroup(), "rule__IsEqualTo__Group__0");
+			builder.put(grammarAccess.getIsEqualToAccess().getGroup_1_1(), "rule__IsEqualTo__Group_1_1__0");
 			builder.put(grammarAccess.getIsNotEqualToAccess().getGroup(), "rule__IsNotEqualTo__Group__0");
+			builder.put(grammarAccess.getIsNotEqualToAccess().getGroup_1_1(), "rule__IsNotEqualTo__Group_1_1__0");
 			builder.put(grammarAccess.getIsGreaterThanAccess().getGroup(), "rule__IsGreaterThan__Group__0");
+			builder.put(grammarAccess.getIsGreaterThanAccess().getGroup_1_1(), "rule__IsGreaterThan__Group_1_1__0");
 			builder.put(grammarAccess.getIsLowerThanAccess().getGroup(), "rule__IsLowerThan__Group__0");
+			builder.put(grammarAccess.getIsLowerThanAccess().getGroup_1_1(), "rule__IsLowerThan__Group_1_1__0");
 			builder.put(grammarAccess.getEDoubleAccess().getGroup(), "rule__EDouble__Group__0");
 			builder.put(grammarAccess.getEDoubleAccess().getGroup_4(), "rule__EDouble__Group_4__0");
 			builder.put(grammarAccess.getFarmbotAccess().getInstructionsAssignment_1(), "rule__Farmbot__InstructionsAssignment_1");
@@ -85,7 +92,6 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getMoveAbsoluteAccess().getSpeedAssignment_16(), "rule__MoveAbsolute__SpeedAssignment_16");
 			builder.put(grammarAccess.getExecuteSequenceAccess().getIdAssignment_5(), "rule__ExecuteSequence__IdAssignment_5");
 			builder.put(grammarAccess.getWaitAccess().getDurationAssignment_5(), "rule__Wait__DurationAssignment_5");
-			builder.put(grammarAccess.getIsToolOnAccess().getPinAssignment_5(), "rule__IsToolOn__PinAssignment_5");
 			builder.put(grammarAccess.getSendMessageAccess().getMessageTypeAssignment_5(), "rule__SendMessage__MessageTypeAssignment_5");
 			builder.put(grammarAccess.getSendMessageAccess().getMessageAssignment_9(), "rule__SendMessage__MessageAssignment_9");
 			builder.put(grammarAccess.getRunFarmwareAccess().getNameAssignment_5(), "rule__RunFarmware__NameAssignment_5");
@@ -97,13 +103,17 @@ public class MyFarmbotParser extends AbstractContentAssistParser {
 			builder.put(grammarAccess.getScheduleAccess().getRepeatUnitAssignment_25(), "rule__Schedule__RepeatUnitAssignment_25");
 			builder.put(grammarAccess.getScheduleAccess().getEndDateAssignment_29(), "rule__Schedule__EndDateAssignment_29");
 			builder.put(grammarAccess.getScheduleAccess().getEndTimeAssignment_33(), "rule__Schedule__EndTimeAssignment_33");
-			builder.put(grammarAccess.getIsEqualToAccess().getAxeAssignment_1(), "rule__IsEqualTo__AxeAssignment_1");
+			builder.put(grammarAccess.getIsEqualToAccess().getAxeAssignment_1_0(), "rule__IsEqualTo__AxeAssignment_1_0");
+			builder.put(grammarAccess.getIsEqualToAccess().getPinNumberAssignment_1_1_1(), "rule__IsEqualTo__PinNumberAssignment_1_1_1");
 			builder.put(grammarAccess.getIsEqualToAccess().getValueAssignment_5(), "rule__IsEqualTo__ValueAssignment_5");
-			builder.put(grammarAccess.getIsNotEqualToAccess().getAxeAssignment_1(), "rule__IsNotEqualTo__AxeAssignment_1");
+			builder.put(grammarAccess.getIsNotEqualToAccess().getAxeAssignment_1_0(), "rule__IsNotEqualTo__AxeAssignment_1_0");
+			builder.put(grammarAccess.getIsNotEqualToAccess().getPinNumberAssignment_1_1_1(), "rule__IsNotEqualTo__PinNumberAssignment_1_1_1");
 			builder.put(grammarAccess.getIsNotEqualToAccess().getValueAssignment_6(), "rule__IsNotEqualTo__ValueAssignment_6");
-			builder.put(grammarAccess.getIsGreaterThanAccess().getAxeAssignment_1(), "rule__IsGreaterThan__AxeAssignment_1");
+			builder.put(grammarAccess.getIsGreaterThanAccess().getAxeAssignment_1_0(), "rule__IsGreaterThan__AxeAssignment_1_0");
+			builder.put(grammarAccess.getIsGreaterThanAccess().getPinNumberAssignment_1_1_1(), "rule__IsGreaterThan__PinNumberAssignment_1_1_1");
 			builder.put(grammarAccess.getIsGreaterThanAccess().getValueAssignment_5(), "rule__IsGreaterThan__ValueAssignment_5");
-			builder.put(grammarAccess.getIsLowerThanAccess().getAxeAssignment_1(), "rule__IsLowerThan__AxeAssignment_1");
+			builder.put(grammarAccess.getIsLowerThanAccess().getAxeAssignment_1_0(), "rule__IsLowerThan__AxeAssignment_1_0");
+			builder.put(grammarAccess.getIsLowerThanAccess().getPinNumberAssignment_1_1_1(), "rule__IsLowerThan__PinNumberAssignment_1_1_1");
 			builder.put(grammarAccess.getIsLowerThanAccess().getValueAssignment_5(), "rule__IsLowerThan__ValueAssignment_5");
 		}
 	}

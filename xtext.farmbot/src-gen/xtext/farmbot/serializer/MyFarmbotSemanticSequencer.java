@@ -13,7 +13,6 @@ import farmbot.modeling.farmbot_modeling.IsEqualTo;
 import farmbot.modeling.farmbot_modeling.IsGreaterThan;
 import farmbot.modeling.farmbot_modeling.IsLowerThan;
 import farmbot.modeling.farmbot_modeling.IsNotEqualTo;
-import farmbot.modeling.farmbot_modeling.IsToolOn;
 import farmbot.modeling.farmbot_modeling.ListPeripherals;
 import farmbot.modeling.farmbot_modeling.ListSequences;
 import farmbot.modeling.farmbot_modeling.MoveAbsolute;
@@ -75,9 +74,6 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 				return; 
 			case Farmbot_modelingPackage.IS_NOT_EQUAL_TO:
 				sequence_IsNotEqualTo(context, (IsNotEqualTo) semanticObject); 
-				return; 
-			case Farmbot_modelingPackage.IS_TOOL_ON:
-				sequence_IsToolOn(context, (IsToolOn) semanticObject); 
 				return; 
 			case Farmbot_modelingPackage.LIST_PERIPHERALS:
 				sequence_ListPeripherals(context, (ListPeripherals) semanticObject); 
@@ -200,19 +196,10 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     IsEqualTo returns IsEqualTo
 	 *
 	 * Constraint:
-	 *     (axe=STRING value=INT)
+	 *     ((axe=STRING | pinNumber=INT) value=INT)
 	 */
 	protected void sequence_IsEqualTo(ISerializationContext context, IsEqualTo semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_EQUAL_TO__AXE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_EQUAL_TO__AXE));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_EQUAL_TO__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_EQUAL_TO__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIsEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsEqualToAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -222,19 +209,10 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     IsGreaterThan returns IsGreaterThan
 	 *
 	 * Constraint:
-	 *     (axe=STRING value=INT)
+	 *     ((axe=STRING | pinNumber=INT) value=INT)
 	 */
 	protected void sequence_IsGreaterThan(ISerializationContext context, IsGreaterThan semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_GREATER_THAN__AXE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_GREATER_THAN__AXE));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_GREATER_THAN__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_GREATER_THAN__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIsGreaterThanAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsGreaterThanAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -244,19 +222,10 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     IsLowerThan returns IsLowerThan
 	 *
 	 * Constraint:
-	 *     (axe=STRING value=INT)
+	 *     ((axe=STRING | pinNumber=INT) value=INT)
 	 */
 	protected void sequence_IsLowerThan(ISerializationContext context, IsLowerThan semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_LOWER_THAN__AXE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_LOWER_THAN__AXE));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_LOWER_THAN__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_LOWER_THAN__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIsLowerThanAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsLowerThanAccess().getValueINTTerminalRuleCall_5_0(), semanticObject.getValue());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	
@@ -266,41 +235,10 @@ public class MyFarmbotSemanticSequencer extends AbstractDelegatingSemanticSequen
 	 *     IsNotEqualTo returns IsNotEqualTo
 	 *
 	 * Constraint:
-	 *     (axe=STRING value=INT)
+	 *     ((axe=STRING | pinNumber=INT) value=INT)
 	 */
 	protected void sequence_IsNotEqualTo(ISerializationContext context, IsNotEqualTo semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_NOT_EQUAL_TO__AXE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_NOT_EQUAL_TO__AXE));
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_NOT_EQUAL_TO__VALUE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_NOT_EQUAL_TO__VALUE));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIsNotEqualToAccess().getAxeSTRINGTerminalRuleCall_1_0(), semanticObject.getAxe());
-		feeder.accept(grammarAccess.getIsNotEqualToAccess().getValueINTTerminalRuleCall_6_0(), semanticObject.getValue());
-		feeder.finish();
-	}
-	
-	
-	/**
-	 * Contexts:
-	 *     Instruction returns IsToolOn
-	 *     SequenceCommand returns IsToolOn
-	 *     SequenceInstruction returns IsToolOn
-	 *     BooleanExpression returns IsToolOn
-	 *     IsToolOn returns IsToolOn
-	 *
-	 * Constraint:
-	 *     pin=INT
-	 */
-	protected void sequence_IsToolOn(ISerializationContext context, IsToolOn semanticObject) {
-		if (errorAcceptor != null) {
-			if (transientValues.isValueTransient(semanticObject, Farmbot_modelingPackage.Literals.IS_TOOL_ON__PIN) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, Farmbot_modelingPackage.Literals.IS_TOOL_ON__PIN));
-		}
-		SequenceFeeder feeder = createSequencerFeeder(context, semanticObject);
-		feeder.accept(grammarAccess.getIsToolOnAccess().getPinINTTerminalRuleCall_5_0(), semanticObject.getPin());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

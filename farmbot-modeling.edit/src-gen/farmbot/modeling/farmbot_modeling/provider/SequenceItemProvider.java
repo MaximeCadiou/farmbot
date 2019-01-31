@@ -190,9 +190,6 @@ public class SequenceItemProvider extends InstructionItemProvider {
 				Farmbot_modelingFactory.eINSTANCE.createWait()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
-				Farmbot_modelingFactory.eINSTANCE.createIsToolOn()));
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,
 				Farmbot_modelingFactory.eINSTANCE.createSendMessage()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.SEQUENCE__SEQUENCE_INSTRUCTIONS,

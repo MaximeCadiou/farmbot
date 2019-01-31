@@ -146,9 +146,6 @@ public class IfItemProvider extends SequenceInstructionItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
-				Farmbot_modelingFactory.eINSTANCE.createIsToolOn()));
-
-		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,
 				Farmbot_modelingFactory.eINSTANCE.createIsEqualTo()));
 
 		newChildDescriptors.add(createChildParameter(Farmbot_modelingPackage.Literals.IF__BOOLEAN_EXPRESSION,

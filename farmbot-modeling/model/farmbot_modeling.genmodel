@@ -52,10 +52,9 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Wait/duration"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//BooleanExpression">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//BooleanExpression/result"/>
-    </genClasses>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//IsToolOn">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsToolOn/pin"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//BooleanExpression/value"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//BooleanExpression/axe"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//BooleanExpression/pinNumber"/>
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//SendMessage">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//SendMessage/message"/>
@@ -66,22 +65,10 @@
     </genClasses>
     <genClasses ecoreClass="farmbot_modeling.ecore#//TakePhoto"/>
     <genClasses image="false" ecoreClass="farmbot_modeling.ecore#//SequenceInstruction"/>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//IsEqualTo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsEqualTo/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsEqualTo/axe"/>
-    </genClasses>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//IsNotEqualTo">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsNotEqualTo/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsNotEqualTo/axe"/>
-    </genClasses>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//IsGreaterThan">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsGreaterThan/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsGreaterThan/axe"/>
-    </genClasses>
-    <genClasses ecoreClass="farmbot_modeling.ecore#//IsLowerThan">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsLowerThan/value"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//IsLowerThan/axe"/>
-    </genClasses>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsEqualTo"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsNotEqualTo"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsGreaterThan"/>
+    <genClasses ecoreClass="farmbot_modeling.ecore#//IsLowerThan"/>
     <genClasses ecoreClass="farmbot_modeling.ecore#//Schedule">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/sequence"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute farmbot_modeling.ecore#//Schedule/startDate"/>
